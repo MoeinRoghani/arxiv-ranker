@@ -41,6 +41,8 @@ python src/ranker.py cs.MA,cs.CL,cs.AI 2025-10
 
 Any valid [arXiv category](https://arxiv.org/category_taxonomy) is accepted. Multiple categories are comma-separated, no spaces.
 
+**Note:** The keyword filters (B, C, D) are tuned for multi-agent systems, LLM agents, and related AI research. Other categories will still fetch and enrich papers, but scoring will be low since the keywords won't match. To adapt for a different domain, edit `MAS_KEYWORDS`, `REASONING_KEYWORDS`, and `ABSTRACT_KEYWORDS` in `src/ranker.py`.
+
 ### Update Mode
 
 Re-rank a previous run's papers with fresh Semantic Scholar data. Enables citation-based scoring filters that are inactive in new mode (citations are ~0 for freshly released papers).
