@@ -1,123 +1,74 @@
-# arXiv Paper Retrieval & Ranking System
+# arXiv Research Ranker
 
-Fetches monthly paper listings from arXiv, enriches each paper with Semantic Scholar metadata, scores them with a multi-signal ranking algorithm, and exports ranked results.
+Automated pipeline that fetches monthly arXiv paper listings, enriches them with Semantic Scholar metadata, scores them with a multi-signal ranking algorithm, and publishes results to a static website.
 
-## Requirements
+**Live site:** [rankedresearch.com](https://rankedresearch.com)
 
-- Python 3.8+
-- `pip install -r requirements.txt`
+## How It Works
 
-## Setup
+1. **Fetch** — Scrapes arXiv listings by category and month
+2. **Enrich** — Batch API call to Semantic Scholar for venue, citations, hIndex, abstract
+3. **Score** — Multi-filter ranking (venue, keywords, hIndex, citations)
+4. **Publish** — Builds a React frontend, deploys to GitHub Pages
 
-### Semantic Scholar API Key
+Runs automatically via GitHub Actions. See [docs/DEVELOPER.md](docs/DEVELOPER.md) for full technical reference.
 
-The system uses the Semantic Scholar batch API. A key is optional but recommended to avoid rate limits.
+## Automation
 
-1. Request a key at https://www.semanticscholar.org/product/api#api-key-form
-2. Set it as an environment variable:
+| Workflow | Schedule | What it does |
+|----------|----------|--------------|
+| `generate.yml` | 1st of each month, 06:00 UTC | Generates rankings for the previous month |
+| `update.yml` | Every Monday, 06:00 UTC | Re-scores all entries from the past 12 months with fresh citation data |
 
-```bash
-export S2_API_KEY=your_key_here
-```
+Both workflows also support manual triggering from the website UI via `workflow_dispatch`.
 
-Without a key, the public rate limit applies (100 requests per 5 minutes).
-
-## Usage
-
-### New Mode (default)
-
-Fetch papers from arXiv for a given month, enrich with Semantic Scholar, score, and export.
+## Local Development
 
 ```bash
-# Default categories (cs.MA, cs.CL, cs.AI), current month
-python src/ranker.py
+pip install -r requirements.txt
 
-# Single category
-python src/ranker.py cs.MA
+# Generate rankings
+python src/ranker.py cs.MA,cs.CL,cs.AI 2026-02
 
-# Multiple categories, specific month
-python src/ranker.py cs.MA,cs.CL,cs.AI 2025-10
+# Update existing rankings
+python src/ranker.py --update output/csMA_csCL_csAI_2026_02/papers_raw.json
+
+# Run the frontend
+cd site && npm install && npm run dev
 ```
 
-Any valid [arXiv category](https://arxiv.org/category_taxonomy) is accepted. Multiple categories are comma-separated, no spaces.
+### Environment Variables
 
-**Note:** The keyword filters (B, C, D) are tuned for multi-agent systems, LLM agents, and related AI research. Other categories will still fetch and enrich papers, but scoring will be low since the keywords won't match. To adapt for a different domain, edit `MAS_KEYWORDS`, `REASONING_KEYWORDS`, and `ABSTRACT_KEYWORDS` in `src/ranker.py`.
+| Variable | Where | Purpose |
+|----------|-------|---------|
+| `S2_API_KEY` | GitHub Secrets / local env | Semantic Scholar API key |
+| `VITE_GITHUB_REPO` | `site/.env` (local) / injected by workflow | Repository name for workflow dispatch |
+| `VITE_GITHUB_PAT` | `site/.env` (local only) | GitHub PAT for local UI testing |
 
-### Update Mode
+## Scoring
 
-Re-rank a previous run's papers with fresh Semantic Scholar data. Enables citation-based scoring filters that are inactive in new mode (citations are ~0 for freshly released papers).
+| Filter | Source | Max Points | Notes |
+|--------|--------|------------|-------|
+| Venue | S2 `publicationVenue` | 120 | Tiered by conference ranking |
+| Title keywords | Title text | 70 | MAS, agent, coordination terms |
+| Abstract keywords | S2 abstract | 60 | Domain-specific terms |
+| hIndex | S2 `authors.hIndex` | 35 | Power-law formula |
+| Citations | S2 `citationCount` | continuous | Update mode only |
+| Influential ratio | S2 influential/total | 30 | Update mode only, requires >= 10 citations |
 
-```bash
-python src/ranker.py --update output/csMA_csCL_csAI_2025_10/papers_raw.json
-```
+**Tiers:** Landmark (>= 150), Important (>= 100), Notable (< 100)
 
-Takes the `papers_raw.json` from any previous run, bypasses cache, re-fetches S2 data, and re-scores with citation count and influential citation ratio as additional signals.
-
-## Data Sources
-
-### arXiv
-
-Bulk paper listing by category and month. Provides:
-- `Title`, `Authors`, `Subjects`
-
-### Semantic Scholar (Batch API)
-
-Per-paper enrichment via `POST /graph/v1/paper/batch`. Provides:
-- `publicationVenue` (alternate names + full name) — used for venue scoring
-- `abstract` — used for keyword scoring
-- `citationCount`, `influentialCitationCount` — used in update mode
-- `authors[].hIndex` — max across authors, used in both modes
-
-All S2 responses are cached locally in `.arxiv_cache/s2_data.json`. Subsequent runs for the same papers skip the API call unless `--update` is used.
-
-## Scoring Filters
-
-All filters run on every paper. Filters F and G are only active in update mode.
-
-| Filter | Source | Weight | Signal |
-|--------|--------|--------|--------|
-| A | Venue (S2) | 40-120 | Tiered venue scoring with workshop/findings downgrade |
-| B | Title | +50 | Core MAS keywords (`multi-agent`, `agentic`, `llm agent`, ...) |
-| C | Title | +25 | Reasoning/framework keywords (`planning`, `coordination`, `benchmark`, ...) |
-| D | Abstract | up to +50 | Weighted keyword matching, capped |
-| E | hIndex (S2) | 5-35 | Author reputation tiers |
-| F | Citations (S2) | 20-100 | Citation count tiers (update mode only) |
-| G | Influential ratio (S2) | 5-25 | Influential/total citation ratio (update mode only, requires >= 10 citations) |
-
-## Tier Assignment
-
-| Tier | Threshold |
-|------|-----------|
-| TIER-1 LANDMARK | score >= 150 |
-| TIER-2 IMPORTANT | score >= 100 |
-| TIER-3 NOTABLE | score < 100 |
-
-## Output
-
-Files are written to `output/<categories>_<year>_<month>/`:
-
-```
-output/csMA_csCL_csAI_2026_03/
-  papers_ALL_RANKED.csv      # All papers sorted by score
-  papers_landmark.csv        # Tier-1 only
-  papers_important.csv       # Tier-2 only
-  papers_notable.csv         # Tier-3 only
-  papers_raw.json            # Full data (input for --update)
-  papers_SUMMARY.txt         # Statistics
-```
-
-### CSV Columns
-
-`arXiv_ID`, `Title`, `Authors`, `Subjects`, `Abstract`, `Venue`, `Citation_Count`, `Influential_Citations`, `Max_Author_hIndex`, `Category`, `Score`, `Factors`, `Tier`
+Keywords are tuned for multi-agent systems and LLM agent research. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full scoring specification.
 
 ## Project Structure
 
 ```
 src/
-  ranker.py            # Main script: retrieval, enrichment, scoring
-  exporter.py          # Export logic: CSV, JSON, summary generation
-docs/
-  ARCHITECTURE.md      # Scoring algorithm specification
-.arxiv_cache/          # Local S2 response cache (auto-created)
-output/                # Ranked results (auto-created)
+  ranker.py          # Retrieval, enrichment, scoring
+  exporter.py        # CSV/JSON/summary export
+  site_builder.py    # Transforms output → site JSON, tracks newly discovered papers
+  run_updates.py     # Batch updater for weekly cron
+site/                # React + Vite frontend
+.github/workflows/   # generate.yml, update.yml
+docs/                # ARCHITECTURE.md, DEVELOPER.md
 ```

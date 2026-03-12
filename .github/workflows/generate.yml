@@ -1,0 +1,101 @@
+name: Generate Rankings
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'  # 1st of each month at 6 AM UTC
+  workflow_dispatch:
+    inputs:
+      year_month:
+        description: 'Year-month (e.g., 2026-03). Defaults to current month.'
+        required: false
+        default: ''
+      categories:
+        description: 'Comma-separated arXiv categories'
+        required: false
+        default: 'cs.MA,cs.CL,cs.AI'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: pip install -r requirements.txt
+
+      - name: Restore S2 cache
+        uses: actions/cache@v4
+        with:
+          path: .arxiv_cache
+          key: s2-cache-${{ github.run_id }}
+          restore-keys: s2-cache-
+
+      - name: Run ranker
+        env:
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+        run: |
+          YEAR_MONTH="${{ inputs.year_month }}"
+          CATEGORIES="${{ inputs.categories }}"
+
+          if [ -z "$YEAR_MONTH" ]; then
+            # Cron runs on the 1st — generate for the previous month
+            YEAR_MONTH=$(date -u -d "last month" +%Y-%m 2>/dev/null || date -u -v-1m +%Y-%m)
+          fi
+          if [ -z "$CATEGORIES" ]; then
+            CATEGORIES="cs.MA,cs.CL,cs.AI"
+          fi
+
+          echo "Categories: $CATEGORIES"
+          echo "Period: $YEAR_MONTH"
+
+          python src/ranker.py "$CATEGORIES" "$YEAR_MONTH"
+
+          CAT_STR=$(echo "$CATEGORIES" | sed 's/\.//g' | sed 's/,/_/g')
+          YM_STR=$(echo "$YEAR_MONTH" | sed 's/-/_/g')
+          OUTPUT_DIR="output/${CAT_STR}_${YM_STR}"
+
+          python src/site_builder.py "$OUTPUT_DIR/papers_raw.json" \
+            --categories "$CATEGORIES" \
+            --year-month "$YEAR_MONTH"
+
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/public/data/
+          git diff --cached --quiet || git commit -m "Generate rankings: $(date -u +%Y-%m)"
+          git push
+
+      - name: Build site
+        working-directory: site
+        env:
+          VITE_GITHUB_REPO: ${{ github.repository }}
+        run: |
+          npm ci
+          npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: generate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

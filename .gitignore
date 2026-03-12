@@ -1,5 +1,9 @@
 .arxiv_cache/
 output/
+dev/
 __pycache__/
 *.pyc
 .DS_Store
+site/.env
+site/node_modules/
+site/dist/

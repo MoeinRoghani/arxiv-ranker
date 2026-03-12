@@ -1,0 +1,104 @@
+name: Update Rankings
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 6 AM UTC
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Run ID to update (e.g., csMA_csCL_csAI_2026_03). Leave empty for all within past year.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: pip install -r requirements.txt
+
+      - name: Restore S2 cache
+        uses: actions/cache@v4
+        with:
+          path: .arxiv_cache
+          key: s2-cache-${{ github.run_id }}
+          restore-keys: s2-cache-
+
+      - name: Run updates
+        env:
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+        run: |
+          RUN_ID="${{ inputs.run_id }}"
+
+          if [ -n "$RUN_ID" ]; then
+            echo "Updating single run: $RUN_ID"
+            RAW_PATH="site/public/data/$RUN_ID/papers_raw.json"
+
+            if [ ! -f "$RAW_PATH" ]; then
+              echo "Error: $RAW_PATH not found"
+              exit 1
+            fi
+
+            python src/ranker.py --update "$RAW_PATH"
+
+            UPDATED="site/public/data/$RUN_ID/papers_updated_raw.json"
+            if [ -f "$UPDATED" ]; then
+              mv "$UPDATED" "$RAW_PATH"
+            fi
+
+            find "site/public/data/$RUN_ID" -name 'papers_updated_*' -delete
+
+            CATEGORIES=$(python3 -c "import json; entries=[e for e in json.load(open('site/public/data/index.json')) if e['id']=='$RUN_ID']; print(','.join(entries[0]['categories']) if entries else '')")
+            YEAR_MONTH=$(python3 -c "import json; entries=[e for e in json.load(open('site/public/data/index.json')) if e['id']=='$RUN_ID']; print(entries[0]['year_month'] if entries else '')")
+
+            python src/site_builder.py "$RAW_PATH" \
+              --categories "$CATEGORIES" \
+              --year-month "$YEAR_MONTH"
+          else
+            echo "Updating all runs within past year"
+            python src/run_updates.py
+          fi
+
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/public/data/
+          git diff --cached --quiet || git commit -m "Update rankings: $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Build site
+        working-directory: site
+        env:
+          VITE_GITHUB_REPO: ${{ github.repository }}
+        run: |
+          npm ci
+          npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

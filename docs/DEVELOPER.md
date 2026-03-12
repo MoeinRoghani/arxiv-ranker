@@ -4,15 +4,78 @@
 
 ```
 src/
-  ranker.py      # Main entry point, retrieval, enrichment, ranking
-  exporter.py    # CSV/JSON export utilities
+  ranker.py        # Main entry point, retrieval, enrichment, ranking
+  exporter.py      # CSV/JSON export utilities
+  site_builder.py  # Transforms ranker output → lightweight site JSON
+  run_updates.py   # Batch updater for weekly cron (past 12 months)
+site/              # React + Vite frontend
+  src/             # Components, styles, API layer
+  public/data/     # Generated site data (index.json + per-run papers.json)
+.github/workflows/
+  generate.yml     # Monthly cron + manual dispatch
+  update.yml       # Weekly cron + manual dispatch
 docs/
   ARCHITECTURE.md  # Scoring algorithm specification
   DEVELOPER.md     # This file
-output/            # Generated results per run
+output/            # Generated results per run (local only)
 .arxiv_cache/
   s2_data.json     # Semantic Scholar response cache
 ```
+
+---
+
+## GitHub Actions Workflows
+
+### generate.yml — New Rankings
+
+| Property | Value |
+|----------|-------|
+| **Trigger** | Cron: `0 6 1 * *` (1st of each month, 06:00 UTC) |
+| **Manual** | `workflow_dispatch` with optional `year_month` and `categories` |
+| **Cron behavior** | Generates rankings for the **previous month** |
+| **Manual default** | Previous month if `year_month` is empty; `cs.MA,cs.CL,cs.AI` if `categories` is empty |
+
+**Steps:**
+1. Checkout repo
+2. Install Python deps + restore S2 cache
+3. `python src/ranker.py "$CATEGORIES" "$YEAR_MONTH"`
+4. `python src/site_builder.py` — writes `site/public/data/<run_id>/papers.json`, updates `index.json`
+5. Commit + push data
+6. Build React app (`npm ci && npm run build`)
+7. Deploy to GitHub Pages
+
+### update.yml — Re-score Existing Rankings
+
+| Property | Value |
+|----------|-------|
+| **Trigger** | Cron: `0 6 * * 1` (every Monday, 06:00 UTC) |
+| **Manual** | `workflow_dispatch` with optional `run_id` |
+| **Cron behavior** | Runs `src/run_updates.py` — updates **all entries within the past 12 months** |
+| **Manual behavior** | If `run_id` is provided, updates only that single entry |
+
+**Steps:**
+1. Checkout repo
+2. Install Python deps + restore S2 cache
+3. Run update (batch via `run_updates.py` or single via `ranker.py --update`)
+4. `site_builder.py` rebuilds site JSON — marks newly discovered papers with `New: true`
+5. Commit + push data
+6. Build React app, deploy to GitHub Pages
+
+### Rate Limiting
+
+`run_updates.py` waits **300 seconds (5 minutes)** between consecutive updates to respect Semantic Scholar API limits.
+
+### Secrets
+
+| Secret | Where | Purpose |
+|--------|-------|---------|
+| `S2_API_KEY` | GitHub repo → Settings → Secrets → Actions | Semantic Scholar API key (higher rate limits) |
+| `VITE_GITHUB_REPO` | Injected at build time via `${{ github.repository }}` | Used by frontend to trigger workflows |
+| GitHub PAT | User's browser `localStorage` (entered via Settings modal) | Triggers `workflow_dispatch` from the UI |
+
+### Deployment
+
+GitHub Pages, source: GitHub Actions. Both workflows upload `site/dist` as a Pages artifact and deploy automatically.
 
 ## Entry Points
 
