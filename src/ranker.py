@@ -30,6 +30,7 @@ Output:
 """
 
 import os
+import math
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -71,14 +72,20 @@ class VenueScorer:
         'aamas': 100, 'acl': 100,
 
         # Tier A: Top journals
-        'nature': 100, 'science': 100, 'jmlr': 100,
-        'tacl': 90, 'tpami': 90,
+        'nature': 100, 'science': 100, 'jmlr': 100, 'tpami': 100,
+        'tnnls': 90, 'tacl': 90,
 
-        # Tier B: Strong conferences
+        # Tier A-: Strong conferences/journals
+        'uai': 90, 'corl': 90,
+
+        # Tier B: Solid conferences/journals
         'naacl': 80, 'coling': 80, 'eacl': 80,
         'icra': 80, 'iros': 80,
-        'uai': 80, 'aistats': 80, 'colt': 80, 'corl': 80, 'colm': 80,
+        'aistats': 80, 'colt': 80, 'colm': 80,
         'tmlr': 80, 'jair': 80,
+
+        # Tier C: Relevant but lower tier
+        'ecai': 70, 'prima': 70, 'tist': 70,
     }
 
     # Full name mappings for publicationVenue.name fallback
@@ -92,17 +99,25 @@ class VenueScorer:
         'international conference on computer vision': 100,
         'european conference on computer vision': 100,
         'association for the advancement of artificial intelligence': 100,
+        'international joint conference on artificial intelligence': 100,
         'autonomous agents and multi-agent systems': 100,
+        'international conference on autonomous agents': 100,
         'knowledge discovery and data mining': 100,
         'journal of machine learning research': 100,
+        'pattern analysis and machine intelligence': 100,
+        'artificial intelligence journal': 90,
+        'artificial intelligence (elsevier)': 90,
+        'transactions on neural networks and learning systems': 90,
         'transactions of the association for computational linguistics': 90,
-        'pattern analysis and machine intelligence': 90,
+        'uncertainty in artificial intelligence': 90,
+        'conference on robot learning': 90,
         'north american chapter': 80,
-        'uncertainty in artificial intelligence': 80,
         'artificial intelligence and statistics': 80,
-        'conference on robot learning': 80,
         'transactions on machine learning research': 80,
         'journal of artificial intelligence research': 80,
+        'european conference on artificial intelligence': 70,
+        'principles and practice of multi-agent systems': 70,
+        'transactions on intelligent systems and technology': 70,
     }
 
     # Sorted by key length descending so "naacl" matches before "acl",
@@ -401,16 +416,30 @@ class PaperRanker:
     TIER1_THRESHOLD = 150  # LANDMARK
     TIER2_THRESHOLD = 100  # IMPORTANT
     
-    MAS_KEYWORDS = [
-        'multi-agent', 'multiagent', 'agent coordination', 'agent-to-agent',
-        'llm agent', 'agentic', 'multi agent', 'autonomous agent'
-    ]
-    
-    REASONING_KEYWORDS = [
-        'communication', 'collaboration', 'cooperation', 'orchestration',
-        'framework', 'reasoning', 'planning', 'coordination', 'negotiation',
-        'benchmark', 'survey'
-    ]
+    TITLE_KEYWORDS = {
+        # Core MAS keywords (high relevance)
+        'multi-agent': 50,
+        'multiagent': 50,
+        'agent coordination': 50,
+        'agent-to-agent': 50,
+        'llm agent': 50,
+        'agentic': 50,
+        'multi agent': 50,
+        'autonomous agent': 50,
+        
+        # Reasoning/Framework keywords (moderate relevance)
+        'communication': 25,
+        'collaboration': 25,
+        'cooperation': 25,
+        'orchestration': 25,
+        'framework': 25,
+        'reasoning': 25,
+        'planning': 25,
+        'coordination': 25,
+        'negotiation': 25,
+        'benchmark': 25,
+        'survey': 25,
+    }
     
     ABSTRACT_KEYWORDS = {
         'multi-agent': 25,
@@ -424,11 +453,32 @@ class PaperRanker:
         'distributed': 10,
     }
     
-    HINDEX_TIERS = [(60, 35), (40, 25), (20, 15)]
+    # hIndex scoring: power-law normalized to 0-35
+    # Derived from: N(h) = MAX_PTS * (h^2 - h_min^2) / (h_max^2 - h_min^2)
+    # Simplified (h_min=0): N(h) = 35 * h^1.36 / 223^1.36
+    # Reference max: Yoshua Bengio, CS D-index = 223 (highest in CS)
+    # Rationale: power-law compression gives diminishing returns at high hIndex,
+    # reflecting that going from h=40 to h=60 is far harder than h=10 to h=30
+    #
+    # Rejected alternative: N(h) = 35 * log(1 + h^2) / log(1 + 223^2)
+    # Log compression was too aggressive — scores clustered together
+    # (h=20 → 19pts, h=60 → 27pts, h=100 → 30pts), failing to
+    # differentiate mid-range from high-range researchers
+    HINDEX_MAX_PTS = 35
+    HINDEX_REF = 223
+    HINDEX_EXP = 1.36
 
-    CITATION_TIERS = [(1000, 100), (500, 80), (200, 60), (50, 40), (10, 20)]
+    # Citation scoring: linear ratio against benchmark, uncapped (update mode only)
+    # Score(paper) = 60 * (paper_citations / benchmark_citations)
+    # Benchmark: Research.com 2025 report — average total citations for ranked
+    # CS scholars is 58,848; top 1% average is 276,341. Using 58,848 as reference.
+    # Not capped: papers with exceptional citations (e.g., "Attention Is All You Need"
+    # at 200k+) will score well above 60, and we want to surface those outliers.
+    CITATION_MULTIPLIER = 60
+    CITATION_BENCHMARK = 58848
 
-    INFLUENTIAL_RATIO_TIERS = [(0.15, 25), (0.10, 15), (0.05, 5)]
+    # Influential ratio tiers (max 30 pts, update mode only)
+    INFLUENTIAL_RATIO_TIERS = [(0.15, 30), (0.10, 15), (0.05, 5)]
 
     def __init__(self, update_mode=False):
         self.papers = []
@@ -453,43 +503,46 @@ class PaperRanker:
             score += venue_score
             factors.append(f"VENUE(+{venue_score}:{venue_matched})")
         
-        # FILTER B: Core MAS Keywords in title
-        if any(kw in title for kw in self.MAS_KEYWORDS):
-            score += 50
-            factors.append("MAS_TITLE(+50)")
+        # FILTER B: Title keywords (capped at 70)
+        title_score = 0
+        title_matches = []
+        for kw, kw_pts in self.TITLE_KEYWORDS.items():
+            if kw in title:
+                title_score += kw_pts
+                title_matches.append(kw)
+        title_score = min(70, title_score)
+        if title_score > 0:
+            score += title_score
+            factors.append(f"TITLE(+{title_score}:{','.join(title_matches[:2])})")
         
-        # FILTER C: Reasoning/Framework/Structure in title
-        if any(kw in title for kw in self.REASONING_KEYWORDS):
-            score += 25
-            factors.append("REASONING(+25)")
-        
-        # FILTER D: Abstract-based scoring
+        # FILTER C: Abstract keywords (capped at 60)
         if has_abstract:
             abstract_score = 0
             for kw, kw_score in self.ABSTRACT_KEYWORDS.items():
                 if kw in abstract:
                     abstract_score += kw_score
-            abstract_score = min(50, abstract_score)
+            abstract_score = min(60, abstract_score)
             if abstract_score > 0:
                 score += abstract_score
                 factors.append(f"ABSTRACT(+{abstract_score})")
         
-        # FILTER E: Author hIndex (active in both modes)
+        # FILTER D: Author hIndex (power-law, 0-35 pts)
         h_index = paper.get('Max_Author_hIndex', 0)
-        for threshold, pts in self.HINDEX_TIERS:
-            if h_index >= threshold:
-                score += pts
-                factors.append(f"HINDEX(+{pts}:h={h_index})")
-                break
+        if h_index > 0:
+            h_pts = int(self.HINDEX_MAX_PTS * (h_index ** self.HINDEX_EXP) / (self.HINDEX_REF ** self.HINDEX_EXP))
+            h_pts = min(h_pts, self.HINDEX_MAX_PTS)
+            if h_pts > 0:
+                score += h_pts
+                factors.append(f"HINDEX(+{h_pts}:h={h_index})")
 
-        # FILTER F: Citation count (update mode only)
+        # FILTER E: Citation count (update mode only, uncapped)
         if self.update_mode:
             citations = paper.get('Citation_Count', 0)
-            for threshold, pts in self.CITATION_TIERS:
-                if citations >= threshold:
-                    score += pts
-                    factors.append(f"CITATIONS(+{pts}:n={citations})")
-                    break
+            if citations > 0:
+                c_pts = int(self.CITATION_MULTIPLIER * citations / self.CITATION_BENCHMARK)
+                if c_pts > 0:
+                    score += c_pts
+                    factors.append(f"CITATIONS(+{c_pts}:n={citations})")
 
         # FILTER G: Influential citation ratio (update mode only, requires >= 10 citations)
         if self.update_mode:
@@ -559,10 +612,10 @@ def parse_args():
     return args
 
 
-def process_category(category, year_month):
-    """Process a single category: arXiv scrape → S2 enrichment → ranking"""
+def fetch_category(category, year_month):
+    """Fetch papers from a single arXiv category (no enrichment/ranking)"""
     print(f"\n{'='*80}")
-    print(f"PROCESSING: {category}")
+    print(f"FETCHING: {category}")
     print(f"{'='*80}\n")
     
     retriever = ArxivRetriever(category=category, year_month=year_month)
@@ -572,14 +625,32 @@ def process_category(category, year_month):
         print(f"✗ No papers retrieved for {category}")
         return []
     
-    enricher = SemanticScholarEnricher()
-    papers = enricher.enrich_papers(papers)
+    return papers
+
+
+def merge_papers(all_papers):
+    """Merge duplicate papers, combining category tags"""
+    papers_by_id = {}
+    for paper in all_papers:
+        arxiv_id = paper['arXiv_ID']
+        if arxiv_id in papers_by_id:
+            existing = papers_by_id[arxiv_id]
+            existing_cats = existing.get('Categories', [])
+            new_cat = paper.get('Category', '')
+            if new_cat and new_cat not in existing_cats:
+                existing_cats.append(new_cat)
+            existing['Categories'] = existing_cats
+        else:
+            cat = paper.get('Category', '')
+            paper['Categories'] = [cat] if cat else []
+            papers_by_id[arxiv_id] = paper
     
-    ranker = PaperRanker()
-    ranker.add_papers(papers)
-    ranked_papers = ranker.rank_all()
+    unique = list(papers_by_id.values())
     
-    return ranked_papers
+    if len(unique) < len(all_papers):
+        print(f"\n✓ Merged {len(all_papers) - len(unique)} cross-listed papers")
+    
+    return unique
 
 
 def run_update(update_path):
@@ -642,31 +713,29 @@ def main():
     print(f"Period: {args['year_month']}")
     print(f"Sources: arXiv (listing) + Semantic Scholar (enrichment)")
     
-    # Process each category
+    # Step 1: Fetch all categories
     all_papers = []
     for category in args['categories']:
-        papers = process_category(
-            category=category,
-            year_month=args['year_month'],
-        )
+        papers = fetch_category(category=category, year_month=args['year_month'])
         all_papers.extend(papers)
     
     if not all_papers:
         print("\n✗ No papers retrieved from any category. Exiting.")
         return
     
-    # Remove duplicates (papers can appear in multiple categories)
-    seen_ids = set()
-    unique_papers = []
-    for paper in all_papers:
-        if paper['arXiv_ID'] not in seen_ids:
-            seen_ids.add(paper['arXiv_ID'])
-            unique_papers.append(paper)
+    # Step 2: Merge duplicates (before enrichment)
+    unique_papers = merge_papers(all_papers)
     
-    if len(unique_papers) < len(all_papers):
-        print(f"\n✓ Removed {len(all_papers) - len(unique_papers)} duplicate papers")
+    # Step 3: Enrich with Semantic Scholar (once per unique paper)
+    enricher = SemanticScholarEnricher()
+    unique_papers = enricher.enrich_papers(unique_papers)
     
-    # Re-sort all papers by score
+    # Step 4: Rank
+    ranker = PaperRanker()
+    ranker.add_papers(unique_papers)
+    unique_papers = ranker.rank_all()
+    
+    # Sort by score
     unique_papers.sort(key=lambda x: x['Score'], reverse=True)
     
     # Print combined statistics
