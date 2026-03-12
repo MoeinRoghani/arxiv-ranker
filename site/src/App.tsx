@@ -5,12 +5,15 @@ import GenerateForm from './components/GenerateForm';
 import FilterBar from './components/FilterBar';
 import RunCard from './components/RunCard';
 import Toast from './components/Toast';
+import WorkflowTracker from './components/WorkflowTracker';
+import type { TrackedRun } from './components/WorkflowTracker';
 
 type SortMode = 'newest' | 'oldest' | 'most_papers' | 'most_landmarks';
 
 export default function App() {
   const [entries, setEntries] = useState<RunEntry[]>([]);
   const [toast, setToast] = useState({ message: '', isError: false });
+  const [trackedRuns, setTrackedRuns] = useState<TrackedRun[]>([]);
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [activeTier, setActiveTier] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -147,6 +150,11 @@ export default function App() {
           />
         ))}
       </main>
+
+      <WorkflowTracker
+        runs={trackedRuns}
+        onDismiss={(id) => setTrackedRuns(prev => prev.filter(r => r.id !== id))}
+      />
 
       <Toast
         message={toast.message}
