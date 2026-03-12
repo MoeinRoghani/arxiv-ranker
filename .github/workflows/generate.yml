@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       year_month:
-        description: 'Year-month (e.g., 2026-03). Defaults to current month.'
+        description: 'Year-month (e.g., 2026-03). Defaults to previous month.'
         required: false
         default: ''
       categories:
@@ -16,8 +16,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   generate:
@@ -28,10 +26,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
 
       - run: pip install -r requirements.txt
 
@@ -50,7 +44,6 @@ jobs:
           CATEGORIES="${{ inputs.categories }}"
 
           if [ -z "$YEAR_MONTH" ]; then
-            # Cron runs on the 1st — generate for the previous month
             YEAR_MONTH=$(date -u -d "last month" +%Y-%m 2>/dev/null || date -u -v-1m +%Y-%m)
           fi
           if [ -z "$CATEGORIES" ]; then
@@ -70,32 +63,9 @@ jobs:
             --categories "$CATEGORIES" \
             --year-month "$YEAR_MONTH"
 
-      - name: Commit data
+      - name: Commit and push data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add site/public/data/
-          git diff --cached --quiet || git commit -m "Generate rankings: $(date -u +%Y-%m)"
-          git push
-
-      - name: Build site
-        working-directory: site
-        env:
-          VITE_GITHUB_REPO: ${{ github.repository }}
-        run: |
-          npm ci
-          npm run build
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site/dist
-
-  deploy:
-    needs: generate
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          git diff --cached --quiet || (git commit -m "Generate rankings: $(date -u +%Y-%m)" && git push)
