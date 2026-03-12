@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { RunEntry } from '../lib/types';
 import ConfirmDialog from './ConfirmDialog';
+import MonthPicker from './MonthPicker';
 
 interface Props {
   entries: RunEntry[];
@@ -10,13 +11,9 @@ interface Props {
 function getLastMonth(): string {
   const d = new Date();
   d.setMonth(d.getMonth() - 1);
-  return d.toISOString().slice(0, 7);
-}
-
-function getMaxMonth(): string {
-  const d = new Date();
-  d.setMonth(d.getMonth() - 1);
-  return d.toISOString().slice(0, 7);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  return `${y}-${m}`;
 }
 
 export default function GenerateForm({ entries, onGenerate }: Props) {
@@ -28,9 +25,6 @@ export default function GenerateForm({ entries, onGenerate }: Props) {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!yearMonth || !categories.trim()) return;
-
-    const currentMonth = new Date().toISOString().slice(0, 7);
-    if (yearMonth >= currentMonth) return;
 
     const catStr = categories.split(',').map(c => c.trim().replace('.', '')).join('_');
     const ymStr = yearMonth.replace('-', '_');
@@ -57,11 +51,10 @@ export default function GenerateForm({ entries, onGenerate }: Props) {
 
       {open && (
         <form className="generate-form" onSubmit={handleSubmit}>
-          <input
-            type="month"
+          <MonthPicker
             value={yearMonth}
-            max={getMaxMonth()}
-            onChange={(e) => setYearMonth(e.target.value)}
+            max={getLastMonth()}
+            onChange={setYearMonth}
           />
           <input
             type="text"
