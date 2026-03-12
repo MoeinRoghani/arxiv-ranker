@@ -11,5 +11,18 @@
     "landmarks": 0,
     "important": 142,
     "last_updated": "2026-03-12T22:19:07Z"
+  },
+  {
+    "id": "csMA_csCL_csAI_2026_01",
+    "categories": [
+      "cs.MA",
+      "cs.CL",
+      "cs.AI"
+    ],
+    "year_month": "2026-01",
+    "paper_count": 3728,
+    "landmarks": 5,
+    "important": 146,
+    "last_updated": "2026-03-12T22:30:57Z"
   }
 ]
