@@ -1,4 +1,5 @@
 import type { RunEntry, Paper } from './types';
+import type { TrackedRun } from '../components/WorkflowTracker';
 
 const BASE = import.meta.env.BASE_URL;
 const REPO = import.meta.env.VITE_GITHUB_REPO ?? '';
@@ -37,5 +38,79 @@ export async function triggerWorkflow(
     return res.status === 204;
   } catch {
     return false;
+  }
+}
+
+function formatElapsed(startedAt: string): string {
+  const ms = Date.now() - new Date(startedAt).getTime();
+  const s = Math.floor(ms / 1000);
+  if (s < 60) return `${s}s`;
+  const m = Math.floor(s / 60);
+  const rem = s % 60;
+  return `${m}m ${rem}s`;
+}
+
+export async function fetchWorkflowRuns(): Promise<TrackedRun[]> {
+  if (!PAT || !REPO) return [];
+
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${REPO}/actions/runs?per_page=10`,
+      {
+        headers: {
+          Authorization: `Bearer ${PAT}`,
+          Accept: 'application/vnd.github.v3+json',
+        },
+      },
+    );
+    if (!res.ok) return [];
+
+    const data = await res.json();
+    const runs = data.workflow_runs ?? [];
+
+    const tracked: TrackedRun[] = [];
+    for (const run of runs) {
+      if (run.name === 'Deploy Site') continue;
+
+      const isActive = run.status === 'queued' || run.status === 'in_progress';
+      const isRecent = Date.now() - new Date(run.created_at).getTime() < 3600000;
+
+      if (!isActive && !isRecent) continue;
+
+      let currentStep: string | undefined;
+      if (run.status === 'in_progress') {
+        try {
+          const jobsRes = await fetch(run.jobs_url, {
+            headers: {
+              Authorization: `Bearer ${PAT}`,
+              Accept: 'application/vnd.github.v3+json',
+            },
+          });
+          if (jobsRes.ok) {
+            const jobsData = await jobsRes.json();
+            const activeJob = jobsData.jobs?.find((j: { status: string }) => j.status === 'in_progress');
+            if (activeJob) {
+              const activeStep = activeJob.steps?.find((s: { status: string }) => s.status === 'in_progress');
+              if (activeStep) currentStep = activeStep.name;
+            }
+          }
+        } catch { /* ignore */ }
+      }
+
+      tracked.push({
+        id: run.id,
+        name: run.name ?? run.display_title,
+        status: run.status as TrackedRun['status'],
+        conclusion: run.conclusion as TrackedRun['conclusion'],
+        startedAt: run.run_started_at ?? run.created_at,
+        elapsed: formatElapsed(run.run_started_at ?? run.created_at),
+        currentStep,
+        url: run.html_url,
+      });
+    }
+
+    return tracked;
+  } catch {
+    return [];
   }
 }

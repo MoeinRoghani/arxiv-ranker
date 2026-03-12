@@ -1,16 +1,17 @@
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import type { Paper } from '../lib/types';
-import { tierClass, tierLabel, truncateAuthors } from '../lib/format';
+import { tierClass, tierLabel, truncateAuthors, shortVenue } from '../lib/format';
 
 interface Props {
   papers: Paper[];
   tierFilter: string | null;
   categoryFilter: string | null;
+  venueFilter?: string | null;
+  onViewAll?: () => void;
+  showAll?: boolean;
 }
 
-export default function PapersTable({ papers, tierFilter, categoryFilter }: Props) {
-  const [showAll, setShowAll] = useState(false);
-
+export default function PapersTable({ papers, tierFilter, categoryFilter, venueFilter, onViewAll, showAll = false }: Props) {
   const filtered = useMemo(() => {
     let result = papers;
 
@@ -18,6 +19,8 @@ export default function PapersTable({ papers, tierFilter, categoryFilter }: Prop
       result = result.filter(p => p.Tier?.includes('LANDMARK'));
     } else if (tierFilter === 'important') {
       result = result.filter(p => p.Tier?.includes('IMPORTANT'));
+    } else if (tierFilter === 'notable') {
+      result = result.filter(p => p.Tier?.includes('NOTABLE'));
     }
 
     if (categoryFilter) {
@@ -26,17 +29,21 @@ export default function PapersTable({ papers, tierFilter, categoryFilter }: Prop
       );
     }
 
-    return result;
-  }, [papers, tierFilter, categoryFilter]);
+    if (venueFilter) {
+      result = result.filter(p => shortVenue(p.Venue) === venueFilter);
+    }
 
-  const hasActiveFilter = tierFilter !== null || categoryFilter !== null;
+    return result;
+  }, [papers, tierFilter, categoryFilter, venueFilter]);
+
+  const hasActiveFilter = tierFilter !== null || categoryFilter !== null || (venueFilter !== null && venueFilter !== undefined);
 
   const landmarks = filtered.filter(p => p.Tier?.includes('LANDMARK'));
   const others = filtered.filter(p => !p.Tier?.includes('LANDMARK'));
   const topOthers = others.slice(0, 6);
   const remaining = others.slice(6);
 
-  const visible = hasActiveFilter || showAll
+  const visible = showAll
     ? [...landmarks, ...others]
     : [...landmarks, ...topOthers];
 
@@ -48,13 +55,12 @@ export default function PapersTable({ papers, tierFilter, categoryFilter }: Prop
     <div>
       <table className="papers-table">
         <colgroup>
-          <col style={{ width: '36px' }} />
-          <col style={{ width: '100px' }} />
+          <col style={{ width: '30px' }} />
+          <col style={{ width: '110px' }} />
           <col style={{ width: '50px' }} />
           <col />
-          <col style={{ width: '110px' }} />
-          <col style={{ width: '70px' }} />
-          <col style={{ width: '200px' }} />
+          <col style={{ width: '80px' }} />
+          <col style={{ width: '180px' }} />
         </colgroup>
         <thead>
           <tr>
@@ -62,7 +68,6 @@ export default function PapersTable({ papers, tierFilter, categoryFilter }: Prop
             <th>Tier</th>
             <th>Score</th>
             <th>Title</th>
-            <th>Categories</th>
             <th>Venue</th>
             <th className="col-authors">Authors</th>
           </tr>
@@ -74,14 +79,9 @@ export default function PapersTable({ papers, tierFilter, categoryFilter }: Prop
         </tbody>
       </table>
 
-      {!hasActiveFilter && remaining.length > 0 && (
-        <button
-          className="show-more"
-          onClick={() => setShowAll(!showAll)}
-        >
-          {showAll
-            ? 'Show fewer papers'
-            : `Show ${remaining.length} more papers`}
+      {!showAll && remaining.length > 0 && onViewAll && (
+        <button className="show-more" onClick={onViewAll}>
+          View all {filtered.length} papers →
         </button>
       )}
     </div>
@@ -99,6 +99,11 @@ function PaperRow({ paper, rank }: { paper: Paper; rank: number }) {
       <td className="paper-rank">{rank}</td>
       <td>
         <span className={`tier-badge tier-${tc}`}>{tierLabel(paper.Tier)}</span>
+        <div className="paper-categories">
+          {paper.Categories?.map(c => (
+            <span key={c} className="cat-tag">{c}</span>
+          ))}
+        </div>
       </td>
       <td className="paper-score">{paper.Score}</td>
       <td className="paper-title">
@@ -112,12 +117,7 @@ function PaperRow({ paper, rank }: { paper: Paper; rank: number }) {
         {paper.New && <span className="new-badge">Newly discovered</span>}
         {factors && <div className="paper-factors">{factors}</div>}
       </td>
-      <td className="paper-categories">
-        {paper.Categories?.map(c => (
-          <span key={c} className="cat-tag">{c}</span>
-        )) || '-'}
-      </td>
-      <td className="paper-venue">{paper.Venue || '-'}</td>
+      <td className="paper-venue" title={paper.Venue || ''}>{shortVenue(paper.Venue)}</td>
       <td className="paper-authors">{truncateAuthors(paper.Authors)}</td>
     </tr>
   );

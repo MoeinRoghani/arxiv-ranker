@@ -224,12 +224,38 @@ header h1 {
 .generate-form input[type='month'] { width: 170px; }
 .generate-form input[type='text'] { width: 240px; }
 
+.back-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-right: 16px;
+  transition: all 0.15s;
+}
+
+.back-btn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.all-papers-meta {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 12px;
+}
+
 /* ── Filter Bar ── */
 
 .filter-bar {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+  margin-top: 12px;
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
@@ -399,6 +425,7 @@ header h1 {
   border-collapse: collapse;
   font-size: 13px;
   table-layout: fixed;
+  overflow: hidden;
 }
 
 .papers-table th {
@@ -510,7 +537,7 @@ header h1 {
 }
 
 .paper-categories {
-  white-space: nowrap;
+  margin-top: 5px;
 }
 
 .cat-tag {
@@ -529,8 +556,8 @@ header h1 {
 .paper-venue {
   font-size: 12px;
   color: var(--text-secondary);
-  white-space: nowrap;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .paper-authors {
@@ -904,7 +931,7 @@ header h1 {
 }
 
 main {
-  padding-top: 4px;
+  padding-top: 24px;
   padding-bottom: 60px;
 }
 
