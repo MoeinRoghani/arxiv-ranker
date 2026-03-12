@@ -35,7 +35,7 @@ export default function App() {
       setTrackedRuns(runs.filter(r => !dismissed.current.has(r.id)));
 
       const hasActive = runs.some(r => r.status !== 'completed');
-      const delay = hasActive ? 10000 : 30000;
+      const delay = hasActive ? 5000 : 15000;
       if (active) setTimeout(poll, delay);
     }
 
@@ -127,7 +127,7 @@ export default function App() {
     <>
       <header>
         <div className="container header-inner">
-          <h1>arXiv Research Ranker</h1>
+          <h1>Ranked Research</h1>
         </div>
       </header>
 
