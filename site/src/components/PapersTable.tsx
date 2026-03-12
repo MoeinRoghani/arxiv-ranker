@@ -36,8 +36,6 @@ export default function PapersTable({ papers, tierFilter, categoryFilter, venueF
     return result;
   }, [papers, tierFilter, categoryFilter, venueFilter]);
 
-  const hasActiveFilter = tierFilter !== null || categoryFilter !== null || (venueFilter !== null && venueFilter !== undefined);
-
   const landmarks = filtered.filter(p => p.Tier?.includes('LANDMARK'));
   const others = filtered.filter(p => !p.Tier?.includes('LANDMARK'));
   const topOthers = others.slice(0, 6);
