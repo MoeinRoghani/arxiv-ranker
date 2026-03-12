@@ -27,6 +27,7 @@ jobs:
         working-directory: site
         env:
           VITE_GITHUB_REPO: ${{ github.repository }}
+          VITE_GITHUB_PAT: ${{ secrets.VITE_GITHUB_PAT }}
         run: |
           npm ci
           npm run build

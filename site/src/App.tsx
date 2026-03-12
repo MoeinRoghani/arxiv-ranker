@@ -1,17 +1,15 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import type { RunEntry } from './lib/types';
-import { fetchIndex, triggerWorkflow, getPat } from './lib/api';
+import { fetchIndex, triggerWorkflow } from './lib/api';
 import GenerateForm from './components/GenerateForm';
 import FilterBar from './components/FilterBar';
 import RunCard from './components/RunCard';
-import SettingsModal from './components/SettingsModal';
 import Toast from './components/Toast';
 
 type SortMode = 'newest' | 'oldest' | 'most_papers' | 'most_landmarks';
 
 export default function App() {
   const [entries, setEntries] = useState<RunEntry[]>([]);
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const [toast, setToast] = useState({ message: '', isError: false });
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [activeTier, setActiveTier] = useState<string | null>(null);
@@ -62,11 +60,6 @@ export default function App() {
   }, []);
 
   async function handleGenerate(yearMonth: string, categories: string) {
-    if (!getPat()) {
-      setSettingsOpen(true);
-      return;
-    }
-
     const ok = await triggerWorkflow('generate.yml', {
       year_month: yearMonth,
       categories,
@@ -74,21 +67,16 @@ export default function App() {
     if (ok) {
       showToast('Workflow triggered. Rankings will appear once the run completes.');
     } else {
-      showToast('Failed to trigger workflow.', true);
+      showToast('Failed to trigger workflow. Check PAT configuration.', true);
     }
   }
 
   async function handleUpdate(runId: string) {
-    if (!getPat()) {
-      setSettingsOpen(true);
-      return;
-    }
-
     const ok = await triggerWorkflow('update.yml', { run_id: runId });
     if (ok) {
       showToast(`Update triggered for ${runId}.`);
     } else {
-      showToast('Failed to trigger workflow.', true);
+      showToast('Failed to trigger workflow. Check PAT configuration.', true);
     }
   }
 
@@ -159,12 +147,6 @@ export default function App() {
           />
         ))}
       </main>
-
-      <SettingsModal
-        open={settingsOpen}
-        onClose={() => setSettingsOpen(false)}
-        onSave={() => setSettingsOpen(false)}
-      />
 
       <Toast
         message={toast.message}
