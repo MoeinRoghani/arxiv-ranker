@@ -1098,6 +1098,29 @@
     "Tier": "\u2b50 TIER-2 IMPORTANT"
   },
   {
+    "arXiv_ID": "2512.20848",
+    "Title": "Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
+    "Authors": "NVIDIA: Aaron Blakeman, Aaron Grattafiori, Aarti Basant, Abhibha Gupta, Abhinav Khattar, Adi Renduchintala, Aditya Vavre, Akanksha Shukla, Akhiad Bercovich, Aleksander Ficek, Aleksandr Shaposhnikov, Alex Kondratenko, Alexander Bukharin, Alexandre Milesi, Ali Taghibakhshi, Alisa Liu, Amelia Barton, Ameya Sunil Mahabaleshwarkar, Amir Klein, Amit Zuker, Amnon Geifman, Amy Shen, Anahita Bhiwandiwalla, Andrew Tao, Ann Guan, Anubhav Mandarwal, Arham Mehta, Ashwath Aithal, Ashwin Poojary, Asif Ahamed, Asma Kuriparambil Thekkumpate, Ayush Dattagupta, Banghua Zhu, Bardiya Sadeghi, Barnaby Simkin, Ben Lanir, Benedikt Schifferer, Besmira Nushi, Bilal Kartal, Bita Darvish Rouhani, Boris Ginsburg, Brandon Norick, Brandon Soubasis, Branislav Kisacanin, Brian Yu, Bryan Catanzaro, Carlo del Mundo, Chantal Hwang, Charles Wang, Cheng-Ping Hsieh, Chenghao Zhang, Chenhan Yu, Chetan Mungekar, Chintan Patel, Chris Alexiuk, Christopher Parisien, Collin Neale, Damon Mosk-Aoyama, Dan Su, Dane Corneil, Daniel Afrimi, Daniel Rohrer, Daniel Serebrenik, Daria Gitman, Daria Levy, Darko Stosic, David Mosallanezhad, Deepak Narayanan, Dhruv Nathawani, Dima Rekesh, Dina Yared, Divyanshu Kakwani, Dong Ahn, Duncan Riach, Dusan Stosic, Edgar Minasyan, Edward Lin, Eileen Long, Eileen Peters Long, Elena Lantz, Ellie Evans, Elliott Ning, Eric Chung, Eric Harper, Eric Tramel, Erick Galinkin, Erik Pounds, Evan Briones, Evelina Bakhturina, Faisal Ladhak, Fay Wang, Fei Jia, Felipe Soares, Feng Chen, Ferenc Galko, Frankie Siino, Gal Hubara Agam, Ganesh Ajjanagadde, Gantavya Bhatt",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "We present Nemotron 3 Nano 30B-A3B, a Mixture-of-Experts hybrid Mamba-Transformer language model. Nemotron 3 Nano was pretrained on 25 trillion text tokens, including more than 3 trillion new unique tokens over Nemotron 2, followed by supervised fine tuning and large-scale RL on diverse environments. Nemotron 3 Nano achieves better accuracy than our previous generation Nemotron 2 Nano while activating less than half of the parameters per forward pass. It achieves up to 3.3x higher inference throughput than similarly-sized open models like GPT-OSS-20B and Qwen3-30B-A3B-Thinking-2507, while also being more accurate on popular benchmarks. Nemotron 3 Nano demonstrates enhanced agentic, reasoning, and chat abilities and supports context lengths up to 1M tokens. We release both our pretrained Nemotron 3 Nano 30B-A3B Base and post-trained Nemotron 3 Nano 30B-A3B checkpoints on Hugging Face.",
+    "Venue": "ArXiv",
+    "Citation_Count": 15,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 40,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 113,
+    "Factors": [
+      "TITLE(+70:agentic,reasoning)",
+      "ABSTRACT(+10)",
+      "HINDEX(+3:h=40)",
+      "INFLUENTIAL(+30:20%)"
+    ],
+    "Tier": "\u2b50 TIER-2 IMPORTANT"
+  },
+  {
     "arXiv_ID": "2512.04691",
     "Title": "Towards Ethical Multi-Agent Systems of Large Language Models: A Mechanistic Interpretability Perspective",
     "Authors": "Jae Hee Lee, Anne Lauscher, Stefano V. Albrecht",
@@ -3300,6 +3323,51 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.06688",
+    "Title": "PersonaMem-v2: Towards Personalized Intelligence via Learning Implicit User Personas and Agentic Memory",
+    "Authors": "Bowen Jiang, Yuan Yuan, Maohao Shen, Zhuoqun Hao, Zhangchen Xu, Zichen Chen, Ziyi Liu, Anvesh Rao Vijjini, Jiashu He, Hanchao Yu, Radha Poovendran, Gregory Wornell, Lyle Ungar, Dan Roth, Sihao Chen, Camillo Jose Taylor",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "Personalization is one of the next milestones in advancing AI capability and alignment. We introduce PersonaMem-v2, the state-of-the-art dataset for LLM personalization that simulates 1,000 realistic user-chatbot interactions on 300+ scenarios, 20,000+ user preferences, and 128k-token context windows, where most user preferences are implicitly revealed to reflect real-world interactions. Using this data, we investigate how reinforcement fine-tuning enables a model to improve its long-context reasoning capabilities for user understanding and personalization. We also develop a framework for training an agentic memory system, which maintains a single, human-readable memory that grows with each user over time. In our experiments, frontier LLMs still struggle with implicit personalization, achieving only 37-48% accuracy. While they support long context windows, reasoning remains the bottleneck for implicit personalization tasks. Using reinforcement fine-tuning, we successfully train Qwen3-4B to outperforms GPT-5, reaching 53% accuracy in implicit personalization. Moreover, our agentic memory framework achieves state-of-the-art 55% accuracy while using 16x fewer input tokens, relying on a 2k-token memory instead of full 32k conversation histories. These results underscore the impact of our dataset and demonstrate agentic memory as a scalable path toward real-world personalized intelligence.",
+    "Venue": "ArXiv",
+    "Citation_Count": 16,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 20,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 91,
+    "Factors": [
+      "TITLE(+50:agentic)",
+      "ABSTRACT(+10)",
+      "HINDEX(+1:h=20)",
+      "INFLUENTIAL(+30:19%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.08296",
+    "Title": "Towards a Science of Scaling Agent Systems",
+    "Authors": "Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park, Samuel Schmidgall, A. Ali Heydari, Yao Yan, Zhihan Zhang, Yuchen Zhuang, Mark Malhotra, Paul Pu Liang, Hae Won Park, Yuzhe Yang, Xuhai Xu, Yilun Du, Shwetak Patel, Tim Althoff, Daniel McDuff, Xin Liu",
+    "Subjects": "Artificial Intelligence (cs.AI)",
+    "Abstract": "Agents, language model-based systems that are capable of reasoning, planning, and acting are becoming the dominant paradigm for real-world AI applications. Despite this widespread adoption, the principles that determine their performance remain underexplored. We address this by deriving quantitative scaling principles for agent systems. We first formalize a definition for agentic evaluation and characterize scaling laws as the interplay between agent quantity, coordination structure, model capability, and task properties. We evaluate this across four benchmarks: Finance-Agent, BrowseComp-Plus, PlanCraft, and Workbench. With five canonical agent architectures (Single-Agent and four Multi-Agent Systems: Independent, Centralized, Decentralized, Hybrid), instantiated across three LLM families, we perform a controlled evaluation spanning 180 configurations. We derive a predictive model using coordination metrics, that achieves cross-validated R^2=0.524, enabling prediction on unseen task domains. We identify three effects: (1) a tool-coordination trade-off: under fixed computational budgets, tool-heavy tasks suffer disproportionately from multi-agent overhead. (2) a capability saturation: coordination yields diminishing or negative returns once single-agent baselines exceed ~45%. (3) topology-dependent error amplification: independent agents amplify errors 17.2x, while centralized coordination contains this to 4.4x. Centralized coordination improves performance by 80.8% on parallelizable tasks, while decentralized coordination excels on web navigation (+9.2% vs. +0.2%). Yet for sequential reasoning tasks, every multi-agent variants degraded performance by 39-70%. The framework predicts the optimal coordination strategy for 87% of held-out configurations. Out-of-sample validation on GPT-5.2, achieves MAE=0.071 and confirms four of five scaling principles generalize to unseen frontier models.",
+    "Venue": "ArXiv",
+    "Citation_Count": 29,
+    "Influential_Citations": 6,
+    "Max_Author_hIndex": 20,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 91,
+    "Factors": [
+      "ABSTRACT(+60)",
+      "HINDEX(+1:h=20)",
+      "INFLUENTIAL(+30:21%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.16167",
     "Title": "Ev-Trust: An Evolutionary Stable Trust Mechanism for Decentralized LLM-Based Multi-Agent Service Economies",
     "Authors": "Jiye Wang, Shiduo Yang, Jiayu Qin, Jianbin Li, Yu Wang, Yuanhe Zhao, Kenan Guo",
@@ -4063,28 +4131,6 @@
     "Factors": [
       "TITLE(+50:reasoning,benchmark)",
       "ABSTRACT(+35)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.20848",
-    "Title": "Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
-    "Authors": "NVIDIA: Aaron Blakeman, Aaron Grattafiori, Aarti Basant, Abhibha Gupta, Abhinav Khattar, Adi Renduchintala, Aditya Vavre, Akanksha Shukla, Akhiad Bercovich, Aleksander Ficek, Aleksandr Shaposhnikov, Alex Kondratenko, Alexander Bukharin, Alexandre Milesi, Ali Taghibakhshi, Alisa Liu, Amelia Barton, Ameya Sunil Mahabaleshwarkar, Amir Klein, Amit Zuker, Amnon Geifman, Amy Shen, Anahita Bhiwandiwalla, Andrew Tao, Ann Guan, Anubhav Mandarwal, Arham Mehta, Ashwath Aithal, Ashwin Poojary, Asif Ahamed, Asma Kuriparambil Thekkumpate, Ayush Dattagupta, Banghua Zhu, Bardiya Sadeghi, Barnaby Simkin, Ben Lanir, Benedikt Schifferer, Besmira Nushi, Bilal Kartal, Bita Darvish Rouhani, Boris Ginsburg, Brandon Norick, Brandon Soubasis, Branislav Kisacanin, Brian Yu, Bryan Catanzaro, Carlo del Mundo, Chantal Hwang, Charles Wang, Cheng-Ping Hsieh, Chenghao Zhang, Chenhan Yu, Chetan Mungekar, Chintan Patel, Chris Alexiuk, Christopher Parisien, Collin Neale, Damon Mosk-Aoyama, Dan Su, Dane Corneil, Daniel Afrimi, Daniel Rohrer, Daniel Serebrenik, Daria Gitman, Daria Levy, Darko Stosic, David Mosallanezhad, Deepak Narayanan, Dhruv Nathawani, Dima Rekesh, Dina Yared, Divyanshu Kakwani, Dong Ahn, Duncan Riach, Dusan Stosic, Edgar Minasyan, Edward Lin, Eileen Long, Eileen Peters Long, Elena Lantz, Ellie Evans, Elliott Ning, Eric Chung, Eric Harper, Eric Tramel, Erick Galinkin, Erik Pounds, Evan Briones, Evelina Bakhturina, Faisal Ladhak, Fay Wang, Fei Jia, Felipe Soares, Feng Chen, Ferenc Galko, Frankie Siino, Gal Hubara Agam, Ganesh Ajjanagadde, Gantavya Bhatt",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "We present Nemotron 3 Nano 30B-A3B, a Mixture-of-Experts hybrid Mamba-Transformer language model. Nemotron 3 Nano was pretrained on 25 trillion text tokens, including more than 3 trillion new unique tokens over Nemotron 2, followed by supervised fine tuning and large-scale RL on diverse environments. Nemotron 3 Nano achieves better accuracy than our previous generation Nemotron 2 Nano while activating less than half of the parameters per forward pass. It achieves up to 3.3x higher inference throughput than similarly-sized open models like GPT-OSS-20B and Qwen3-30B-A3B-Thinking-2507, while also being more accurate on popular benchmarks. Nemotron 3 Nano demonstrates enhanced agentic, reasoning, and chat abilities and supports context lengths up to 1M tokens. We release both our pretrained Nemotron 3 Nano 30B-A3B Base and post-trained Nemotron 3 Nano 30B-A3B checkpoints on Hugging Face.",
-    "Venue": "ArXiv",
-    "Citation_Count": 15,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 40,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 83,
-    "Factors": [
-      "TITLE(+70:agentic,reasoning)",
-      "ABSTRACT(+10)",
-      "HINDEX(+3:h=40)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -6474,28 +6520,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2512.06688",
-    "Title": "PersonaMem-v2: Towards Personalized Intelligence via Learning Implicit User Personas and Agentic Memory",
-    "Authors": "Bowen Jiang, Yuan Yuan, Maohao Shen, Zhuoqun Hao, Zhangchen Xu, Zichen Chen, Ziyi Liu, Anvesh Rao Vijjini, Jiashu He, Hanchao Yu, Radha Poovendran, Gregory Wornell, Lyle Ungar, Dan Roth, Sihao Chen, Camillo Jose Taylor",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "Personalization is one of the next milestones in advancing AI capability and alignment. We introduce PersonaMem-v2, the state-of-the-art dataset for LLM personalization that simulates 1,000 realistic user-chatbot interactions on 300+ scenarios, 20,000+ user preferences, and 128k-token context windows, where most user preferences are implicitly revealed to reflect real-world interactions. Using this data, we investigate how reinforcement fine-tuning enables a model to improve its long-context reasoning capabilities for user understanding and personalization. We also develop a framework for training an agentic memory system, which maintains a single, human-readable memory that grows with each user over time. In our experiments, frontier LLMs still struggle with implicit personalization, achieving only 37-48% accuracy. While they support long context windows, reasoning remains the bottleneck for implicit personalization tasks. Using reinforcement fine-tuning, we successfully train Qwen3-4B to outperforms GPT-5, reaching 53% accuracy in implicit personalization. Moreover, our agentic memory framework achieves state-of-the-art 55% accuracy while using 16x fewer input tokens, relying on a 2k-token memory instead of full 32k conversation histories. These results underscore the impact of our dataset and demonstrate agentic memory as a scalable path toward real-world personalized intelligence.",
-    "Venue": "ArXiv",
-    "Citation_Count": 16,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 20,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 61,
-    "Factors": [
-      "TITLE(+50:agentic)",
-      "ABSTRACT(+10)",
-      "HINDEX(+1:h=20)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2512.10739",
     "Title": "Long-horizon Reasoning Agent for Olympiad-Level Mathematical Problem Solving",
     "Authors": "Songyang Gao, Yuzhe Gu, Zijian Wu, Lingkai Kong, Wenwei Zhang, Zhongrui Cai, Fan Zheng, Tianyou Ma, Junhao Shen, Haiteng Zhao, Duanyang Zhang, Huilun Zhang, Kuikun Liu, Chengqi Lyu, Yanhui Duan, Chiyu Chen, Ningsheng Ma, Jianfei Gao, Han Lyu, Dahua Lin, Kai Chen",
@@ -6606,27 +6630,6 @@
       "TITLE(+25:planning)",
       "ABSTRACT(+35)",
       "HINDEX(+1:h=26)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.08296",
-    "Title": "Towards a Science of Scaling Agent Systems",
-    "Authors": "Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park, Samuel Schmidgall, A. Ali Heydari, Yao Yan, Zhihan Zhang, Yuchen Zhuang, Mark Malhotra, Paul Pu Liang, Hae Won Park, Yuzhe Yang, Xuhai Xu, Yilun Du, Shwetak Patel, Tim Althoff, Daniel McDuff, Xin Liu",
-    "Subjects": "Artificial Intelligence (cs.AI)",
-    "Abstract": "Agents, language model-based systems that are capable of reasoning, planning, and acting are becoming the dominant paradigm for real-world AI applications. Despite this widespread adoption, the principles that determine their performance remain underexplored. We address this by deriving quantitative scaling principles for agent systems. We first formalize a definition for agentic evaluation and characterize scaling laws as the interplay between agent quantity, coordination structure, model capability, and task properties. We evaluate this across four benchmarks: Finance-Agent, BrowseComp-Plus, PlanCraft, and Workbench. With five canonical agent architectures (Single-Agent and four Multi-Agent Systems: Independent, Centralized, Decentralized, Hybrid), instantiated across three LLM families, we perform a controlled evaluation spanning 180 configurations. We derive a predictive model using coordination metrics, that achieves cross-validated R^2=0.524, enabling prediction on unseen task domains. We identify three effects: (1) a tool-coordination trade-off: under fixed computational budgets, tool-heavy tasks suffer disproportionately from multi-agent overhead. (2) a capability saturation: coordination yields diminishing or negative returns once single-agent baselines exceed ~45%. (3) topology-dependent error amplification: independent agents amplify errors 17.2x, while centralized coordination contains this to 4.4x. Centralized coordination improves performance by 80.8% on parallelizable tasks, while decentralized coordination excels on web navigation (+9.2% vs. +0.2%). Yet for sequential reasoning tasks, every multi-agent variants degraded performance by 39-70%. The framework predicts the optimal coordination strategy for 87% of held-out configurations. Out-of-sample validation on GPT-5.2, achieves MAE=0.071 and confirms four of five scaling principles generalize to unseen frontier models.",
-    "Venue": "ArXiv",
-    "Citation_Count": 29,
-    "Influential_Citations": 6,
-    "Max_Author_hIndex": 20,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 61,
-    "Factors": [
-      "ABSTRACT(+60)",
-      "HINDEX(+1:h=20)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -9511,6 +9514,29 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.01374",
+    "Title": "Stabilizing Reinforcement Learning with LLMs: Formulation and Practices",
+    "Authors": "Chujie Zheng, Kai Dang, Bowen Yu, Mingze Li, Huiqiang Jiang, Junrong Lin, Yuqiong Liu, Hao Lin, Chencan Wu, Feng Hu, An Yang, Jingren Zhou, Junyang Lin",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "This paper proposes a novel formulation for reinforcement learning (RL) with large language models, explaining why and under what conditions the true sequence-level reward can be optimized via a surrogate token-level objective in policy gradient methods such as REINFORCE. Specifically, through a first-order approximation, we show that this surrogate becomes increasingly valid only when both the training-inference discrepancy and policy staleness are minimized. This insight provides a principled explanation for the crucial role of several widely adopted techniques in stabilizing RL training, including importance sampling correction, clipping, and particularly Routing Replay for Mixture-of-Experts (MoE) models. Through extensive experiments with a 30B MoE model totaling hundreds of thousands of GPU hours, we show that for on-policy training, the basic policy gradient algorithm with importance sampling correction achieves the highest training stability. When off-policy updates are introduced to accelerate convergence, combining clipping and Routing Replay becomes essential to mitigate the instability caused by policy staleness. Notably, once training is stabilized, prolonged optimization consistently yields comparable final performance regardless of cold-start initialization. We hope that the shared insights and the developed recipes for stable RL training will facilitate future research.",
+    "Venue": "ArXiv",
+    "Citation_Count": 11,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 27,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 46,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "HINDEX(+1:h=27)",
+      "INFLUENTIAL(+30:18%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.23739",
     "Title": "Break Out the Silverware -- Semantic Understanding of Stored Household Items",
     "Authors": "Michaela Levi-Richter, Reuth Mirsky, Oren Glickman",
@@ -9548,6 +9574,27 @@
     "Factors": [
       "TITLE(+25:framework)",
       "ABSTRACT(+20)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.15745",
+    "Title": "LLaDA2.0: Scaling Up Diffusion Language Models to 100B",
+    "Authors": "Tiwei Bie, Maosong Cao, Kun Chen, Lun Du, Mingliang Gong, Zhuochen Gong, Yanmei Gu, Jiaqi Hu, Zenan Huang, Zhenzhong Lan, Chengxi Li, Chongxuan Li, Jianguo Li, Zehuan Li, Huabin Liu, Lin Liu, Guoshan Lu, Xiaocheng Lu, Yuxin Ma, Jianfeng Tan, Lanning Wei, Ji-Rong Wen, Yipeng Xing, Xiaolu Zhang, Junbo Zhao, Da Zheng, Jun Zhou, Junlin Zhou, Zhanchao Zhou, Liwang Zhu, Yihong Zhuang",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "This paper presents LLaDA2.0 -- a tuple of discrete diffusion large language models (dLLM) scaling up to 100B total parameters through systematic conversion from auto-regressive (AR) models -- establishing a new paradigm for frontier-scale deployment. Instead of costly training from scratch, LLaDA2.0 upholds knowledge inheritance, progressive adaption and efficiency-aware design principle, and seamless converts a pre-trained AR model into dLLM with a novel 3-phase block-level WSD based training scheme: progressive increasing block-size in block diffusion (warm-up), large-scale full-sequence diffusion (stable) and reverting back to compact-size block diffusion (decay). Along with post-training alignment with SFT and DPO, we obtain LLaDA2.0-mini (16B) and LLaDA2.0-flash (100B), two instruction-tuned Mixture-of-Experts (MoE) variants optimized for practical deployment. By preserving the advantages of parallel decoding, these models deliver superior performance and efficiency at the frontier scale. Both models were open-sourced.",
+    "Venue": "ArXiv",
+    "Citation_Count": 40,
+    "Influential_Citations": 10,
+    "Max_Author_hIndex": 8,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 45,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "INFLUENTIAL(+30:25%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -9704,6 +9751,28 @@
       "TITLE(+25:framework)",
       "ABSTRACT(+15)",
       "HINDEX(+3:h=40)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.13564",
+    "Title": "Memory in the Age of AI Agents",
+    "Authors": "Yuyang Hu, Shichun Liu, Yanwei Yue, Guibin Zhang, Boyang Liu, Fangyi Zhu, Jiahang Lin, Honglin Guo, Shihan Dou, Zhiheng Xi, Senjie Jin, Jiejun Tan, Yanbin Yin, Jiongnan Liu, Zeyu Zhang, Zhongxiang Sun, Yutao Zhu, Hao Sun, Boci Peng, Zhenrong Cheng, Xuanbo Fan, Jiaxin Guo, Xinlei Yu, Zhenhong Zhou, Zewen Hu, Jiahao Huo, Junhao Wang, Yuwei Niu, Yu Wang, Zhenfei Yin, Xiaobin Hu, Yue Liao, Qiankun Li, Kun Wang, Wangchunshu Zhou, Yixin Liu, Dawei Cheng, Qi Zhang, Tao Gui, Shirui Pan, Yan Zhang, Philip Torr, Zhicheng Dou, Ji-Rong Wen, Xuanjing Huang, Yu-Gang Jiang, Shuicheng Yan",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
+    "Abstract": "Memory has emerged, and will continue to remain, a core capability of foundation model-based agents. As research on agent memory rapidly expands and attracts unprecedented attention, the field has also become increasingly fragmented. Existing works that fall under the umbrella of agent memory often differ substantially in their motivations, implementations, and evaluation protocols, while the proliferation of loosely defined memory terminologies has further obscured conceptual clarity. Traditional taxonomies such as long/short-term memory have proven insufficient to capture the diversity of contemporary agent memory systems. This work aims to provide an up-to-date landscape of current agent memory research. We begin by clearly delineating the scope of agent memory and distinguishing it from related concepts such as LLM memory, retrieval augmented generation (RAG), and context engineering. We then examine agent memory through the unified lenses of forms, functions, and dynamics. From the perspective of forms, we identify three dominant realizations of agent memory, namely token-level, parametric, and latent memory. From the perspective of functions, we propose a finer-grained taxonomy that distinguishes factual, experiential, and working memory. From the perspective of dynamics, we analyze how memory is formed, evolved, and retrieved over time. To support practical development, we compile a comprehensive summary of memory benchmarks and open-source frameworks. Beyond consolidation, we articulate a forward-looking perspective on emerging research frontiers, including memory automation, reinforcement learning integration, multimodal memory, multi-agent memory, and trustworthiness issues. We hope this survey serves not only as a reference for existing work, but also as a conceptual foundation for rethinking memory as a first-class primitive in the design of future agentic intelligence.",
+    "Venue": "ArXiv",
+    "Citation_Count": 71,
+    "Influential_Citations": 7,
+    "Max_Author_hIndex": 40,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 43,
+    "Factors": [
+      "ABSTRACT(+35)",
+      "HINDEX(+3:h=40)",
+      "INFLUENTIAL(+5:10%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -13662,27 +13731,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2512.13564",
-    "Title": "Memory in the Age of AI Agents",
-    "Authors": "Yuyang Hu, Shichun Liu, Yanwei Yue, Guibin Zhang, Boyang Liu, Fangyi Zhu, Jiahang Lin, Honglin Guo, Shihan Dou, Zhiheng Xi, Senjie Jin, Jiejun Tan, Yanbin Yin, Jiongnan Liu, Zeyu Zhang, Zhongxiang Sun, Yutao Zhu, Hao Sun, Boci Peng, Zhenrong Cheng, Xuanbo Fan, Jiaxin Guo, Xinlei Yu, Zhenhong Zhou, Zewen Hu, Jiahao Huo, Junhao Wang, Yuwei Niu, Yu Wang, Zhenfei Yin, Xiaobin Hu, Yue Liao, Qiankun Li, Kun Wang, Wangchunshu Zhou, Yixin Liu, Dawei Cheng, Qi Zhang, Tao Gui, Shirui Pan, Yan Zhang, Philip Torr, Zhicheng Dou, Ji-Rong Wen, Xuanjing Huang, Yu-Gang Jiang, Shuicheng Yan",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
-    "Abstract": "Memory has emerged, and will continue to remain, a core capability of foundation model-based agents. As research on agent memory rapidly expands and attracts unprecedented attention, the field has also become increasingly fragmented. Existing works that fall under the umbrella of agent memory often differ substantially in their motivations, implementations, and evaluation protocols, while the proliferation of loosely defined memory terminologies has further obscured conceptual clarity. Traditional taxonomies such as long/short-term memory have proven insufficient to capture the diversity of contemporary agent memory systems. This work aims to provide an up-to-date landscape of current agent memory research. We begin by clearly delineating the scope of agent memory and distinguishing it from related concepts such as LLM memory, retrieval augmented generation (RAG), and context engineering. We then examine agent memory through the unified lenses of forms, functions, and dynamics. From the perspective of forms, we identify three dominant realizations of agent memory, namely token-level, parametric, and latent memory. From the perspective of functions, we propose a finer-grained taxonomy that distinguishes factual, experiential, and working memory. From the perspective of dynamics, we analyze how memory is formed, evolved, and retrieved over time. To support practical development, we compile a comprehensive summary of memory benchmarks and open-source frameworks. Beyond consolidation, we articulate a forward-looking perspective on emerging research frontiers, including memory automation, reinforcement learning integration, multimodal memory, multi-agent memory, and trustworthiness issues. We hope this survey serves not only as a reference for existing work, but also as a conceptual foundation for rethinking memory as a first-class primitive in the design of future agentic intelligence.",
-    "Venue": "ArXiv",
-    "Citation_Count": 71,
-    "Influential_Citations": 7,
-    "Max_Author_hIndex": 40,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 38,
-    "Factors": [
-      "ABSTRACT(+35)",
-      "HINDEX(+3:h=40)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2512.03248",
     "Title": "Learning Network Sheaves for AI-native Semantic Communication",
     "Authors": "Enrico Grimaldi, Mario Edoardo Pandolfo, Gabriele D'Acunto, Sergio Barbarossa, Paolo Di Lorenzo",
@@ -15658,6 +15706,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.13607",
+    "Title": "Nemotron-Cascade: Scaling Cascaded Reinforcement Learning for General-Purpose Reasoning Models",
+    "Authors": "Boxin Wang, Chankyu Lee, Nayeon Lee, Sheng-Chieh Lin, Wenliang Dai, Yang Chen, Yangyi Chen, Zhuolin Yang, Zihan Liu, Mohammad Shoeybi, Bryan Catanzaro, Wei Ping",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "Building general-purpose reasoning models with reinforcement learning (RL) entails substantial cross-domain heterogeneity, including large variation in inference-time response lengths and verification latency. Such variability complicates the RL infrastructure, slows training, and makes training curriculum (e.g., response length extension) and hyperparameter selection challenging. In this work, we propose cascaded domain-wise reinforcement learning (Cascade RL) to develop general-purpose reasoning models, Nemotron-Cascade, capable of operating in both instruct and deep thinking modes. Departing from conventional approaches that blend heterogeneous prompts from different domains, Cascade RL orchestrates sequential, domain-wise RL, reducing engineering complexity and delivering state-of-the-art performance across a wide range of benchmarks. Notably, RLHF for alignment, when used as a pre-step, boosts the model's reasoning ability far beyond mere preference optimization, and subsequent domain-wise RLVR stages rarely degrade the benchmark performance attained in earlier domains and may even improve it (see an illustration in Figure 1). Our 14B model, after RL, outperforms its SFT teacher, DeepSeek-R1-0528, on LiveCodeBench v5/v6/Pro and achieves silver-medal performance in the 2025 International Olympiad in Informatics (IOI). We transparently share our training and data recipes.",
+    "Venue": "ArXiv",
+    "Citation_Count": 13,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 40,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 33,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "HINDEX(+3:h=40)",
+      "INFLUENTIAL(+5:8%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.04988",
     "Title": "Strategic Self-Improvement for Competitive Agents in AI Labour Markets",
     "Authors": "Christopher Chiu, Simpson Zhang, Mihaela van der Schaar",
@@ -15865,6 +15935,88 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.18746",
+    "Title": "MemEvolve: Meta-Evolution of Agent Memory Systems",
+    "Authors": "Guibin Zhang, Haotian Ren, Chong Zhan, Zhenhong Zhou, Junhao Wang, He Zhu, Wangchunshu Zhou, Shuicheng Yan",
+    "Subjects": "Computation and Language (cs.CL); Multiagent Systems (cs.MA)",
+    "Abstract": "Self-evolving memory systems are unprecedentedly reshaping the evolutionary paradigm of large language model (LLM)-based agents. Prior work has predominantly relied on manually engineered memory architectures to store trajectories, distill experience, and synthesize reusable tools, enabling agents to evolve on the fly within environment interactions. However, this paradigm is fundamentally constrained by the staticity of the memory system itself: while memory facilitates agent-level evolving, the underlying memory architecture cannot be meta-adapted to diverse task contexts. To address this gap, we propose MemEvolve, a meta-evolutionary framework that jointly evolves agents'experiential knowledge and their memory architecture, allowing agent systems not only to accumulate experience but also to progressively refine how they learn from it. To ground MemEvolve in prior research and foster openness in future self-evolving systems, we introduce EvolveLab, a unified self-evolving memory codebase that distills twelve representative memory systems into a modular design space (encode, store, retrieve, manage), providing both a standardized implementation substrate and a fair experimental arena. Extensive evaluations on four challenging agentic benchmarks demonstrate that MemEvolve achieves (I) substantial performance gains, improving frameworks such as SmolAgent and Flash-Searcher by up to $17.06\\%$; and (II) strong cross-task and cross-LLM generalization, designing memory architectures that transfer effectively across diverse benchmarks and backbone models.",
+    "Venue": "ArXiv",
+    "Citation_Count": 12,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 6,
+    "Category": "cs.MA",
+    "Categories": [
+      "cs.MA",
+      "cs.CL"
+    ],
+    "Score": 30,
+    "Factors": [
+      "ABSTRACT(+25)",
+      "INFLUENTIAL(+5:8%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.24880",
+    "Title": "mHC: Manifold-Constrained Hyper-Connections",
+    "Authors": "Zhenda Xie, Yixuan Wei, Huanqi Cao, Chenggang Zhao, Chengqi Deng, Jiashi Li, Damai Dai, Huazuo Gao, Jiang Chang, Kuai Yu, Liang Zhao, Shangyan Zhou, Zhean Xu, Zhengyan Zhang, Wangding Zeng, Shengding Hu, Yuqing Wang, Jingyang Yuan, Lean Wang, Wenfeng Liang",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "Recently, studies exemplified by Hyper-Connections (HC) have extended the ubiquitous residual connection paradigm established over the past decade by expanding the residual stream width and diversifying connectivity patterns. While yielding substantial performance gains, this diversification fundamentally compromises the identity mapping property intrinsic to the residual connection, which causes severe training instability and restricted scalability, and additionally incurs notable memory access overhead. To address these challenges, we propose Manifold-Constrained Hyper-Connections (mHC), a general framework that projects the residual connection space of HC onto a specific manifold to restore the identity mapping property, while incorporating rigorous infrastructure optimization to ensure efficiency. Empirical experiments demonstrate that mHC is effective for training at scale, offering tangible performance improvements and superior scalability. We anticipate that mHC, as a flexible and practical extension of HC, will contribute to a deeper understanding of topological architecture design and suggest promising directions for the evolution of foundational models.",
+    "Venue": "ArXiv",
+    "Citation_Count": 21,
+    "Influential_Citations": 5,
+    "Max_Author_hIndex": 15,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 30,
+    "Factors": [
+      "INFLUENTIAL(+30:24%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.05964",
+    "Title": "Training-Time Action Conditioning for Efficient Real-Time Chunking",
+    "Authors": "Kevin Black, Allen Z. Ren, Michael Equi, Sergey Levine",
+    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI)",
+    "Abstract": "Real-time chunking (RTC) enables vision-language-action models (VLAs) to generate smooth, reactive robot trajectories by asynchronously predicting action chunks and conditioning on previously committed actions via inference-time inpainting. However, this inpainting method introduces computational overhead that increases inference latency. In this work, we propose a simple alternative: simulating inference delay at training time and conditioning on action prefixes directly, eliminating any inference-time overhead. Our method requires no modifications to the model architecture or robot runtime, and can be implemented with only a few additional lines of code. In simulated experiments, we find that training-time RTC outperforms inference-time RTC at higher inference delays. In real-world experiments on box building and espresso making tasks with the $\\pi_{0.6}$ VLA, we demonstrate that training-time RTC maintains both task performance and speed parity with inference-time RTC while being computationally cheaper. Our results suggest that training-time action conditioning is a practical drop-in replacement for inference-time inpainting in real-time robot control.",
+    "Venue": "ArXiv",
+    "Citation_Count": 11,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 11,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 30,
+    "Factors": [
+      "INFLUENTIAL(+30:18%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.10794",
+    "Title": "What matters for Representation Alignment: Global Information or Spatial Structure?",
+    "Authors": "Jaskirat Singh, Xingjian Leng, Zongze Wu, Liang Zheng, Richard Zhang, Eli Shechtman, Saining Xie",
+    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Graphics (cs.GR); Machine Learning (cs.LG); Machine Learning (stat.ML)",
+    "Abstract": "Representation alignment (REPA) guides generative training by distilling representations from a strong, pretrained vision encoder to intermediate diffusion features. We investigate a fundamental question: what aspect of the target representation matters for generation, its \\textit{global} \\revision{semantic} information (e.g., measured by ImageNet-1K accuracy) or its spatial structure (i.e. pairwise cosine similarity between patch tokens)? Prevalent wisdom holds that stronger global semantic performance leads to better generation as a target representation. To study this, we first perform a large-scale empirical analysis across 27 different vision encoders and different model scales. The results are surprising; spatial structure, rather than global performance, drives the generation performance of a target representation. To further study this, we introduce two straightforward modifications, which specifically accentuate the transfer of \\emph{spatial} information. We replace the standard MLP projection layer in REPA with a simple convolution layer and introduce a spatial normalization layer for the external representation. Surprisingly, our simple method (implemented in $<$4 lines of code), termed iREPA, consistently improves convergence speed of REPA, across a diverse set of vision encoders, model sizes, and training variants (such as REPA, REPA-E, Meanflow, JiT etc). %, etc. Our work motivates revisiting the fundamental working mechanism of representational alignment and how it can be leveraged for improved training of generative models. The code and project page are available at https://end2end-diffusion.github.io/irepa",
+    "Venue": "ArXiv",
+    "Citation_Count": 14,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 14,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 30,
+    "Factors": [
+      "INFLUENTIAL(+30:21%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.05983",
     "Title": "AI-Generated Compromises for Coalition Formation: Modeling, Simulation, and a Textual Case Study",
     "Authors": "Eyal Briman (Ben Gurion University of the Negev), Ehud Shapiro (Weizmann Institute of Science), Nimrod Talmon (Ben Gurion University of the Negev)",
@@ -15967,27 +16119,6 @@
     "Factors": [
       "TITLE(+25:reasoning)",
       "HINDEX(+4:h=49)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.13607",
-    "Title": "Nemotron-Cascade: Scaling Cascaded Reinforcement Learning for General-Purpose Reasoning Models",
-    "Authors": "Boxin Wang, Chankyu Lee, Nayeon Lee, Sheng-Chieh Lin, Wenliang Dai, Yang Chen, Yangyi Chen, Zhuolin Yang, Zihan Liu, Mohammad Shoeybi, Bryan Catanzaro, Wei Ping",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "Building general-purpose reasoning models with reinforcement learning (RL) entails substantial cross-domain heterogeneity, including large variation in inference-time response lengths and verification latency. Such variability complicates the RL infrastructure, slows training, and makes training curriculum (e.g., response length extension) and hyperparameter selection challenging. In this work, we propose cascaded domain-wise reinforcement learning (Cascade RL) to develop general-purpose reasoning models, Nemotron-Cascade, capable of operating in both instruct and deep thinking modes. Departing from conventional approaches that blend heterogeneous prompts from different domains, Cascade RL orchestrates sequential, domain-wise RL, reducing engineering complexity and delivering state-of-the-art performance across a wide range of benchmarks. Notably, RLHF for alignment, when used as a pre-step, boosts the model's reasoning ability far beyond mere preference optimization, and subsequent domain-wise RLVR stages rarely degrade the benchmark performance attained in earlier domains and may even improve it (see an illustration in Figure 1). Our 14B model, after RL, outperforms its SFT teacher, DeepSeek-R1-0528, on LiveCodeBench v5/v6/Pro and achieves silver-medal performance in the 2025 International Olympiad in Informatics (IOI). We transparently share our training and data recipes.",
-    "Venue": "ArXiv",
-    "Citation_Count": 13,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 40,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 28,
-    "Factors": [
-      "TITLE(+25:reasoning)",
-      "HINDEX(+3:h=40)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -17132,6 +17263,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.02556",
+    "Title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+    "Authors": "DeepSeek-AI, Aixin Liu, Aoxue Mei, Bangcai Lin, Bing Xue, Bingxuan Wang, Bingzheng Xu, Bochao Wu, Bowei Zhang, Chaofan Lin, Chen Dong, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenhao Xu, Chong Ruan, Damai Dai, Daya Guo, Dejian Yang, Deli Chen, Erhang Li, Fangqi Zhou, Fangyun Lin, Fucong Dai, Guangbo Hao, Guanting Chen, Guowei Li, H. Zhang, Hanwei Xu, Hao Li, Haofen Liang, Haoran Wei, Haowei Zhang, Haowen Luo, Haozhe Ji, Honghui Ding, Hongxuan Tang, Huanqi Cao, Huazuo Gao, Hui Qu, Hui Zeng, Jialiang Huang, Jiashi Li, Jiaxin Xu, Jiewen Hu, Jingchang Chen, Jingting Xiang, Jingyang Yuan, Jingyuan Cheng, Jinhua Zhu, Jun Ran, Junguang Jiang, Junjie Qiu, Junlong Li, Junxiao Song, Kai Dong, Kaige Gao, Kang Guan, Kexin Huang, Kexing Zhou, Kezhao Huang, Kuai Yu, Lean Wang, Lecong Zhang, Lei Wang, Liang Zhao, Liangsheng Yin, Lihua Guo, Lingxiao Luo, Linwang Ma, Litong Wang, Liyue Zhang, M.S. Di, M.Y Xu, Mingchuan Zhang, Minghua Zhang, Minghui Tang, Mingxu Zhou, Panpan Huang, Peixin Cong, Peiyi Wang, Qiancheng Wang, Qihao Zhu, Qingyang Li, Qinyu Chen, Qiushi Du, Ruiling Xu, Ruiqi Ge, Ruisong Zhang, Ruizhe Pan, Runji Wang, Runqiu Yin, Runxin Xu, Ruomeng Shen, Ruoyu Zhang, S.H. Liu, Shanghao Lu, Shangyan Zhou, Shanhuang Chen, Shaofei Cai",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "We introduce DeepSeek-V3.2, a model that harmonizes high computational efficiency with superior reasoning and agent performance. The key technical breakthroughs of DeepSeek-V3.2 are as follows: (1) DeepSeek Sparse Attention (DSA): We introduce DSA, an efficient attention mechanism that substantially reduces computational complexity while preserving model performance in long-context scenarios. (2) Scalable Reinforcement Learning Framework: By implementing a robust reinforcement learning protocol and scaling post-training compute, DeepSeek-V3.2 performs comparably to GPT-5. Notably, our high-compute variant, DeepSeek-V3.2-Speciale, surpasses GPT-5 and exhibits reasoning proficiency on par with Gemini-3.0-Pro, achieving gold-medal performance in both the 2025 International Mathematical Olympiad (IMO) and the International Olympiad in Informatics (IOI). (3) Large-Scale Agentic Task Synthesis Pipeline: To integrate reasoning into tool-use scenarios, we developed a novel synthesis pipeline that systematically generates training data at scale. This methodology facilitates scalable agentic post-training, yielding substantial improvements in generalization and instruction-following robustness within complex, interactive environments.",
+    "Venue": "ArXiv",
+    "Citation_Count": 219,
+    "Influential_Citations": 25,
+    "Max_Author_hIndex": 19,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 26,
+    "Factors": [
+      "ABSTRACT(+10)",
+      "HINDEX(+1:h=19)",
+      "INFLUENTIAL(+15:11%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.02561",
     "Title": "EZYer: A simulacrum of high school with generative agent",
     "Authors": "Jinming Yang, Zimu Ji, Weiqi Luo, Gaoxi Wang, Bin Ma, Yueling Deng",
@@ -17407,27 +17560,6 @@
     "Category": "cs.MA",
     "Categories": [
       "cs.MA"
-    ],
-    "Score": 25,
-    "Factors": [
-      "ABSTRACT(+25)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.18746",
-    "Title": "MemEvolve: Meta-Evolution of Agent Memory Systems",
-    "Authors": "Guibin Zhang, Haotian Ren, Chong Zhan, Zhenhong Zhou, Junhao Wang, He Zhu, Wangchunshu Zhou, Shuicheng Yan",
-    "Subjects": "Computation and Language (cs.CL); Multiagent Systems (cs.MA)",
-    "Abstract": "Self-evolving memory systems are unprecedentedly reshaping the evolutionary paradigm of large language model (LLM)-based agents. Prior work has predominantly relied on manually engineered memory architectures to store trajectories, distill experience, and synthesize reusable tools, enabling agents to evolve on the fly within environment interactions. However, this paradigm is fundamentally constrained by the staticity of the memory system itself: while memory facilitates agent-level evolving, the underlying memory architecture cannot be meta-adapted to diverse task contexts. To address this gap, we propose MemEvolve, a meta-evolutionary framework that jointly evolves agents'experiential knowledge and their memory architecture, allowing agent systems not only to accumulate experience but also to progressively refine how they learn from it. To ground MemEvolve in prior research and foster openness in future self-evolving systems, we introduce EvolveLab, a unified self-evolving memory codebase that distills twelve representative memory systems into a modular design space (encode, store, retrieve, manage), providing both a standardized implementation substrate and a fair experimental arena. Extensive evaluations on four challenging agentic benchmarks demonstrate that MemEvolve achieves (I) substantial performance gains, improving frameworks such as SmolAgent and Flash-Searcher by up to $17.06\\%$; and (II) strong cross-task and cross-LLM generalization, designing memory architectures that transfer effectively across diverse benchmarks and backbone models.",
-    "Venue": "ArXiv",
-    "Citation_Count": 12,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 6,
-    "Category": "cs.MA",
-    "Categories": [
-      "cs.MA",
-      "cs.CL"
     ],
     "Score": 25,
     "Factors": [
@@ -23024,6 +23156,49 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.22737",
+    "Title": "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+    "Authors": "Aiwei Liu, Minghua He, Shaoxun Zeng, Sijun Zhang, Linhao Zhang, Chuhan Wu, Wei Jia, Yuan Liu, Xiao Zhou, Jie Zhou",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "Autoregressive (AR) generation is the standard decoding paradigm for Large Language Models (LLMs), but its token-by-token nature limits parallelism at inference time. Diffusion Language Models (DLLMs) offer parallel decoding by recovering multiple masked tokens per step; however, in practice they often fail to translate this parallelism into deployment speed gains over optimized AR engines (e.g., vLLM). A key reason is that many DLLMs rely on bidirectional attention, which breaks standard prefix KV caching and forces repeated contextualization, undermining efficiency. We propose WeDLM, a diffusion decoding framework built entirely on standard causal attention to make parallel generation prefix-cache friendly. The core idea is to let each masked position condition on all currently observed tokens while keeping a strict causal mask, achieved by Topological Reordering that moves observed tokens to the physical prefix while preserving their logical positions. Building on this property, we introduce a streaming decoding procedure that continuously commits confident tokens into a growing left-to-right prefix and maintains a fixed parallel workload, avoiding the stop-and-wait behavior common in block diffusion methods. Experiments show that WeDLM preserves the quality of strong AR backbones while delivering substantial speedups, approaching 3x on challenging reasoning benchmarks and up to 10x in low-entropy generation regimes; critically, our comparisons are against AR baselines served by vLLM under matched deployment settings, demonstrating that diffusion-style decoding can outperform an optimized AR engine in practice.",
+    "Venue": "ArXiv",
+    "Citation_Count": 14,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 6,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 20,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "INFLUENTIAL(+5:7%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.24601",
+    "Title": "Recursive Language Models",
+    "Authors": "Alex L. Zhang, Tim Kraska, Omar Khattab",
+    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "We study allowing large language models (LLMs) to process arbitrarily long prompts through the lens of inference-time scaling. We propose Recursive Language Models (RLMs), a general inference paradigm that treats long prompts as part of an external environment and allows the LLM to programmatically examine, decompose, and recursively call itself over snippets of the prompt. We find that RLMs can successfully process inputs up to two orders of magnitude beyond model context windows and, even for shorter prompts, dramatically outperform the quality of vanilla frontier LLMs and common long-context scaffolds across four diverse long-context tasks while having comparable cost. At a small scale, we post-train the first natively recursive language model. Our model, RLM-Qwen3-8B, outperforms the underlying Qwen3-8B model by $28.3\\%$ on average and even approaches the quality of vanilla GPT-5 on three long-context tasks. Code is available at https://github.com/alexzhang13/rlm.",
+    "Venue": "ArXiv",
+    "Citation_Count": 14,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 8,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 20,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "INFLUENTIAL(+5:7%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.03026",
     "Title": "The Moral Consistency Pipeline: Continuous Ethical Evaluation for Large Language Models",
     "Authors": "Saeid Jamshidi, Kawser Wazed Nafi, Arghavan Moradi Dakhel, Negar Shahabi, Foutse Khomh",
@@ -23168,6 +23343,27 @@
     "Factors": [
       "ABSTRACT(+10)",
       "HINDEX(+9:h=88)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.19366",
+    "Title": "Learning General Policies with Policy Gradient Methods",
+    "Authors": "Simon St\u00e5hlberg, Blai Bonet, Hector Geffner",
+    "Subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "While reinforcement learning methods have delivered remarkable results in a number of settings, generalization, i.e., the ability to produce policies that generalize in a reliable and systematic way, has remained a challenge. The problem of generalization has been addressed formally in classical planning where provable correct policies that generalize over all instances of a given domain have been learned using combinatorial methods. The aim of this work is to bring these two research threads together to illuminate the conditions under which (deep) reinforcement learning approaches, and in particular, policy optimization methods, can be used to learn policies that generalize like combinatorial methods do. We draw on lessons learned from previous combinatorial and deep learning approaches, and extend them in a convenient way. From the former, we model policies as state transition classifiers, as (ground) actions are not general and change from instance to instance. From the latter, we use graph neural networks (GNNs) adapted to deal with relational structures for representing value functions over planning states, and in our case, policies. With these ingredients in place, we find that actor-critic methods can be used to learn policies that generalize almost as well as those obtained using combinatorial approaches while avoiding the scalability bottleneck and the use of feature pools. Moreover, the limitations of the DRL methods on the benchmarks considered have little to do with deep learning or reinforcement learning algorithms, and result from the well-understood expressive limitations of GNNs, and the tradeoff between optimality and generalization (general policies cannot be optimal in some domains). Both of these limitations are addressed without changing the basic DRL methods by adding derived predicates and an alternative cost structure to optimize.",
+    "Venue": "KR, Princ Knowl Represent Reason, Int Conf Princ Knowl Represent Reason, Principles of Knowledge Representation and Reasoning",
+    "Citation_Count": 29,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 51,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 19,
+    "Factors": [
+      "HINDEX(+4:h=51)",
+      "INFLUENTIAL(+15:10%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -24951,28 +25147,6 @@
     "Factors": [
       "ABSTRACT(+15)",
       "HINDEX(+1:h=23)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.01374",
-    "Title": "Stabilizing Reinforcement Learning with LLMs: Formulation and Practices",
-    "Authors": "Chujie Zheng, Kai Dang, Bowen Yu, Mingze Li, Huiqiang Jiang, Junrong Lin, Yuqiong Liu, Hao Lin, Chencan Wu, Feng Hu, An Yang, Jingren Zhou, Junyang Lin",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "This paper proposes a novel formulation for reinforcement learning (RL) with large language models, explaining why and under what conditions the true sequence-level reward can be optimized via a surrogate token-level objective in policy gradient methods such as REINFORCE. Specifically, through a first-order approximation, we show that this surrogate becomes increasingly valid only when both the training-inference discrepancy and policy staleness are minimized. This insight provides a principled explanation for the crucial role of several widely adopted techniques in stabilizing RL training, including importance sampling correction, clipping, and particularly Routing Replay for Mixture-of-Experts (MoE) models. Through extensive experiments with a 30B MoE model totaling hundreds of thousands of GPU hours, we show that for on-policy training, the basic policy gradient algorithm with importance sampling correction achieves the highest training stability. When off-policy updates are introduced to accelerate convergence, combining clipping and Routing Replay becomes essential to mitigate the instability caused by policy staleness. Notably, once training is stabilized, prolonged optimization consistently yields comparable final performance regardless of cold-start initialization. We hope that the shared insights and the developed recipes for stable RL training will facilitate future research.",
-    "Venue": "ArXiv",
-    "Citation_Count": 11,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 27,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 16,
-    "Factors": [
-      "ABSTRACT(+15)",
-      "HINDEX(+1:h=27)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -30160,26 +30334,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2512.22737",
-    "Title": "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
-    "Authors": "Aiwei Liu, Minghua He, Shaoxun Zeng, Sijun Zhang, Linhao Zhang, Chuhan Wu, Wei Jia, Yuan Liu, Xiao Zhou, Jie Zhou",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "Autoregressive (AR) generation is the standard decoding paradigm for Large Language Models (LLMs), but its token-by-token nature limits parallelism at inference time. Diffusion Language Models (DLLMs) offer parallel decoding by recovering multiple masked tokens per step; however, in practice they often fail to translate this parallelism into deployment speed gains over optimized AR engines (e.g., vLLM). A key reason is that many DLLMs rely on bidirectional attention, which breaks standard prefix KV caching and forces repeated contextualization, undermining efficiency. We propose WeDLM, a diffusion decoding framework built entirely on standard causal attention to make parallel generation prefix-cache friendly. The core idea is to let each masked position condition on all currently observed tokens while keeping a strict causal mask, achieved by Topological Reordering that moves observed tokens to the physical prefix while preserving their logical positions. Building on this property, we introduce a streaming decoding procedure that continuously commits confident tokens into a growing left-to-right prefix and maintains a fixed parallel workload, avoiding the stop-and-wait behavior common in block diffusion methods. Experiments show that WeDLM preserves the quality of strong AR backbones while delivering substantial speedups, approaching 3x on challenging reasoning benchmarks and up to 10x in low-entropy generation regimes; critically, our comparisons are against AR baselines served by vLLM under matched deployment settings, demonstrating that diffusion-style decoding can outperform an optimized AR engine in practice.",
-    "Venue": "ArXiv",
-    "Citation_Count": 14,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 6,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 15,
-    "Factors": [
-      "ABSTRACT(+15)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2512.22738",
     "Title": "Harnessing Large Language Models for Biomedical Named Entity Recognition",
     "Authors": "Jian Chen, Leilei Su, Cong Sun",
@@ -31583,26 +31737,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2512.15745",
-    "Title": "LLaDA2.0: Scaling Up Diffusion Language Models to 100B",
-    "Authors": "Tiwei Bie, Maosong Cao, Kun Chen, Lun Du, Mingliang Gong, Zhuochen Gong, Yanmei Gu, Jiaqi Hu, Zenan Huang, Zhenzhong Lan, Chengxi Li, Chongxuan Li, Jianguo Li, Zehuan Li, Huabin Liu, Lin Liu, Guoshan Lu, Xiaocheng Lu, Yuxin Ma, Jianfeng Tan, Lanning Wei, Ji-Rong Wen, Yipeng Xing, Xiaolu Zhang, Junbo Zhao, Da Zheng, Jun Zhou, Junlin Zhou, Zhanchao Zhou, Liwang Zhu, Yihong Zhuang",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "This paper presents LLaDA2.0 -- a tuple of discrete diffusion large language models (dLLM) scaling up to 100B total parameters through systematic conversion from auto-regressive (AR) models -- establishing a new paradigm for frontier-scale deployment. Instead of costly training from scratch, LLaDA2.0 upholds knowledge inheritance, progressive adaption and efficiency-aware design principle, and seamless converts a pre-trained AR model into dLLM with a novel 3-phase block-level WSD based training scheme: progressive increasing block-size in block diffusion (warm-up), large-scale full-sequence diffusion (stable) and reverting back to compact-size block diffusion (decay). Along with post-training alignment with SFT and DPO, we obtain LLaDA2.0-mini (16B) and LLaDA2.0-flash (100B), two instruction-tuned Mixture-of-Experts (MoE) variants optimized for practical deployment. By preserving the advantages of parallel decoding, these models deliver superior performance and efficiency at the frontier scale. Both models were open-sourced.",
-    "Venue": "ArXiv",
-    "Citation_Count": 40,
-    "Influential_Citations": 10,
-    "Max_Author_hIndex": 8,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 15,
-    "Factors": [
-      "ABSTRACT(+15)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2512.15782",
     "Title": "Auto-Tuning Safety Guardrails for Black-Box Large Language Models",
     "Authors": "Perry Abdulkadir",
@@ -32159,27 +32293,6 @@
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
-    ],
-    "Score": 15,
-    "Factors": [
-      "ABSTRACT(+15)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.24601",
-    "Title": "Recursive Language Models",
-    "Authors": "Alex L. Zhang, Tim Kraska, Omar Khattab",
-    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "We study allowing large language models (LLMs) to process arbitrarily long prompts through the lens of inference-time scaling. We propose Recursive Language Models (RLMs), a general inference paradigm that treats long prompts as part of an external environment and allows the LLM to programmatically examine, decompose, and recursively call itself over snippets of the prompt. We find that RLMs can successfully process inputs up to two orders of magnitude beyond model context windows and, even for shorter prompts, dramatically outperform the quality of vanilla frontier LLMs and common long-context scaffolds across four diverse long-context tasks while having comparable cost. At a small scale, we post-train the first natively recursive language model. Our model, RLM-Qwen3-8B, outperforms the underlying Qwen3-8B model by $28.3\\%$ on average and even approaches the quality of vanilla GPT-5 on three long-context tasks. Code is available at https://github.com/alexzhang13/rlm.",
-    "Venue": "ArXiv",
-    "Citation_Count": 14,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 8,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
     ],
     "Score": 15,
     "Factors": [
@@ -35988,6 +36101,26 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.10675",
+    "Title": "Evaluating Gemini Robotics Policies in a Veo World Simulator",
+    "Authors": "Gemini Robotics Team, Krzysztof Choromanski, Coline Devin, Yilun Du, Debidatta Dwibedi, Ruiqi Gao, Abhishek Jindal, Thomas Kipf, Sean Kirmani, Isabel Leal, Fangchen Liu, Anirudha Majumdar, Andrew Marmon, Carolina Parada, Yulia Rubanova, Dhruv Shah, Vikas Sindhwani, Jie Tan, Fei Xia, Ted Xiao, Sherry Yang, Wenhao Yu, Allan Zhou",
+    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV); Machine Learning (cs.LG)",
+    "Abstract": "Generative world models hold significant potential for simulating interactions with visuomotor policies in varied environments. Frontier video models can enable generation of realistic observations and environment interactions in a scalable and general manner. However, the use of video models in robotics has been limited primarily to in-distribution evaluations, i.e., scenarios that are similar to ones used to train the policy or fine-tune the base video model. In this report, we demonstrate that video models can be used for the entire spectrum of policy evaluation use cases in robotics: from assessing nominal performance to out-of-distribution (OOD) generalization, and probing physical and semantic safety. We introduce a generative evaluation system built upon a frontier video foundation model (Veo). The system is optimized to support robot action conditioning and multi-view consistency, while integrating generative image-editing and multi-view completion to synthesize realistic variations of real-world scenes along multiple axes of generalization. We demonstrate that the system preserves the base capabilities of the video model to enable accurate simulation of scenes that have been edited to include novel interaction objects, novel visual backgrounds, and novel distractor objects. This fidelity enables accurately predicting the relative performance of different policies in both nominal and OOD conditions, determining the relative impact of different axes of generalization on policy performance, and performing red teaming of policies to expose behaviors that violate physical or semantic safety constraints. We validate these capabilities through 1600+ real-world evaluations of eight Gemini Robotics policy checkpoints and five tasks for a bimanual manipulator.",
+    "Venue": "ArXiv",
+    "Citation_Count": 16,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 11,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 15,
+    "Factors": [
+      "INFLUENTIAL(+15:12%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.13961",
     "Title": "Olmo 3",
     "Authors": "Team Olmo: Allyson Ettinger, Amanda Bertsch, Bailey Kuehl, David Graham, David Heineman, Dirk Groeneveld, Faeze Brahman, Finbarr Timbers, Hamish Ivison, Jacob Morrison, Jake Poznanski, Kyle Lo, Luca Soldaini, Matt Jordan, Mayee Chen, Michael Noukhovitch, Nathan Lambert, Pete Walsh, Pradeep Dasigi, Robert Berry, Saumya Malik, Saurabh Shah, Scott Geng, Shane Arora, Shashank Gupta, Taira Anderson, Teng Xiao, Tyler Murray, Tyler Romero, Victoria Graf, Akari Asai, Akshita Bhagia, Alexander Wettig, Alisa Liu, Aman Rangapur, Chloe Anastasiades, Costa Huang, Dustin Schwenk, Harsh Trivedi, Ian Magnusson, Jaron Lochner, Jiacheng Liu, Lester James V. Miranda, Maarten Sap, Malia Morgan, Michael Schmitz, Michal Guerquin, Michael Wilson, Regan Huff, Ronan Le Bras, Rui Xin, Rulin Shao, Sam Skjonsberg, Shannon Zejiang Shen, Shuyue Stella Li, Tucker Wilde, Valentina Pyatkin, Will Merrill, Yapei Chang, Yuling Gu, Zhiyuan Zeng, Ashish Sabharwal, Luke Zettlemoyer, Pang Wei Koh, Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi",
@@ -36236,27 +36369,6 @@
     "Factors": [
       "ABSTRACT(+10)",
       "HINDEX(+2:h=32)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.02556",
-    "Title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
-    "Authors": "DeepSeek-AI, Aixin Liu, Aoxue Mei, Bangcai Lin, Bing Xue, Bingxuan Wang, Bingzheng Xu, Bochao Wu, Bowei Zhang, Chaofan Lin, Chen Dong, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenhao Xu, Chong Ruan, Damai Dai, Daya Guo, Dejian Yang, Deli Chen, Erhang Li, Fangqi Zhou, Fangyun Lin, Fucong Dai, Guangbo Hao, Guanting Chen, Guowei Li, H. Zhang, Hanwei Xu, Hao Li, Haofen Liang, Haoran Wei, Haowei Zhang, Haowen Luo, Haozhe Ji, Honghui Ding, Hongxuan Tang, Huanqi Cao, Huazuo Gao, Hui Qu, Hui Zeng, Jialiang Huang, Jiashi Li, Jiaxin Xu, Jiewen Hu, Jingchang Chen, Jingting Xiang, Jingyang Yuan, Jingyuan Cheng, Jinhua Zhu, Jun Ran, Junguang Jiang, Junjie Qiu, Junlong Li, Junxiao Song, Kai Dong, Kaige Gao, Kang Guan, Kexin Huang, Kexing Zhou, Kezhao Huang, Kuai Yu, Lean Wang, Lecong Zhang, Lei Wang, Liang Zhao, Liangsheng Yin, Lihua Guo, Lingxiao Luo, Linwang Ma, Litong Wang, Liyue Zhang, M.S. Di, M.Y Xu, Mingchuan Zhang, Minghua Zhang, Minghui Tang, Mingxu Zhou, Panpan Huang, Peixin Cong, Peiyi Wang, Qiancheng Wang, Qihao Zhu, Qingyang Li, Qinyu Chen, Qiushi Du, Ruiling Xu, Ruiqi Ge, Ruisong Zhang, Ruizhe Pan, Runji Wang, Runqiu Yin, Runxin Xu, Ruomeng Shen, Ruoyu Zhang, S.H. Liu, Shanghao Lu, Shangyan Zhou, Shanhuang Chen, Shaofei Cai",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "We introduce DeepSeek-V3.2, a model that harmonizes high computational efficiency with superior reasoning and agent performance. The key technical breakthroughs of DeepSeek-V3.2 are as follows: (1) DeepSeek Sparse Attention (DSA): We introduce DSA, an efficient attention mechanism that substantially reduces computational complexity while preserving model performance in long-context scenarios. (2) Scalable Reinforcement Learning Framework: By implementing a robust reinforcement learning protocol and scaling post-training compute, DeepSeek-V3.2 performs comparably to GPT-5. Notably, our high-compute variant, DeepSeek-V3.2-Speciale, surpasses GPT-5 and exhibits reasoning proficiency on par with Gemini-3.0-Pro, achieving gold-medal performance in both the 2025 International Mathematical Olympiad (IMO) and the International Olympiad in Informatics (IOI). (3) Large-Scale Agentic Task Synthesis Pipeline: To integrate reasoning into tool-use scenarios, we developed a novel synthesis pipeline that systematically generates training data at scale. This methodology facilitates scalable agentic post-training, yielding substantial improvements in generalization and instruction-following robustness within complex, interactive environments.",
-    "Venue": "ArXiv",
-    "Citation_Count": 219,
-    "Influential_Citations": 25,
-    "Max_Author_hIndex": 19,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 11,
-    "Factors": [
-      "ABSTRACT(+10)",
-      "HINDEX(+1:h=19)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -39936,6 +40048,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.06776",
+    "Title": "From Next-Token to Next-Block: A Principled Adaptation Path for Diffusion LLMs",
+    "Authors": "Yuchuan Tian, Yuchen Liang, Shuo Zhang, Yingte Shu, Guangwen Yang, Wei He, Sibo Fang, Tianyu Guo, Kai Han, Chao Xu, Hanting Chen, Xinghao Chen, Yunhe Wang",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
+    "Abstract": "Diffusion Language Models (DLMs) enable fast generation, yet training large DLMs from scratch is costly. As a practical shortcut, adapting off-the-shelf Auto-Regressive (AR) model weights into a DLM could quickly equip the DLM with strong long-context generation capabilies. Prior\"adaptation\"attempts either modify logits or randomly grow attention masks to Full-Sequence diffusion, or simply transplant AR weights into a Block-Diffusion recipe, leaving two key questions unaddressed: where is the final destination of adaptation, and how to adapt better? For manifold benefits, we reframe the whole AR-to-DLM adaptation under the Block-Diffusion paradigm, transitioning from block size 1 to the final Block-Diffusion state. Concretely, the principled pathway of adaptation is designed as follows: we keep a context-causal path where causal attention is kept in the prefix, an efficient parallel adaptation procedure where an AR guidance is maintained, and gradual increment of the generation block size for a smoother transition. Built on these components, the adaptation is proved competitive on various models at different scales. With better adaptation, we propose NBDiff-7B that could inherit the long-context modeling and reasoning capabilities, and achieve state-of-the-art performance among the 7B-class DLMs. Codes: https://github.com/YuchuanTian/NBDiff.",
+    "Venue": "ArXiv",
+    "Citation_Count": 11,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 28,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 7,
+    "Factors": [
+      "HINDEX(+2:h=28)",
+      "INFLUENTIAL(+5:9%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.15556",
     "Title": "An Empirical Study on Chinese Character Decomposition in Multiword Expression-Aware Neural Machine Translation",
     "Authors": "Lifeng Han, Gareth J. F. Jones, Alan F. Smeaton",
@@ -40072,6 +40206,28 @@
     "Score": 6,
     "Factors": [
       "HINDEX(+6:h=68)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2512.02472",
+    "Title": "Guided Self-Evolving LLMs with Minimal Human Supervision",
+    "Authors": "Wenhao Yu, Zhenwen Liang, Chengsong Huang, Kishan Panaganti, Tianqing Fang, Haitao Mi, Dong Yu",
+    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
+    "Abstract": "AI self-evolution has long been envisioned as a path toward superintelligence, where models autonomously acquire, refine, and internalize knowledge from their own learning experiences. Yet in practice, unguided self-evolving systems often plateau quickly or even degrade as training progresses. These failures arise from issues such as concept drift, diversity collapse, and mis-evolution, as models reinforce their own biases and converge toward low-entropy behaviors. To enable models to self-evolve in a stable and controllable manner while minimizing reliance on human supervision, we introduce R-Few, a guided Self-Play Challenger-Solver framework that incorporates lightweight human oversight through in-context grounding and mixed training. At each iteration, the Challenger samples a small set of human-labeled examples to guide synthetic question generation, while the Solver jointly trains on human and synthetic examples under an online, difficulty-based curriculum. Across math and general reasoning benchmarks, R-Few achieves consistent and iterative improvements. For example, Qwen3-8B-Base improves by +3.0 points over R-Zero on math tasks and achieves performance on par with General-Reasoner, despite the latter being trained on 20 times more human data. Ablation studies confirm the complementary contributions of grounded challenger training and curriculum-based solver training, and further analysis shows that R-Few mitigates drift, yielding more stable and controllable co-evolutionary dynamics.",
+    "Venue": "ArXiv",
+    "Citation_Count": 11,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 20,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 6,
+    "Factors": [
+      "HINDEX(+1:h=20)",
+      "INFLUENTIAL(+5:9%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -40277,6 +40433,26 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2512.23808",
+    "Title": "MiMo-Audio: Audio Language Models are Few-Shot Learners",
+    "Authors": "Xiaomi LLM-Core Team: Dong Zhang, Gang Wang, Jinlong Xue, Kai Fang, Liang Zhao, Rui Ma, Shuhuai Ren, Shuo Liu, Tao Guo, Weiji Zhuang, Xin Zhang, Xingchen Song, Yihan Yan, Yongzhe He, Cici, Bowen Shen, Chengxuan Zhu, Chong Ma, Chun Chen, Heyu Chen, Jiawei Li, Lei Li, Menghang Zhu, Peidian Li, Qiying Wang, Sirui Deng, Weimin Xiong, Wenshan Huang, Wenyu Yang, Yilin Jiang, Yixin Yang, Yuanyuan Tian, Yue Ma, Yue Yu, Zihan Zhang, Zihao Yue, Bangjun Xiao, Bingquan Xia, Bofei Gao, Bowen Ye, Can Cai, Chang Liu, Chenhong He, Chunan Li, Dawei Zhu, Duo Zhang, Fengyuan Shi, Guoan Wang, Hailin Zhang, Hanglong Lv, Hanyu Li, Hao Tian, Heng Qu, Hongshen Xu, Houbin Zhang, Huaqiu Liu, Jiangshan Duo, Jianguang Zuo, Jianyu Wei, Jiebao Xiao, Jinhao Dong, Jun Shi, Junhao Hu, Kainan Bao, Kang Zhou, Linghao Zhang, Meng Chen, Nuo Chen, Peng Zhang, Qianli Chen, Qiantong Wang, Rang Li, Shaohui Liu, Shengfan Wang, Shicheng Li, Shihua Yu, Shijie Cao, Shimao Chen, Shuhao Gu, Weikun Wang, Wenhan Ma, Xiangwei Deng, Xing Yong, Xing Zhang, Xu Wang, Yifan Song, Yihao Zhao, Yingbo Zhao, Yizhao Gao, Yu Cheng, Yu Tu, Yudong Wang, Zhaojun Huang, Zhengju Tang, Zhenru Lin, Zhichao Song, Zhipeng Xu, Zhixian Zheng, Zihan Jiang",
+    "Subjects": "Computation and Language (cs.CL); Sound (cs.SD); Audio and Speech Processing (eess.AS)",
+    "Abstract": "Existing audio language models typically rely on task-specific fine-tuning to accomplish particular audio tasks. In contrast, humans are able to generalize to new audio tasks with only a few examples or simple instructions. GPT-3 has shown that scaling next-token prediction pretraining enables strong generalization capabilities in text, and we believe this paradigm is equally applicable to the audio domain. By scaling MiMo-Audio's pretraining data to over one hundred million of hours, we observe the emergence of few-shot learning capabilities across a diverse set of audio tasks. We develop a systematic evaluation of these capabilities and find that MiMo-Audio-7B-Base achieves SOTA performance on both speech intelligence and audio understanding benchmarks among open-source models. Beyond standard metrics, MiMo-Audio-7B-Base generalizes to tasks absent from its training data, such as voice conversion, style transfer, and speech editing. MiMo-Audio-7B-Base also demonstrates powerful speech continuation capabilities, capable of generating highly realistic talk shows, recitations, livestreaming and debates. At the post-training stage, we curate a diverse instruction-tuning corpus and introduce thinking mechanisms into both audio understanding and generation. MiMo-Audio-7B-Instruct achieves open-source SOTA on audio understanding benchmarks (MMSU, MMAU, MMAR, MMAU-Pro), spoken dialogue benchmarks (Big Bench Audio, MultiChallenge Audio) and instruct-TTS evaluations, approaching or surpassing closed-source models. Model checkpoints and full evaluation suite are available at https://github.com/XiaomiMiMo/MiMo-Audio.",
+    "Venue": "ArXiv",
+    "Citation_Count": 39,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 13,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 5,
+    "Factors": [
+      "INFLUENTIAL(+5:5%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2512.06515",
     "Title": "ProSocialAlign: Preference Conditioned Test Time Alignment in Language Models",
     "Authors": "Somnath Banerjee, Sayan Layek, Sayantan Adak, Mykola Pechenizkiy, Animesh Mukherjee, Rima Hazra",
@@ -40393,26 +40569,6 @@
     "Score": 4,
     "Factors": [
       "HINDEX(+4:h=49)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.19366",
-    "Title": "Learning General Policies with Policy Gradient Methods",
-    "Authors": "Simon St\u00e5hlberg, Blai Bonet, Hector Geffner",
-    "Subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "While reinforcement learning methods have delivered remarkable results in a number of settings, generalization, i.e., the ability to produce policies that generalize in a reliable and systematic way, has remained a challenge. The problem of generalization has been addressed formally in classical planning where provable correct policies that generalize over all instances of a given domain have been learned using combinatorial methods. The aim of this work is to bring these two research threads together to illuminate the conditions under which (deep) reinforcement learning approaches, and in particular, policy optimization methods, can be used to learn policies that generalize like combinatorial methods do. We draw on lessons learned from previous combinatorial and deep learning approaches, and extend them in a convenient way. From the former, we model policies as state transition classifiers, as (ground) actions are not general and change from instance to instance. From the latter, we use graph neural networks (GNNs) adapted to deal with relational structures for representing value functions over planning states, and in our case, policies. With these ingredients in place, we find that actor-critic methods can be used to learn policies that generalize almost as well as those obtained using combinatorial approaches while avoiding the scalability bottleneck and the use of feature pools. Moreover, the limitations of the DRL methods on the benchmarks considered have little to do with deep learning or reinforcement learning algorithms, and result from the well-understood expressive limitations of GNNs, and the tradeoff between optimality and generalization (general policies cannot be optimal in some domains). Both of these limitations are addressed without changing the basic DRL methods by adding derived predicates and an alternative cost structure to optimize.",
-    "Venue": "KR, Princ Knowl Represent Reason, Int Conf Princ Knowl Represent Reason, Principles of Knowledge Representation and Reasoning",
-    "Citation_Count": 29,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 51,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 4,
-    "Factors": [
-      "HINDEX(+4:h=51)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -41053,27 +41209,6 @@
     "Score": 2,
     "Factors": [
       "HINDEX(+2:h=29)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.06776",
-    "Title": "From Next-Token to Next-Block: A Principled Adaptation Path for Diffusion LLMs",
-    "Authors": "Yuchuan Tian, Yuchen Liang, Shuo Zhang, Yingte Shu, Guangwen Yang, Wei He, Sibo Fang, Tianyu Guo, Kai Han, Chao Xu, Hanting Chen, Xinghao Chen, Yunhe Wang",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
-    "Abstract": "Diffusion Language Models (DLMs) enable fast generation, yet training large DLMs from scratch is costly. As a practical shortcut, adapting off-the-shelf Auto-Regressive (AR) model weights into a DLM could quickly equip the DLM with strong long-context generation capabilies. Prior\"adaptation\"attempts either modify logits or randomly grow attention masks to Full-Sequence diffusion, or simply transplant AR weights into a Block-Diffusion recipe, leaving two key questions unaddressed: where is the final destination of adaptation, and how to adapt better? For manifold benefits, we reframe the whole AR-to-DLM adaptation under the Block-Diffusion paradigm, transitioning from block size 1 to the final Block-Diffusion state. Concretely, the principled pathway of adaptation is designed as follows: we keep a context-causal path where causal attention is kept in the prefix, an efficient parallel adaptation procedure where an AR guidance is maintained, and gradual increment of the generation block size for a smoother transition. Built on these components, the adaptation is proved competitive on various models at different scales. With better adaptation, we propose NBDiff-7B that could inherit the long-context modeling and reasoning capabilities, and achieve state-of-the-art performance among the 7B-class DLMs. Codes: https://github.com/YuchuanTian/NBDiff.",
-    "Venue": "ArXiv",
-    "Citation_Count": 11,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 28,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 2,
-    "Factors": [
-      "HINDEX(+2:h=28)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -42602,27 +42737,6 @@
     "Score": 1,
     "Factors": [
       "HINDEX(+1:h=17)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.02472",
-    "Title": "Guided Self-Evolving LLMs with Minimal Human Supervision",
-    "Authors": "Wenhao Yu, Zhenwen Liang, Chengsong Huang, Kishan Panaganti, Tianqing Fang, Haitao Mi, Dong Yu",
-    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
-    "Abstract": "AI self-evolution has long been envisioned as a path toward superintelligence, where models autonomously acquire, refine, and internalize knowledge from their own learning experiences. Yet in practice, unguided self-evolving systems often plateau quickly or even degrade as training progresses. These failures arise from issues such as concept drift, diversity collapse, and mis-evolution, as models reinforce their own biases and converge toward low-entropy behaviors. To enable models to self-evolve in a stable and controllable manner while minimizing reliance on human supervision, we introduce R-Few, a guided Self-Play Challenger-Solver framework that incorporates lightweight human oversight through in-context grounding and mixed training. At each iteration, the Challenger samples a small set of human-labeled examples to guide synthetic question generation, while the Solver jointly trains on human and synthetic examples under an online, difficulty-based curriculum. Across math and general reasoning benchmarks, R-Few achieves consistent and iterative improvements. For example, Qwen3-8B-Base improves by +3.0 points over R-Zero on math tasks and achieves performance on par with General-Reasoner, despite the latter being trained on 20 times more human data. Ablation studies confirm the complementary contributions of grounded challenger training and curriculum-based solver training, and further analysis shows that R-Few mitigates drift, yielding more stable and controllable co-evolutionary dynamics.",
-    "Venue": "ArXiv",
-    "Citation_Count": 11,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 20,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 1,
-    "Factors": [
-      "HINDEX(+1:h=20)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -48757,24 +48871,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2512.23808",
-    "Title": "MiMo-Audio: Audio Language Models are Few-Shot Learners",
-    "Authors": "Xiaomi LLM-Core Team: Dong Zhang, Gang Wang, Jinlong Xue, Kai Fang, Liang Zhao, Rui Ma, Shuhuai Ren, Shuo Liu, Tao Guo, Weiji Zhuang, Xin Zhang, Xingchen Song, Yihan Yan, Yongzhe He, Cici, Bowen Shen, Chengxuan Zhu, Chong Ma, Chun Chen, Heyu Chen, Jiawei Li, Lei Li, Menghang Zhu, Peidian Li, Qiying Wang, Sirui Deng, Weimin Xiong, Wenshan Huang, Wenyu Yang, Yilin Jiang, Yixin Yang, Yuanyuan Tian, Yue Ma, Yue Yu, Zihan Zhang, Zihao Yue, Bangjun Xiao, Bingquan Xia, Bofei Gao, Bowen Ye, Can Cai, Chang Liu, Chenhong He, Chunan Li, Dawei Zhu, Duo Zhang, Fengyuan Shi, Guoan Wang, Hailin Zhang, Hanglong Lv, Hanyu Li, Hao Tian, Heng Qu, Hongshen Xu, Houbin Zhang, Huaqiu Liu, Jiangshan Duo, Jianguang Zuo, Jianyu Wei, Jiebao Xiao, Jinhao Dong, Jun Shi, Junhao Hu, Kainan Bao, Kang Zhou, Linghao Zhang, Meng Chen, Nuo Chen, Peng Zhang, Qianli Chen, Qiantong Wang, Rang Li, Shaohui Liu, Shengfan Wang, Shicheng Li, Shihua Yu, Shijie Cao, Shimao Chen, Shuhao Gu, Weikun Wang, Wenhan Ma, Xiangwei Deng, Xing Yong, Xing Zhang, Xu Wang, Yifan Song, Yihao Zhao, Yingbo Zhao, Yizhao Gao, Yu Cheng, Yu Tu, Yudong Wang, Zhaojun Huang, Zhengju Tang, Zhenru Lin, Zhichao Song, Zhipeng Xu, Zhixian Zheng, Zihan Jiang",
-    "Subjects": "Computation and Language (cs.CL); Sound (cs.SD); Audio and Speech Processing (eess.AS)",
-    "Abstract": "Existing audio language models typically rely on task-specific fine-tuning to accomplish particular audio tasks. In contrast, humans are able to generalize to new audio tasks with only a few examples or simple instructions. GPT-3 has shown that scaling next-token prediction pretraining enables strong generalization capabilities in text, and we believe this paradigm is equally applicable to the audio domain. By scaling MiMo-Audio's pretraining data to over one hundred million of hours, we observe the emergence of few-shot learning capabilities across a diverse set of audio tasks. We develop a systematic evaluation of these capabilities and find that MiMo-Audio-7B-Base achieves SOTA performance on both speech intelligence and audio understanding benchmarks among open-source models. Beyond standard metrics, MiMo-Audio-7B-Base generalizes to tasks absent from its training data, such as voice conversion, style transfer, and speech editing. MiMo-Audio-7B-Base also demonstrates powerful speech continuation capabilities, capable of generating highly realistic talk shows, recitations, livestreaming and debates. At the post-training stage, we curate a diverse instruction-tuning corpus and introduce thinking mechanisms into both audio understanding and generation. MiMo-Audio-7B-Instruct achieves open-source SOTA on audio understanding benchmarks (MMSU, MMAU, MMAR, MMAU-Pro), spoken dialogue benchmarks (Big Bench Audio, MultiChallenge Audio) and instruct-TTS evaluations, approaching or surpassing closed-source models. Model checkpoints and full evaluation suite are available at https://github.com/XiaomiMiMo/MiMo-Audio.",
-    "Venue": "ArXiv",
-    "Citation_Count": 39,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 13,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2512.23813",
     "Title": "StressRoBERTa: Cross-Condition Transfer Learning from Depression, Anxiety, and PTSD to Stress Detection",
     "Authors": "Amal Alqahtani, Efsun Kayi, Mona Diab",
@@ -49036,24 +49132,6 @@
     "Citation_Count": 0,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 1,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.24880",
-    "Title": "mHC: Manifold-Constrained Hyper-Connections",
-    "Authors": "Zhenda Xie, Yixuan Wei, Huanqi Cao, Chenggang Zhao, Chengqi Deng, Jiashi Li, Damai Dai, Huazuo Gao, Jiang Chang, Kuai Yu, Liang Zhao, Shangyan Zhou, Zhean Xu, Zhengyan Zhang, Wangding Zeng, Shengding Hu, Yuqing Wang, Jingyang Yuan, Lean Wang, Wenfeng Liang",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "Recently, studies exemplified by Hyper-Connections (HC) have extended the ubiquitous residual connection paradigm established over the past decade by expanding the residual stream width and diversifying connectivity patterns. While yielding substantial performance gains, this diversification fundamentally compromises the identity mapping property intrinsic to the residual connection, which causes severe training instability and restricted scalability, and additionally incurs notable memory access overhead. To address these challenges, we propose Manifold-Constrained Hyper-Connections (mHC), a general framework that projects the residual connection space of HC onto a specific manifold to restore the identity mapping property, while incorporating rigorous infrastructure optimization to ensure efficiency. Empirical experiments demonstrate that mHC is effective for training at scale, offering tangible performance improvements and superior scalability. We anticipate that mHC, as a flexible and practical extension of HC, will contribute to a deeper understanding of topological architecture design and suggest promising directions for the evolution of foundational models.",
-    "Venue": "ArXiv",
-    "Citation_Count": 21,
-    "Influential_Citations": 5,
-    "Max_Author_hIndex": 15,
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
@@ -58335,24 +58413,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2512.05964",
-    "Title": "Training-Time Action Conditioning for Efficient Real-Time Chunking",
-    "Authors": "Kevin Black, Allen Z. Ren, Michael Equi, Sergey Levine",
-    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI)",
-    "Abstract": "Real-time chunking (RTC) enables vision-language-action models (VLAs) to generate smooth, reactive robot trajectories by asynchronously predicting action chunks and conditioning on previously committed actions via inference-time inpainting. However, this inpainting method introduces computational overhead that increases inference latency. In this work, we propose a simple alternative: simulating inference delay at training time and conditioning on action prefixes directly, eliminating any inference-time overhead. Our method requires no modifications to the model architecture or robot runtime, and can be implemented with only a few additional lines of code. In simulated experiments, we find that training-time RTC outperforms inference-time RTC at higher inference delays. In real-world experiments on box building and espresso making tasks with the $\\pi_{0.6}$ VLA, we demonstrate that training-time RTC maintains both task performance and speed parity with inference-time RTC while being computationally cheaper. Our results suggest that training-time action conditioning is a practical drop-in replacement for inference-time inpainting in real-time robot control.",
-    "Venue": "ArXiv",
-    "Citation_Count": 11,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 11,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2512.05969",
     "Title": "Video Models Start to Solve Chess, Maze, Sudoku, Mental Rotation, and Raven' Matrices",
     "Authors": "Hokin Deng",
@@ -61665,24 +61725,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2512.10675",
-    "Title": "Evaluating Gemini Robotics Policies in a Veo World Simulator",
-    "Authors": "Gemini Robotics Team, Krzysztof Choromanski, Coline Devin, Yilun Du, Debidatta Dwibedi, Ruiqi Gao, Abhishek Jindal, Thomas Kipf, Sean Kirmani, Isabel Leal, Fangchen Liu, Anirudha Majumdar, Andrew Marmon, Carolina Parada, Yulia Rubanova, Dhruv Shah, Vikas Sindhwani, Jie Tan, Fei Xia, Ted Xiao, Sherry Yang, Wenhao Yu, Allan Zhou",
-    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV); Machine Learning (cs.LG)",
-    "Abstract": "Generative world models hold significant potential for simulating interactions with visuomotor policies in varied environments. Frontier video models can enable generation of realistic observations and environment interactions in a scalable and general manner. However, the use of video models in robotics has been limited primarily to in-distribution evaluations, i.e., scenarios that are similar to ones used to train the policy or fine-tune the base video model. In this report, we demonstrate that video models can be used for the entire spectrum of policy evaluation use cases in robotics: from assessing nominal performance to out-of-distribution (OOD) generalization, and probing physical and semantic safety. We introduce a generative evaluation system built upon a frontier video foundation model (Veo). The system is optimized to support robot action conditioning and multi-view consistency, while integrating generative image-editing and multi-view completion to synthesize realistic variations of real-world scenes along multiple axes of generalization. We demonstrate that the system preserves the base capabilities of the video model to enable accurate simulation of scenes that have been edited to include novel interaction objects, novel visual backgrounds, and novel distractor objects. This fidelity enables accurately predicting the relative performance of different policies in both nominal and OOD conditions, determining the relative impact of different axes of generalization on policy performance, and performing red teaming of policies to expose behaviors that violate physical or semantic safety constraints. We validate these capabilities through 1600+ real-world evaluations of eight Gemini Robotics policy checkpoints and five tasks for a bimanual manipulator.",
-    "Venue": "ArXiv",
-    "Citation_Count": 16,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 11,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2512.10688",
     "Title": "Rethinking Popularity Bias in Collaborative Filtering via Analytical Vector Decomposition",
     "Authors": "Lingfeng Liu, Yixin Song, Dazhong Shen, Bing Yin, Hao Li, Yanyong Zhang, Chao Wang",
@@ -61728,24 +61770,6 @@
     "Citation_Count": 0,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 15,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2512.10794",
-    "Title": "What matters for Representation Alignment: Global Information or Spatial Structure?",
-    "Authors": "Jaskirat Singh, Xingjian Leng, Zongze Wu, Liang Zheng, Richard Zhang, Eli Shechtman, Saining Xie",
-    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Graphics (cs.GR); Machine Learning (cs.LG); Machine Learning (stat.ML)",
-    "Abstract": "Representation alignment (REPA) guides generative training by distilling representations from a strong, pretrained vision encoder to intermediate diffusion features. We investigate a fundamental question: what aspect of the target representation matters for generation, its \\textit{global} \\revision{semantic} information (e.g., measured by ImageNet-1K accuracy) or its spatial structure (i.e. pairwise cosine similarity between patch tokens)? Prevalent wisdom holds that stronger global semantic performance leads to better generation as a target representation. To study this, we first perform a large-scale empirical analysis across 27 different vision encoders and different model scales. The results are surprising; spatial structure, rather than global performance, drives the generation performance of a target representation. To further study this, we introduce two straightforward modifications, which specifically accentuate the transfer of \\emph{spatial} information. We replace the standard MLP projection layer in REPA with a simple convolution layer and introduce a spatial normalization layer for the external representation. Surprisingly, our simple method (implemented in $<$4 lines of code), termed iREPA, consistently improves convergence speed of REPA, across a diverse set of vision encoders, model sizes, and training variants (such as REPA, REPA-E, Meanflow, JiT etc). %, etc. Our work motivates revisiting the fundamental working mechanism of representational alignment and how it can be leveraged for improved training of generative models. The code and project page are available at https://end2end-diffusion.github.io/irepa",
-    "Venue": "ArXiv",
-    "Citation_Count": 14,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 14,
     "Category": "cs.AI",
     "Categories": [
       "cs.AI"
