@@ -482,9 +482,13 @@ class PaperRanker:
     # Influential ratio tiers (max 30 pts, update mode only)
     INFLUENTIAL_RATIO_TIERS = [(0.15, 30), (0.10, 15), (0.05, 5)]
 
-    def __init__(self, update_mode=False):
+    def __init__(self, update_mode=False, title_keywords=None, abstract_keywords=None):
         self.papers = []
         self.update_mode = update_mode
+        if title_keywords is not None:
+            self.TITLE_KEYWORDS = {k: int(v) for k, v in title_keywords.items()}
+        if abstract_keywords is not None:
+            self.ABSTRACT_KEYWORDS = {k: int(v) for k, v in abstract_keywords.items()}
     
     def add_papers(self, papers_data):
         self.papers = papers_data
@@ -593,6 +597,8 @@ def parse_args():
         'categories': DEFAULT_CATEGORIES,
         'year_month': datetime.now().strftime("%Y-%m"),
         'update_path': None,
+        'title_keywords': None,
+        'abstract_keywords': None,
     }
     
     argv = sys.argv[1:]
@@ -610,6 +616,13 @@ def parse_args():
         elif '-' in arg and len(arg) == 7:
             args['year_month'] = arg
         i += 1
+
+    tk_env = os.environ.get('TITLE_KEYWORDS', '').strip()
+    ak_env = os.environ.get('ABSTRACT_KEYWORDS', '').strip()
+    if tk_env:
+        args['title_keywords'] = json.loads(tk_env)
+    if ak_env:
+        args['abstract_keywords'] = json.loads(ak_env)
     
     return args
 
@@ -714,6 +727,10 @@ def main():
     print(f"\nCategories: {', '.join(args['categories'])}")
     print(f"Period: {args['year_month']}")
     print(f"Sources: arXiv (listing) + Semantic Scholar (enrichment)")
+    if args.get('title_keywords'):
+        print(f"Custom title keywords: {len(args['title_keywords'])} terms")
+    if args.get('abstract_keywords'):
+        print(f"Custom abstract keywords: {len(args['abstract_keywords'])} terms")
     
     # Step 1: Fetch all categories
     all_papers = []
@@ -733,7 +750,10 @@ def main():
     unique_papers = enricher.enrich_papers(unique_papers)
     
     # Step 4: Rank
-    ranker = PaperRanker()
+    ranker = PaperRanker(
+        title_keywords=args.get('title_keywords'),
+        abstract_keywords=args.get('abstract_keywords'),
+    )
     ranker.add_papers(unique_papers)
     unique_papers = ranker.rank_all()
     

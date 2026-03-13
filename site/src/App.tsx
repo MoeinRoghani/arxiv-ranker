@@ -90,10 +90,12 @@ export default function App() {
     setTrackedRuns(prev => prev.filter(r => r.id !== id));
   }
 
-  async function handleGenerate(yearMonth: string, categories: string) {
+  async function handleGenerate(yearMonth: string, categories: string, titleKw: string, abstractKw: string) {
     const ok = await triggerWorkflow('generate.yml', {
       year_month: yearMonth,
       categories,
+      title_keywords: titleKw,
+      abstract_keywords: abstractKw,
     });
     if (ok) {
       showToast('Workflow triggered. Rankings will appear once the run completes.');

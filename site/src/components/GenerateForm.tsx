@@ -6,7 +6,7 @@ import MonthPicker from './MonthPicker';
 interface Props {
   entries: RunEntry[];
   open: boolean;
-  onGenerate: (yearMonth: string, categories: string) => void;
+  onGenerate: (yearMonth: string, categories: string, titleKw: string, abstractKw: string) => void;
 }
 
 interface KeywordEntry {
@@ -142,7 +142,9 @@ export default function GenerateForm({ entries, open, onGenerate }: Props) {
       return;
     }
 
-    onGenerate(yearMonth, categories.trim());
+    const tkw = JSON.stringify(Object.fromEntries(titleKeywords.map(k => [k.term, k.pts])));
+    const akw = JSON.stringify(Object.fromEntries(abstractKeywords.map(k => [k.term, k.pts])));
+    onGenerate(yearMonth, categories.trim(), tkw, akw);
   }
 
   return (
@@ -207,7 +209,9 @@ export default function GenerateForm({ entries, open, onGenerate }: Props) {
           message="Rankings already exist for this period. Generate anyway?"
           onConfirm={() => {
             setConfirmOpen(false);
-            onGenerate(yearMonth, categories.trim());
+            const tkw = JSON.stringify(Object.fromEntries(titleKeywords.map(k => [k.term, k.pts])));
+            const akw = JSON.stringify(Object.fromEntries(abstractKeywords.map(k => [k.term, k.pts])));
+            onGenerate(yearMonth, categories.trim(), tkw, akw);
           }}
           onCancel={() => setConfirmOpen(false)}
         />

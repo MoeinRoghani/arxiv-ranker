@@ -13,6 +13,14 @@ on:
         description: 'Comma-separated arXiv categories'
         required: false
         default: 'cs.MA,cs.CL,cs.AI'
+      title_keywords:
+        description: 'JSON dict of title keywords and point values'
+        required: false
+        default: ''
+      abstract_keywords:
+        description: 'JSON dict of abstract keywords and point values'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -39,6 +47,8 @@ jobs:
       - name: Run ranker
         env:
           S2_API_KEY: ${{ secrets.S2_API_KEY }}
+          TITLE_KEYWORDS: ${{ inputs.title_keywords }}
+          ABSTRACT_KEYWORDS: ${{ inputs.abstract_keywords }}
         run: |
           YEAR_MONTH="${{ inputs.year_month }}"
           CATEGORIES="${{ inputs.categories }}"
