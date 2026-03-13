@@ -1,15 +1,40 @@
 import { useState, useEffect, useRef } from 'react';
 import type { Paper, PaperSummary } from '../lib/types';
 import { tierClass, tierLabel, shortVenue, fullVenue } from '../lib/format';
-import { fetchSummary, saveSummaryToRepo } from '../lib/api';
+import { fetchSummary, saveSummaryToRepo, fetchPapers } from '../lib/api';
 import { analyzeWithAI } from '../lib/openai';
 
 interface Props {
-  paper: Paper;
+  paper?: Paper;
+  datasetKey?: string;
+  arxivId?: string;
   onBack: () => void;
 }
 
-export default function PaperAnalysisView({ paper, onBack }: Props) {
+export default function PaperAnalysisView({ paper: paperProp, datasetKey, arxivId, onBack }: Props) {
+  const [paper, setPaper] = useState<Paper | null>(paperProp ?? null);
+  const [paperLoading, setPaperLoading] = useState(!paperProp);
+
+  useEffect(() => {
+    if (paperProp) {
+      setPaper(paperProp);
+      setPaperLoading(false);
+      return;
+    }
+    if (!datasetKey || !arxivId) {
+      setPaperLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+    fetchPapers(datasetKey).then(papers => {
+      if (cancelled) return;
+      const found = papers.find(p => p.arXiv_ID === arxivId);
+      setPaper(found ?? null);
+      setPaperLoading(false);
+    });
+    return () => { cancelled = true; };
+  }, [paperProp, datasetKey, arxivId]);
   const [summary, setSummary] = useState<PaperSummary | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,13 +46,14 @@ export default function PaperAnalysisView({ paper, onBack }: Props) {
   const feedbackRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
+    if (!paper) return;
     let cancelled = false;
 
     async function load() {
       setLoading(true);
       setError(null);
 
-      const cached = await fetchSummary(paper.arXiv_ID);
+      const cached = await fetchSummary(paper!.arXiv_ID);
       if (cached && !cancelled) {
         setSummary(cached);
         setLoading(false);
@@ -35,10 +61,10 @@ export default function PaperAnalysisView({ paper, onBack }: Props) {
       }
 
       try {
-        const result = await analyzeWithAI(paper.Title, paper.arXiv_ID);
+        const result = await analyzeWithAI(paper!.Title, paper!.arXiv_ID);
         if (cancelled) return;
         setSummary(result);
-        saveSummaryToRepo(paper.arXiv_ID, paper.Title, result.summary);
+        saveSummaryToRepo(paper!.arXiv_ID, paper!.Title, result.summary);
       } catch (err) {
         if (!cancelled) {
           setError(err instanceof Error ? err.message : 'Failed to analyze paper.');
@@ -53,6 +79,7 @@ export default function PaperAnalysisView({ paper, onBack }: Props) {
   }, [paper]);
 
   async function handleRegenerate() {
+    if (!paper) return;
     setLoading(true);
     setError(null);
     setShowFeedback(false);
@@ -79,13 +106,41 @@ export default function PaperAnalysisView({ paper, onBack }: Props) {
     }
   }, [showFeedback]);
 
+  if (paperLoading) {
+    return (
+      <div className="pa-page">
+        <header>
+          <div className="container header-inner">
+            <button className="back-btn" onClick={onBack}>← Back</button>
+            <h1>Paper Analysis</h1>
+          </div>
+        </header>
+        <main className="pa-main"><div className="container"><div className="loading">Loading paper data...</div></div></main>
+      </div>
+    );
+  }
+
+  if (!paper) {
+    return (
+      <div className="pa-page">
+        <header>
+          <div className="container header-inner">
+            <button className="back-btn" onClick={onBack}>← Back</button>
+            <h1>Paper Analysis</h1>
+          </div>
+        </header>
+        <main className="pa-main"><div className="container"><div className="pa-error"><p>Paper not found.</p></div></div></main>
+      </div>
+    );
+  }
+
   const tc = tierClass(paper.Tier);
   const venue = shortVenue(paper.Venue);
   const venueFull = fullVenue(paper.Venue);
 
   function handleCopy() {
     if (!summary) return;
-    const text = `${paper.Title}\n\n${summary.summary}`;
+    const text = `${paper!.Title}\n\n${summary.summary}`;
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);

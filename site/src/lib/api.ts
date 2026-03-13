@@ -20,8 +20,8 @@ export async function fetchIndex(): Promise<RunEntry[]> {
   return res.json();
 }
 
-export async function fetchPapers(runId: string): Promise<Paper[]> {
-  const res = await fetch(`${BASE}data/${runId}/papers.json`, NO_CACHE);
+export async function fetchPapers(datasetKey: string): Promise<Paper[]> {
+  const res = await fetch(`${BASE}data/${datasetKey}/papers.json`, NO_CACHE);
   if (!res.ok) return [];
   return res.json();
 }

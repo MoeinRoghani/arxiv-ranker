@@ -9,11 +9,27 @@ src/
   site_builder.py  # Transforms ranker output → lightweight site JSON
   run_updates.py   # Batch updater for weekly cron (past 12 months)
 site/              # React + Vite frontend
-  src/             # Components, styles, API layer
-  public/data/     # Generated site data (index.json + per-run papers.json)
+  src/
+    App.tsx        # Root component, hash routing, workflow polling
+    lib/api.ts     # All fetch calls (data files, GitHub API, summaries)
+    lib/openai.ts  # Client-side OpenAI analysis
+    lib/types.ts   # TypeScript interfaces
+    lib/format.ts  # Display formatters (venues, dates, authors)
+    components/
+      PapersTable.tsx       # Sortable/filterable paper table
+      RunCard.tsx           # Expandable month card on homepage
+      AllPapersView.tsx     # Full paper list for a dataset
+      PaperAnalysisView.tsx # AI analysis page (supports new-tab routing)
+      GenerateForm.tsx      # Header panel for new rankings + keyword editor
+      WorkflowTracker.tsx   # Live workflow status tracker
+      FilterBar.tsx         # Tier/category/sort controls
+      MonthPicker.tsx       # Date selector
+  public/data/     # Generated site data (index.json + per-dataset papers.json)
 .github/workflows/
   generate.yml     # Monthly cron + manual dispatch
   update.yml       # Weekly cron + manual dispatch
+  deploy.yml       # Auto-deploys after generate/update/save-analysis
+  save-analysis.yml # Persists AI analysis to repo
 docs/
   ARCHITECTURE.md  # Scoring algorithm specification
   DEVELOPER.md     # This file
@@ -31,18 +47,27 @@ output/            # Generated results per run (local only)
 | Property | Value |
 |----------|-------|
 | **Trigger** | Cron: `0 6 1 * *` (1st of each month, 06:00 UTC) |
-| **Manual** | `workflow_dispatch` with optional `year_month` and `categories` |
-| **Cron behavior** | Generates rankings for the **previous month** |
-| **Manual default** | Previous month if `year_month` is empty; `cs.MA,cs.CL,cs.AI` if `categories` is empty |
+| **Manual** | `workflow_dispatch` with optional `year_month`, `categories`, `title_keywords`, `abstract_keywords` |
+| **Cron behavior** | Generates rankings for the **previous month** using default keywords |
+| **Manual default** | Previous month if `year_month` is empty; `cs.MA,cs.CL,cs.AI` if `categories` is empty; hardcoded keywords if keyword inputs are empty |
+
+**Dispatch inputs:**
+
+| Input | Type | Description |
+|-------|------|-------------|
+| `year_month` | string | `YYYY-MM` format. Defaults to previous month. |
+| `categories` | string | Comma-separated arXiv categories. |
+| `title_keywords` | string | JSON dict `{"keyword": points, ...}`. Overrides `TITLE_KEYWORDS`. |
+| `abstract_keywords` | string | JSON dict `{"keyword": points, ...}`. Overrides `ABSTRACT_KEYWORDS`. |
+
+Keyword inputs are passed to `ranker.py` via environment variables `TITLE_KEYWORDS` and `ABSTRACT_KEYWORDS`. The ranker parses these as JSON and uses them instead of the hardcoded defaults.
 
 **Steps:**
 1. Checkout repo
 2. Install Python deps + restore S2 cache
-3. `python src/ranker.py "$CATEGORIES" "$YEAR_MONTH"`
-4. `python src/site_builder.py` — writes `site/public/data/<run_id>/papers.json`, updates `index.json`
+3. `python src/ranker.py "$CATEGORIES" "$YEAR_MONTH"` (reads keyword env vars)
+4. `python src/site_builder.py` — writes `site/public/data/<dataset_key>/papers.json`, updates `index.json`
 5. Commit + push data
-6. Build React app (`npm ci && npm run build`)
-7. Deploy to GitHub Pages
 
 ### update.yml — Re-score Existing Rankings
 
@@ -59,7 +84,23 @@ output/            # Generated results per run (local only)
 3. Run update (batch via `run_updates.py` or single via `ranker.py --update`)
 4. `site_builder.py` rebuilds site JSON — marks newly discovered papers with `New: true`
 5. Commit + push data
-6. Build React app, deploy to GitHub Pages
+
+### deploy.yml — Site Deployment
+
+| Property | Value |
+|----------|-------|
+| **Trigger** | On push to `main`, or after `Generate Rankings`, `Update Rankings`, or `Save Analysis` completes |
+| **What it does** | Builds React app (`npm ci && npm run build`), deploys to GitHub Pages |
+
+Env vars injected at build time: `VITE_GITHUB_REPO`, `VITE_GITHUB_PAT`, `VITE_OPENAI_API_KEY`.
+
+### save-analysis.yml — Persist AI Analysis
+
+| Property | Value |
+|----------|-------|
+| **Trigger** | `workflow_dispatch` from frontend after AI analysis completes |
+| **Inputs** | `arxiv_id`, `paper_title`, `summary` |
+| **What it does** | Writes `site/public/data/summaries/{arxiv_id}.json`, commits + pushes |
 
 ### Rate Limiting
 
@@ -69,13 +110,12 @@ output/            # Generated results per run (local only)
 
 | Secret | Where | Purpose |
 |--------|-------|---------|
-| `S2_API_KEY` | GitHub repo → Settings → Secrets → Actions | Semantic Scholar API key (higher rate limits) |
+| `S2_API_KEY` | GitHub repo → Settings → Secrets → Actions | **Required.** Semantic Scholar API key. Ranker raises `RuntimeError` if missing. |
+| `VITE_OPENAI_API_KEY` | GitHub repo → Settings → Secrets → Actions | OpenAI API key for client-side paper analysis |
+| `VITE_GITHUB_PAT` | GitHub repo → Settings → Secrets → Actions | GitHub PAT for workflow dispatch from UI |
 | `VITE_GITHUB_REPO` | Injected at build time via `${{ github.repository }}` | Used by frontend to trigger workflows |
-| GitHub PAT | User's browser `localStorage` (entered via Settings modal) | Triggers `workflow_dispatch` from the UI |
 
-### Deployment
-
-GitHub Pages, source: GitHub Actions. Both workflows upload `site/dist` as a Pages artifact and deploy automatically.
+---
 
 ## Entry Points
 
@@ -84,6 +124,14 @@ GitHub Pages, source: GitHub Actions. Both workflows upload `site/dist` as a Pag
 python src/ranker.py cs.MA,cs.CL 2026-02
 ```
 Flow: `main()` → `fetch_category()` per category → `merge_papers()` → `enrich_papers()` → `rank_all()` → `export_papers()`
+
+### New Mode with Custom Keywords
+```bash
+TITLE_KEYWORDS='{"multi-agent": 50, "llm": 30}' \
+ABSTRACT_KEYWORDS='{"agent": 10}' \
+python src/ranker.py cs.MA,cs.CL 2026-02
+```
+Custom keywords override the hardcoded defaults entirely when provided via env vars.
 
 ### Update Mode
 ```bash
@@ -128,13 +176,7 @@ cache.save()
 
 **Storage:** `.arxiv_cache/s2_data.json`
 
-**Format:**
-```json
-{
-  "2602.12345": { "citationCount": 5, "authors": [...], ... },
-  ...
-}
-```
+**Cache poisoning prevention:** Empty dicts `{}` (from failed lookups) are never written to cache. On read, empty cached entries are skipped — the paper is re-fetched from S2 instead.
 
 ---
 
@@ -148,18 +190,9 @@ enricher.enrich_papers(papers, force_refresh=False) → papers
 
 **API:** `POST https://api.semanticscholar.org/graph/v1/paper/batch`
 
-**Request body:**
-```json
-{
-  "ids": ["arXiv:2602.12345", "arXiv:2602.67890", ...]
-}
-```
+**Auth:** **Required.** Reads `S2_API_KEY` from env. Raises `RuntimeError` immediately if missing. No unauthenticated fallback.
 
-**Query params:** `fields=publicationVenue,citationCount,influentialCitationCount,authors.hIndex,abstract`
-
-**Auth:** Optional. Set `S2_API_KEY` env var for higher rate limits.
-
-**Rate limiting:** Exponential backoff on 429. Retries indefinitely.
+**Rate limiting:** Exponential backoff on 429/timeout. Capped at `MAX_RETRIES=5`. Raises `RuntimeError` if retries exhausted.
 
 **Methods:**
 
@@ -206,10 +239,12 @@ papers = retriever.fetch_papers() → list[dict]
 Applies scoring filters to papers.
 
 ```python
-ranker = PaperRanker(update_mode=False)
+ranker = PaperRanker(update_mode=False, title_keywords=None, abstract_keywords=None)
 ranker.add_papers(papers)
 ranked = ranker.rank_all() → list[dict]
 ```
+
+Constructor accepts optional `title_keywords` and `abstract_keywords` dicts (`{term: points}`). When provided, they override the class-level `TITLE_KEYWORDS` and `ABSTRACT_KEYWORDS` defaults. When `None`, the hardcoded defaults are used.
 
 **Filters (see ARCHITECTURE.md for weights/formulas):**
 
@@ -263,7 +298,72 @@ Loads `papers_raw.json`, re-fetches S2 data with `force_refresh=True`, re-ranks 
 ```python
 parse_args() → dict
 ```
-Parses `sys.argv`. Returns `{'categories': list, 'year_month': str, 'update_path': str|None}`. Categories can be comma-separated.
+Parses `sys.argv` for positional args (categories, year_month, `--update`). Also reads `TITLE_KEYWORDS` and `ABSTRACT_KEYWORDS` from environment variables — if set, parses them as JSON dicts and includes them in the returned args.
+
+---
+
+## Frontend
+
+### Routing
+
+The frontend is a single-page application with hash-based routing for the analysis view.
+
+| Hash | View |
+|------|------|
+| (empty) | Homepage — run cards, filters, generate panel |
+| `#analyze/{datasetKey}/{arxivId}` | Paper analysis page |
+
+`datasetKey` is the folder name derived from categories + date (e.g., `csMA_csCL_csAI_2026_02`). `arxivId` is the arXiv paper ID.
+
+**New-tab behavior:** Clicking "Analyze" on any paper calls `window.open('#analyze/{datasetKey}/{arxivId}', '_blank')`. The new tab boots the app, reads the hash, fetches `data/{datasetKey}/papers.json`, finds the paper by arXiv ID, and renders the analysis view. The original tab is unaffected.
+
+`App.tsx` listens for `hashchange` events, so browser back/forward navigation works.
+
+### Caching Strategy
+
+All `fetch()` calls use `cache: 'no-store'` to bypass the browser HTTP cache entirely. This ensures:
+- Workflow status polls always hit GitHub's API
+- Data files reflect the latest deployment
+- No stale responses after deploys
+
+`index.html` includes `Cache-Control: no-cache, no-store, must-revalidate` meta tags to prevent HTML caching.
+
+### AI Analysis Flow
+
+1. `PaperAnalysisView` mounts
+2. Calls `fetchSummary(arxivId)` — checks for cached analysis at `data/summaries/{arxivId}.json`
+3. If cached → render immediately
+4. If not cached → calls `analyzeWithAI()` (OpenAI API from browser), then `saveSummaryToRepo()` triggers `save-analysis.yml` to persist it
+5. Supports regeneration with optional feedback text
+
+### Generate Panel
+
+The header "New Ranking" button opens a slide-down panel with:
+- Period selector (month picker)
+- Categories input
+- Run button
+- Collapsible "View Ranking Terms" section with editable keyword chips for title and abstract keywords, including add/remove/reset
+
+Keywords edited in the UI are serialized as JSON and passed as workflow dispatch inputs. The ranker reads them from environment variables and uses them to override the hardcoded defaults.
+
+### Dataset Structure
+
+Each generate creates a folder under `site/public/data/`:
+
+```
+data/
+  index.json                          # Manifest of all datasets
+  summaries/                          # Persisted AI analyses
+    2401.12345.json
+  csMA_csCL_csAI_2026_02/
+    papers.json                       # Lightweight paper data for frontend
+    papers_raw.json                   # Full ranker output
+  csMA_csCL_csAI_2026_01/
+    papers.json
+    papers_raw.json
+```
+
+Datasets accumulate over time. They are never deleted — generating for the same date overwrites that dataset's folder.
 
 ---
 
@@ -329,7 +429,7 @@ Prints stats dict to stdout.
 ### New Mode
 
 ```
-parse_args()
+parse_args() + env vars (TITLE_KEYWORDS, ABSTRACT_KEYWORDS)
     ↓
 for category in categories:
     fetch_category()
@@ -342,7 +442,7 @@ merge_papers(all_papers)
 SemanticScholarEnricher.enrich_papers(unique_papers)
     → mutates papers with S2 data (single pass)
     ↓
-PaperRanker.rank_all()
+PaperRanker(title_keywords=..., abstract_keywords=...).rank_all()
     → mutates papers with Score, Factors, Tier
     ↓
 sort by Score desc
@@ -395,7 +495,9 @@ After full pipeline, each paper dict contains:
 
 | Var | Required | Description |
 |-----|----------|-------------|
-| `S2_API_KEY` | No | Semantic Scholar API key. Increases rate limit. |
+| `S2_API_KEY` | **Yes** | Semantic Scholar API key. Ranker refuses to run without it. |
+| `TITLE_KEYWORDS` | No | JSON dict overriding default title keywords. Set by workflow from UI. |
+| `ABSTRACT_KEYWORDS` | No | JSON dict overriding default abstract keywords. Set by workflow from UI. |
 
 ---
 
@@ -403,17 +505,20 @@ After full pipeline, each paper dict contains:
 
 | Mode | Cache Read | Cache Write |
 |------|------------|-------------|
-| New | Yes | Yes |
+| New | Yes (skips empty entries) | Yes (only successful lookups) |
 | Update | No (`force_refresh=True`) | Yes (overwrites) |
 
 Cache path: `.arxiv_cache/s2_data.json`
+
+Empty dicts from failed S2 lookups are never written to cache. On read, entries that are empty `{}` are skipped and the paper is re-fetched.
 
 ---
 
 ## Error Handling
 
+- **S2_API_KEY missing:** `RuntimeError` immediately. No unauthenticated fallback.
 - **arXiv 4xx/5xx:** Returns empty list, prints error.
-- **S2 429:** Exponential backoff, retries indefinitely.
-- **S2 timeout:** Exponential backoff, retries.
-- **S2 paper not found:** Stores empty dict `{}` in cache, sets defaults.
+- **S2 429 (rate limited):** Exponential backoff, max 5 retries. `RuntimeError` if exhausted.
+- **S2 timeout:** Exponential backoff, max 5 retries. `RuntimeError` if exhausted.
+- **S2 paper not found:** Sets default zeros, does not cache the empty result.
 - **Parse failure:** Skips paper, prints warning, continues.

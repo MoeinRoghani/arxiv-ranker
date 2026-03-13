@@ -4,16 +4,16 @@ import { tierClass, tierLabel, truncateAuthors, shortVenue } from '../lib/format
 
 interface Props {
   papers: Paper[];
+  datasetKey: string;
   tierFilter: string | null;
   categoryFilter: string | null;
   venueFilter?: string | null;
   searchQuery?: string;
   onViewAll?: () => void;
-  onAnalyze?: (paper: Paper) => void;
   showAll?: boolean;
 }
 
-export default function PapersTable({ papers, tierFilter, categoryFilter, venueFilter, searchQuery, onViewAll, onAnalyze, showAll = false }: Props) {
+export default function PapersTable({ papers, datasetKey, tierFilter, categoryFilter, venueFilter, searchQuery, onViewAll, showAll = false }: Props) {
   const filtered = useMemo(() => {
     let result = papers;
 
@@ -84,7 +84,7 @@ export default function PapersTable({ papers, tierFilter, categoryFilter, venueF
         </thead>
         <tbody>
           {visible.map((p, i) => (
-            <PaperRow key={p.arXiv_ID} paper={p} rank={i + 1} onAnalyze={onAnalyze} />
+            <PaperRow key={p.arXiv_ID} paper={p} rank={i + 1} datasetKey={datasetKey} />
           ))}
         </tbody>
       </table>
@@ -103,7 +103,7 @@ function parseFactor(f: string): { name: string; pts: string } | null {
   return m ? { name: m[1].toLowerCase(), pts: m[2] } : null;
 }
 
-function PaperRow({ paper, rank, onAnalyze }: { paper: Paper; rank: number; onAnalyze?: (paper: Paper) => void }) {
+function PaperRow({ paper, rank, datasetKey }: { paper: Paper; rank: number; datasetKey: string }) {
   const tc = tierClass(paper.Tier);
   const factors = Array.isArray(paper.Factors)
     ? paper.Factors.slice(0, 4).map(parseFactor).filter(Boolean) as { name: string; pts: string }[]
@@ -143,19 +143,17 @@ function PaperRow({ paper, rank, onAnalyze }: { paper: Paper; rank: number; onAn
       <td className="paper-venue" title={paper.Venue || ''}>{shortVenue(paper.Venue)}</td>
       <td className="paper-authors"><div className="authors-clamp">{truncateAuthors(paper.Authors, 80)}</div></td>
       <td className="paper-actions">
-        {onAnalyze && (
-          <button
-            className="analyze-btn"
-            onClick={() => onAnalyze(paper)}
-            title="AI Analysis"
-          >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-            Analyze
-          </button>
-        )}
+        <button
+          className="analyze-btn"
+          onClick={() => window.open(`#analyze/${datasetKey}/${paper.arXiv_ID}`, '_blank')}
+          title="AI Analysis"
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          Analyze
+        </button>
       </td>
     </tr>
   );

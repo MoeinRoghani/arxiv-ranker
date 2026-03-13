@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import type { RunEntry, Paper } from '../lib/types';
+import type { RunEntry } from '../lib/types';
 import { fetchPapers } from '../lib/api';
 import { formatYearMonth, formatDate } from '../lib/format';
 import PapersTable from './PapersTable';
@@ -7,14 +7,13 @@ import ConfirmDialog from './ConfirmDialog';
 
 interface Props {
   entry: RunEntry;
-  onUpdate: (runId: string) => void;
+  onUpdate: (datasetKey: string) => void;
   tierFilter: string | null;
   categoryFilter: string | null;
-  onViewAll: (runId: string) => void;
-  onAnalyze: (paper: Paper) => void;
+  onViewAll: (datasetKey: string) => void;
 }
 
-export default function RunCard({ entry, onUpdate, tierFilter, categoryFilter, onViewAll, onAnalyze }: Props) {
+export default function RunCard({ entry, onUpdate, tierFilter, categoryFilter, onViewAll }: Props) {
   const [open, setOpen] = useState(false);
   const [papers, setPapers] = useState<Paper[] | null>(null);
   const [loading, setLoading] = useState(false);
@@ -117,10 +116,10 @@ export default function RunCard({ entry, onUpdate, tierFilter, categoryFilter, o
           {papers && (
             <PapersTable
               papers={papers}
+              datasetKey={entry.id}
               tierFilter={tierFilter}
               categoryFilter={categoryFilter}
               onViewAll={() => onViewAll(entry.id)}
-              onAnalyze={onAnalyze}
             />
           )}
           {!loading && papers && papers.length === 0 && (

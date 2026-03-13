@@ -135,9 +135,9 @@ export default function GenerateForm({ entries, open, onGenerate }: Props) {
 
     const catStr = categories.split(',').map(c => c.trim().replace('.', '')).join('_');
     const ymStr = yearMonth.replace('-', '_');
-    const runId = `${catStr}_${ymStr}`;
+    const datasetKey = `${catStr}_${ymStr}`;
 
-    if (entries.some(e => e.id === runId)) {
+    if (entries.some(e => e.id === datasetKey)) {
       setConfirmOpen(true);
       return;
     }

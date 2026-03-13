@@ -10,17 +10,19 @@ arXiv (HTML scrape per category/month)
   → Scoring (Filters A-F)
   → Tier assignment
   → Export (CSV per tier + JSON + summary)
+  → site_builder.py → site JSON + index manifest
+  → Deploy to GitHub Pages
 ```
 
 Two modes:
-- **New**: Filters A-D active. Citations are ~0 for current-month papers.
+- **New**: Filters A-D active. Citations are ~0 for current-month papers. Accepts custom keyword overrides via environment variables.
 - **Update**: Filters A-F active. Re-fetches S2 data (bypasses cache) to get accumulated citations.
 
 ## Data Sources
 
 **arXiv** — HTML listing at `https://arxiv.org/list/{category}/{YYYY-MM}?show=2000`. Parsed with BeautifulSoup. Extracts `Title`, `Authors`, `Subjects` from `dt`/`dd` tag pairs.
 
-**Semantic Scholar** — `POST /graph/v1/paper/batch` with `arXiv:{id}` identifiers, up to 500 per request. Fields: `publicationVenue`, `abstract`, `citationCount`, `influentialCitationCount`, `authors.hIndex`. Responses cached in `.arxiv_cache/s2_data.json`. API key via `S2_API_KEY` env var (optional).
+**Semantic Scholar** — `POST /graph/v1/paper/batch` with `arXiv:{id}` identifiers, up to 500 per request. Fields: `publicationVenue`, `abstract`, `citationCount`, `influentialCitationCount`, `authors.hIndex`. Responses cached in `.arxiv_cache/s2_data.json`. **Requires `S2_API_KEY` env var** — ranker raises `RuntimeError` if missing. Max 5 retries on rate limit/timeout.
 
 ## Scoring
 
@@ -54,16 +56,20 @@ Downgraded (40-50 pts): workshops, findings
 
 Source: `Title`. Cumulative across all matches, capped at 70.
 
-Dictionary-based scoring (`TITLE_KEYWORDS`):
+Default dictionary (`TITLE_KEYWORDS`):
 
 | Weight | Keywords |
 |--------|----------|
 | +50 | `multi-agent`, `multiagent`, `agent coordination`, `agent-to-agent`, `llm agent`, `agentic`, `multi agent`, `autonomous agent` |
 | +25 | `communication`, `collaboration`, `cooperation`, `orchestration`, `framework`, `reasoning`, `planning`, `coordination`, `negotiation`, `benchmark`, `survey` |
 
+**Custom override:** Set `TITLE_KEYWORDS` env var as a JSON dict (`{"keyword": points, ...}`) to replace the defaults entirely. The UI keyword editor passes custom keywords through workflow dispatch.
+
 ### Filter C — Abstract Keywords (cap: 60)
 
 Source: `Abstract` (requires length > 50 chars). Cumulative, capped at 60.
+
+Default dictionary (`ABSTRACT_KEYWORDS`):
 
 | Weight | Keywords |
 |--------|----------|
@@ -71,6 +77,8 @@ Source: `Abstract` (requires length > 50 chars). Cumulative, capped at 60.
 | +20 | `emergent` |
 | +15 | `network architecture`, `large language model`, `coordination`, `cooperation`, `decentralized` |
 | +10 | `agent`, `distributed` |
+
+**Custom override:** Set `ABSTRACT_KEYWORDS` env var as a JSON dict to replace the defaults entirely.
 
 ### Filter D — Author hIndex (max: 35)
 
@@ -134,7 +142,7 @@ Papers appearing in multiple categories are merged by `arXiv_ID`. All source cat
 
 ## Caching
 
-S2 responses stored in `.arxiv_cache/s2_data.json` as `{arxiv_id: s2_response}`. New mode reads from cache if available. Update mode bypasses cache (`force_refresh=True`) and overwrites entries with fresh data.
+S2 responses stored in `.arxiv_cache/s2_data.json` as `{arxiv_id: s2_response}`. New mode reads from cache if available (skips empty entries). Update mode bypasses cache (`force_refresh=True`) and overwrites entries with fresh data. Failed S2 lookups are never cached to prevent cache poisoning.
 
 ## Output Structure
 
@@ -149,3 +157,28 @@ output/<categories>_<YYYY>_<MM>/
 ```
 
 `papers_raw.json` is the input for `--update`.
+
+## Site Data Structure
+
+```
+site/public/data/
+  index.json                        # Manifest of all datasets
+  summaries/{arxiv_id}.json         # Persisted AI analyses
+  csMA_csCL_csAI_2026_02/
+    papers.json                     # Lightweight paper data for frontend
+    papers_raw.json                 # Full ranker output
+```
+
+Each generate creates a dataset folder named `{categories}_{YYYY}_{MM}`. Generating for the same date+categories overwrites the existing dataset. Datasets from different months accumulate and are never deleted.
+
+## Frontend Architecture
+
+**Tech:** React + Vite, deployed as a static SPA on GitHub Pages.
+
+**Routing:** Hash-based. The only routed view is paper analysis: `#analyze/{datasetKey}/{arxivId}`. All other navigation is state-driven within the same page.
+
+**New-tab analysis:** Clicking "Analyze" opens `window.open('#analyze/...', '_blank')`. The new tab boots the app, parses the hash, fetches the dataset's `papers.json`, locates the paper, and renders the analysis view independently.
+
+**Workflow tracking:** `App.tsx` polls the GitHub Actions API every 5s (active workflows) or 15s (idle). All fetch calls use `cache: 'no-store'` to prevent stale responses.
+
+**AI analysis:** Client-side OpenAI API call. Results are persisted to the repo via the `save-analysis.yml` workflow dispatch. Subsequent visits load the cached analysis from `data/summaries/`.

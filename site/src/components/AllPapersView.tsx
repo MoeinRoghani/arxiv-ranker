@@ -4,14 +4,13 @@ import { formatYearMonth, shortVenue } from '../lib/format';
 import PapersTable from './PapersTable';
 
 interface Props {
-  runId: string;
+  datasetKey: string;
   entry: RunEntry | null;
   onBack: () => void;
-  fetchPapers: (runId: string) => Promise<Paper[]>;
-  onAnalyze?: (paper: Paper) => void;
+  fetchPapers: (datasetKey: string) => Promise<Paper[]>;
 }
 
-export default function AllPapersView({ runId, entry, onBack, fetchPapers, onAnalyze }: Props) {
+export default function AllPapersView({ datasetKey, entry, onBack, fetchPapers }: Props) {
   const [papers, setPapers] = useState<Paper[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeTier, setActiveTier] = useState<string | null>(null);
@@ -22,11 +21,11 @@ export default function AllPapersView({ runId, entry, onBack, fetchPapers, onAna
 
   useEffect(() => {
     setLoading(true);
-    fetchPapers(runId).then((data) => {
+    fetchPapers(datasetKey).then((data) => {
       setPapers(data);
       setLoading(false);
     });
-  }, [runId, fetchPapers]);
+  }, [datasetKey, fetchPapers]);
 
   const categories = useMemo(() => {
     if (!papers) return [];
@@ -69,7 +68,7 @@ export default function AllPapersView({ runId, entry, onBack, fetchPapers, onAna
         <div className="container header-inner">
           <button className="back-btn" onClick={onBack}>← Back</button>
           <h1>
-            {entry ? formatYearMonth(entry.year_month) : runId}
+            {entry ? formatYearMonth(entry.year_month) : datasetKey}
             {entry && (
               <span className="all-papers-meta">
                 {entry.paper_count} papers · {entry.categories.join(', ')}
@@ -153,11 +152,11 @@ export default function AllPapersView({ runId, entry, onBack, fetchPapers, onAna
         {sortedPapers && (
           <PapersTable
             papers={sortedPapers}
+            datasetKey={datasetKey}
             tierFilter={activeTier}
             categoryFilter={activeCategory}
             venueFilter={activeVenue}
             searchQuery={search}
-            onAnalyze={onAnalyze}
             showAll
           />
         )}

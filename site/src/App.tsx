@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import type { RunEntry, Paper } from './lib/types';
+import type { RunEntry } from './lib/types';
 import { fetchIndex, triggerWorkflow, fetchWorkflowRuns, fetchPapers } from './lib/api';
 import GenerateForm from './components/GenerateForm';
 import FilterBar from './components/FilterBar';
@@ -20,10 +20,25 @@ export default function App() {
   const [activeTier, setActiveTier] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [sort, setSort] = useState<SortMode>('newest');
-  const [viewAllRunId, setViewAllRunId] = useState<string | null>(null);
-  const [analyzePaper, setAnalyzePaper] = useState<Paper | null>(null);
+  const [viewAllDatasetKey, setViewAllDatasetKey] = useState<string | null>(null);
+  const [analyzeRoute, setAnalyzeRoute] = useState<{ datasetKey: string; arxivId: string } | null>(null);
   const [genOpen, setGenOpen] = useState(false);
   const dismissed = useRef<Set<number>>(new Set());
+
+  useEffect(() => {
+    function handleHash() {
+      const hash = window.location.hash;
+      const match = hash.match(/^#analyze\/([^/]+)\/(.+)$/);
+      if (match) {
+        setAnalyzeRoute({ datasetKey: match[1], arxivId: match[2] });
+      } else {
+        setAnalyzeRoute(null);
+      }
+    }
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   useEffect(() => {
     fetchIndex().then(setEntries);
@@ -104,33 +119,36 @@ export default function App() {
     }
   }
 
-  async function handleUpdate(runId: string) {
-    const ok = await triggerWorkflow('update.yml', { run_id: runId });
+  async function handleUpdate(datasetKey: string) {
+    const ok = await triggerWorkflow('update.yml', { run_id: datasetKey });
     if (ok) {
-      showToast(`Update triggered for ${runId}.`);
+      showToast(`Update triggered for ${datasetKey}.`);
     } else {
       showToast('Failed to trigger workflow. Check PAT configuration.', true);
     }
   }
 
-  if (analyzePaper) {
+  if (analyzeRoute) {
     return (
       <PaperAnalysisView
-        paper={analyzePaper}
-        onBack={() => setAnalyzePaper(null)}
+        datasetKey={analyzeRoute.datasetKey}
+        arxivId={analyzeRoute.arxivId}
+        onBack={() => {
+          window.location.hash = '';
+          setAnalyzeRoute(null);
+        }}
       />
     );
   }
 
-  if (viewAllRunId) {
-    const entry = entries.find(e => e.id === viewAllRunId);
+  if (viewAllDatasetKey) {
+    const entry = entries.find(e => e.id === viewAllDatasetKey);
     return (
       <AllPapersView
-        runId={viewAllRunId}
+        datasetKey={viewAllDatasetKey}
         entry={entry ?? null}
-        onBack={() => setViewAllRunId(null)}
+        onBack={() => setViewAllDatasetKey(null)}
         fetchPapers={fetchPapers}
-        onAnalyze={setAnalyzePaper}
       />
     );
   }
@@ -224,8 +242,7 @@ export default function App() {
             onUpdate={handleUpdate}
             tierFilter={activeTier}
             categoryFilter={activeCategory}
-            onViewAll={(runId) => setViewAllRunId(runId)}
-            onAnalyze={setAnalyzePaper}
+            onViewAll={(datasetKey) => setViewAllDatasetKey(datasetKey)}
           />
         ))}
       </main>
