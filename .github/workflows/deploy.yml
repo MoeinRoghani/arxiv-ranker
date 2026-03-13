@@ -31,7 +31,7 @@ jobs:
         env:
           VITE_GITHUB_REPO: ${{ github.repository }}
           VITE_GITHUB_PAT: ${{ secrets.VITE_GITHUB_PAT }}
-          VITE_OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
         run: |
           npm ci
           npm run build

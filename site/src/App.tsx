@@ -122,16 +122,13 @@ export default function App() {
   if (viewAllRunId) {
     const entry = entries.find(e => e.id === viewAllRunId);
     return (
-      <>
-        <AllPapersView
-          runId={viewAllRunId}
-          entry={entry ?? null}
-          onBack={() => setViewAllRunId(null)}
-          fetchPapers={fetchPapers}
-          onAnalyze={setAnalyzePaper}
-        />
-        <WorkflowTracker runs={trackedRuns} onDismiss={handleDismissRun} />
-      </>
+      <AllPapersView
+        runId={viewAllRunId}
+        entry={entry ?? null}
+        onBack={() => setViewAllRunId(null)}
+        fetchPapers={fetchPapers}
+        onAnalyze={setAnalyzePaper}
+      />
     );
   }
 

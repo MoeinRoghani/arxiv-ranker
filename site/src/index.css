@@ -572,14 +572,6 @@ header h1 {
 }
 .papers-table tbody tr:hover td { background: var(--surface-hover); }
 
-.papers-table tr.landmark-row td {
-  background: var(--landmark-bg);
-}
-
-.papers-table tr.landmark-row:hover td {
-  background: rgba(244, 63, 94, 0.12);
-}
-
 .paper-rank {
   font-size: 12px;
   color: var(--text-muted);
