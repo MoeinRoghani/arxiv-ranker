@@ -23,6 +23,30 @@
     "Tier": "\ud83d\udd25 TIER-1 LANDMARK"
   },
   {
+    "arXiv_ID": "2511.01846",
+    "Title": "Towards Robust Mathematical Reasoning",
+    "Authors": "Thang Luong, Dawsen Hwang, Hoang H. Nguyen, Golnaz Ghiasi, Yuri Chervonyi, Insuk Seo, Junsu Kim, Garrett Bingham, Jonathan Lee, Swaroop Mishra, Alex Zhai, Clara Huiyi Hu, Henryk Michalewski, Jimin Kim, Jeonghyun Ahn, Junhwi Bae, Xingyou Song, Trieu H. Trinh, Quoc V. Le, Junehyuk Jung",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
+    "Abstract": "Finding the right north-star metrics is highly critical for advancing the mathematical reasoning capabilities of foundation models, especially given that existing evaluations are either too easy or only focus on getting correct short answers. To address these issues, we present IMO-Bench, a suite of advanced reasoning benchmarks, vetted by a panel of top specialists and that specifically targets the level of the International Mathematical Olympiad (IMO), the most prestigious venue for young mathematicians. IMO-AnswerBench first tests models on 400 diverse Olympiad problems with verifiable short answers. IMO-Proof Bench is the next-level evaluation for proof-writing capabilities, which includes both basic and advanced IMO level problems as well as detailed grading guidelines to facilitate automatic grading. These benchmarks played a crucial role in our historic achievement of the gold-level performance at IMO 2025 with Gemini Deep Think (Luong and Lockhart, 2025). Our model achieved 80.0% on IMO-AnswerBench and 65.7% on the advanced IMO-Proof Bench, surpassing the best non-Gemini models by large margins of 6.9% and 42.4% respectively. We also showed that autograders built with Gemini reasoning correlate well with human evaluations and construct IMO-GradingBench, with 1000 human gradings on proofs, to enable further progress in automatic evaluation of long-form answers. We hope that IMO-Bench will help the community towards advancing robust mathematical reasoning and release it at https://imobench.github.io/.",
+    "Venue": "Empir Method Nat Lang Process, Empirical Methods in Natural Language Processing, Conf Empir Method Nat Lang Process, EMNLP",
+    "Citation_Count": 24,
+    "Influential_Citations": 8,
+    "Max_Author_hIndex": 25,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 156,
+    "Factors": [
+      "VENUE(+100:emnlp)",
+      "TITLE(+25:reasoning)",
+      "HINDEX(+1:h=25)",
+      "INFLUENTIAL(+30:33%)"
+    ],
+    "Tier": "\ud83d\udd25 TIER-1 LANDMARK"
+  },
+  {
     "arXiv_ID": "2511.02469",
     "Title": "Modeling Hawkish-Dovish Latent Beliefs in Multi-Agent Debate-Based LLMs for Monetary Policy Decision Classification",
     "Authors": "Kaito Takano, Masanori Hirano, Kei Nakagawa",
@@ -175,6 +199,28 @@
     "Factors": [
       "VENUE(+100:science)",
       "ABSTRACT(+35)"
+    ],
+    "Tier": "\u2b50 TIER-2 IMPORTANT"
+  },
+  {
+    "arXiv_ID": "2511.05396",
+    "Title": "Sample Complexity of Distributionally Robust Off-Dynamics Reinforcement Learning with Online Interaction",
+    "Authors": "Yiting He, Zhishuai Liu, Weixin Wang, Pan Xu",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Robotics (cs.RO); Machine Learning (stat.ML)",
+    "Abstract": "Off-dynamics reinforcement learning (RL), where training and deployment transition dynamics are different, can be formulated as learning in a robust Markov decision process (RMDP) where uncertainties in transition dynamics are imposed. Existing literature mostly assumes access to generative models allowing arbitrary state-action queries or pre-collected datasets with a good state coverage of the deployment environment, bypassing the challenge of exploration. In this work, we study a more realistic and challenging setting where the agent is limited to online interaction with the training environment. To capture the intrinsic difficulty of exploration in online RMDPs, we introduce the supremal visitation ratio, a novel quantity that measures the mismatch between the training dynamics and the deployment dynamics. We show that if this ratio is unbounded, online learning becomes exponentially hard. We propose the first computationally efficient algorithm that achieves sublinear regret in online RMDPs with $f$-divergence based transition uncertainties. We also establish matching regret lower bounds, demonstrating that our algorithm achieves optimal dependence on both the supremal visitation ratio and the number of interaction episodes. Finally, we validate our theoretical results through comprehensive numerical experiments.",
+    "Venue": "ICML, Int Conf Mach Learn",
+    "Citation_Count": 11,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 6,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 135,
+    "Factors": [
+      "VENUE(+120:icml)",
+      "ABSTRACT(+10)",
+      "INFLUENTIAL(+5:9%)"
     ],
     "Tier": "\u2b50 TIER-2 IMPORTANT"
   },
@@ -460,27 +506,6 @@
     "Tier": "\u2b50 TIER-2 IMPORTANT"
   },
   {
-    "arXiv_ID": "2511.05396",
-    "Title": "Sample Complexity of Distributionally Robust Off-Dynamics Reinforcement Learning with Online Interaction",
-    "Authors": "Yiting He, Zhishuai Liu, Weixin Wang, Pan Xu",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Robotics (cs.RO); Machine Learning (stat.ML)",
-    "Abstract": "Off-dynamics reinforcement learning (RL), where training and deployment transition dynamics are different, can be formulated as learning in a robust Markov decision process (RMDP) where uncertainties in transition dynamics are imposed. Existing literature mostly assumes access to generative models allowing arbitrary state-action queries or pre-collected datasets with a good state coverage of the deployment environment, bypassing the challenge of exploration. In this work, we study a more realistic and challenging setting where the agent is limited to online interaction with the training environment. To capture the intrinsic difficulty of exploration in online RMDPs, we introduce the supremal visitation ratio, a novel quantity that measures the mismatch between the training dynamics and the deployment dynamics. We show that if this ratio is unbounded, online learning becomes exponentially hard. We propose the first computationally efficient algorithm that achieves sublinear regret in online RMDPs with $f$-divergence based transition uncertainties. We also establish matching regret lower bounds, demonstrating that our algorithm achieves optimal dependence on both the supremal visitation ratio and the number of interaction episodes. Finally, we validate our theoretical results through comprehensive numerical experiments.",
-    "Venue": "ICML, Int Conf Mach Learn",
-    "Citation_Count": 11,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 6,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 130,
-    "Factors": [
-      "VENUE(+120:icml)",
-      "ABSTRACT(+10)"
-    ],
-    "Tier": "\u2b50 TIER-2 IMPORTANT"
-  },
-  {
     "arXiv_ID": "2511.04700",
     "Title": "Separate the Wheat from the Chaff: Winnowing Down Divergent Views in Retrieval Augmented Generation",
     "Authors": "Song Wang, Zihan Chen, Peng Wang, Zhepei Wei, Zhen Tan, Yu Meng, Cong Shen, Jundong Li",
@@ -500,29 +525,6 @@
       "VENUE(+100:emnlp)",
       "ABSTRACT(+25)",
       "HINDEX(+3:h=38)"
-    ],
-    "Tier": "\u2b50 TIER-2 IMPORTANT"
-  },
-  {
-    "arXiv_ID": "2511.01846",
-    "Title": "Towards Robust Mathematical Reasoning",
-    "Authors": "Thang Luong, Dawsen Hwang, Hoang H. Nguyen, Golnaz Ghiasi, Yuri Chervonyi, Insuk Seo, Junsu Kim, Garrett Bingham, Jonathan Lee, Swaroop Mishra, Alex Zhai, Clara Huiyi Hu, Henryk Michalewski, Jimin Kim, Jeonghyun Ahn, Junhwi Bae, Xingyou Song, Trieu H. Trinh, Quoc V. Le, Junehyuk Jung",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
-    "Abstract": "Finding the right north-star metrics is highly critical for advancing the mathematical reasoning capabilities of foundation models, especially given that existing evaluations are either too easy or only focus on getting correct short answers. To address these issues, we present IMO-Bench, a suite of advanced reasoning benchmarks, vetted by a panel of top specialists and that specifically targets the level of the International Mathematical Olympiad (IMO), the most prestigious venue for young mathematicians. IMO-AnswerBench first tests models on 400 diverse Olympiad problems with verifiable short answers. IMO-Proof Bench is the next-level evaluation for proof-writing capabilities, which includes both basic and advanced IMO level problems as well as detailed grading guidelines to facilitate automatic grading. These benchmarks played a crucial role in our historic achievement of the gold-level performance at IMO 2025 with Gemini Deep Think (Luong and Lockhart, 2025). Our model achieved 80.0% on IMO-AnswerBench and 65.7% on the advanced IMO-Proof Bench, surpassing the best non-Gemini models by large margins of 6.9% and 42.4% respectively. We also showed that autograders built with Gemini reasoning correlate well with human evaluations and construct IMO-GradingBench, with 1000 human gradings on proofs, to enable further progress in automatic evaluation of long-form answers. We hope that IMO-Bench will help the community towards advancing robust mathematical reasoning and release it at https://imobench.github.io/.",
-    "Venue": "Empir Method Nat Lang Process, Empirical Methods in Natural Language Processing, Conf Empir Method Nat Lang Process, EMNLP",
-    "Citation_Count": 24,
-    "Influential_Citations": 8,
-    "Max_Author_hIndex": 25,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 126,
-    "Factors": [
-      "VENUE(+100:emnlp)",
-      "TITLE(+25:reasoning)",
-      "HINDEX(+1:h=25)"
     ],
     "Tier": "\u2b50 TIER-2 IMPORTANT"
   },
@@ -4681,6 +4683,30 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.02208",
+    "Title": "Training Proactive and Personalized LLM Agents",
+    "Authors": "Weiwei Sun, Xuhui Zhou, Weihua Du, Xingyao Wang, Sean Welleck, Graham Neubig, Maarten Sap, Yiming Yang",
+    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
+    "Abstract": "While existing work focuses primarily on task success, we argue that effective real-world agents require optimizing three dimensions: productivity (task completion), proactivity (asking essential questions), and personalization (adapting to diverse user preferences). We introduce UserVille, an interactive environment with LLM-based user simulators enabling diverse, configurable user preferences. Leveraging UserVille, we introduce PPP, a multi-objective reinforcement learning approach that jointly optimizes all three dimensions: Productivity, Proactivity, and Personalization. Experiments on software engineering and deep research tasks show that agents trained with PPP achieve substantial improvements over strong baselines such as GPT-5 (+21.6 on average), demonstrating the ability to ask strategic clarifying questions, adapt to unseen user preferences, and improve task success through better interaction. This work demonstrates that explicitly optimizing for user-centered interaction is critical for building practical and effective AI agents.",
+    "Venue": "ArXiv",
+    "Citation_Count": 12,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 34,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 92,
+    "Factors": [
+      "TITLE(+50:llm agent)",
+      "ABSTRACT(+10)",
+      "HINDEX(+2:h=34)",
+      "INFLUENTIAL(+30:17%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.04949",
     "Title": "DeepForgeSeal: Latent Space-Driven Semi-Fragile Watermarking for Deepfake Detection Using Multi-Agent Adversarial Reinforcement Learning",
     "Authors": "Tharindu Fernando, Clinton Fookes, Sridha Sridharan",
@@ -4721,6 +4747,28 @@
       "TITLE(+25:negotiation)",
       "ABSTRACT(+60)",
       "HINDEX(+5:h=54)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.05271",
+    "Title": "DeepEyesV2: Toward Agentic Multimodal Model",
+    "Authors": "Jack Hong, Chenxiao Zhao, ChengLin Zhu, Weiheng Lu, Guohai Xu, Xing Yu",
+    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI)",
+    "Abstract": "Agentic multimodal models should not only comprehend text and images, but also actively invoke external tools, such as code execution environments and web search, and integrate these operations into reasoning. In this work, we introduce DeepEyesV2 and explore how to build an agentic multimodal model from the perspectives of data construction, training methods, and model evaluation. We observe that direct reinforcement learning alone fails to induce robust tool-use behavior. This phenomenon motivates a two-stage training pipeline: a cold-start stage to establish tool-use patterns, and reinforcement learning stage to further refine tool invocation. We curate a diverse, moderately challenging training dataset, specifically including examples where tool use is beneficial. We further introduce RealX-Bench, a comprehensive benchmark designed to evaluate real-world multimodal reasoning, which inherently requires the integration of multiple capabilities, including perception, search, and reasoning. We evaluate DeepEyesV2 on RealX-Bench and other representative benchmarks, demonstrating its effectiveness across real-world understanding, mathematical reasoning, and search-intensive tasks. Moreover, DeepEyesV2 exhibits task-adaptive tool invocation, tending to use image operations for perception tasks and numerical computations for reasoning tasks. Reinforcement learning further enables complex tool combinations and allows model to selectively invoke tools based on context. We hope our study can provide guidance for community in developing agentic multimodal models.",
+    "Venue": "ArXiv",
+    "Citation_Count": 26,
+    "Influential_Citations": 4,
+    "Max_Author_hIndex": 5,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 90,
+    "Factors": [
+      "TITLE(+50:agentic)",
+      "ABSTRACT(+10)",
+      "INFLUENTIAL(+30:15%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -5841,6 +5889,29 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.14460",
+    "Title": "Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning",
+    "Authors": "Mingyue Cheng, Jie Ouyang, Shuo Yu, Ruiran Yan, Yucong Luo, Zirui Liu, Daoyu Wang, Qi Liu, Enhong Chen",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "Large Language Models (LLMs) are increasingly being explored for building Agents capable of active environmental interaction (e.g., via tool use) to solve complex problems. Reinforcement Learning (RL) is considered a key technology with significant potential for training such Agents; however, the effective application of RL to LLM Agents is still in its nascent stages and faces considerable challenges. Currently, this emerging field lacks in-depth exploration into RL approaches specifically tailored for the LLM Agent context, alongside a scarcity of flexible and easily extensible training frameworks designed for this purpose. To help advance this area, this paper first revisits and clarifies Reinforcement Learning methodologies for LLM Agents by systematically extending the Markov Decision Process (MDP) framework to comprehensively define the key components of an LLM Agent. Secondly, we introduce Agent-R1, a modular, flexible, and user-friendly training framework for RL-based LLM Agents, designed for straightforward adaptation across diverse task scenarios and interactive environments. We conducted experiments on Multihop QA benchmark tasks, providing initial validation for the effectiveness of our proposed methods and framework.",
+    "Venue": "ArXiv",
+    "Citation_Count": 18,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 17,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 81,
+    "Factors": [
+      "TITLE(+50:llm agent)",
+      "ABSTRACT(+25)",
+      "HINDEX(+1:h=17)",
+      "INFLUENTIAL(+5:6%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.07707",
     "Title": "A Negotiation-Based Multi-Agent Reinforcement Learning Approach for Dynamic Scheduling of Reconfigurable Manufacturing Systems",
     "Authors": "Manonmani Sekar, Nasim Nezamoddini",
@@ -6132,6 +6203,51 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.18423",
+    "Title": "General Agentic Memory Via Deep Research",
+    "Authors": "B.Y. Yan, Chaofan Li, Hongjin Qian, Shuqi Lu, Zheng Liu",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Information Retrieval (cs.IR); Machine Learning (cs.LG)",
+    "Abstract": "Memory is critical for AI agents, yet the widely-adopted static memory, aiming to create readily available memory in advance, is inevitably subject to severe information loss. To address this limitation, we propose a novel framework called \\textbf{general agentic memory (GAM)}. GAM follows the principle of\"\\textbf{just-in time (JIT) compilation}\"where it focuses on creating optimized contexts for its client at runtime while keeping only simple but useful memory during the offline stage. To this end, GAM employs a duo-design with the following components. 1) \\textbf{Memorizer}, which highlights key historical information using a lightweight memory, while maintaining complete historical information within a universal page-store. 2) \\textbf{Researcher}, which retrieves and integrates useful information from the page-store for its online request guided by the pre-constructed memory. This design allows GAM to effectively leverage the agentic capabilities and test-time scalability of frontier large language models (LLMs), while also facilitating end-to-end performance optimization through reinforcement learning. In our experimental study, we demonstrate that GAM achieves substantial improvement on various memory-grounded task completion scenarios against existing memory systems.",
+    "Venue": "ArXiv",
+    "Citation_Count": 13,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 11,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 80,
+    "Factors": [
+      "TITLE(+50:agentic)",
+      "ABSTRACT(+25)",
+      "INFLUENTIAL(+5:8%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.07685",
+    "Title": "ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents",
+    "Authors": "Manasi Sharma, Chen Bo Calvin Zhang, Chaithanya Bandi, Clinton Wang, Ankit Aich, Huy Nghiem, Tahseen Rabbani, Ye Htet, Brian Jang, Sumana Basu, Aishwarya Balwani, Denis Peskoff, Marcos Ayestaran, Sean M. Hendryx, Brad Kenstler, Bing Liu",
+    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
+    "Abstract": "Deep Research (DR) is an emerging agent application that leverages large language models (LLMs) to address open-ended queries. It requires the integration of several capabilities, including multi-step reasoning, cross-document synthesis, and the generation of evidence-backed, long-form answers. Evaluating DR remains challenging because responses are lengthy and diverse, admit many valid solutions, and often depend on dynamic information sources. We introduce ResearchRubrics, a standardized benchmark for DR built with over 2,800+ hours of human labor that pairs realistic, domain-diverse prompts with 2,500+ expert-written, fine-grained rubrics to assess factual grounding, reasoning soundness, and clarity. We also propose a new complexity framework for categorizing DR tasks along three axes: conceptual breadth, logical nesting, and exploration. In addition, we develop human and model-based evaluation protocols that measure rubric adherence for DR agents. We evaluate several state-of-the-art DR systems and find that even leading agents like Gemini's DR and OpenAI's DR achieve under 68% average compliance with our rubrics, primarily due to missed implicit context and inadequate reasoning about retrieved information. Our results highlight the need for robust, scalable assessment of deep research capabilities, to which end we release ResearchRubrics(including all prompts, rubrics, and evaluation code) to facilitate progress toward well-justified research assistants.",
+    "Venue": "ArXiv",
+    "Citation_Count": 21,
+    "Influential_Citations": 4,
+    "Max_Author_hIndex": 12,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 80,
+    "Factors": [
+      "TITLE(+25:benchmark)",
+      "ABSTRACT(+25)",
+      "INFLUENTIAL(+30:19%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.14010",
     "Title": "Knowledge-Grounded Agentic Large Language Models for Multi-Hazard Understanding from Reconnaissance Reports",
     "Authors": "Chenchen Kuai, Zihao Li, Braden Rosen, Stephanie Paal, Navid Jafari, Jean-Louis Briaud, Yunlong Zhang, Youssef M. A. Hashash, Yang Zhou",
@@ -6278,28 +6394,6 @@
     "Categories": [
       "cs.CL",
       "cs.AI"
-    ],
-    "Score": 76,
-    "Factors": [
-      "TITLE(+50:llm agent)",
-      "ABSTRACT(+25)",
-      "HINDEX(+1:h=17)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.14460",
-    "Title": "Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning",
-    "Authors": "Mingyue Cheng, Jie Ouyang, Shuo Yu, Ruiran Yan, Yucong Luo, Zirui Liu, Daoyu Wang, Qi Liu, Enhong Chen",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "Large Language Models (LLMs) are increasingly being explored for building Agents capable of active environmental interaction (e.g., via tool use) to solve complex problems. Reinforcement Learning (RL) is considered a key technology with significant potential for training such Agents; however, the effective application of RL to LLM Agents is still in its nascent stages and faces considerable challenges. Currently, this emerging field lacks in-depth exploration into RL approaches specifically tailored for the LLM Agent context, alongside a scarcity of flexible and easily extensible training frameworks designed for this purpose. To help advance this area, this paper first revisits and clarifies Reinforcement Learning methodologies for LLM Agents by systematically extending the Markov Decision Process (MDP) framework to comprehensively define the key components of an LLM Agent. Secondly, we introduce Agent-R1, a modular, flexible, and user-friendly training framework for RL-based LLM Agents, designed for straightforward adaptation across diverse task scenarios and interactive environments. We conducted experiments on Multihop QA benchmark tasks, providing initial validation for the effectiveness of our proposed methods and framework.",
-    "Venue": "ArXiv",
-    "Citation_Count": 18,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 17,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
     ],
     "Score": 76,
     "Factors": [
@@ -6673,27 +6767,6 @@
     "Score": 75,
     "Factors": [
       "TITLE(+50:llm agent)",
-      "ABSTRACT(+25)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.18423",
-    "Title": "General Agentic Memory Via Deep Research",
-    "Authors": "B.Y. Yan, Chaofan Li, Hongjin Qian, Shuqi Lu, Zheng Liu",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Information Retrieval (cs.IR); Machine Learning (cs.LG)",
-    "Abstract": "Memory is critical for AI agents, yet the widely-adopted static memory, aiming to create readily available memory in advance, is inevitably subject to severe information loss. To address this limitation, we propose a novel framework called \\textbf{general agentic memory (GAM)}. GAM follows the principle of\"\\textbf{just-in time (JIT) compilation}\"where it focuses on creating optimized contexts for its client at runtime while keeping only simple but useful memory during the offline stage. To this end, GAM employs a duo-design with the following components. 1) \\textbf{Memorizer}, which highlights key historical information using a lightweight memory, while maintaining complete historical information within a universal page-store. 2) \\textbf{Researcher}, which retrieves and integrates useful information from the page-store for its online request guided by the pre-constructed memory. This design allows GAM to effectively leverage the agentic capabilities and test-time scalability of frontier large language models (LLMs), while also facilitating end-to-end performance optimization through reinforcement learning. In our experimental study, we demonstrate that GAM achieves substantial improvement on various memory-grounded task completion scenarios against existing memory systems.",
-    "Venue": "ArXiv",
-    "Citation_Count": 13,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 11,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 75,
-    "Factors": [
-      "TITLE(+50:agentic)",
       "ABSTRACT(+25)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
@@ -7722,6 +7795,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.01824",
+    "Title": "Simulating Environments with Reasoning Models for Agent Training",
+    "Authors": "Yuetai Li, Huseyin A Inan, Xiang Yue, Wei-Ning Chen, Lukas Wutschitz, Janardhan Kulkarni, Radha Poovendran, Robert Sim, Saravan Rajmohan",
+    "Subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "LLM agents excel in compact environments requiring deep reasoning but remain brittle when operating in broader, more complex contexts that demand robustness across diverse tools and schemas. Building bespoke environments for training is heavy, brittle, and limits progress. In this paper, we demonstrate that LLMs can simulate realistic environment feedback without access to actual testbed data or APIs. Inspired by this capability, we propose two frameworks: Simia-SFT, a pipeline that synthesizes SFT data by amplifying small seed sets into diverse trajectories in an environment-agnostic manner, and Simia-RL, a framework that enables RL training without real environment implementations through LLM-simulated feedback. Fine-tuning open models yields consistent improvements across multiple benchmarks, surpassing GPT-4o and approaching o4-mini on $\\tau^2$-Bench. Together, Simia-SFT and Simia-RL enable scalable agent training without environment engineering, replacing heavy and brittle implementations with flexible LLM-based simulation.",
+    "Venue": "ArXiv",
+    "Citation_Count": 19,
+    "Influential_Citations": 5,
+    "Max_Author_hIndex": 12,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 65,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "ABSTRACT(+10)",
+      "INFLUENTIAL(+30:26%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.02230",
     "Title": "Continuum: Efficient and Robust Multi-Turn LLM Agent Scheduling with KV Cache Time-to-Live",
     "Authors": "Hanchen Li, Qiuyang Mang, Runyuan He, Qizheng Zhang, Huanzhi Mao, Xiaokun Chen, Hangrui Zhou, Alvin Cheung, Joseph Gonzalez, Ion Stoica",
@@ -7761,29 +7856,6 @@
     "Factors": [
       "ABSTRACT(+60)",
       "HINDEX(+2:h=33)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.02208",
-    "Title": "Training Proactive and Personalized LLM Agents",
-    "Authors": "Weiwei Sun, Xuhui Zhou, Weihua Du, Xingyao Wang, Sean Welleck, Graham Neubig, Maarten Sap, Yiming Yang",
-    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
-    "Abstract": "While existing work focuses primarily on task success, we argue that effective real-world agents require optimizing three dimensions: productivity (task completion), proactivity (asking essential questions), and personalization (adapting to diverse user preferences). We introduce UserVille, an interactive environment with LLM-based user simulators enabling diverse, configurable user preferences. Leveraging UserVille, we introduce PPP, a multi-objective reinforcement learning approach that jointly optimizes all three dimensions: Productivity, Proactivity, and Personalization. Experiments on software engineering and deep research tasks show that agents trained with PPP achieve substantial improvements over strong baselines such as GPT-5 (+21.6 on average), demonstrating the ability to ask strategic clarifying questions, adapt to unseen user preferences, and improve task success through better interaction. This work demonstrates that explicitly optimizing for user-centered interaction is critical for building practical and effective AI agents.",
-    "Venue": "ArXiv",
-    "Citation_Count": 12,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 34,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 62,
-    "Factors": [
-      "TITLE(+50:llm agent)",
-      "ABSTRACT(+10)",
-      "HINDEX(+2:h=34)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -8663,27 +8735,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.05271",
-    "Title": "DeepEyesV2: Toward Agentic Multimodal Model",
-    "Authors": "Jack Hong, Chenxiao Zhao, ChengLin Zhu, Weiheng Lu, Guohai Xu, Xing Yu",
-    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI)",
-    "Abstract": "Agentic multimodal models should not only comprehend text and images, but also actively invoke external tools, such as code execution environments and web search, and integrate these operations into reasoning. In this work, we introduce DeepEyesV2 and explore how to build an agentic multimodal model from the perspectives of data construction, training methods, and model evaluation. We observe that direct reinforcement learning alone fails to induce robust tool-use behavior. This phenomenon motivates a two-stage training pipeline: a cold-start stage to establish tool-use patterns, and reinforcement learning stage to further refine tool invocation. We curate a diverse, moderately challenging training dataset, specifically including examples where tool use is beneficial. We further introduce RealX-Bench, a comprehensive benchmark designed to evaluate real-world multimodal reasoning, which inherently requires the integration of multiple capabilities, including perception, search, and reasoning. We evaluate DeepEyesV2 on RealX-Bench and other representative benchmarks, demonstrating its effectiveness across real-world understanding, mathematical reasoning, and search-intensive tasks. Moreover, DeepEyesV2 exhibits task-adaptive tool invocation, tending to use image operations for perception tasks and numerical computations for reasoning tasks. Reinforcement learning further enables complex tool combinations and allows model to selectively invoke tools based on context. We hope our study can provide guidance for community in developing agentic multimodal models.",
-    "Venue": "ArXiv",
-    "Citation_Count": 26,
-    "Influential_Citations": 4,
-    "Max_Author_hIndex": 5,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 60,
-    "Factors": [
-      "TITLE(+50:agentic)",
-      "ABSTRACT(+10)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.05511",
     "Title": "From Failure Modes to Reliability Awareness in Generative and Agentic AI System",
     "Authors": "Janet (Jing)Lin, Liangwei Zhang",
@@ -8976,6 +9027,27 @@
     "Factors": [
       "TITLE(+50:framework,reasoning)",
       "HINDEX(+5:h=57)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.02864",
+    "Title": "Mathematical exploration and discovery at scale",
+    "Authors": "Bogdan Georgiev, Javier G\u00f3mez-Serrano, Terence Tao, Adam Zsolt Wagner",
+    "Subjects": "Neural and Evolutionary Computing (cs.NE); Artificial Intelligence (cs.AI); Classical Analysis and ODEs (math.CA); Combinatorics (math.CO); Metric Geometry (math.MG)",
+    "Abstract": "AlphaEvolve (Novikov et al., 2025) is a generic evolutionary coding agent that combines the generative capabilities of LLMs with automated evaluation in an iterative evolutionary framework that proposes, tests, and refines algorithmic solutions to challenging scientific and practical problems. In this paper we showcase AlphaEvolve as a tool for autonomously discovering novel mathematical constructions and advancing our understanding of long-standing open problems. To demonstrate its breadth, we considered a list of 67 problems spanning mathematical analysis, combinatorics, geometry, and number theory. The system rediscovered the best known solutions in most of the cases and discovered improved solutions in several. In some instances, AlphaEvolve is also able to generalize results for a finite number of input values into a formula valid for all input values. Furthermore, we are able to combine this methodology with Deep Think and AlphaProof in a broader framework where the additional proof-assistants and reasoning systems provide automated proof generation and further mathematical insights. These results demonstrate that large language model-guided evolutionary search can autonomously discover mathematical constructions that complement human intuition, at times matching or even improving the best known results, highlighting the potential for significant new ways of interaction between mathematicians and AI systems. We present AlphaEvolve as a powerful new tool for mathematical discovery, capable of exploring vast search spaces to solve complex optimization problems at scale, often with significantly reduced requirements on preparation and computation time.",
+    "Venue": "ArXiv",
+    "Citation_Count": 32,
+    "Influential_Citations": 7,
+    "Max_Author_hIndex": 5,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 55,
+    "Factors": [
+      "ABSTRACT(+25)",
+      "INFLUENTIAL(+30:22%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -10012,28 +10084,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.07685",
-    "Title": "ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents",
-    "Authors": "Manasi Sharma, Chen Bo Calvin Zhang, Chaithanya Bandi, Clinton Wang, Ankit Aich, Huy Nghiem, Tahseen Rabbani, Ye Htet, Brian Jang, Sumana Basu, Aishwarya Balwani, Denis Peskoff, Marcos Ayestaran, Sean M. Hendryx, Brad Kenstler, Bing Liu",
-    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
-    "Abstract": "Deep Research (DR) is an emerging agent application that leverages large language models (LLMs) to address open-ended queries. It requires the integration of several capabilities, including multi-step reasoning, cross-document synthesis, and the generation of evidence-backed, long-form answers. Evaluating DR remains challenging because responses are lengthy and diverse, admit many valid solutions, and often depend on dynamic information sources. We introduce ResearchRubrics, a standardized benchmark for DR built with over 2,800+ hours of human labor that pairs realistic, domain-diverse prompts with 2,500+ expert-written, fine-grained rubrics to assess factual grounding, reasoning soundness, and clarity. We also propose a new complexity framework for categorizing DR tasks along three axes: conceptual breadth, logical nesting, and exploration. In addition, we develop human and model-based evaluation protocols that measure rubric adherence for DR agents. We evaluate several state-of-the-art DR systems and find that even leading agents like Gemini's DR and OpenAI's DR achieve under 68% average compliance with our rubrics, primarily due to missed implicit context and inadequate reasoning about retrieved information. Our results highlight the need for robust, scalable assessment of deep research capabilities, to which end we release ResearchRubrics(including all prompts, rubrics, and evaluation code) to facilitate progress toward well-justified research assistants.",
-    "Venue": "ArXiv",
-    "Citation_Count": 21,
-    "Influential_Citations": 4,
-    "Max_Author_hIndex": 12,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 50,
-    "Factors": [
-      "TITLE(+25:benchmark)",
-      "ABSTRACT(+25)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.09127",
     "Title": "History-Aware Reasoning for GUI Agents",
     "Authors": "Ziwei Wang, Leyang Yang, Xiaoxuan Tang, Sheng Zhou, Dajun Chen, Wei Jiang, Yong Li",
@@ -10799,6 +10849,52 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.10507",
+    "Title": "AdvancedIF: Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following",
+    "Authors": "Yun He, Wenzhe Li, Hejia Zhang, Songlin Li, Karishma Mandyam, Sopan Khosla, Yuanhao Xiong, Nanshu Wang, Xiaoliang Peng, Beibin Li, Shengjie Bi, Shishir G. Patil, Qi Qi, Shengyu Feng, Julian Katz-Samuels, Richard Yuanzhe Pang, Sujan Gonugondla, Hunter Lang, Yue Yu, Yundi Qian, Maryam Fazel-Zarandi, Licheng Yu, Amine Benhalloum, Hany Awadalla, Manaal Faruqui",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "Recent progress in large language models (LLMs) has led to impressive performance on a range of tasks, yet advanced instruction following (IF)-especially for complex, multi-turn, and system-prompted instructions-remains a significant challenge. Rigorous evaluation and effective training for such capabilities are hindered by the lack of high-quality, human-annotated benchmarks and reliable, interpretable reward signals. In this work, we introduce AdvancedIF (we will release this benchmark soon), a comprehensive benchmark featuring over 1,600 prompts and expert-curated rubrics that assess LLMs ability to follow complex, multi-turn, and system-level instructions. We further propose RIFL (Rubric-based Instruction-Following Learning), a novel post-training pipeline that leverages rubric generation, a finetuned rubric verifier, and reward shaping to enable effective reinforcement learning for instruction following. Extensive experiments demonstrate that RIFL substantially improves the instruction-following abilities of LLMs, achieving a 6.7% absolute gain on AdvancedIF and strong results on public benchmarks. Our ablation studies confirm the effectiveness of each component in RIFL. This work establishes rubrics as a powerful tool for both training and evaluating advanced IF in LLMs, paving the way for more capable and reliable AI systems.",
+    "Venue": "ArXiv",
+    "Citation_Count": 11,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 37,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 48,
+    "Factors": [
+      "TITLE(+25:benchmark)",
+      "ABSTRACT(+15)",
+      "HINDEX(+3:h=37)",
+      "INFLUENTIAL(+5:9%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.00405",
+    "Title": "UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings",
+    "Authors": "Zhibin Lan, Liqiang Niu, Fandong Meng, Jie Zhou, Jinsong Su",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI)",
+    "Abstract": "The remarkable success of multimodal large language models (MLLMs) has driven advances in multimodal embeddings, yet existing models remain inherently discriminative, limiting their ability to benefit from reasoning-driven generation paradigm. In this work, we pioneer the exploration of generative embeddings, unifying embedding tasks within a generative paradigm. We propose UME-R1, a universal multimodal embedding framework consisting of a two-stage training strategy: a cold-start supervised fine-tuning equips the model with reasoning capabilities and enables it to generate both discriminative and generative embeddings; a subsequent reinforcement learning enhances reasoning and further optimizes generative embedding quality. This pioneering work reveals four key insights: 1) generative embeddings unlock substantial performance gains over conventional discriminative embeddings by leveraging the powerful generative reasoning capabilities of MLLMs; 2) discriminative and generative embeddings are complementary, whose combined oracle performance far exceeding that of either alone; 3) RL can effectively enhance generative embeddings, establishing a scalable optimization paradigm.; 4) repeated sampling at inference boosts downstream task coverage (pass@k), highlighting the inference-time scalability potential of generative embeddings. Evaluated on the MMEB-V2 benchmark across 78 tasks spanning video, image, and visual documents, UME-R1 significantly outperforms conventional discriminative embedding models and offers a foundation for more interpretable, reasoning-driven generative multimodal embeddings. Our code, models, and datasets will be publicly available at https://github.com/XMUDeepLIT/UME-R1.",
+    "Venue": "ArXiv",
+    "Citation_Count": 11,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 40,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 48,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "ABSTRACT(+15)",
+      "HINDEX(+3:h=40)",
+      "INFLUENTIAL(+5:9%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.19925",
     "Title": "Semantic-KG: Using Knowledge Graphs to Construct Benchmarks for Measuring Semantic Similarity",
     "Authors": "Qiyao Wei, Edward Morrell, Lea Goetz, Mihaela van der Schaar",
@@ -10817,6 +10913,52 @@
       "TITLE(+25:benchmark)",
       "ABSTRACT(+15)",
       "HINDEX(+7:h=74)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.22570",
+    "Title": "DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning",
+    "Authors": "Zhihong Shao, Yuxiang Luo, Chengda Lu, Z.Z. Ren, Jiewen Hu, Tian Ye, Zhibin Gou, Shirong Ma, Xiaokang Zhang",
+    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "Large language models have made significant progress in mathematical reasoning, which serves as an important testbed for AI and could impact scientific research if further advanced. By scaling reasoning with reinforcement learning that rewards correct final answers, LLMs have improved from poor performance to saturating quantitative reasoning competitions like AIME and HMMT in one year. However, this approach faces fundamental limitations. Pursuing higher final answer accuracy doesn't address a key issue: correct answers don't guarantee correct reasoning. Moreover, many mathematical tasks like theorem proving require rigorous step-by-step derivation rather than numerical answers, making final answer rewards inapplicable. To push the limits of deep reasoning, we believe it is necessary to verify the comprehensiveness and rigor of mathematical reasoning. Self-verification is particularly important for scaling test-time compute, especially for open problems without known solutions. Towards self-verifiable mathematical reasoning, we investigate how to train an accurate and faithful LLM-based verifier for theorem proving. We then train a proof generator using the verifier as the reward model, and incentivize the generator to identify and resolve as many issues as possible in their own proofs before finalizing them. To maintain the generation-verification gap as the generator becomes stronger, we propose to scale verification compute to automatically label new hard-to-verify proofs, creating training data to further improve the verifier. Our resulting model, DeepSeekMath-V2, demonstrates strong theorem-proving capabilities, achieving gold-level scores on IMO 2025 and CMO 2024 and a near-perfect 118/120 on Putnam 2024 with scaled test-time compute.",
+    "Venue": "ArXiv",
+    "Citation_Count": 21,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 17,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 46,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "ABSTRACT(+15)",
+      "HINDEX(+1:h=17)",
+      "INFLUENTIAL(+5:10%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.20347",
+    "Title": "Soft Adaptive Policy Optimization",
+    "Authors": "Chang Gao, Chujie Zheng, Xiong-Hui Chen, Kai Dang, Shixuan Liu, Bowen Yu, An Yang, Shuai Bai, Jingren Zhou, Junyang Lin",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "Reinforcement learning (RL) plays an increasingly important role in enhancing the reasoning capabilities of large language models (LLMs), yet stable and performant policy optimization remains challenging. Token-level importance ratios often exhibit high variance-a phenomenon exacerbated in Mixture-of-Experts models-leading to unstable updates. Existing group-based policy optimization methods, such as GSPO and GRPO, alleviate this problem via hard clipping, making it difficult to maintain both stability and effective learning. We propose Soft Adaptive Policy Optimization (SAPO), which replaces hard clipping with a smooth, temperature-controlled gate that adaptively attenuates off-policy updates while preserving useful learning signals. Compared with GSPO and GRPO, SAPO is both sequence-coherent and token-adaptive. Like GSPO, SAPO maintains sequence-level coherence, but its soft gating forms a continuous trust region that avoids the brittle hard clipping band used in GSPO. When a sequence contains a few highly off-policy tokens, GSPO suppresses all gradients for that sequence, whereas SAPO selectively down-weights only the offending tokens and preserves the learning signal from the near-on-policy ones, improving sample efficiency. Relative to GRPO, SAPO replaces hard token-level clipping with smooth, temperature-controlled scaling, enabling more informative and stable updates. Empirical results on mathematical reasoning benchmarks indicate that SAPO exhibits improved training stability and higher Pass@1 performance under comparable training budgets. Moreover, we employ SAPO to train the Qwen3-VL model series, demonstrating that SAPO yields consistent performance gains across diverse tasks and different model sizes. Overall, SAPO provides a more reliable, scalable, and effective optimization strategy for RL training of LLMs.",
+    "Venue": "ArXiv",
+    "Citation_Count": 22,
+    "Influential_Citations": 9,
+    "Max_Author_hIndex": 27,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 46,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "HINDEX(+1:h=27)",
+      "INFLUENTIAL(+30:41%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -10900,6 +11042,28 @@
     "Factors": [
       "TITLE(+25:communication)",
       "ABSTRACT(+20)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.04570",
+    "Title": "Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm",
+    "Authors": "Jingqi Tong, Yurong Mou, Hangcheng Li, Mingzhe Li, Yongzhuo Yang, Ming Zhang, Qiguang Chen, Tianyi Liang, Xiaomeng Hu, Yining Zheng, Xinchi Chen, Jun Zhao, Xuanjing Huang, Xipeng Qiu",
+    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Computation and Language (cs.CL)",
+    "Abstract": "\"Thinking with Text\"and\"Thinking with Images\"paradigm significantly improve the reasoning ability of large language models (LLMs) and Vision Language Models (VLMs). However, these paradigms have inherent limitations. (1) Images capture only single moments and fail to represent dynamic processes or continuous changes, and (2) The separation of text and vision as distinct modalities, hindering unified multimodal understanding and generation. To overcome these limitations, we introduce\"Thinking with Video\", a new paradigm that leverages video generation models, such as Sora-2, to bridge visual and textual reasoning in a unified temporal framework. To support this exploration, we developed the Video Thinking Benchmark (VideoThinkBench). VideoThinkBench encompasses two task categories: (1) vision-centric tasks (e.g., Eyeballing Puzzles), and (2) text-centric tasks (e.g., subsets of GSM8K, MMMU). Our evaluation establishes Sora-2 as a capable reasoner. On vision-centric tasks, Sora-2 is generally comparable to state-of-the-art (SOTA) VLMs, and even surpasses VLMs on several tasks, such as Eyeballing Games. On text-centric tasks, Sora-2 achieves 92% accuracy on MATH, and 75.53% accuracy on MMMU. Furthermore, we systematically analyse the source of these abilities. We also find that self-consistency and in-context learning can improve Sora-2's performance. In summary, our findings demonstrate that the video generation model is the potential unified multimodal understanding and generation model, positions\"thinking with video\"as a unified multimodal reasoning paradigm.",
+    "Venue": "ArXiv",
+    "Citation_Count": 16,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 16,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 45,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "ABSTRACT(+15)",
+      "INFLUENTIAL(+5:6%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -11013,6 +11177,29 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.16334",
+    "Title": "OpenMMReasoner: Pushing the Frontiers for Multimodal Reasoning with an Open and General Recipe",
+    "Authors": "Kaichen Zhang, Keming Wu, Zuhao Yang, Bo Li, Kairui Hu, Bin Wang, Ziwei Liu, Xingxuan Li, Lidong Bing",
+    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "Recent advancements in large reasoning models have fueled growing interest in extending such capabilities to multimodal domains. However, despite notable progress in visual reasoning, the lack of transparent and reproducible data curation and training strategies remains a major barrier to scalable research. In this work, we introduce OpenMMReasoner, a fully transparent two-stage recipe for multimodal reasoning spanning supervised fine-tuning (SFT) and reinforcement learning (RL). In the SFT stage, we construct an 874K-sample cold-start dataset with rigorous step-by-step validation, providing a strong foundation for reasoning capabilities. The subsequent RL stage leverages a 74K-sample dataset across diverse domains to further sharpen and stabilize these abilities, resulting in a more robust and efficient learning process. Extensive evaluations demonstrate that our training recipe not only surpasses strong baselines but also highlights the critical role of data quality and training design in shaping multimodal reasoning performance. Notably, our method achieves a 11.6% improvement over the Qwen2.5-VL-7B-Instruct baseline across nine multimodal reasoning benchmarks, establishing a solid empirical foundation for future large-scale multimodal reasoning research. We open-sourced all our codes, pipeline, and data at https://github.com/EvolvingLMMs-Lab/OpenMMReasoner.",
+    "Venue": "ArXiv",
+    "Citation_Count": 10,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 51,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 44,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "HINDEX(+4:h=51)",
+      "INFLUENTIAL(+15:10%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.10182",
     "Title": "Beyond the Black Box: Demystifying Multi-Turn LLM Reasoning with VISTA",
     "Authors": "Yiran Zhang, Mingyang Lin, Mark Dras, Usman Naseem",
@@ -11029,28 +11216,6 @@
     "Score": 43,
     "Factors": [
       "TITLE(+25:reasoning)",
-      "ABSTRACT(+15)",
-      "HINDEX(+3:h=37)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.10507",
-    "Title": "AdvancedIF: Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following",
-    "Authors": "Yun He, Wenzhe Li, Hejia Zhang, Songlin Li, Karishma Mandyam, Sopan Khosla, Yuanhao Xiong, Nanshu Wang, Xiaoliang Peng, Beibin Li, Shengjie Bi, Shishir G. Patil, Qi Qi, Shengyu Feng, Julian Katz-Samuels, Richard Yuanzhe Pang, Sujan Gonugondla, Hunter Lang, Yue Yu, Yundi Qian, Maryam Fazel-Zarandi, Licheng Yu, Amine Benhalloum, Hany Awadalla, Manaal Faruqui",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "Recent progress in large language models (LLMs) has led to impressive performance on a range of tasks, yet advanced instruction following (IF)-especially for complex, multi-turn, and system-prompted instructions-remains a significant challenge. Rigorous evaluation and effective training for such capabilities are hindered by the lack of high-quality, human-annotated benchmarks and reliable, interpretable reward signals. In this work, we introduce AdvancedIF (we will release this benchmark soon), a comprehensive benchmark featuring over 1,600 prompts and expert-curated rubrics that assess LLMs ability to follow complex, multi-turn, and system-level instructions. We further propose RIFL (Rubric-based Instruction-Following Learning), a novel post-training pipeline that leverages rubric generation, a finetuned rubric verifier, and reward shaping to enable effective reinforcement learning for instruction following. Extensive experiments demonstrate that RIFL substantially improves the instruction-following abilities of LLMs, achieving a 6.7% absolute gain on AdvancedIF and strong results on public benchmarks. Our ablation studies confirm the effectiveness of each component in RIFL. This work establishes rubrics as a powerful tool for both training and evaluating advanced IF in LLMs, paving the way for more capable and reliable AI systems.",
-    "Venue": "ArXiv",
-    "Citation_Count": 11,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 37,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 43,
-    "Factors": [
-      "TITLE(+25:benchmark)",
       "ABSTRACT(+15)",
       "HINDEX(+3:h=37)"
     ],
@@ -11079,24 +11244,24 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.00405",
-    "Title": "UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings",
-    "Authors": "Zhibin Lan, Liqiang Niu, Fandong Meng, Jie Zhou, Jinsong Su",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI)",
-    "Abstract": "The remarkable success of multimodal large language models (MLLMs) has driven advances in multimodal embeddings, yet existing models remain inherently discriminative, limiting their ability to benefit from reasoning-driven generation paradigm. In this work, we pioneer the exploration of generative embeddings, unifying embedding tasks within a generative paradigm. We propose UME-R1, a universal multimodal embedding framework consisting of a two-stage training strategy: a cold-start supervised fine-tuning equips the model with reasoning capabilities and enables it to generate both discriminative and generative embeddings; a subsequent reinforcement learning enhances reasoning and further optimizes generative embedding quality. This pioneering work reveals four key insights: 1) generative embeddings unlock substantial performance gains over conventional discriminative embeddings by leveraging the powerful generative reasoning capabilities of MLLMs; 2) discriminative and generative embeddings are complementary, whose combined oracle performance far exceeding that of either alone; 3) RL can effectively enhance generative embeddings, establishing a scalable optimization paradigm.; 4) repeated sampling at inference boosts downstream task coverage (pass@k), highlighting the inference-time scalability potential of generative embeddings. Evaluated on the MMEB-V2 benchmark across 78 tasks spanning video, image, and visual documents, UME-R1 significantly outperforms conventional discriminative embedding models and offers a foundation for more interpretable, reasoning-driven generative multimodal embeddings. Our code, models, and datasets will be publicly available at https://github.com/XMUDeepLIT/UME-R1.",
+    "arXiv_ID": "2511.19399",
+    "Title": "DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research",
+    "Authors": "Rulin Shao, Akari Asai, Shannon Zejiang Shen, Hamish Ivison, Varsha Kishore, Jingming Zhuo, Xinran Zhao, Molly Park, Samuel G. Finlayson, David Sontag, Tyler Murray, Sewon Min, Pradeep Dasigi, Luca Soldaini, Faeze Brahman, Wen-tau Yih, Tongshuang Wu, Luke Zettlemoyer, Yoon Kim, Hannaneh Hajishirzi, Pang Wei Koh",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "Deep research models perform multi-step research to produce long-form, well-attributed answers. However, most open deep research models are trained on easily verifiable short-form QA tasks via reinforcement learning with verifiable rewards (RLVR), which does not extend to realistic long-form tasks. We address this with Reinforcement Learning with Evolving Rubrics (RLER), in which we construct and maintain rubrics that co-evolve with the policy model during training; this allows the rubrics to incorporate information that the model has newly explored and to provide discriminative, on-policy feedback. Using RLER, we develop Deep Research Tulu (DR Tulu-8B), the first open model that is directly trained for open-ended, long-form deep research. Across four long-form deep research benchmarks in science, healthcare and general domains, DR Tulu substantially outperforms existing open deep research models, and matches or exceeds proprietary deep research systems, while being significantly smaller and cheaper per query. To facilitate future research, we release all data, models, and code, including our new MCP-based agent infrastructure for deep research systems.",
     "Venue": "ArXiv",
-    "Citation_Count": 11,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 40,
-    "Category": "cs.AI",
+    "Citation_Count": 22,
+    "Influential_Citations": 6,
+    "Max_Author_hIndex": 38,
+    "Category": "cs.CL",
     "Categories": [
-      "cs.AI"
+      "cs.CL"
     ],
     "Score": 43,
     "Factors": [
-      "TITLE(+25:reasoning)",
-      "ABSTRACT(+15)",
-      "HINDEX(+3:h=40)"
+      "ABSTRACT(+10)",
+      "HINDEX(+3:h=38)",
+      "INFLUENTIAL(+30:27%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -11276,6 +11441,28 @@
       "TITLE(+25:reasoning)",
       "ABSTRACT(+15)",
       "HINDEX(+2:h=28)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.00088",
+    "Title": "Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous Driving in the Long Tail",
+    "Authors": "NVIDIA: Yan Wang, Wenjie Luo, Junjie Bai, Yulong Cao, Tong Che, Ke Chen, Yuxiao Chen, Jenna Diamond, Yifan Ding, Wenhao Ding, Liang Feng, Greg Heinrich, Jack Huang, Peter Karkus, Boyi Li, Pinyi Li, Tsung-Yi Lin, Dongran Liu, Ming-Yu Liu, Langechuan Liu, Zhijian Liu, Jason Lu, Yunxiang Mao, Pavlo Molchanov, Lindsey Pavao, Zhenghao Peng, Mike Ranzinger, Ed Schmerling, Shida Shen, Yunfei Shi, Sarah Tariq, Ran Tian, Tilman Wekel, Xinshuo Weng, Tianjun Xiao, Eric Yang, Xiaodong Yang, Yurong You, Xiaohui Zeng, Wenyuan Zhang, Boris Ivanovic, Marco Pavone",
+    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "End-to-end architectures trained via imitation learning have advanced autonomous driving by scaling model size and data, yet performance remains brittle in safety-critical long-tail scenarios where supervision is sparse and causal understanding is limited. We introduce Alpamayo-R1 (AR1), a vision-language-action model (VLA) that integrates Chain of Causation reasoning with trajectory planning for complex driving scenarios. Our approach features three key innovations: (1) the Chain of Causation (CoC) dataset, built through a hybrid auto-labeling and human-in-the-loop pipeline producing decision-grounded, causally linked reasoning traces aligned with driving behaviors; (2) a modular VLA architecture combining Cosmos-Reason, a vision-language model pre-trained for Physical AI, with a diffusion-based trajectory decoder that generates dynamically feasible trajectories in real time; (3) a multi-stage training strategy using supervised fine-tuning to elicit reasoning and reinforcement learning (RL) to enforce reasoning-action consistency and optimize reasoning quality. AR1 achieves up to a 12% improvement in planning accuracy on challenging cases compared to a trajectory-only baseline, with a 35% reduction in close encounter rate in closed-loop simulation. RL post-training improves reasoning quality by 45% and reasoning-action consistency by 37%. Model scaling from 0.5B to 7B parameters shows consistent improvements. On-vehicle road tests confirm real-time performance (99 ms latency) and successful urban deployment. By bridging interpretable reasoning with precise control, AR1 demonstrates a practical path towards Level 4 autonomous driving. Model weights are available at https://huggingface.co/nvidia/Alpamayo-R1-10B with inference code at https://github.com/NVlabs/alpamayo.",
+    "Venue": "ArXiv",
+    "Citation_Count": 33,
+    "Influential_Citations": 4,
+    "Max_Author_hIndex": 32,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 42,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "HINDEX(+2:h=32)",
+      "INFLUENTIAL(+15:12%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -11592,29 +11779,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.22570",
-    "Title": "DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning",
-    "Authors": "Zhihong Shao, Yuxiang Luo, Chengda Lu, Z.Z. Ren, Jiewen Hu, Tian Ye, Zhibin Gou, Shirong Ma, Xiaokang Zhang",
-    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "Large language models have made significant progress in mathematical reasoning, which serves as an important testbed for AI and could impact scientific research if further advanced. By scaling reasoning with reinforcement learning that rewards correct final answers, LLMs have improved from poor performance to saturating quantitative reasoning competitions like AIME and HMMT in one year. However, this approach faces fundamental limitations. Pursuing higher final answer accuracy doesn't address a key issue: correct answers don't guarantee correct reasoning. Moreover, many mathematical tasks like theorem proving require rigorous step-by-step derivation rather than numerical answers, making final answer rewards inapplicable. To push the limits of deep reasoning, we believe it is necessary to verify the comprehensiveness and rigor of mathematical reasoning. Self-verification is particularly important for scaling test-time compute, especially for open problems without known solutions. Towards self-verifiable mathematical reasoning, we investigate how to train an accurate and faithful LLM-based verifier for theorem proving. We then train a proof generator using the verifier as the reward model, and incentivize the generator to identify and resolve as many issues as possible in their own proofs before finalizing them. To maintain the generation-verification gap as the generator becomes stronger, we propose to scale verification compute to automatically label new hard-to-verify proofs, creating training data to further improve the verifier. Our resulting model, DeepSeekMath-V2, demonstrates strong theorem-proving capabilities, achieving gold-level scores on IMO 2025 and CMO 2024 and a near-perfect 118/120 on Putnam 2024 with scaled test-time compute.",
-    "Venue": "ArXiv",
-    "Citation_Count": 21,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 17,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 41,
-    "Factors": [
-      "TITLE(+25:reasoning)",
-      "ABSTRACT(+15)",
-      "HINDEX(+1:h=17)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.07995",
     "Title": "Multivariate Time series Anomaly Detection:A Framework of Hidden Markov Models",
     "Authors": "Jinbo Li, Witold Pedrycz, Iqbal Jamal",
@@ -11785,6 +11949,72 @@
       "TITLE(+25:reasoning)",
       "ABSTRACT(+15)",
       "HINDEX(+1:h=18)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.13646",
+    "Title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
+    "Authors": "Chunqiu Steven Xia, Zhe Wang, Yan Yang, Yuxiang Wei, Lingming Zhang",
+    "Subjects": "Software Engineering (cs.SE); Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
+    "Abstract": "Large Language Models (LLMs) are reshaping almost all industries, including software engineering. In recent years, a number of LLM agents have been proposed to solve real-world software problems. Such software agents are typically equipped with a suite of coding tools and can autonomously decide the next actions to form complete trajectories to solve end-to-end software tasks. While promising, they typically require dedicated design and may still be suboptimal, since it can be extremely challenging and costly to exhaust the entire agent scaffold design space. Recognizing that software agents are inherently software themselves that can be further refined/modified, researchers have proposed a number of self-improving software agents recently, including the Darwin-G\\\"odel Machine (DGM). Meanwhile, such self-improving agents require costly offline training on specific benchmarks and may not generalize well across different LLMs or benchmarks. In this paper, we propose Live-SWE-agent, the first live software agent that can autonomously and continuously evolve itself on-the-fly during runtime when solving real-world software problems. More specifically, Live-SWE-agent starts with the most basic agent scaffold with only access to bash tools (e.g., mini-SWE-agent), and autonomously evolves its own scaffold implementation while solving real-world software problems. Our evaluation on the widely studied SWE-bench Verified benchmark shows that LIVE-SWE-AGENT can achieve an impressive solve rate of 77.4% without test-time scaling, outperforming all existing software agents, including the best proprietary solution. Moreover, Live-SWE-agent outperforms state-of-the-art manually crafted software agents on the recent SWE-Bench Pro benchmark, achieving the best-known solve rate of 45.8%.",
+    "Venue": "ArXiv",
+    "Citation_Count": 24,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 22,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 41,
+    "Factors": [
+      "ABSTRACT(+25)",
+      "HINDEX(+1:h=22)",
+      "INFLUENTIAL(+15:12%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.17006",
+    "Title": "Budget-Aware Tool-Use Enables Effective Agent Scaling",
+    "Authors": "Tengxiao Liu, Zifeng Wang, Jin Miao, I-Hung Hsu, Jun Yan, Jiefeng Chen, Rujun Han, Fangyuan Xu, Yanfei Chen, Ke Jiang, Samira Daruki, Yi Liang, William Yang Wang, Tomas Pfister, Chen-Yu Lee",
+    "Subjects": "Artificial Intelligence (cs.AI)",
+    "Abstract": "Scaling test-time computation improves performance across different tasks on large language models (LLMs), which has also been extended to tool-augmented agents. For these agents, scaling involves not only\"thinking\"in tokens but also\"acting\"via tool calls. The number of tool calls directly bounds the agent's interaction with the external environment. However, we find that simply granting agents a larger tool-call budget fails to improve performance, as they lack\"budget awareness\"and quickly hit a performance ceiling. To address this, we study how to scale such agents effectively under explicit tool-call budgets, focusing on web search agents. We first introduce the Budget Tracker, a lightweight plug-in that provides the agent with continuous budget awareness, enabling simple yet effective scaling. We further develop BATS (Budget Aware Test-time Scaling), an advanced framework that leverages this awareness to dynamically adapt its planning and verification strategy, deciding whether to\"dig deeper\"on a promising lead or\"pivot\"to new paths based on remaining resources. To analyze cost-performance scaling in a controlled manner, we formalize a unified cost metric that jointly accounts for token and tool consumption. We provide the first systematic study on budget-constrained agents, showing that budget-aware methods produce more favorable scaling curves and push the cost-performance Pareto frontier. Our work offers empirical insights toward a more transparent and principled understanding of scaling in tool-augmented agents.",
+    "Venue": "ArXiv",
+    "Citation_Count": 10,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 23,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 41,
+    "Factors": [
+      "ABSTRACT(+25)",
+      "HINDEX(+1:h=23)",
+      "INFLUENTIAL(+15:10%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.08544",
+    "Title": "LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics",
+    "Authors": "Randall Balestriero, Yann LeCun",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV); Machine Learning (stat.ML)",
+    "Abstract": "Learning manipulable representations of the world and its dynamics is central to AI. Joint-Embedding Predictive Architectures (JEPAs) offer a promising blueprint, but lack of practical guidance and theory has led to ad-hoc R&D. We present a comprehensive theory of JEPAs and instantiate it in {\\bf LeJEPA}, a lean, scalable, and theoretically grounded training objective. First, we identify the isotropic Gaussian as the optimal distribution that JEPAs'embeddings should follow to minimize downstream prediction risk. Second, we introduce a novel objective--{\\bf Sketched Isotropic Gaussian Regularization} (SIGReg)--to constrain embeddings to reach that ideal distribution. Combining the JEPA predictive loss with SIGReg yields LeJEPA with numerous theoretical and practical benefits: (i) single trade-off hyperparameter, (ii) linear time and memory complexity, (iii) stability across hyper-parameters, architectures (ResNets, ViTs, ConvNets) and domains, (iv) heuristics-free, e.g., no stop-gradient, no teacher-student, no hyper-parameter schedulers, and (v) distributed training-friendly implementation requiring only $\\approx$50 lines of code. Our empirical validation covers 10+ datasets, 60+ architectures, all with varying scales and domains. As an example, using imagenet-1k for pretraining and linear evaluation with frozen backbone, LeJEPA reaches 79\\% with a ViT-H/14. We hope that the simplicity and theory-friendly ecosystem offered by LeJEPA will reestablish self-supervised pre-training as a core pillar of AI research (\\href{https://github.com/rbalestr-lab/lejepa}{GitHub repo}).",
+    "Venue": "ArXiv",
+    "Citation_Count": 20,
+    "Influential_Citations": 4,
+    "Max_Author_hIndex": 20,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 41,
+    "Factors": [
+      "ABSTRACT(+10)",
+      "HINDEX(+1:h=20)",
+      "INFLUENTIAL(+30:20%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -13612,27 +13842,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.04570",
-    "Title": "Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm",
-    "Authors": "Jingqi Tong, Yurong Mou, Hangcheng Li, Mingzhe Li, Yongzhuo Yang, Ming Zhang, Qiguang Chen, Tianyi Liang, Xiaomeng Hu, Yining Zheng, Xinchi Chen, Jun Zhao, Xuanjing Huang, Xipeng Qiu",
-    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Computation and Language (cs.CL)",
-    "Abstract": "\"Thinking with Text\"and\"Thinking with Images\"paradigm significantly improve the reasoning ability of large language models (LLMs) and Vision Language Models (VLMs). However, these paradigms have inherent limitations. (1) Images capture only single moments and fail to represent dynamic processes or continuous changes, and (2) The separation of text and vision as distinct modalities, hindering unified multimodal understanding and generation. To overcome these limitations, we introduce\"Thinking with Video\", a new paradigm that leverages video generation models, such as Sora-2, to bridge visual and textual reasoning in a unified temporal framework. To support this exploration, we developed the Video Thinking Benchmark (VideoThinkBench). VideoThinkBench encompasses two task categories: (1) vision-centric tasks (e.g., Eyeballing Puzzles), and (2) text-centric tasks (e.g., subsets of GSM8K, MMMU). Our evaluation establishes Sora-2 as a capable reasoner. On vision-centric tasks, Sora-2 is generally comparable to state-of-the-art (SOTA) VLMs, and even surpasses VLMs on several tasks, such as Eyeballing Games. On text-centric tasks, Sora-2 achieves 92% accuracy on MATH, and 75.53% accuracy on MMMU. Furthermore, we systematically analyse the source of these abilities. We also find that self-consistency and in-context learning can improve Sora-2's performance. In summary, our findings demonstrate that the video generation model is the potential unified multimodal understanding and generation model, positions\"thinking with video\"as a unified multimodal reasoning paradigm.",
-    "Venue": "ArXiv",
-    "Citation_Count": 16,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 16,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 40,
-    "Factors": [
-      "TITLE(+25:reasoning)",
-      "ABSTRACT(+15)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.06346",
     "Title": "LPFQA: A Long-Tail Professional Forum-based Benchmark for LLM Evaluation",
     "Authors": "Liya Zhu, Peizhuang Cong, Jingzhe Ding, Aowei Ji, Wenya Wu, Jiani Hou, Chunjie Wu, Xiang Gao, Jingkai Liu, Zhou Huan, Xuelei Sun, Yang Yang, Jianpeng Jiao, Liang Hu, Xinjie Chen, Jiashuo Liu, Tong Yang, Zaiyuan Wang, Ge Zhang, Wenhao Huang",
@@ -15234,6 +15443,48 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.00424",
+    "Title": "A Multimodal Framework for Depression Detection during Covid-19 via Harvesting Social Media: A Novel Dataset and Method",
+    "Authors": "Ashutosh Anshul, Gumpili Sai Pranav, Mohammad Zia Ur Rehman, Nagendra Kumar",
+    "Subjects": "Artificial Intelligence (cs.AI)",
+    "Abstract": "The recent coronavirus disease (COVID-19) has become a pandemic and has affected the entire globe. During the pandemic, we have observed a spike in cases related to mental health, such as anxiety, stress, and depression. Depression significantly influences most diseases worldwide, making it difficult to detect mental health conditions in people due to unawareness and unwillingness to consult a doctor. However, nowadays, people extensively use online social media platforms to express their emotions and thoughts. Hence, social media platforms are now becoming a large data source that can be utilized for detecting depression and mental illness. However, the existing approaches often overlook data sparsity in tweets and the multimodal aspects of social media. In this article, we propose a novel multimodal framework that combines textual, user-specific, and image analysis to detect depression among social media users. To provide enough context about the user\u2019s emotional state, we propose the following: 1) an extrinsic feature by harnessing the URLs present in tweets and 2) extracting textual content present in images posted in tweets. We also extract five sets of features belonging to different modalities to describe a user. In addition, we introduce a deep learning model, the visual neural network (VNN), to generate embeddings of user-posted images, which are used to create the visual feature vector for prediction. We contribute a curated COVID-19 dataset of depressed and nondepressed users for research purposes and demonstrate the effectiveness of our model in detecting depression during the COVID-19 outbreak. Our model outperforms the existing state-of-the-art methods over a benchmark dataset by 2%\u20138% and produces promising results on the COVID-19 dataset. Our analysis highlights the impact of each modality and provides valuable insights into users\u2019 mental and emotional states.",
+    "Venue": "IEEE Trans Comput Soc Syst",
+    "Citation_Count": 27,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 10,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 40,
+    "Factors": [
+      "TITLE(+25:framework)",
+      "INFLUENTIAL(+15:11%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.06449",
+    "Title": "FLEX: Continuous Agent Evolution via Forward Learning from Experience",
+    "Authors": "Zhicheng Cai, Xinyuan Guo, Yu Pei, Jiangtao Feng, Jinsong Su, Jiangjie Chen, Ya-Qin Zhang, Wei-Ying Ma, Mingxuan Wang, Hao Zhou",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI)",
+    "Abstract": "Autonomous agents driven by Large Language Models (LLMs) have revolutionized reasoning and problem-solving but remain static after training, unable to grow with experience as intelligent beings do during deployment. We introduce Forward Learning with EXperience (FLEX), a gradient-free learning paradigm that enables LLM agents to continuously evolve through accumulated experience. Specifically, FLEX cultivates scalable and inheritable evolution by constructing a structured experience library through continual reflection on successes and failures during interaction with the environment. FLEX delivers substantial improvements on mathematical reasoning, chemical retrosynthesis, and protein fitness prediction (up to 23% on AIME25, 10% on USPTO50k, and 14% on ProteinGym). We further identify a clear scaling law of experiential growth and the phenomenon of experience inheritance across agents, marking a step toward scalable and inheritable continuous agent evolution. Project Page: https://flex-gensi-thuair.github.io.",
+    "Venue": "ArXiv",
+    "Citation_Count": 16,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 12,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 40,
+    "Factors": [
+      "ABSTRACT(+25)",
+      "INFLUENTIAL(+15:12%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.18368",
     "Title": "Wireless Power Transfer and Intent-Driven Network Optimization in AAVs-assisted IoT for 6G Sustainable Connectivity",
     "Authors": "Xiaoming He, Gaofeng Wang, Huajun Cui, Rui Yuan, Haitao Zhao",
@@ -16139,27 +16390,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.01824",
-    "Title": "Simulating Environments with Reasoning Models for Agent Training",
-    "Authors": "Yuetai Li, Huseyin A Inan, Xiang Yue, Wei-Ning Chen, Lukas Wutschitz, Janardhan Kulkarni, Radha Poovendran, Robert Sim, Saravan Rajmohan",
-    "Subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "LLM agents excel in compact environments requiring deep reasoning but remain brittle when operating in broader, more complex contexts that demand robustness across diverse tools and schemas. Building bespoke environments for training is heavy, brittle, and limits progress. In this paper, we demonstrate that LLMs can simulate realistic environment feedback without access to actual testbed data or APIs. Inspired by this capability, we propose two frameworks: Simia-SFT, a pipeline that synthesizes SFT data by amplifying small seed sets into diverse trajectories in an environment-agnostic manner, and Simia-RL, a framework that enables RL training without real environment implementations through LLM-simulated feedback. Fine-tuning open models yields consistent improvements across multiple benchmarks, surpassing GPT-4o and approaching o4-mini on $\\tau^2$-Bench. Together, Simia-SFT and Simia-RL enable scalable agent training without environment engineering, replacing heavy and brittle implementations with flexible LLM-based simulation.",
-    "Venue": "ArXiv",
-    "Citation_Count": 19,
-    "Influential_Citations": 5,
-    "Max_Author_hIndex": 12,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 35,
-    "Factors": [
-      "TITLE(+25:reasoning)",
-      "ABSTRACT(+10)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.03106",
     "Title": "Large language models require a new form of oversight: capability-based monitoring",
     "Authors": "Katherine C. Kellogg, Bingyang Ye, Yifan Hu, Guergana K. Savova, Byron Wallace, Danielle S. Bitterman",
@@ -16842,6 +17072,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.08923",
+    "Title": "TiDAR: Think in Diffusion, Talk in Autoregression",
+    "Authors": "Jingyu Liu, Xin Dong, Zhifan Ye, Rishabh Mehta, Yonggan Fu, Vartika Singh, Jan Kautz, Ce Zhang, Pavlo Molchanov",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
+    "Abstract": "Diffusion language models hold the promise of fast parallel generation, while autoregressive (AR) models typically excel in quality due to their causal structure aligning naturally with language modeling. This raises a fundamental question: can we achieve a synergy with high throughput, higher GPU utilization, and AR level quality? Existing methods fail to effectively balance these two aspects, either prioritizing AR using a weaker model for sequential drafting (speculative decoding), leading to lower drafting efficiency, or using some form of left-to-right (AR-like) decoding logic for diffusion, which still suffers from quality degradation and forfeits its potential parallelizability. We introduce TiDAR, a sequence-level hybrid architecture that drafts tokens (Thinking) in Diffusion and samples final outputs (Talking) AutoRegressively - all within a single forward pass using specially designed structured attention masks. This design exploits the free GPU compute density, achieving a strong balance between drafting and verification capacity. Moreover, TiDAR is designed to be serving-friendly (low overhead) as a standalone model. We extensively evaluate TiDAR against AR models, speculative decoding, and diffusion variants across generative and likelihood tasks at 1.5B and 8B scales. Thanks to the parallel drafting and sampling as well as exact KV cache support, TiDAR outperforms speculative decoding in measured throughput and surpasses diffusion models like Dream and Llada in both efficiency and quality. Most notably, TiDAR is the first architecture to close the quality gap with AR models while delivering 4.71x to 5.91x more tokens per second.",
+    "Venue": "ArXiv",
+    "Citation_Count": 12,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 46,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 34,
+    "Factors": [
+      "HINDEX(+4:h=46)",
+      "INFLUENTIAL(+30:17%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.04001",
     "Title": "Accelerating scientific discovery with the common task framework",
     "Authors": "J. Nathan Kutz, Peter Battaglia, Michael Brenner, Kevin Carlberg, Aric Hagberg, Shirley Ho, Stephan Hoyer, Henning Lange, Hod Lipson, Michael W. Mahoney, Frank Noe, Max Welling, Laure Zanna, Francis Zhu, Steven L. Brunton",
@@ -16905,6 +17157,27 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.00062",
+    "Title": "World Simulation with Video Foundation Models for Physical AI",
+    "Authors": "NVIDIA: Arslan Ali, Junjie Bai, Maciej Bala, Yogesh Balaji, Aaron Blakeman, Tiffany Cai, Jiaxin Cao, Tianshi Cao, Elizabeth Cha, Yu-Wei Chao, Prithvijit Chattopadhyay, Mike Chen, Yongxin Chen, Yu Chen, Shuai Cheng, Yin Cui, Jenna Diamond, Yifan Ding, Jiaojiao Fan, Linxi Fan, Liang Feng, Francesco Ferroni, Sanja Fidler, Xiao Fu, Ruiyuan Gao, Yunhao Ge, Jinwei Gu, Aryaman Gupta, Siddharth Gururani, Imad El Hanafi, Ali Hassani, Zekun Hao, Jacob Huffman, Joel Jang, Pooya Jannaty, Jan Kautz, Grace Lam, Xuan Li, Zhaoshuo Li, Maosheng Liao, Chen-Hsuan Lin, Tsung-Yi Lin, Yen-Chen Lin, Huan Ling, Ming-Yu Liu, Xian Liu, Yifan Lu, Alice Luo, Qianli Ma, Hanzi Mao, Kaichun Mo, Seungjun Nah, Yashraj Narang, Abhijeet Panaskar, Lindsey Pavao, Trung Pham, Morteza Ramezanali, Fitsum Reda, Scott Reed, Xuanchi Ren, Haonan Shao, Yue Shen, Stella Shi, Shuran Song, Bartosz Stefaniak, Shangkun Sun, Shitao Tang, Sameena Tasmeen, Lyne Tchapmi, Wei-Cheng Tseng, Jibin Varghese, Andrew Z. Wang, Hao Wang, Haoxiang Wang, Heng Wang, Ting-Chun Wang, Fangyin Wei, Jiashu Xu, Dinghao Yang, Xiaodong Yang, Haotian Ye, Seonghyeon Ye, Xiaohui Zeng, Jing Zhang, Qinsheng Zhang, Kaiwen Zheng, Andrew Zhu, Yuke Zhu",
+    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Robotics (cs.RO)",
+    "Abstract": "We introduce [Cosmos-Predict2.5], the latest generation of the Cosmos World Foundation Models for Physical AI. Built on a flow-based architecture, [Cosmos-Predict2.5] unifies Text2World, Image2World, and Video2World generation in a single model and leverages [Cosmos-Reason1], a Physical AI vision-language model, to provide richer text grounding and finer control of world simulation. Trained on 200M curated video clips and refined with reinforcement learning-based post-training, [Cosmos-Predict2.5] achieves substantial improvements over [Cosmos-Predict1] in video quality and instruction alignment, with models released at 2B and 14B scales. These capabilities enable more reliable synthetic data generation, policy evaluation, and closed-loop simulation for robotics and autonomous systems. We further extend the family with [Cosmos-Transfer2.5], a control-net style framework for Sim2Real and Real2Real world translation. Despite being 3.5$\\times$ smaller than [Cosmos-Transfer1], it delivers higher fidelity and robust long-horizon video generation. Together, these advances establish [Cosmos-Predict2.5] and [Cosmos-Transfer2.5] as versatile tools for scaling embodied intelligence. To accelerate research and deployment in Physical AI, we release source code, pretrained checkpoints, and curated benchmarks under the NVIDIA Open Model License at https://github.com/nvidia-cosmos/cosmos-predict2.5 and https://github.com/nvidia-cosmos/cosmos-transfer2.5. We hope these open resources lower the barrier to adoption and foster innovation in building the next generation of embodied intelligence.",
+    "Venue": "ArXiv",
+    "Citation_Count": 45,
+    "Influential_Citations": 11,
+    "Max_Author_hIndex": 28,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 32,
+    "Factors": [
+      "HINDEX(+2:h=28)",
+      "INFLUENTIAL(+30:24%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.21743",
     "Title": "Scaling Competence, Shrinking Reasoning: Cognitive Signatures in Language Model Learning",
     "Authors": "Mukul Singh, Ananya Singha, Arjun Radhakrishna, Sumit Gulwani",
@@ -16964,6 +17237,28 @@
     "Factors": [
       "ABSTRACT(+25)",
       "HINDEX(+6:h=65)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.08567",
+    "Title": "The Path Not Taken: RLVR Provably Learns Off the Principals",
+    "Authors": "Hanqing Zhu, Zhenyu Zhang, Hanxian Huang, DiJia Su, Zechun Liu, Jiawei Zhao, Igor Fedorov, Hamed Pirsiavash, Zhizhou Sha, Jinwon Lee, David Z. Pan, Zhangyang Wang, Yuandong Tian, Kai Sheng Tai",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI)",
+    "Abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) reliably improves the reasoning performance of large language models, yet it appears to modify only a small fraction of parameters. We revisit this paradox and show that sparsity is a surface artifact of a model-conditioned optimization bias: for a fixed pretrained model, updates consistently localize to preferred parameter regions, highly consistent across runs and largely invariant to datasets and RL recipes. We mechanistically explain these dynamics with a Three-Gate Theory: Gate I (KL Anchor) imposes a KL-constrained update; Gate II (Model Geometry) steers the step off principal directions into low-curvature, spectrum-preserving subspaces; and Gate III (Precision) hides micro-updates in non-preferred regions, making the off-principal bias appear as sparsity. We then validate this theory and, for the first time, provide a parameter-level characterization of RLVR's learning dynamics: RLVR learns off principal directions in weight space, achieving gains via minimal spectral drift, reduced principal-subspace rotation, and off-principal update alignment. In contrast, SFT targets principal weights, distorts the spectrum, and even lags RLVR. Together, these results provide the first parameter-space account of RLVR's training dynamics, revealing clear regularities in how parameters evolve. Crucially, we show that RL operates in a distinct optimization regime from SFT, so directly adapting SFT-era parameter-efficient fine-tuning (PEFT) methods can be flawed, as evidenced by our case studies on advanced sparse fine-tuning and LoRA variants. We hope this work charts a path toward a white-box understanding of RLVR and the design of geometry-aware, RLVR-native learning algorithms, rather than repurposed SFT-era heuristics.",
+    "Venue": "ArXiv",
+    "Citation_Count": 16,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 24,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 31,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "HINDEX(+1:h=24)",
+      "INFLUENTIAL(+15:12%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -17170,24 +17465,43 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.16334",
-    "Title": "OpenMMReasoner: Pushing the Frontiers for Multimodal Reasoning with an Open and General Recipe",
-    "Authors": "Kaichen Zhang, Keming Wu, Zuhao Yang, Bo Li, Kairui Hu, Bin Wang, Ziwei Liu, Xingxuan Li, Lidong Bing",
-    "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "Recent advancements in large reasoning models have fueled growing interest in extending such capabilities to multimodal domains. However, despite notable progress in visual reasoning, the lack of transparent and reproducible data curation and training strategies remains a major barrier to scalable research. In this work, we introduce OpenMMReasoner, a fully transparent two-stage recipe for multimodal reasoning spanning supervised fine-tuning (SFT) and reinforcement learning (RL). In the SFT stage, we construct an 874K-sample cold-start dataset with rigorous step-by-step validation, providing a strong foundation for reasoning capabilities. The subsequent RL stage leverages a 74K-sample dataset across diverse domains to further sharpen and stabilize these abilities, resulting in a more robust and efficient learning process. Extensive evaluations demonstrate that our training recipe not only surpasses strong baselines but also highlights the critical role of data quality and training design in shaping multimodal reasoning performance. Notably, our method achieves a 11.6% improvement over the Qwen2.5-VL-7B-Instruct baseline across nine multimodal reasoning benchmarks, establishing a solid empirical foundation for future large-scale multimodal reasoning research. We open-sourced all our codes, pipeline, and data at https://github.com/EvolvingLMMs-Lab/OpenMMReasoner.",
+    "arXiv_ID": "2511.10395",
+    "Title": "AgentEvolver: Towards Efficient Self-Evolving Agent System",
+    "Authors": "Yunpeng Zhai, Shuchang Tao, Cheng Chen, Anni Zou, Ziqian Chen, Qingxu Fu, Shinji Mai, Li Yu, Jiaji Deng, Zouying Cao, Zhaoyang Liu, Bolin Ding, Jingren Zhou",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "Autonomous agents powered by large language models (LLMs) have the potential to significantly enhance human productivity by reasoning, using tools, and executing complex tasks in diverse environments. However, current approaches to developing such agents remain costly and inefficient, as they typically require manually constructed task datasets and reinforcement learning (RL) pipelines with extensive random exploration. These limitations lead to prohibitively high data-construction costs, low exploration efficiency, and poor sample utilization. To address these challenges, we present AgentEvolver, a self-evolving agent system that leverages the semantic understanding and reasoning capabilities of LLMs to drive autonomous agent learning. AgentEvolver introduces three synergistic mechanisms: (i) self-questioning, which enables curiosity-driven task generation in novel environments, reducing dependence on handcrafted datasets; (ii) self-navigating, which improves exploration efficiency through experience reuse and hybrid policy guidance; and (iii) self-attributing, which enhances sample efficiency by assigning differentiated rewards to trajectory states and actions based on their contribution. By integrating these mechanisms into a unified framework, AgentEvolver enables scalable, cost-effective, and continual improvement of agent capabilities. Preliminary experiments indicate that AgentEvolver achieves more efficient exploration, better sample utilization, and faster adaptation compared to traditional RL-based baselines.",
     "Venue": "ArXiv",
-    "Citation_Count": 10,
+    "Citation_Count": 18,
     "Influential_Citations": 1,
-    "Max_Author_hIndex": 51,
+    "Max_Author_hIndex": 13,
     "Category": "cs.CL",
     "Categories": [
-      "cs.CL",
-      "cs.AI"
+      "cs.CL"
     ],
-    "Score": 29,
+    "Score": 30,
     "Factors": [
-      "TITLE(+25:reasoning)",
-      "HINDEX(+4:h=51)"
+      "ABSTRACT(+25)",
+      "INFLUENTIAL(+5:6%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.15661",
+    "Title": "VisPlay: Self-Evolving Vision-Language Models from Images",
+    "Authors": "Yicheng He, Chengsong Huang, Zongxia Li, Jiaxin Huang, Yonghui Yang",
+    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
+    "Abstract": "Reinforcement learning (RL) provides a principled framework for improving Vision-Language Models (VLMs) on complex reasoning tasks. However, existing RL approaches often rely on human-annotated labels or task-specific heuristics to define verifiable rewards, both of which are costly and difficult to scale. We introduce VisPlay, a self-evolving RL framework that enables VLMs to autonomously improve their reasoning abilities using large amounts of unlabeled image data. Starting from a single base VLM, VisPlay assigns the model into two interacting roles: an Image-Conditioned Questioner that formulates challenging yet answerable visual questions, and a Multimodal Reasoner that generates silver responses. These roles are jointly trained with Group Relative Policy Optimization (GRPO), which incorporates diversity and difficulty rewards to balance the complexity of generated questions with the quality of the silver answers. VisPlay scales efficiently across two model families. When trained on Qwen2.5-VL and MiMo-VL, VisPlay achieves consistent improvements in visual reasoning, compositional generalization, and hallucination reduction across eight benchmarks, including MM-Vet and MMMU, demonstrating a scalable path toward self-evolving multimodal intelligence. The project page is available at https://bruno686.github.io/VisPlay/",
+    "Venue": "ArXiv",
+    "Citation_Count": 17,
+    "Influential_Citations": 5,
+    "Max_Author_hIndex": 13,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 30,
+    "Factors": [
+      "INFLUENTIAL(+30:29%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -17209,6 +17523,28 @@
     "Factors": [
       "TITLE(+25:framework)",
       "HINDEX(+4:h=47)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.11793",
+    "Title": "MiroThinker: Pushing the Performance Boundaries of Open-Source Research Agents via Model, Context, and Interactive Scaling",
+    "Authors": "MiroMind Team, Song Bai, Lidong Bing, Carson Chen, Guanzheng Chen, Yuntao Chen, Zhe Chen, Ziyi Chen, Jifeng Dai, Xuan Dong, Wenhan Dou, Yue Deng, Yunjie Fu, Junqi Ge, Chenxia Han, Tammy Huang, Zhenhang Huang, Jerry Jiao, Shilei Jiang, Tianyu Jiao, Xiaoqi Jian, Lei Lei, Ruilin Li, Ryan Luo, Tiantong Li, Xiang Lin, Ziyuan Liu, Zhiqi Li, Jie Ni, Qiang Ren, Pax Sun, Shiqian Su, Chenxin Tao, Bin Wang, Hellen Wang, Haonan Wang, James Wang, Jin Wang, Jojo Wang, Letian Wang, Shizun Wang, Weizhi Wang, Zixuan Wang, Jinfan Xu, Sen Xing, Chenyu Yang, Hai Ye, Jiaheng Yu, Yue Yu, Muyan Zhong, Tianchen Zhao, Xizhou Zhu, Yanpeng Zhou, Yifan Zhang, Zhi Zhu",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "We present MiroThinker v1.0, an open-source research agent designed to advance tool-augmented reasoning and information-seeking capabilities. Unlike previous agents that only scale up model size or context length, MiroThinker explores interaction scaling at the model level, systematically training the model to handle deeper and more frequent agent-environment interactions as a third dimension of performance improvement. Unlike LLM test-time scaling, which operates in isolation and risks degradation with longer reasoning chains, interactive scaling leverages environment feedback and external information acquisition to correct errors and refine trajectories. Through reinforcement learning, the model achieves efficient interaction scaling: with a 256K context window, it can perform up to 600 tool calls per task, enabling sustained multi-turn reasoning and complex real-world research workflows. Across four representative benchmarks-GAIA, HLE, BrowseComp, and BrowseComp-ZH-the 72B variant achieves up to 81.9%, 37.7%, 47.1%, and 55.6% accuracy respectively, surpassing previous open-source agents and approaching commercial counterparts such as GPT-5-high. Our analysis reveals that MiroThinker benefits from interactive scaling consistently: research performance improves predictably as the model engages in deeper and more frequent agent-environment interactions, demonstrating that interaction depth exhibits scaling behaviors analogous to model size and context length. These findings establish interaction scaling as a third critical dimension for building next-generation open research agents, complementing model capacity and context windows.",
+    "Venue": "ArXiv",
+    "Citation_Count": 21,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 51,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 29,
+    "Factors": [
+      "ABSTRACT(+10)",
+      "HINDEX(+4:h=51)",
+      "INFLUENTIAL(+15:14%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -17634,27 +17970,6 @@
     "Factors": [
       "TITLE(+25:framework)",
       "HINDEX(+2:h=28)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.00088",
-    "Title": "Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous Driving in the Long Tail",
-    "Authors": "NVIDIA: Yan Wang, Wenjie Luo, Junjie Bai, Yulong Cao, Tong Che, Ke Chen, Yuxiao Chen, Jenna Diamond, Yifan Ding, Wenhao Ding, Liang Feng, Greg Heinrich, Jack Huang, Peter Karkus, Boyi Li, Pinyi Li, Tsung-Yi Lin, Dongran Liu, Ming-Yu Liu, Langechuan Liu, Zhijian Liu, Jason Lu, Yunxiang Mao, Pavlo Molchanov, Lindsey Pavao, Zhenghao Peng, Mike Ranzinger, Ed Schmerling, Shida Shen, Yunfei Shi, Sarah Tariq, Ran Tian, Tilman Wekel, Xinshuo Weng, Tianjun Xiao, Eric Yang, Xiaodong Yang, Yurong You, Xiaohui Zeng, Wenyuan Zhang, Boris Ivanovic, Marco Pavone",
-    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "End-to-end architectures trained via imitation learning have advanced autonomous driving by scaling model size and data, yet performance remains brittle in safety-critical long-tail scenarios where supervision is sparse and causal understanding is limited. We introduce Alpamayo-R1 (AR1), a vision-language-action model (VLA) that integrates Chain of Causation reasoning with trajectory planning for complex driving scenarios. Our approach features three key innovations: (1) the Chain of Causation (CoC) dataset, built through a hybrid auto-labeling and human-in-the-loop pipeline producing decision-grounded, causally linked reasoning traces aligned with driving behaviors; (2) a modular VLA architecture combining Cosmos-Reason, a vision-language model pre-trained for Physical AI, with a diffusion-based trajectory decoder that generates dynamically feasible trajectories in real time; (3) a multi-stage training strategy using supervised fine-tuning to elicit reasoning and reinforcement learning (RL) to enforce reasoning-action consistency and optimize reasoning quality. AR1 achieves up to a 12% improvement in planning accuracy on challenging cases compared to a trajectory-only baseline, with a 35% reduction in close encounter rate in closed-loop simulation. RL post-training improves reasoning quality by 45% and reasoning-action consistency by 37%. Model scaling from 0.5B to 7B parameters shows consistent improvements. On-vehicle road tests confirm real-time performance (99 ms latency) and successful urban deployment. By bridging interpretable reasoning with precise control, AR1 demonstrates a practical path towards Level 4 autonomous driving. Model weights are available at https://huggingface.co/nvidia/Alpamayo-R1-10B with inference code at https://github.com/NVlabs/alpamayo.",
-    "Venue": "ArXiv",
-    "Citation_Count": 33,
-    "Influential_Citations": 4,
-    "Max_Author_hIndex": 32,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 27,
-    "Factors": [
-      "TITLE(+25:reasoning)",
-      "HINDEX(+2:h=32)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -18150,27 +18465,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.13646",
-    "Title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
-    "Authors": "Chunqiu Steven Xia, Zhe Wang, Yan Yang, Yuxiang Wei, Lingming Zhang",
-    "Subjects": "Software Engineering (cs.SE); Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
-    "Abstract": "Large Language Models (LLMs) are reshaping almost all industries, including software engineering. In recent years, a number of LLM agents have been proposed to solve real-world software problems. Such software agents are typically equipped with a suite of coding tools and can autonomously decide the next actions to form complete trajectories to solve end-to-end software tasks. While promising, they typically require dedicated design and may still be suboptimal, since it can be extremely challenging and costly to exhaust the entire agent scaffold design space. Recognizing that software agents are inherently software themselves that can be further refined/modified, researchers have proposed a number of self-improving software agents recently, including the Darwin-G\\\"odel Machine (DGM). Meanwhile, such self-improving agents require costly offline training on specific benchmarks and may not generalize well across different LLMs or benchmarks. In this paper, we propose Live-SWE-agent, the first live software agent that can autonomously and continuously evolve itself on-the-fly during runtime when solving real-world software problems. More specifically, Live-SWE-agent starts with the most basic agent scaffold with only access to bash tools (e.g., mini-SWE-agent), and autonomously evolves its own scaffold implementation while solving real-world software problems. Our evaluation on the widely studied SWE-bench Verified benchmark shows that LIVE-SWE-AGENT can achieve an impressive solve rate of 77.4% without test-time scaling, outperforming all existing software agents, including the best proprietary solution. Moreover, Live-SWE-agent outperforms state-of-the-art manually crafted software agents on the recent SWE-Bench Pro benchmark, achieving the best-known solve rate of 45.8%.",
-    "Venue": "ArXiv",
-    "Citation_Count": 24,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 22,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 26,
-    "Factors": [
-      "ABSTRACT(+25)",
-      "HINDEX(+1:h=22)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.16671",
     "Title": "Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation",
     "Authors": "Ziyu Guo, Renrui Zhang, Hongyu Li, Manyuan Zhang, Xinyan Chen, Sifan Wang, Yan Feng, Peng Pei, Pheng-Ann Heng",
@@ -18398,27 +18692,6 @@
     "Factors": [
       "TITLE(+25:framework)",
       "HINDEX(+1:h=27)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.17006",
-    "Title": "Budget-Aware Tool-Use Enables Effective Agent Scaling",
-    "Authors": "Tengxiao Liu, Zifeng Wang, Jin Miao, I-Hung Hsu, Jun Yan, Jiefeng Chen, Rujun Han, Fangyuan Xu, Yanfei Chen, Ke Jiang, Samira Daruki, Yi Liang, William Yang Wang, Tomas Pfister, Chen-Yu Lee",
-    "Subjects": "Artificial Intelligence (cs.AI)",
-    "Abstract": "Scaling test-time computation improves performance across different tasks on large language models (LLMs), which has also been extended to tool-augmented agents. For these agents, scaling involves not only\"thinking\"in tokens but also\"acting\"via tool calls. The number of tool calls directly bounds the agent's interaction with the external environment. However, we find that simply granting agents a larger tool-call budget fails to improve performance, as they lack\"budget awareness\"and quickly hit a performance ceiling. To address this, we study how to scale such agents effectively under explicit tool-call budgets, focusing on web search agents. We first introduce the Budget Tracker, a lightweight plug-in that provides the agent with continuous budget awareness, enabling simple yet effective scaling. We further develop BATS (Budget Aware Test-time Scaling), an advanced framework that leverages this awareness to dynamically adapt its planning and verification strategy, deciding whether to\"dig deeper\"on a promising lead or\"pivot\"to new paths based on remaining resources. To analyze cost-performance scaling in a controlled manner, we formalize a unified cost metric that jointly accounts for token and tool consumption. We provide the first systematic study on budget-constrained agents, showing that budget-aware methods produce more favorable scaling curves and push the cost-performance Pareto frontier. Our work offers empirical insights toward a more transparent and principled understanding of scaling in tool-augmented agents.",
-    "Venue": "ArXiv",
-    "Citation_Count": 10,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 23,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 26,
-    "Factors": [
-      "ABSTRACT(+25)",
-      "HINDEX(+1:h=23)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -18692,6 +18965,28 @@
     "Factors": [
       "TITLE(+25:framework)",
       "HINDEX(+1:h=19)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.09515",
+    "Title": "WMPO: World Model-based Policy Optimization for Vision-Language-Action Models",
+    "Authors": "Fangqi Zhu, Zhengyang Yan, Zicong Hong, Quanxin Shou, Xiao Ma, Song Guo",
+    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI)",
+    "Abstract": "Vision-Language-Action (VLA) models have shown strong potential for general-purpose robotic manipulation, but their reliance on expert demonstrations limits their ability to learn from failures and perform self-corrections. Reinforcement learning (RL) addresses these through self-improving interactions with the physical environment, but suffers from high sample complexity on real robots. We introduce World-Model-based Policy Optimization (WMPO), a principled framework for on-policy VLA RL without interacting with the real environment. In contrast to widely used latent world models, WMPO focuses on pixel-based predictions that align the\"imagined\"trajectories with the VLA features pretrained with web-scale images. Crucially, WMPO enables the policy to perform on-policy GRPO that provides stronger performance than the often-used off-policy methods. Extensive experiments in both simulation and real-robot settings demonstrate that WMPO (i) substantially improves sample efficiency, (ii) achieves stronger overall performance, (iii) exhibits emergent behaviors such as self-correction, and (iv) demonstrates robust generalization and lifelong learning capabilities.",
+    "Venue": "ArXiv",
+    "Citation_Count": 16,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 17,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 26,
+    "Factors": [
+      "ABSTRACT(+20)",
+      "HINDEX(+1:h=17)",
+      "INFLUENTIAL(+5:6%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -21067,26 +21362,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.10395",
-    "Title": "AgentEvolver: Towards Efficient Self-Evolving Agent System",
-    "Authors": "Yunpeng Zhai, Shuchang Tao, Cheng Chen, Anni Zou, Ziqian Chen, Qingxu Fu, Shinji Mai, Li Yu, Jiaji Deng, Zouying Cao, Zhaoyang Liu, Bolin Ding, Jingren Zhou",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "Autonomous agents powered by large language models (LLMs) have the potential to significantly enhance human productivity by reasoning, using tools, and executing complex tasks in diverse environments. However, current approaches to developing such agents remain costly and inefficient, as they typically require manually constructed task datasets and reinforcement learning (RL) pipelines with extensive random exploration. These limitations lead to prohibitively high data-construction costs, low exploration efficiency, and poor sample utilization. To address these challenges, we present AgentEvolver, a self-evolving agent system that leverages the semantic understanding and reasoning capabilities of LLMs to drive autonomous agent learning. AgentEvolver introduces three synergistic mechanisms: (i) self-questioning, which enables curiosity-driven task generation in novel environments, reducing dependence on handcrafted datasets; (ii) self-navigating, which improves exploration efficiency through experience reuse and hybrid policy guidance; and (iii) self-attributing, which enhances sample efficiency by assigning differentiated rewards to trajectory states and actions based on their contribution. By integrating these mechanisms into a unified framework, AgentEvolver enables scalable, cost-effective, and continual improvement of agent capabilities. Preliminary experiments indicate that AgentEvolver achieves more efficient exploration, better sample utilization, and faster adaptation compared to traditional RL-based baselines.",
-    "Venue": "ArXiv",
-    "Citation_Count": 18,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 13,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 25,
-    "Factors": [
-      "ABSTRACT(+25)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.11440",
     "Title": "From Synthetic Scenes to Real Performance: Enhancing Spatial Reasoning in VLMs",
     "Authors": "Massimo Rizzoli, Simone Alghisi, Seyed Mahed Mousavi, Giuseppe Riccardi",
@@ -21442,26 +21717,6 @@
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
-    ],
-    "Score": 25,
-    "Factors": [
-      "TITLE(+25:framework)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.00424",
-    "Title": "A Multimodal Framework for Depression Detection during Covid-19 via Harvesting Social Media: A Novel Dataset and Method",
-    "Authors": "Ashutosh Anshul, Gumpili Sai Pranav, Mohammad Zia Ur Rehman, Nagendra Kumar",
-    "Subjects": "Artificial Intelligence (cs.AI)",
-    "Abstract": "The recent coronavirus disease (COVID-19) has become a pandemic and has affected the entire globe. During the pandemic, we have observed a spike in cases related to mental health, such as anxiety, stress, and depression. Depression significantly influences most diseases worldwide, making it difficult to detect mental health conditions in people due to unawareness and unwillingness to consult a doctor. However, nowadays, people extensively use online social media platforms to express their emotions and thoughts. Hence, social media platforms are now becoming a large data source that can be utilized for detecting depression and mental illness. However, the existing approaches often overlook data sparsity in tweets and the multimodal aspects of social media. In this article, we propose a novel multimodal framework that combines textual, user-specific, and image analysis to detect depression among social media users. To provide enough context about the user\u2019s emotional state, we propose the following: 1) an extrinsic feature by harnessing the URLs present in tweets and 2) extracting textual content present in images posted in tweets. We also extract five sets of features belonging to different modalities to describe a user. In addition, we introduce a deep learning model, the visual neural network (VNN), to generate embeddings of user-posted images, which are used to create the visual feature vector for prediction. We contribute a curated COVID-19 dataset of depressed and nondepressed users for research purposes and demonstrate the effectiveness of our model in detecting depression during the COVID-19 outbreak. Our model outperforms the existing state-of-the-art methods over a benchmark dataset by 2%\u20138% and produces promising results on the COVID-19 dataset. Our analysis highlights the impact of each modality and provides valuable insights into users\u2019 mental and emotional states.",
-    "Venue": "IEEE Trans Comput Soc Syst",
-    "Citation_Count": 27,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 10,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
     ],
     "Score": 25,
     "Factors": [
@@ -23090,26 +23345,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.02864",
-    "Title": "Mathematical exploration and discovery at scale",
-    "Authors": "Bogdan Georgiev, Javier G\u00f3mez-Serrano, Terence Tao, Adam Zsolt Wagner",
-    "Subjects": "Neural and Evolutionary Computing (cs.NE); Artificial Intelligence (cs.AI); Classical Analysis and ODEs (math.CA); Combinatorics (math.CO); Metric Geometry (math.MG)",
-    "Abstract": "AlphaEvolve (Novikov et al., 2025) is a generic evolutionary coding agent that combines the generative capabilities of LLMs with automated evaluation in an iterative evolutionary framework that proposes, tests, and refines algorithmic solutions to challenging scientific and practical problems. In this paper we showcase AlphaEvolve as a tool for autonomously discovering novel mathematical constructions and advancing our understanding of long-standing open problems. To demonstrate its breadth, we considered a list of 67 problems spanning mathematical analysis, combinatorics, geometry, and number theory. The system rediscovered the best known solutions in most of the cases and discovered improved solutions in several. In some instances, AlphaEvolve is also able to generalize results for a finite number of input values into a formula valid for all input values. Furthermore, we are able to combine this methodology with Deep Think and AlphaProof in a broader framework where the additional proof-assistants and reasoning systems provide automated proof generation and further mathematical insights. These results demonstrate that large language model-guided evolutionary search can autonomously discover mathematical constructions that complement human intuition, at times matching or even improving the best known results, highlighting the potential for significant new ways of interaction between mathematicians and AI systems. We present AlphaEvolve as a powerful new tool for mathematical discovery, capable of exploring vast search spaces to solve complex optimization problems at scale, often with significantly reduced requirements on preparation and computation time.",
-    "Venue": "ArXiv",
-    "Citation_Count": 32,
-    "Influential_Citations": 7,
-    "Max_Author_hIndex": 5,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 25,
-    "Factors": [
-      "ABSTRACT(+25)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.02866",
     "Title": "LM-Fix: Lightweight Bit-Flip Detection and Rapid Recovery Framework for Language Models",
     "Authors": "Ahmad Tahmasivand, Noureldin Zahran, Saba Al-Sayouri, Mohammed Fouda, Khaled N. Khasawneh",
@@ -23519,26 +23754,6 @@
     "Citation_Count": 1,
     "Influential_Citations": 1,
     "Max_Author_hIndex": 2,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 25,
-    "Factors": [
-      "ABSTRACT(+25)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.06449",
-    "Title": "FLEX: Continuous Agent Evolution via Forward Learning from Experience",
-    "Authors": "Zhicheng Cai, Xinyuan Guo, Yu Pei, Jiangtao Feng, Jinsong Su, Jiangjie Chen, Ya-Qin Zhang, Wei-Ying Ma, Mingxuan Wang, Hao Zhou",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI)",
-    "Abstract": "Autonomous agents driven by Large Language Models (LLMs) have revolutionized reasoning and problem-solving but remain static after training, unable to grow with experience as intelligent beings do during deployment. We introduce Forward Learning with EXperience (FLEX), a gradient-free learning paradigm that enables LLM agents to continuously evolve through accumulated experience. Specifically, FLEX cultivates scalable and inheritable evolution by constructing a structured experience library through continual reflection on successes and failures during interaction with the environment. FLEX delivers substantial improvements on mathematical reasoning, chemical retrosynthesis, and protein fitness prediction (up to 23% on AIME25, 10% on USPTO50k, and 14% on ProteinGym). We further identify a clear scaling law of experiential growth and the phenomenon of experience inheritance across agents, marking a step toward scalable and inheritable continuous agent evolution. Project Page: https://flex-gensi-thuair.github.io.",
-    "Venue": "ArXiv",
-    "Citation_Count": 16,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 12,
     "Category": "cs.AI",
     "Categories": [
       "cs.AI"
@@ -24217,27 +24432,6 @@
     "Factors": [
       "ABSTRACT(+15)",
       "HINDEX(+6:h=67)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.09515",
-    "Title": "WMPO: World Model-based Policy Optimization for Vision-Language-Action Models",
-    "Authors": "Fangqi Zhu, Zhengyang Yan, Zicong Hong, Quanxin Shou, Xiao Ma, Song Guo",
-    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI)",
-    "Abstract": "Vision-Language-Action (VLA) models have shown strong potential for general-purpose robotic manipulation, but their reliance on expert demonstrations limits their ability to learn from failures and perform self-corrections. Reinforcement learning (RL) addresses these through self-improving interactions with the physical environment, but suffers from high sample complexity on real robots. We introduce World-Model-based Policy Optimization (WMPO), a principled framework for on-policy VLA RL without interacting with the real environment. In contrast to widely used latent world models, WMPO focuses on pixel-based predictions that align the\"imagined\"trajectories with the VLA features pretrained with web-scale images. Crucially, WMPO enables the policy to perform on-policy GRPO that provides stronger performance than the often-used off-policy methods. Extensive experiments in both simulation and real-robot settings demonstrate that WMPO (i) substantially improves sample efficiency, (ii) achieves stronger overall performance, (iii) exhibits emergent behaviors such as self-correction, and (iv) demonstrates robust generalization and lifelong learning capabilities.",
-    "Venue": "ArXiv",
-    "Citation_Count": 16,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 17,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 21,
-    "Factors": [
-      "ABSTRACT(+20)",
-      "HINDEX(+1:h=17)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -25374,6 +25568,27 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.07317",
+    "Title": "RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments",
+    "Authors": "Zhiyuan Zeng, Hamish Ivison, Yiping Wang, Lifan Yuan, Shuyue Stella Li, Zhuorui Ye, Siting Li, Jacqueline He, Runlong Zhou, Tong Chen, Chenyang Zhao, Yulia Tsvetkov, Simon Shaolei Du, Natasha Jaques, Hao Peng, Pang Wei Koh, Hannaneh Hajishirzi",
+    "Subjects": "Computation and Language (cs.CL); Machine Learning (cs.LG)",
+    "Abstract": "We introduce Reinforcement Learning (RL) with Adaptive Verifiable Environments (RLVE), an approach using verifiable environments that procedurally generate problems and provide algorithmically verifiable rewards, to scale up RL for language models (LMs). RLVE enables each verifiable environment to dynamically adapt its problem difficulty distribution to the policy model's capabilities as training progresses. In contrast, static data distributions often lead to vanishing learning signals when problems are either too easy or too hard for the policy. To implement RLVE, we create RLVE-Gym, a large-scale suite of 400 verifiable environments carefully developed through manual environment engineering. Using RLVE-Gym, we show that environment scaling, i.e., expanding the collection of training environments, consistently improves generalizable reasoning capabilities. RLVE with joint training across all 400 environments in RLVE-Gym yields a 3.37% absolute average improvement across six reasoning benchmarks, starting from one of the strongest 1.5B reasoning LMs. By comparison, continuing this LM's original RL training yields only a 0.49% average absolute gain despite using over 3x more compute. We release our code publicly.",
+    "Venue": "ArXiv",
+    "Citation_Count": 14,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 28,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 17,
+    "Factors": [
+      "HINDEX(+2:h=28)",
+      "INFLUENTIAL(+15:14%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.12869",
     "Title": "On the Fundamental Limits of LLMs at Scale",
     "Authors": "Muhammad Ahmed Mohsin, Muhammad Umer, Ahsan Bilal, Zeeshan Memon, Muhammad Ibtsaam Qadir, Sagnik Bhattacharya, Hassan Rizwan, Abhiram R. Gorle, Maahe Zehra Kazmi, Nukhba Amir, Ali Subhan, Muhammad Usman Rafique, Zihao He, Pulkit Mehta, Muhammad Ali Jamshed, John M. Cioffi",
@@ -26349,27 +26564,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.20347",
-    "Title": "Soft Adaptive Policy Optimization",
-    "Authors": "Chang Gao, Chujie Zheng, Xiong-Hui Chen, Kai Dang, Shixuan Liu, Bowen Yu, An Yang, Shuai Bai, Jingren Zhou, Junyang Lin",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "Reinforcement learning (RL) plays an increasingly important role in enhancing the reasoning capabilities of large language models (LLMs), yet stable and performant policy optimization remains challenging. Token-level importance ratios often exhibit high variance-a phenomenon exacerbated in Mixture-of-Experts models-leading to unstable updates. Existing group-based policy optimization methods, such as GSPO and GRPO, alleviate this problem via hard clipping, making it difficult to maintain both stability and effective learning. We propose Soft Adaptive Policy Optimization (SAPO), which replaces hard clipping with a smooth, temperature-controlled gate that adaptively attenuates off-policy updates while preserving useful learning signals. Compared with GSPO and GRPO, SAPO is both sequence-coherent and token-adaptive. Like GSPO, SAPO maintains sequence-level coherence, but its soft gating forms a continuous trust region that avoids the brittle hard clipping band used in GSPO. When a sequence contains a few highly off-policy tokens, GSPO suppresses all gradients for that sequence, whereas SAPO selectively down-weights only the offending tokens and preserves the learning signal from the near-on-policy ones, improving sample efficiency. Relative to GRPO, SAPO replaces hard token-level clipping with smooth, temperature-controlled scaling, enabling more informative and stable updates. Empirical results on mathematical reasoning benchmarks indicate that SAPO exhibits improved training stability and higher Pass@1 performance under comparable training budgets. Moreover, we employ SAPO to train the Qwen3-VL model series, demonstrating that SAPO yields consistent performance gains across diverse tasks and different model sizes. Overall, SAPO provides a more reliable, scalable, and effective optimization strategy for RL training of LLMs.",
-    "Venue": "ArXiv",
-    "Citation_Count": 22,
-    "Influential_Citations": 9,
-    "Max_Author_hIndex": 27,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 16,
-    "Factors": [
-      "ABSTRACT(+15)",
-      "HINDEX(+1:h=27)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.03092",
     "Title": "SnapStream: Efficient Long Sequence Decoding on Dataflow Accelerators",
     "Authors": "Jonathan Li, Nasim Farahini, Evgenii Iuliugin, Magnus Vesterlund, Christian H\u00e4ggstr\u00f6m, Guangtao Wang, Shubhangi Upasani, Ayush Sachdeva, Rui Li, Faline Fu, Chen Wu, Ayesha Siddiqua, John Long, Tuowen Zhao, Matheen Musaddiq, H\u00e5kan Zeffer, Yun Du, Mingran Wang, Qinghua Li, Bo Li, Urmish Thakker, Raghu Prabhakar",
@@ -26902,27 +27096,6 @@
     "Venue": "Asia-pacific Signal Inf Process Assoc Annu Summit Conf, APSIPA",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 24,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 16,
-    "Factors": [
-      "ABSTRACT(+15)",
-      "HINDEX(+1:h=24)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.08567",
-    "Title": "The Path Not Taken: RLVR Provably Learns Off the Principals",
-    "Authors": "Hanqing Zhu, Zhenyu Zhang, Hanxian Huang, DiJia Su, Zechun Liu, Jiawei Zhao, Igor Fedorov, Hamed Pirsiavash, Zhizhou Sha, Jinwon Lee, David Z. Pan, Zhangyang Wang, Yuandong Tian, Kai Sheng Tai",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI)",
-    "Abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) reliably improves the reasoning performance of large language models, yet it appears to modify only a small fraction of parameters. We revisit this paradox and show that sparsity is a surface artifact of a model-conditioned optimization bias: for a fixed pretrained model, updates consistently localize to preferred parameter regions, highly consistent across runs and largely invariant to datasets and RL recipes. We mechanistically explain these dynamics with a Three-Gate Theory: Gate I (KL Anchor) imposes a KL-constrained update; Gate II (Model Geometry) steers the step off principal directions into low-curvature, spectrum-preserving subspaces; and Gate III (Precision) hides micro-updates in non-preferred regions, making the off-principal bias appear as sparsity. We then validate this theory and, for the first time, provide a parameter-level characterization of RLVR's learning dynamics: RLVR learns off principal directions in weight space, achieving gains via minimal spectral drift, reduced principal-subspace rotation, and off-principal update alignment. In contrast, SFT targets principal weights, distorts the spectrum, and even lags RLVR. Together, these results provide the first parameter-space account of RLVR's training dynamics, revealing clear regularities in how parameters evolve. Crucially, we show that RL operates in a distinct optimization regime from SFT, so directly adapting SFT-era parameter-efficient fine-tuning (PEFT) methods can be flawed, as evidenced by our case studies on advanced sparse fine-tuning and LoRA variants. We hope this work charts a path toward a white-box understanding of RLVR and the design of geometry-aware, RLVR-native learning algorithms, rather than repurposed SFT-era heuristics.",
-    "Venue": "ArXiv",
-    "Citation_Count": 16,
-    "Influential_Citations": 2,
     "Max_Author_hIndex": 24,
     "Category": "cs.AI",
     "Categories": [
@@ -39343,6 +39516,27 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.13593",
+    "Title": "O-Mem: Omni Memory System for Personalized, Long Horizon, Self-Evolving Agents",
+    "Authors": "Piaohong Wang, Motong Tian, Jiaxian Li, Yuan Liang, Yuqing Wang, Qianben Chen, Tiannan Wang, Zhicong Lu, Jiawei Ma, Yuchen Eleanor Jiang, Wangchunshu Zhou",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "Recent advancements in LLM-powered agents have demonstrated significant potential in generating human-like responses; however, they continue to face challenges in maintaining long-term interactions within complex environments, primarily due to limitations in contextual consistency and dynamic personalization. Existing memory systems often depend on semantic grouping prior to retrieval, which can overlook semantically irrelevant yet critical user information and introduce retrieval noise. In this report, we propose the initial design of O-Mem, a novel memory framework based on active user profiling that dynamically extracts and updates user characteristics and event records from their proactive interactions with agents. O-Mem supports hierarchical retrieval of persona attributes and topic-related context, enabling more adaptive and coherent personalized responses. O-Mem achieves 51.67% on the public LoCoMo benchmark, a nearly 3% improvement upon LangMem,the previous state-of-the-art, and it achieves 62.99% on PERSONAMEM, a 3.5% improvement upon A-Mem,the previous state-of-the-art. O-Mem also boosts token and interaction response time efficiency compared to previous memory frameworks. Our work opens up promising directions for developing efficient and human-like personalized AI assistants in the future.",
+    "Venue": "ArXiv",
+    "Citation_Count": 11,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 16,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 15,
+    "Factors": [
+      "ABSTRACT(+10)",
+      "INFLUENTIAL(+5:9%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.17076",
     "Title": "A segment anchoring-based balancing algorithm for agricultural multi-robot task allocation with energy constraints",
     "Authors": "Peng Chen, Jing Liang, Kang-Jia Qiao, Hui Song, Tian-lei Ma, Kun-Jie Yu, Cai-Tong Yue, Ponnuthurai Nagaratnam Suganthan, Witold Pedryc",
@@ -39384,27 +39578,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.11793",
-    "Title": "MiroThinker: Pushing the Performance Boundaries of Open-Source Research Agents via Model, Context, and Interactive Scaling",
-    "Authors": "MiroMind Team, Song Bai, Lidong Bing, Carson Chen, Guanzheng Chen, Yuntao Chen, Zhe Chen, Ziyi Chen, Jifeng Dai, Xuan Dong, Wenhan Dou, Yue Deng, Yunjie Fu, Junqi Ge, Chenxia Han, Tammy Huang, Zhenhang Huang, Jerry Jiao, Shilei Jiang, Tianyu Jiao, Xiaoqi Jian, Lei Lei, Ruilin Li, Ryan Luo, Tiantong Li, Xiang Lin, Ziyuan Liu, Zhiqi Li, Jie Ni, Qiang Ren, Pax Sun, Shiqian Su, Chenxin Tao, Bin Wang, Hellen Wang, Haonan Wang, James Wang, Jin Wang, Jojo Wang, Letian Wang, Shizun Wang, Weizhi Wang, Zixuan Wang, Jinfan Xu, Sen Xing, Chenyu Yang, Hai Ye, Jiaheng Yu, Yue Yu, Muyan Zhong, Tianchen Zhao, Xizhou Zhu, Yanpeng Zhou, Yifan Zhang, Zhi Zhu",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "We present MiroThinker v1.0, an open-source research agent designed to advance tool-augmented reasoning and information-seeking capabilities. Unlike previous agents that only scale up model size or context length, MiroThinker explores interaction scaling at the model level, systematically training the model to handle deeper and more frequent agent-environment interactions as a third dimension of performance improvement. Unlike LLM test-time scaling, which operates in isolation and risks degradation with longer reasoning chains, interactive scaling leverages environment feedback and external information acquisition to correct errors and refine trajectories. Through reinforcement learning, the model achieves efficient interaction scaling: with a 256K context window, it can perform up to 600 tool calls per task, enabling sustained multi-turn reasoning and complex real-world research workflows. Across four representative benchmarks-GAIA, HLE, BrowseComp, and BrowseComp-ZH-the 72B variant achieves up to 81.9%, 37.7%, 47.1%, and 55.6% accuracy respectively, surpassing previous open-source agents and approaching commercial counterparts such as GPT-5-high. Our analysis reveals that MiroThinker benefits from interactive scaling consistently: research performance improves predictably as the model engages in deeper and more frequent agent-environment interactions, demonstrating that interaction depth exhibits scaling behaviors analogous to model size and context length. These findings establish interaction scaling as a third critical dimension for building next-generation open research agents, complementing model capacity and context windows.",
-    "Venue": "ArXiv",
-    "Citation_Count": 21,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 51,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 14,
-    "Factors": [
-      "ABSTRACT(+10)",
-      "HINDEX(+4:h=51)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.06090",
     "Title": "SWE-fficiency: Can Language Models Optimize Real-World Repositories on Real Workloads?",
     "Authors": "Jeffrey Jian Ma, Milad Hashemi, Amir Yazdanbakhsh, Kevin Swersky, Ofir Press, Enhui Li, Vijay Janapa Reddi, Parthasarathy Ranganathan",
@@ -39422,27 +39595,6 @@
     "Factors": [
       "ABSTRACT(+10)",
       "HINDEX(+4:h=46)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.19399",
-    "Title": "DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research",
-    "Authors": "Rulin Shao, Akari Asai, Shannon Zejiang Shen, Hamish Ivison, Varsha Kishore, Jingming Zhuo, Xinran Zhao, Molly Park, Samuel G. Finlayson, David Sontag, Tyler Murray, Sewon Min, Pradeep Dasigi, Luca Soldaini, Faeze Brahman, Wen-tau Yih, Tongshuang Wu, Luke Zettlemoyer, Yoon Kim, Hannaneh Hajishirzi, Pang Wei Koh",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "Deep research models perform multi-step research to produce long-form, well-attributed answers. However, most open deep research models are trained on easily verifiable short-form QA tasks via reinforcement learning with verifiable rewards (RLVR), which does not extend to realistic long-form tasks. We address this with Reinforcement Learning with Evolving Rubrics (RLER), in which we construct and maintain rubrics that co-evolve with the policy model during training; this allows the rubrics to incorporate information that the model has newly explored and to provide discriminative, on-policy feedback. Using RLER, we develop Deep Research Tulu (DR Tulu-8B), the first open model that is directly trained for open-ended, long-form deep research. Across four long-form deep research benchmarks in science, healthcare and general domains, DR Tulu substantially outperforms existing open deep research models, and matches or exceeds proprietary deep research systems, while being significantly smaller and cheaper per query. To facilitate future research, we release all data, models, and code, including our new MCP-based agent infrastructure for deep research systems.",
-    "Venue": "ArXiv",
-    "Citation_Count": 22,
-    "Influential_Citations": 6,
-    "Max_Author_hIndex": 38,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 13,
-    "Factors": [
-      "ABSTRACT(+10)",
-      "HINDEX(+3:h=38)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -39738,6 +39890,27 @@
     "Factors": [
       "ABSTRACT(+10)",
       "HINDEX(+2:h=29)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.16072",
+    "Title": "Early science acceleration experiments with GPT-5",
+    "Authors": "S\u00e9bastien Bubeck, Christian Coester, Ronen Eldan, Timothy Gowers, Yin Tat Lee, Alexandru Lupsasca, Mehtaab Sawhney, Robert Scherrer, Mark Sellke, Brian K. Spears, Derya Unutmaz, Kevin Weil, Steven Yin, Nikita Zhivotovskiy",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
+    "Abstract": "AI models like GPT-5 are an increasingly valuable tool for scientists, but many remain unaware of the capabilities of frontier AI. We present a collection of short case studies in which GPT-5 produced new, concrete steps in ongoing research across mathematics, physics, astronomy, computer science, biology, and materials science. In these examples, the authors highlight how AI accelerated their work, and where it fell short; where expert time was saved, and where human input was still key. We document the interactions of the human authors with GPT-5, as guiding examples of fruitful collaboration with AI. Of note, this paper includes four new results in mathematics (carefully verified by the human authors), underscoring how GPT-5 can help human mathematicians settle previously unsolved problems. These contributions are modest in scope but profound in implication, given the rate at which frontier AI is progressing.",
+    "Venue": "ArXiv",
+    "Citation_Count": 11,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 70,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 12,
+    "Factors": [
+      "HINDEX(+7:h=70)",
+      "INFLUENTIAL(+5:9%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -40173,27 +40346,6 @@
     "Venue": "ArXiv",
     "Citation_Count": 4,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 20,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 11,
-    "Factors": [
-      "ABSTRACT(+10)",
-      "HINDEX(+1:h=20)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.08544",
-    "Title": "LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics",
-    "Authors": "Randall Balestriero, Yann LeCun",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV); Machine Learning (stat.ML)",
-    "Abstract": "Learning manipulable representations of the world and its dynamics is central to AI. Joint-Embedding Predictive Architectures (JEPAs) offer a promising blueprint, but lack of practical guidance and theory has led to ad-hoc R&D. We present a comprehensive theory of JEPAs and instantiate it in {\\bf LeJEPA}, a lean, scalable, and theoretically grounded training objective. First, we identify the isotropic Gaussian as the optimal distribution that JEPAs'embeddings should follow to minimize downstream prediction risk. Second, we introduce a novel objective--{\\bf Sketched Isotropic Gaussian Regularization} (SIGReg)--to constrain embeddings to reach that ideal distribution. Combining the JEPA predictive loss with SIGReg yields LeJEPA with numerous theoretical and practical benefits: (i) single trade-off hyperparameter, (ii) linear time and memory complexity, (iii) stability across hyper-parameters, architectures (ResNets, ViTs, ConvNets) and domains, (iv) heuristics-free, e.g., no stop-gradient, no teacher-student, no hyper-parameter schedulers, and (v) distributed training-friendly implementation requiring only $\\approx$50 lines of code. Our empirical validation covers 10+ datasets, 60+ architectures, all with varying scales and domains. As an example, using imagenet-1k for pretraining and linear evaluation with frozen backbone, LeJEPA reaches 79\\% with a ViT-H/14. We hope that the simplicity and theory-friendly ecosystem offered by LeJEPA will reestablish self-supervised pre-training as a core pillar of AI research (\\href{https://github.com/rbalestr-lab/lejepa}{GitHub repo}).",
-    "Venue": "ArXiv",
-    "Citation_Count": 20,
-    "Influential_Citations": 4,
     "Max_Author_hIndex": 20,
     "Category": "cs.AI",
     "Categories": [
@@ -40986,26 +41138,6 @@
     "Citation_Count": 2,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 5,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 10,
-    "Factors": [
-      "ABSTRACT(+10)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.13593",
-    "Title": "O-Mem: Omni Memory System for Personalized, Long Horizon, Self-Evolving Agents",
-    "Authors": "Piaohong Wang, Motong Tian, Jiaxian Li, Yuan Liang, Yuqing Wang, Qianben Chen, Tiannan Wang, Zhicong Lu, Jiawei Ma, Yuchen Eleanor Jiang, Wangchunshu Zhou",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "Recent advancements in LLM-powered agents have demonstrated significant potential in generating human-like responses; however, they continue to face challenges in maintaining long-term interactions within complex environments, primarily due to limitations in contextual consistency and dynamic personalization. Existing memory systems often depend on semantic grouping prior to retrieval, which can overlook semantically irrelevant yet critical user information and introduce retrieval noise. In this report, we propose the initial design of O-Mem, a novel memory framework based on active user profiling that dynamically extracts and updates user characteristics and event records from their proactive interactions with agents. O-Mem supports hierarchical retrieval of persona attributes and topic-related context, enabling more adaptive and coherent personalized responses. O-Mem achieves 51.67% on the public LoCoMo benchmark, a nearly 3% improvement upon LangMem,the previous state-of-the-art, and it achieves 62.99% on PERSONAMEM, a 3.5% improvement upon A-Mem,the previous state-of-the-art. O-Mem also boosts token and interaction response time efficiency compared to previous memory frameworks. Our work opens up promising directions for developing efficient and human-like personalized AI assistants in the future.",
-    "Venue": "ArXiv",
-    "Citation_Count": 11,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 16,
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
@@ -43148,22 +43280,23 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.16072",
-    "Title": "Early science acceleration experiments with GPT-5",
-    "Authors": "S\u00e9bastien Bubeck, Christian Coester, Ronen Eldan, Timothy Gowers, Yin Tat Lee, Alexandru Lupsasca, Mehtaab Sawhney, Robert Scherrer, Mark Sellke, Brian K. Spears, Derya Unutmaz, Kevin Weil, Steven Yin, Nikita Zhivotovskiy",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
-    "Abstract": "AI models like GPT-5 are an increasingly valuable tool for scientists, but many remain unaware of the capabilities of frontier AI. We present a collection of short case studies in which GPT-5 produced new, concrete steps in ongoing research across mathematics, physics, astronomy, computer science, biology, and materials science. In these examples, the authors highlight how AI accelerated their work, and where it fell short; where expert time was saved, and where human input was still key. We document the interactions of the human authors with GPT-5, as guiding examples of fruitful collaboration with AI. Of note, this paper includes four new results in mathematics (carefully verified by the human authors), underscoring how GPT-5 can help human mathematicians settle previously unsolved problems. These contributions are modest in scope but profound in implication, given the rate at which frontier AI is progressing.",
+    "arXiv_ID": "2511.07820",
+    "Title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+    "Authors": "Zhengyi Luo, Ye Yuan, Tingwu Wang, Chenran Li, Sirui Chen, Fernando Casta\u00f1eda, Zi-Ang Cao, Jiefeng Li, David Minor, Qingwei Ben, Xingye Da, Runyu Ding, Cyrus Hogg, Lina Song, Edy Lim, Eugene Jeong, Tairan He, Haoru Xue, Wenli Xiao, Zi Wang, Simon Yuen, Jan Kautz, Yan Chang, Umar Iqbal, Linxi \"Jim\" Fan, Yuke Zhu",
+    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV); Graphics (cs.GR); Systems and Control (eess.SY)",
+    "Abstract": "Despite the rise of billion-parameter foundation models trained across thousands of GPUs, similar scaling gains have not been shown for humanoid control. Current neural controllers for humanoids remain modest in size, target a limited set of behaviors, and are trained on a handful of GPUs over several days. We show that scaling up model capacity, data, and compute yields a generalist humanoid controller capable of creating natural and robust whole-body movements. Specifically, we posit motion tracking as a natural and scalable task for humanoid control, leveraging dense supervision from diverse motion-capture data to acquire human motion priors without manual reward engineering. We build a foundation model for motion tracking by scaling along three axes: network size (from 1.2M to 42M parameters), dataset volume (over 100M frames, 700 hours of high-quality motion data), and compute (9k GPU hours). Beyond demonstrating the benefits of scale, we show the practical utility of our model through two mechanisms: (1) a real-time universal kinematic planner that bridges motion tracking to downstream task execution, enabling natural and interactive control, and (2) a unified token space that supports various motion input interfaces, such as VR teleoperation devices, human videos, and vision-language-action (VLA) models, all using the same policy. Scaling motion tracking exhibits favorable properties: performance improves steadily with increased compute and data diversity, and learned representations generalize to unseen motions, establishing motion tracking at scale as a practical foundation for humanoid control.",
     "Venue": "ArXiv",
-    "Citation_Count": 11,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 70,
-    "Category": "cs.CL",
+    "Citation_Count": 30,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 40,
+    "Category": "cs.AI",
     "Categories": [
-      "cs.CL"
+      "cs.AI"
     ],
-    "Score": 7,
+    "Score": 8,
     "Factors": [
-      "HINDEX(+7:h=70)"
+      "HINDEX(+3:h=40)",
+      "INFLUENTIAL(+5:7%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -43689,6 +43822,47 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2511.07025",
+    "Title": "Llama-Embed-Nemotron-8B: A Universal Text Embedding Model for Multilingual and Cross-Lingual Tasks",
+    "Authors": "Yauhen Babakhin, Radek Osmulski, Ronay Ak, Gabriel Moreira, Mengyao Xu, Benedikt Schifferer, Bo Liu, Even Oldridge",
+    "Subjects": "Computation and Language (cs.CL); Information Retrieval (cs.IR)",
+    "Abstract": "We introduce llama-embed-nemotron-8b, an open-weights text embedding model that achieves state-of-the-art performance on the Multilingual Massive Text Embedding Benchmark (MMTEB) leaderboard as of October 21, 2025. While recent models show strong performance, their training data or methodologies are often not fully disclosed. We aim to address this by developing a fully open-source model, publicly releasing its weights and detailed ablation studies, and planning to share the curated training datasets. Our model demonstrates superior performance across all major embedding tasks -- including retrieval, classification and semantic textual similarity (STS) -- and excels in challenging multilingual scenarios, such as low-resource languages and cross-lingual setups. This state-of-the-art performance is driven by a novel data mix of 16.1 million query-document pairs, split between 7.7 million samples from public datasets and 8.4 million synthetically generated examples from various open-weight LLMs. One of our key contributions is a detailed ablation study analyzing core design choices, including a comparison of contrastive loss implementations, an evaluation of synthetic data generation (SDG) strategies, and the impact of model merging. The llama-embed-nemotron-8b is an instruction-aware model, supporting user-defined instructions to enhance performance for specific use-cases. This combination of top-tier performance, broad applicability, and user-driven flexibility enables it to serve as a universal text embedding solution.",
+    "Venue": "ArXiv",
+    "Citation_Count": 17,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 11,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 5,
+    "Factors": [
+      "INFLUENTIAL(+5:6%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2511.00279",
+    "Title": "LongCat-Flash-Omni Technical Report",
+    "Authors": "Meituan LongCat Team, Bairui Wang, Bayan, Bin Xiao, Bo Zhang, Bolin Rong, Borun Chen, Chang Wan, Chao Zhang, Chen Huang, Chen Chen, Chen Chen, Chengxu Yang, Chengzuo Yang, Cong Han, Dandan Peng, Delian Ruan, Detai Xin, Disong Wang, Dongchao Yang, Fanfan Liu, Fengjiao Chen, Fengyu Yang, Gan Dong, Gang Huang, Gang Xu, Guanglu Wan, Guoqiang Tan, Guoqiao Yu, Haibo Qiu, Hao Lu, Hongbo Liu, Hongyu Xiang, Jiaheng Wu, Jian Yang, Jiaxing Liu, Jing Huang, Jingang Wang, Jinrui Ding, Juchao Jiang, Jun Kuang, Jun Wang, Junhui Mei, Ke Ding, Kefeng Zhang, Lei Chen, Liang Shi, Limeng Qiao, Liming Zheng, Lin Ma, Liuyang Guo, Liya Ma, Luying Sun, Man Gao, Mengshen Zhu, Miao Cao, Minliang Lin, Nuo Xu, Peng Shi, Qi Zhang, Qian Fang, Qian Wang, Qian Yang, Quanxiu Wang, Rongxiang Weng, Rongxin Guo, Ruoxuan Liang, Senbin Yang, Shanbo Xu, Shanglin Lei, Shengze Ye, Shimin Chen, Shuaiqi Chen, Shujie Hu, Shuo Li, Siqi Yang, Siyu Xu, Siyu Ren, Song Li, Songxiang Liu, Tianhao Bai, Tianye Dai, Wei Hong, Wei Wang, Weixiao Zhao, Wengang Cao, Wenlong Zhu, Wenlong He, Xi Su, Xi Nan, Xiaohan Zhao, Xiaohao Wang, Xiaoyu Zhao, Xiaoyu Wang, Xiaoyu Li, Xin Pan, Xin Chen, Xiusong Sun, Xu Xiang, Xudong Xing",
+    "Subjects": "Multimedia (cs.MM); Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Distributed, Parallel, and Cluster Computing (cs.DC); Machine Learning (cs.LG); Sound (cs.SD)",
+    "Abstract": "We introduce LongCat-Flash-Omni, a state-of-the-art open-source omni-modal model with 560 billion parameters, excelling at real-time audio-visual interaction. By adopting a curriculum-inspired progressive training strategy that transitions from simpler to increasingly complex modality sequence modeling tasks, LongCat-Flash-Omni attains comprehensive multimodal capabilities while maintaining strong unimodal capability. Building upon LongCat-Flash, which adopts a high-performance Shortcut-connected Mixture-of-Experts (MoE) architecture with zero-computation experts, LongCat-Flash-Omni integrates efficient multimodal perception and speech reconstruction modules. Despite its immense size of 560B parameters (with 27B activated), LongCat-Flash-Omni achieves low-latency real-time audio-visual interaction. For training infrastructure, we developed a modality-decoupled parallelism scheme specifically designed to manage the data and model heterogeneity inherent in large-scale multimodal training. This innovative approach demonstrates exceptional efficiency by sustaining over 90% of the throughput achieved by text-only training. Extensive evaluations show that LongCat-Flash-Omni achieves state-of-the-art performance on omni-modal benchmarks among open-source models. Furthermore, it delivers highly competitive results across a wide range of modality-specific tasks, including text, image, and video understanding, as well as audio understanding and generation. We provide a comprehensive overview of the model architecture design, training procedures, and data strategies, and open-source the model to foster future research and development in the community.",
+    "Venue": "ArXiv",
+    "Citation_Count": 13,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 4,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 5,
+    "Factors": [
+      "INFLUENTIAL(+5:8%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2511.04070",
     "Title": "T-FIX: Text-Based Explanations with Features Interpretable to eXperts",
     "Authors": "Shreya Havaldar, Helen Jin, Chaehyeon Kim, Anton Xue, Weiqiu You, Marco Gatti, Bhuvnesh Jain, Helen Qu, Daniel A Hashimoto, Amin Madani, Rajat Deo, Sameed Ahmed M. Khatana, Gary E. Weissman, Lyle Ungar, Eric Wong",
@@ -43725,27 +43899,6 @@
     "Score": 4,
     "Factors": [
       "HINDEX(+4:h=51)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.08923",
-    "Title": "TiDAR: Think in Diffusion, Talk in Autoregression",
-    "Authors": "Jingyu Liu, Xin Dong, Zhifan Ye, Rishabh Mehta, Yonggan Fu, Vartika Singh, Jan Kautz, Ce Zhang, Pavlo Molchanov",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
-    "Abstract": "Diffusion language models hold the promise of fast parallel generation, while autoregressive (AR) models typically excel in quality due to their causal structure aligning naturally with language modeling. This raises a fundamental question: can we achieve a synergy with high throughput, higher GPU utilization, and AR level quality? Existing methods fail to effectively balance these two aspects, either prioritizing AR using a weaker model for sequential drafting (speculative decoding), leading to lower drafting efficiency, or using some form of left-to-right (AR-like) decoding logic for diffusion, which still suffers from quality degradation and forfeits its potential parallelizability. We introduce TiDAR, a sequence-level hybrid architecture that drafts tokens (Thinking) in Diffusion and samples final outputs (Talking) AutoRegressively - all within a single forward pass using specially designed structured attention masks. This design exploits the free GPU compute density, achieving a strong balance between drafting and verification capacity. Moreover, TiDAR is designed to be serving-friendly (low overhead) as a standalone model. We extensively evaluate TiDAR against AR models, speculative decoding, and diffusion variants across generative and likelihood tasks at 1.5B and 8B scales. Thanks to the parallel drafting and sampling as well as exact KV cache support, TiDAR outperforms speculative decoding in measured throughput and surpasses diffusion models like Dream and Llada in both efficiency and quality. Most notably, TiDAR is the first architecture to close the quality gap with AR models while delivering 4.71x to 5.91x more tokens per second.",
-    "Venue": "ArXiv",
-    "Citation_Count": 12,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 46,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 4,
-    "Factors": [
-      "HINDEX(+4:h=46)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -44494,26 +44647,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.07820",
-    "Title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
-    "Authors": "Zhengyi Luo, Ye Yuan, Tingwu Wang, Chenran Li, Sirui Chen, Fernando Casta\u00f1eda, Zi-Ang Cao, Jiefeng Li, David Minor, Qingwei Ben, Xingye Da, Runyu Ding, Cyrus Hogg, Lina Song, Edy Lim, Eugene Jeong, Tairan He, Haoru Xue, Wenli Xiao, Zi Wang, Simon Yuen, Jan Kautz, Yan Chang, Umar Iqbal, Linxi \"Jim\" Fan, Yuke Zhu",
-    "Subjects": "Robotics (cs.RO); Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV); Graphics (cs.GR); Systems and Control (eess.SY)",
-    "Abstract": "Despite the rise of billion-parameter foundation models trained across thousands of GPUs, similar scaling gains have not been shown for humanoid control. Current neural controllers for humanoids remain modest in size, target a limited set of behaviors, and are trained on a handful of GPUs over several days. We show that scaling up model capacity, data, and compute yields a generalist humanoid controller capable of creating natural and robust whole-body movements. Specifically, we posit motion tracking as a natural and scalable task for humanoid control, leveraging dense supervision from diverse motion-capture data to acquire human motion priors without manual reward engineering. We build a foundation model for motion tracking by scaling along three axes: network size (from 1.2M to 42M parameters), dataset volume (over 100M frames, 700 hours of high-quality motion data), and compute (9k GPU hours). Beyond demonstrating the benefits of scale, we show the practical utility of our model through two mechanisms: (1) a real-time universal kinematic planner that bridges motion tracking to downstream task execution, enabling natural and interactive control, and (2) a unified token space that supports various motion input interfaces, such as VR teleoperation devices, human videos, and vision-language-action (VLA) models, all using the same policy. Scaling motion tracking exhibits favorable properties: performance improves steadily with increased compute and data diversity, and learned representations generalize to unseen motions, establishing motion tracking at scale as a practical foundation for humanoid control.",
-    "Venue": "ArXiv",
-    "Citation_Count": 30,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 40,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 3,
-    "Factors": [
-      "HINDEX(+3:h=40)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.08046",
     "Title": "ProSona: Prompt-Guided Personalization for Multi-Expert Medical Image Segmentation",
     "Authors": "Aya Elgebaly, Nikolaos Delopoulos, Juliane H\u00f6rner-Rieber, Carolin Rippke, Sebastian Kl\u00fcter, Luca Boldrini, Lorenzo Placidi, Riccardo Dal Bello, Nicolaus Andratschke, Michael Baumgartl, Claus Belka, Christopher Kurz, Guillaume Landry, Shadi Albarqouni",
@@ -44713,26 +44846,6 @@
     "Score": 2,
     "Factors": [
       "HINDEX(+2:h=32)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.07317",
-    "Title": "RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments",
-    "Authors": "Zhiyuan Zeng, Hamish Ivison, Yiping Wang, Lifan Yuan, Shuyue Stella Li, Zhuorui Ye, Siting Li, Jacqueline He, Runlong Zhou, Tong Chen, Chenyang Zhao, Yulia Tsvetkov, Simon Shaolei Du, Natasha Jaques, Hao Peng, Pang Wei Koh, Hannaneh Hajishirzi",
-    "Subjects": "Computation and Language (cs.CL); Machine Learning (cs.LG)",
-    "Abstract": "We introduce Reinforcement Learning (RL) with Adaptive Verifiable Environments (RLVE), an approach using verifiable environments that procedurally generate problems and provide algorithmically verifiable rewards, to scale up RL for language models (LMs). RLVE enables each verifiable environment to dynamically adapt its problem difficulty distribution to the policy model's capabilities as training progresses. In contrast, static data distributions often lead to vanishing learning signals when problems are either too easy or too hard for the policy. To implement RLVE, we create RLVE-Gym, a large-scale suite of 400 verifiable environments carefully developed through manual environment engineering. Using RLVE-Gym, we show that environment scaling, i.e., expanding the collection of training environments, consistently improves generalizable reasoning capabilities. RLVE with joint training across all 400 environments in RLVE-Gym yields a 3.37% absolute average improvement across six reasoning benchmarks, starting from one of the strongest 1.5B reasoning LMs. By comparison, continuing this LM's original RL training yields only a 0.49% average absolute gain despite using over 3x more compute. We release our code publicly.",
-    "Venue": "ArXiv",
-    "Citation_Count": 14,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 28,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 2,
-    "Factors": [
-      "HINDEX(+2:h=28)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -45033,26 +45146,6 @@
     "Score": 2,
     "Factors": [
       "HINDEX(+2:h=35)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.00062",
-    "Title": "World Simulation with Video Foundation Models for Physical AI",
-    "Authors": "NVIDIA: Arslan Ali, Junjie Bai, Maciej Bala, Yogesh Balaji, Aaron Blakeman, Tiffany Cai, Jiaxin Cao, Tianshi Cao, Elizabeth Cha, Yu-Wei Chao, Prithvijit Chattopadhyay, Mike Chen, Yongxin Chen, Yu Chen, Shuai Cheng, Yin Cui, Jenna Diamond, Yifan Ding, Jiaojiao Fan, Linxi Fan, Liang Feng, Francesco Ferroni, Sanja Fidler, Xiao Fu, Ruiyuan Gao, Yunhao Ge, Jinwei Gu, Aryaman Gupta, Siddharth Gururani, Imad El Hanafi, Ali Hassani, Zekun Hao, Jacob Huffman, Joel Jang, Pooya Jannaty, Jan Kautz, Grace Lam, Xuan Li, Zhaoshuo Li, Maosheng Liao, Chen-Hsuan Lin, Tsung-Yi Lin, Yen-Chen Lin, Huan Ling, Ming-Yu Liu, Xian Liu, Yifan Lu, Alice Luo, Qianli Ma, Hanzi Mao, Kaichun Mo, Seungjun Nah, Yashraj Narang, Abhijeet Panaskar, Lindsey Pavao, Trung Pham, Morteza Ramezanali, Fitsum Reda, Scott Reed, Xuanchi Ren, Haonan Shao, Yue Shen, Stella Shi, Shuran Song, Bartosz Stefaniak, Shangkun Sun, Shitao Tang, Sameena Tasmeen, Lyne Tchapmi, Wei-Cheng Tseng, Jibin Varghese, Andrew Z. Wang, Hao Wang, Haoxiang Wang, Heng Wang, Ting-Chun Wang, Fangyin Wei, Jiashu Xu, Dinghao Yang, Xiaodong Yang, Haotian Ye, Seonghyeon Ye, Xiaohui Zeng, Jing Zhang, Qinsheng Zhang, Kaiwen Zheng, Andrew Zhu, Yuke Zhu",
-    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Robotics (cs.RO)",
-    "Abstract": "We introduce [Cosmos-Predict2.5], the latest generation of the Cosmos World Foundation Models for Physical AI. Built on a flow-based architecture, [Cosmos-Predict2.5] unifies Text2World, Image2World, and Video2World generation in a single model and leverages [Cosmos-Reason1], a Physical AI vision-language model, to provide richer text grounding and finer control of world simulation. Trained on 200M curated video clips and refined with reinforcement learning-based post-training, [Cosmos-Predict2.5] achieves substantial improvements over [Cosmos-Predict1] in video quality and instruction alignment, with models released at 2B and 14B scales. These capabilities enable more reliable synthetic data generation, policy evaluation, and closed-loop simulation for robotics and autonomous systems. We further extend the family with [Cosmos-Transfer2.5], a control-net style framework for Sim2Real and Real2Real world translation. Despite being 3.5$\\times$ smaller than [Cosmos-Transfer1], it delivers higher fidelity and robust long-horizon video generation. Together, these advances establish [Cosmos-Predict2.5] and [Cosmos-Transfer2.5] as versatile tools for scaling embodied intelligence. To accelerate research and deployment in Physical AI, we release source code, pretrained checkpoints, and curated benchmarks under the NVIDIA Open Model License at https://github.com/nvidia-cosmos/cosmos-predict2.5 and https://github.com/nvidia-cosmos/cosmos-transfer2.5. We hope these open resources lower the barrier to adoption and foster innovation in building the next generation of embodied intelligence.",
-    "Venue": "ArXiv",
-    "Citation_Count": 45,
-    "Influential_Citations": 11,
-    "Max_Author_hIndex": 28,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 2,
-    "Factors": [
-      "HINDEX(+2:h=28)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -49710,24 +49803,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.07025",
-    "Title": "Llama-Embed-Nemotron-8B: A Universal Text Embedding Model for Multilingual and Cross-Lingual Tasks",
-    "Authors": "Yauhen Babakhin, Radek Osmulski, Ronay Ak, Gabriel Moreira, Mengyao Xu, Benedikt Schifferer, Bo Liu, Even Oldridge",
-    "Subjects": "Computation and Language (cs.CL); Information Retrieval (cs.IR)",
-    "Abstract": "We introduce llama-embed-nemotron-8b, an open-weights text embedding model that achieves state-of-the-art performance on the Multilingual Massive Text Embedding Benchmark (MMTEB) leaderboard as of October 21, 2025. While recent models show strong performance, their training data or methodologies are often not fully disclosed. We aim to address this by developing a fully open-source model, publicly releasing its weights and detailed ablation studies, and planning to share the curated training datasets. Our model demonstrates superior performance across all major embedding tasks -- including retrieval, classification and semantic textual similarity (STS) -- and excels in challenging multilingual scenarios, such as low-resource languages and cross-lingual setups. This state-of-the-art performance is driven by a novel data mix of 16.1 million query-document pairs, split between 7.7 million samples from public datasets and 8.4 million synthetically generated examples from various open-weight LLMs. One of our key contributions is a detailed ablation study analyzing core design choices, including a comparison of contrastive loss implementations, an evaluation of synthetic data generation (SDG) strategies, and the impact of model merging. The llama-embed-nemotron-8b is an instruction-aware model, supporting user-defined instructions to enhance performance for specific use-cases. This combination of top-tier performance, broad applicability, and user-driven flexibility enables it to serve as a universal text embedding solution.",
-    "Venue": "ArXiv",
-    "Citation_Count": 17,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 11,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.07055",
     "Title": "Can ensembles improve evidence recall? A case study",
     "Authors": "Katharina Beckh, Sven Heuser, Stefan R\u00fcping",
@@ -53338,25 +53413,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2511.00279",
-    "Title": "LongCat-Flash-Omni Technical Report",
-    "Authors": "Meituan LongCat Team, Bairui Wang, Bayan, Bin Xiao, Bo Zhang, Bolin Rong, Borun Chen, Chang Wan, Chao Zhang, Chen Huang, Chen Chen, Chen Chen, Chengxu Yang, Chengzuo Yang, Cong Han, Dandan Peng, Delian Ruan, Detai Xin, Disong Wang, Dongchao Yang, Fanfan Liu, Fengjiao Chen, Fengyu Yang, Gan Dong, Gang Huang, Gang Xu, Guanglu Wan, Guoqiang Tan, Guoqiao Yu, Haibo Qiu, Hao Lu, Hongbo Liu, Hongyu Xiang, Jiaheng Wu, Jian Yang, Jiaxing Liu, Jing Huang, Jingang Wang, Jinrui Ding, Juchao Jiang, Jun Kuang, Jun Wang, Junhui Mei, Ke Ding, Kefeng Zhang, Lei Chen, Liang Shi, Limeng Qiao, Liming Zheng, Lin Ma, Liuyang Guo, Liya Ma, Luying Sun, Man Gao, Mengshen Zhu, Miao Cao, Minliang Lin, Nuo Xu, Peng Shi, Qi Zhang, Qian Fang, Qian Wang, Qian Yang, Quanxiu Wang, Rongxiang Weng, Rongxin Guo, Ruoxuan Liang, Senbin Yang, Shanbo Xu, Shanglin Lei, Shengze Ye, Shimin Chen, Shuaiqi Chen, Shujie Hu, Shuo Li, Siqi Yang, Siyu Xu, Siyu Ren, Song Li, Songxiang Liu, Tianhao Bai, Tianye Dai, Wei Hong, Wei Wang, Weixiao Zhao, Wengang Cao, Wenlong Zhu, Wenlong He, Xi Su, Xi Nan, Xiaohan Zhao, Xiaohao Wang, Xiaoyu Zhao, Xiaoyu Wang, Xiaoyu Li, Xin Pan, Xin Chen, Xiusong Sun, Xu Xiang, Xudong Xing",
-    "Subjects": "Multimedia (cs.MM); Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Distributed, Parallel, and Cluster Computing (cs.DC); Machine Learning (cs.LG); Sound (cs.SD)",
-    "Abstract": "We introduce LongCat-Flash-Omni, a state-of-the-art open-source omni-modal model with 560 billion parameters, excelling at real-time audio-visual interaction. By adopting a curriculum-inspired progressive training strategy that transitions from simpler to increasingly complex modality sequence modeling tasks, LongCat-Flash-Omni attains comprehensive multimodal capabilities while maintaining strong unimodal capability. Building upon LongCat-Flash, which adopts a high-performance Shortcut-connected Mixture-of-Experts (MoE) architecture with zero-computation experts, LongCat-Flash-Omni integrates efficient multimodal perception and speech reconstruction modules. Despite its immense size of 560B parameters (with 27B activated), LongCat-Flash-Omni achieves low-latency real-time audio-visual interaction. For training infrastructure, we developed a modality-decoupled parallelism scheme specifically designed to manage the data and model heterogeneity inherent in large-scale multimodal training. This innovative approach demonstrates exceptional efficiency by sustaining over 90% of the throughput achieved by text-only training. Extensive evaluations show that LongCat-Flash-Omni achieves state-of-the-art performance on omni-modal benchmarks among open-source models. Furthermore, it delivers highly competitive results across a wide range of modality-specific tasks, including text, image, and video understanding, as well as audio understanding and generation. We provide a comprehensive overview of the model architecture design, training procedures, and data strategies, and open-source the model to foster future research and development in the community.",
-    "Venue": "ArXiv",
-    "Citation_Count": 13,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 4,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2511.00584",
     "Title": "Structurally Refined Graph Transformer for Multimodal Recommendation",
     "Authors": "Ke Shi, Yan Zhang, Miao Zhang, Lifan Chen, Jiali Yi, Kui Xiao, Xiaoju Hou, Zhifei Li",
@@ -54461,24 +54517,6 @@
     "Citation_Count": 3,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 7,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2511.15661",
-    "Title": "VisPlay: Self-Evolving Vision-Language Models from Images",
-    "Authors": "Yicheng He, Chengsong Huang, Zongxia Li, Jiaxin Huang, Yonghui Yang",
-    "Subjects": "Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (cs.LG)",
-    "Abstract": "Reinforcement learning (RL) provides a principled framework for improving Vision-Language Models (VLMs) on complex reasoning tasks. However, existing RL approaches often rely on human-annotated labels or task-specific heuristics to define verifiable rewards, both of which are costly and difficult to scale. We introduce VisPlay, a self-evolving RL framework that enables VLMs to autonomously improve their reasoning abilities using large amounts of unlabeled image data. Starting from a single base VLM, VisPlay assigns the model into two interacting roles: an Image-Conditioned Questioner that formulates challenging yet answerable visual questions, and a Multimodal Reasoner that generates silver responses. These roles are jointly trained with Group Relative Policy Optimization (GRPO), which incorporates diversity and difficulty rewards to balance the complexity of generated questions with the quality of the silver answers. VisPlay scales efficiently across two model families. When trained on Qwen2.5-VL and MiMo-VL, VisPlay achieves consistent improvements in visual reasoning, compositional generalization, and hallucination reduction across eight benchmarks, including MM-Vet and MMMU, demonstrating a scalable path toward self-evolving multimodal intelligence. The project page is available at https://bruno686.github.io/VisPlay/",
-    "Venue": "ArXiv",
-    "Citation_Count": 17,
-    "Influential_Citations": 5,
-    "Max_Author_hIndex": 13,
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
