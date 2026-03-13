@@ -7,12 +7,13 @@ interface Props {
   tierFilter: string | null;
   categoryFilter: string | null;
   venueFilter?: string | null;
+  searchQuery?: string;
   onViewAll?: () => void;
   onAnalyze?: (paper: Paper) => void;
   showAll?: boolean;
 }
 
-export default function PapersTable({ papers, tierFilter, categoryFilter, venueFilter, onViewAll, onAnalyze, showAll = false }: Props) {
+export default function PapersTable({ papers, tierFilter, categoryFilter, venueFilter, searchQuery, onViewAll, onAnalyze, showAll = false }: Props) {
   const filtered = useMemo(() => {
     let result = papers;
 
@@ -34,8 +35,16 @@ export default function PapersTable({ papers, tierFilter, categoryFilter, venueF
       result = result.filter(p => shortVenue(p.Venue) === venueFilter);
     }
 
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(p =>
+        p.Title.toLowerCase().includes(q) ||
+        p.Authors.toLowerCase().includes(q)
+      );
+    }
+
     return result;
-  }, [papers, tierFilter, categoryFilter, venueFilter]);
+  }, [papers, tierFilter, categoryFilter, venueFilter, searchQuery]);
 
   const landmarks = filtered.filter(p => p.Tier?.includes('LANDMARK'));
   const others = filtered.filter(p => !p.Tier?.includes('LANDMARK'));
@@ -89,11 +98,16 @@ export default function PapersTable({ papers, tierFilter, categoryFilter, venueF
   );
 }
 
+function parseFactor(f: string): { name: string; pts: string } | null {
+  const m = f.match(/^(\w+)\(\+(\d+)/);
+  return m ? { name: m[1].toLowerCase(), pts: m[2] } : null;
+}
+
 function PaperRow({ paper, rank, onAnalyze }: { paper: Paper; rank: number; onAnalyze?: (paper: Paper) => void }) {
   const tc = tierClass(paper.Tier);
   const factors = Array.isArray(paper.Factors)
-    ? paper.Factors.slice(0, 3).join(', ')
-    : '';
+    ? paper.Factors.slice(0, 4).map(parseFactor).filter(Boolean) as { name: string; pts: string }[]
+    : [];
 
   return (
     <tr className={tc === 'landmark' ? 'landmark-row' : ''}>
@@ -116,7 +130,15 @@ function PaperRow({ paper, rank, onAnalyze }: { paper: Paper; rank: number; onAn
           {paper.Title}
         </a>
         {paper.New && <span className="new-badge">Newly discovered</span>}
-        {factors && <div className="paper-factors">{factors}</div>}
+        {factors.length > 0 && (
+          <div className="paper-factors">
+            {factors.map((f, i) => (
+              <span key={i} className="factor-chip">
+                {f.name} <span className="factor-chip-pts">+{f.pts}</span>
+              </span>
+            ))}
+          </div>
+        )}
       </td>
       <td className="paper-venue" title={paper.Venue || ''}>{shortVenue(paper.Venue)}</td>
       <td className="paper-authors"><div className="authors-clamp">{truncateAuthors(paper.Authors, 80)}</div></td>

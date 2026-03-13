@@ -5,6 +5,8 @@ import MonthPicker from './MonthPicker';
 
 interface Props {
   entries: RunEntry[];
+  open: boolean;
+  onClose: () => void;
   onGenerate: (yearMonth: string, categories: string) => void;
 }
 
@@ -16,8 +18,7 @@ function getLastMonth(): string {
   return `${y}-${m}`;
 }
 
-export default function GenerateForm({ entries, onGenerate }: Props) {
-  const [open, setOpen] = useState(true);
+export default function GenerateForm({ entries, open, onClose, onGenerate }: Props) {
   const [yearMonth, setYearMonth] = useState(getLastMonth());
   const [categories, setCategories] = useState('cs.MA,cs.CL,cs.AI');
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -36,35 +37,40 @@ export default function GenerateForm({ entries, onGenerate }: Props) {
     }
 
     onGenerate(yearMonth, categories.trim());
+    onClose();
   }
 
   return (
-    <section className="generate-section">
-      <button
-        className="generate-toggle"
-        onClick={() => setOpen(!open)}
-        type="button"
-      >
-        <span>Generate New Rankings</span>
-        <span className={`chevron ${open ? 'open' : ''}`}>&#9654;</span>
-      </button>
-
-      {open && (
-        <form className="generate-form" onSubmit={handleSubmit}>
-          <MonthPicker
-            value={yearMonth}
-            max={getLastMonth()}
-            onChange={setYearMonth}
-          />
-          <input
-            type="text"
-            value={categories}
-            onChange={(e) => setCategories(e.target.value)}
-            placeholder="cs.MA,cs.CL,cs.AI"
-          />
-          <button type="submit" className="btn btn-primary">Generate</button>
-        </form>
-      )}
+    <div className={`gen-panel-wrapper ${open ? 'gen-panel-open' : ''}`}>
+      <div className="gen-panel">
+        <div className="container">
+          <form className="gen-panel-form" onSubmit={handleSubmit}>
+            <div className="gen-panel-field">
+              <label className="gen-panel-label">Period</label>
+              <MonthPicker
+                value={yearMonth}
+                max={getLastMonth()}
+                onChange={setYearMonth}
+              />
+            </div>
+            <div className="gen-panel-field">
+              <label className="gen-panel-label">Categories</label>
+              <input
+                type="text"
+                value={categories}
+                onChange={(e) => setCategories(e.target.value)}
+                placeholder="cs.MA,cs.CL,cs.AI"
+                className="gen-panel-input"
+                spellCheck={false}
+                autoCorrect="off"
+              />
+            </div>
+            <button type="submit" className="btn btn-primary gen-panel-run">
+              Run
+            </button>
+          </form>
+        </div>
+      </div>
 
       {confirmOpen && (
         <ConfirmDialog
@@ -72,10 +78,11 @@ export default function GenerateForm({ entries, onGenerate }: Props) {
           onConfirm={() => {
             setConfirmOpen(false);
             onGenerate(yearMonth, categories.trim());
+            onClose();
           }}
           onCancel={() => setConfirmOpen(false)}
         />
       )}
-    </section>
+    </div>
   );
 }

@@ -18,6 +18,7 @@ export default function AllPapersView({ runId, entry, onBack, fetchPapers, onAna
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [activeVenue, setActiveVenue] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<'score' | 'venue' | 'citations'>('score');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     setLoading(true);
@@ -81,6 +82,16 @@ export default function AllPapersView({ runId, entry, onBack, fetchPapers, onAna
       <main className="container main-content">
         {papers && (
           <div className="filter-bar">
+            <div className="filter-group filter-group-search">
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search by title or author..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+
             <div className="filter-group">
               <button
                 className={`filter-chip ${activeTier === null ? 'active' : ''}`}
@@ -145,6 +156,7 @@ export default function AllPapersView({ runId, entry, onBack, fetchPapers, onAna
             tierFilter={activeTier}
             categoryFilter={activeCategory}
             venueFilter={activeVenue}
+            searchQuery={search}
             onAnalyze={onAnalyze}
             showAll
           />

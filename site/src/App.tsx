@@ -22,6 +22,7 @@ export default function App() {
   const [sort, setSort] = useState<SortMode>('newest');
   const [viewAllRunId, setViewAllRunId] = useState<string | null>(null);
   const [analyzePaper, setAnalyzePaper] = useState<Paper | null>(null);
+  const [genOpen, setGenOpen] = useState(false);
   const dismissed = useRef<Set<number>>(new Set());
 
   useEffect(() => {
@@ -137,8 +138,21 @@ export default function App() {
       <header>
         <div className="container header-inner">
           <h1>Ranked Research</h1>
+          <button
+            className={`header-generate-btn ${genOpen ? 'header-generate-active' : ''}`}
+            onClick={() => setGenOpen(!genOpen)}
+          >
+            {genOpen ? '✕ Close' : 'New Ranking'}
+          </button>
         </div>
       </header>
+
+      <GenerateForm
+        entries={entries}
+        open={genOpen}
+        onClose={() => setGenOpen(false)}
+        onGenerate={handleGenerate}
+      />
 
       {years.length > 0 && (
         <nav className="year-nav">
@@ -161,7 +175,6 @@ export default function App() {
       )}
 
       <main className="container main-content">
-        <GenerateForm entries={entries} onGenerate={handleGenerate} />
 
         {entries.length > 0 && (
           <FilterBar
@@ -179,7 +192,7 @@ export default function App() {
         {filteredEntries.length === 0 && entries.length === 0 && (
           <div className="empty-state">
             <h2>No rankings yet</h2>
-            <p>Generate your first ranking using the form above.</p>
+            <p>Click + Generate to create your first ranking.</p>
           </div>
         )}
 
