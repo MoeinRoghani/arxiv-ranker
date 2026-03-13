@@ -59,6 +59,43 @@ const VENUE_ABBREV: [RegExp, string][] = [
   [/\barXiv\b/i, 'arXiv'],
 ];
 
+const VENUE_FULL: Record<string, string> = {
+  'NeurIPS': 'Conference on Neural Information Processing Systems',
+  'ICML': 'International Conference on Machine Learning',
+  'ICLR': 'International Conference on Learning Representations',
+  'EMNLP': 'Conference on Empirical Methods in Natural Language Processing',
+  'NAACL': 'North American Chapter of the Association for Computational Linguistics',
+  'ACL': 'Annual Meeting of the Association for Computational Linguistics',
+  'CVPR': 'IEEE/CVF Conference on Computer Vision and Pattern Recognition',
+  'ICCV': 'IEEE/CVF International Conference on Computer Vision',
+  'ECCV': 'European Conference on Computer Vision',
+  'AAAI': 'AAAI Conference on Artificial Intelligence',
+  'IJCAI': 'International Joint Conference on Artificial Intelligence',
+  'ICRA': 'IEEE International Conference on Robotics and Automation',
+  'IROS': 'IEEE/RSJ International Conference on Intelligent Robots and Systems',
+  'AAMAS': 'International Conference on Autonomous Agents and Multi-Agent Systems',
+  'UAI': 'Conference on Uncertainty in Artificial Intelligence',
+  'CoRL': 'Conference on Robot Learning',
+  'RSS': 'Robotics: Science and Systems',
+  'KDD': 'ACM SIGKDD Conference on Knowledge Discovery and Data Mining',
+  'AISTATS': 'International Conference on Artificial Intelligence and Statistics',
+  'EACL': 'Conference of the European Chapter of the Association for Computational Linguistics',
+  'SIGIR': 'ACM SIGIR Conference on Research and Development in Information Retrieval',
+  'COLT': 'Conference on Learning Theory',
+  'COLM': 'Conference on Language Modeling',
+  'IEEE Access': 'IEEE Access',
+  'IEEE TAC': 'IEEE Transactions on Automatic Control',
+  'IEEE RA-L': 'IEEE Robotics and Automation Letters',
+  'IEEE CL': 'IEEE Communications Letters',
+  'Frontiers AI': 'Frontiers in Artificial Intelligence',
+  'Expert Syst Appl': 'Expert Systems with Applications',
+  'JMLR': 'Journal of Machine Learning Research',
+  'TMLR': 'Transactions on Machine Learning Research',
+  'JAIR': 'Journal of Artificial Intelligence Research',
+  'TPAMI': 'IEEE Transactions on Pattern Analysis and Machine Intelligence',
+  'TACL': 'Transactions of the Association for Computational Linguistics',
+};
+
 export function shortVenue(venue: string): string {
   if (!venue) return '-';
   for (const [re, short] of VENUE_ABBREV) {
@@ -70,6 +107,12 @@ export function shortVenue(venue: string): string {
     if (shortest.length <= 20) return shortest;
   }
   return venue;
+}
+
+export function fullVenue(venue: string): string | null {
+  const short = shortVenue(venue);
+  if (short === '-' || short === venue) return null;
+  return VENUE_FULL[short] ?? null;
 }
 
 export function tierClass(tier: string): string {

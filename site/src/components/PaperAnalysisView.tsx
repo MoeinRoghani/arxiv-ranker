@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import type { Paper, PaperSummary } from '../lib/types';
-import { tierClass, tierLabel, shortVenue } from '../lib/format';
+import { tierClass, tierLabel, shortVenue, fullVenue } from '../lib/format';
 import { fetchSummary, saveSummaryToRepo } from '../lib/api';
 import { analyzeWithAI } from '../lib/openai';
 
@@ -78,6 +78,7 @@ export default function PaperAnalysisView({ paper, onBack }: Props) {
 
   const tc = tierClass(paper.Tier);
   const venue = shortVenue(paper.Venue);
+  const venueFull = fullVenue(paper.Venue);
 
   return (
     <div className="pa-page">
@@ -93,7 +94,11 @@ export default function PaperAnalysisView({ paper, onBack }: Props) {
           <div className="pa-hero-top">
             <span className={`tier-badge tier-${tc}`}>{tierLabel(paper.Tier)}</span>
             <span className="pa-score-pill">{paper.Score} pts</span>
-            {venue !== '-' && <span className="pa-venue-pill">{venue}</span>}
+            {venue !== '-' && (
+              <span className="pa-venue-pill">
+                {venue}{venueFull && <> · {venueFull}</>}
+              </span>
+            )}
             <a
               href={`https://arxiv.org/abs/${paper.arXiv_ID}`}
               target="_blank"
@@ -117,11 +122,34 @@ export default function PaperAnalysisView({ paper, onBack }: Props) {
               arXiv: {paper.arXiv_ID}
             </a>
             <span className="pa-stat-chip">{paper.Citation_Count ?? 0} citations</span>
-            {(paper.Influential_Citations ?? 0) > 0 && (
-              <span className="pa-stat-chip">{paper.Influential_Citations} influential</span>
-            )}
-            <span className="pa-stat-chip">h-index: {paper.Max_Author_hIndex ?? 0}</span>
+            <span className="pa-stat-chip">
+              {paper.Influential_Citations ?? 0} influential
+              {(paper.Citation_Count ?? 0) > 0 && (
+                <> ({Math.round(((paper.Influential_Citations ?? 0) / paper.Citation_Count) * 100)}%)</>
+              )}
+            </span>
+            <span className="pa-stat-chip">top author h-index: {paper.Max_Author_hIndex ?? 0}</span>
           </div>
+
+          {Array.isArray(paper.Factors) && paper.Factors.length > 0 && (
+            <div className="pa-score-breakdown">
+              <span className="pa-breakdown-label">Score breakdown</span>
+              <div className="pa-factors">
+                {paper.Factors.map((f, i) => {
+                  const m = f.match(/^(\w+)\(\+(\d+):?(.*)?\)$/);
+                  if (!m) return <span key={i} className="pa-factor">{f}</span>;
+                  const [, name, pts, detail] = m;
+                  return (
+                    <span key={i} className="pa-factor">
+                      <span className="pa-factor-name">{name.toLowerCase()}</span>
+                      <span className="pa-factor-pts">+{pts}</span>
+                      {detail && <span className="pa-factor-detail">{detail}</span>}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           <div className="pa-tags">
             {paper.Categories?.map(c => (
