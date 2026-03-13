@@ -201,10 +201,14 @@ class SemanticScholarEnricher:
     FIELDS = "publicationVenue,citationCount,influentialCitationCount,authors.hIndex,abstract"
     BATCH_SIZE = 500
 
+    MAX_RETRIES = 5
+
     def __init__(self):
         self.cache = SemanticScholarCache()
         self.api_key = os.environ.get("S2_API_KEY")
-        self.headers = {"x-api-key": self.api_key} if self.api_key else {}
+        if not self.api_key:
+            raise RuntimeError("S2_API_KEY is not set. Add it to environment variables or GitHub secrets.")
+        self.headers = {"x-api-key": self.api_key}
 
     def enrich_papers(self, papers, force_refresh=False):
         """
@@ -223,8 +227,9 @@ class SemanticScholarEnricher:
 
         for paper in papers:
             arxiv_id = paper['arXiv_ID']
-            if not force_refresh and self.cache.has(arxiv_id):
-                self._apply_s2_data(paper, self.cache.get(arxiv_id))
+            cached_data = self.cache.get(arxiv_id) if not force_refresh else None
+            if cached_data is not None and cached_data != {}:
+                self._apply_s2_data(paper, cached_data)
                 cached += 1
             else:
                 to_fetch.append(paper)
@@ -246,17 +251,12 @@ class SemanticScholarEnricher:
             print(f"  Fetching batch {batch_start+1}-{batch_start+len(batch)} of {len(to_fetch)}...")
             results = self._fetch_batch(ids)
 
-            if results is None:
-                failed += len(batch)
-                continue
-
             for paper, s2_data in zip(batch, results):
                 if s2_data is not None:
                     self.cache.set(paper['arXiv_ID'], s2_data)
                     self._apply_s2_data(paper, s2_data)
                     fetched += 1
                 else:
-                    self.cache.set(paper['arXiv_ID'], {})
                     self._apply_s2_data(paper, {})
                     failed += 1
 
@@ -271,9 +271,9 @@ class SemanticScholarEnricher:
         return papers
 
     def _fetch_batch(self, ids):
-        """POST batch request to S2. Retries on 429. Returns list aligned with input ids."""
+        """POST batch request to S2. Retries on 429/timeout up to MAX_RETRIES. Returns list aligned with input ids."""
         attempt = 0
-        while True:
+        while attempt < self.MAX_RETRIES:
             try:
                 response = requests.post(
                     self.BATCH_URL,
@@ -288,21 +288,23 @@ class SemanticScholarEnricher:
                 if response.status_code == 429:
                     attempt += 1
                     wait = min(2 ** attempt, 60)
-                    print(f"    ⚠ S2 rate limited, waiting {wait}s (attempt {attempt})")
+                    print(f"    ⚠ S2 rate limited, waiting {wait}s (attempt {attempt}/{self.MAX_RETRIES})")
                     time.sleep(wait)
                     continue
 
-                print(f"    ⚠ S2 batch HTTP {response.status_code}")
-                return None
+                raise RuntimeError(f"S2 batch HTTP {response.status_code}: {response.text[:200]}")
 
             except requests.exceptions.Timeout:
                 attempt += 1
                 wait = min(2 ** attempt, 60)
-                print(f"    ⚠ S2 timeout, retrying in {wait}s (attempt {attempt})")
+                print(f"    ⚠ S2 timeout, retrying in {wait}s (attempt {attempt}/{self.MAX_RETRIES})")
                 time.sleep(wait)
+            except RuntimeError:
+                raise
             except Exception as e:
-                print(f"    ⚠ S2 batch error: {e}")
-                return None
+                raise RuntimeError(f"S2 batch error: {e}")
+
+        raise RuntimeError(f"S2 rate limited — exhausted {self.MAX_RETRIES} retries. Is S2_API_KEY set correctly?")
 
     def _apply_s2_data(self, paper, s2_data):
         """Apply Semantic Scholar data to a paper dict"""
