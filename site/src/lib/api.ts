@@ -5,18 +5,23 @@ const BASE = import.meta.env.BASE_URL;
 const REPO = import.meta.env.VITE_GITHUB_REPO ?? '';
 const PAT = import.meta.env.VITE_GITHUB_PAT ?? '';
 
-function nocache(url: string): string {
-  return `${url}?_=${Date.now()}`;
+const NO_CACHE: RequestInit = { cache: 'no-store' };
+
+function ghHeaders(): HeadersInit {
+  return {
+    Authorization: `Bearer ${PAT}`,
+    Accept: 'application/vnd.github.v3+json',
+  };
 }
 
 export async function fetchIndex(): Promise<RunEntry[]> {
-  const res = await fetch(nocache(`${BASE}data/index.json`));
+  const res = await fetch(`${BASE}data/index.json`, NO_CACHE);
   if (!res.ok) return [];
   return res.json();
 }
 
 export async function fetchPapers(runId: string): Promise<Paper[]> {
-  const res = await fetch(nocache(`${BASE}data/${runId}/papers.json`));
+  const res = await fetch(`${BASE}data/${runId}/papers.json`, NO_CACHE);
   if (!res.ok) return [];
   return res.json();
 }
@@ -32,10 +37,8 @@ export async function triggerWorkflow(
       `https://api.github.com/repos/${REPO}/actions/workflows/${workflowFile}/dispatches`,
       {
         method: 'POST',
-        headers: {
-          Authorization: `Bearer ${PAT}`,
-          Accept: 'application/vnd.github.v3+json',
-        },
+        cache: 'no-store',
+        headers: ghHeaders(),
         body: JSON.stringify({ ref: 'main', inputs }),
       },
     );
@@ -47,7 +50,7 @@ export async function triggerWorkflow(
 
 export async function fetchSummary(arXivId: string): Promise<PaperSummary | null> {
   try {
-    const res = await fetch(nocache(`${BASE}data/summaries/${arXivId}.json`));
+    const res = await fetch(`${BASE}data/summaries/${arXivId}.json`, NO_CACHE);
     if (!res.ok) return null;
     const ct = res.headers.get('content-type') ?? '';
     if (!ct.includes('application/json')) return null;
@@ -85,10 +88,8 @@ export async function fetchWorkflowRuns(): Promise<TrackedRun[]> {
     const res = await fetch(
       `https://api.github.com/repos/${REPO}/actions/runs?per_page=10`,
       {
-        headers: {
-          Authorization: `Bearer ${PAT}`,
-          Accept: 'application/vnd.github.v3+json',
-        },
+        cache: 'no-store',
+        headers: ghHeaders(),
       },
     );
     if (!res.ok) return [];
@@ -109,10 +110,8 @@ export async function fetchWorkflowRuns(): Promise<TrackedRun[]> {
       if (run.status === 'in_progress') {
         try {
           const jobsRes = await fetch(run.jobs_url, {
-            headers: {
-              Authorization: `Bearer ${PAT}`,
-              Accept: 'application/vnd.github.v3+json',
-            },
+            cache: 'no-store',
+            headers: ghHeaders(),
           });
           if (jobsRes.ok) {
             const jobsData = await jobsRes.json();
