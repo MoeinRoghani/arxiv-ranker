@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import type { RunEntry } from '../lib/types';
+import type { RunEntry, Paper } from '../lib/types';
 import { fetchPapers } from '../lib/api';
 import { formatYearMonth, formatDate } from '../lib/format';
 import PapersTable from './PapersTable';

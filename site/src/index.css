@@ -1911,7 +1911,7 @@ header h1 {
 .reader-content {
   flex: 1;
   overflow-y: auto;
-  padding: 48px clamp(24px, 16vw, 280px) 80px;
+  padding: 48px clamp(24px, 5vw, 80px) 80px;
 }
 
 .reader-content p {
