@@ -6,7 +6,6 @@ import MonthPicker from './MonthPicker';
 interface Props {
   entries: RunEntry[];
   open: boolean;
-  onClose: () => void;
   onGenerate: (yearMonth: string, categories: string) => void;
 }
 
@@ -18,7 +17,7 @@ function getLastMonth(): string {
   return `${y}-${m}`;
 }
 
-export default function GenerateForm({ entries, open, onClose, onGenerate }: Props) {
+export default function GenerateForm({ entries, open, onGenerate }: Props) {
   const [yearMonth, setYearMonth] = useState(getLastMonth());
   const [categories, setCategories] = useState('cs.MA,cs.CL,cs.AI');
   const [confirmOpen, setConfirmOpen] = useState(false);

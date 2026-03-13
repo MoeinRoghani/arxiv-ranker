@@ -150,7 +150,6 @@ export default function App() {
       <GenerateForm
         entries={entries}
         open={genOpen}
-        onClose={() => setGenOpen(false)}
         onGenerate={handleGenerate}
       />
 
