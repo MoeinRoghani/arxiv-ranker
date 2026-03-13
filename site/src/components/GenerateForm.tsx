@@ -37,7 +37,6 @@ export default function GenerateForm({ entries, open, onClose, onGenerate }: Pro
     }
 
     onGenerate(yearMonth, categories.trim());
-    onClose();
   }
 
   return (
@@ -78,7 +77,6 @@ export default function GenerateForm({ entries, open, onClose, onGenerate }: Pro
           onConfirm={() => {
             setConfirmOpen(false);
             onGenerate(yearMonth, categories.trim());
-            onClose();
           }}
           onCancel={() => setConfirmOpen(false)}
         />
