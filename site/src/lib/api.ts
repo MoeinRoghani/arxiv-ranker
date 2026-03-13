@@ -5,14 +5,18 @@ const BASE = import.meta.env.BASE_URL;
 const REPO = import.meta.env.VITE_GITHUB_REPO ?? '';
 const PAT = import.meta.env.VITE_GITHUB_PAT ?? '';
 
+function nocache(url: string): string {
+  return `${url}?_=${Date.now()}`;
+}
+
 export async function fetchIndex(): Promise<RunEntry[]> {
-  const res = await fetch(`${BASE}data/index.json`);
+  const res = await fetch(nocache(`${BASE}data/index.json`));
   if (!res.ok) return [];
   return res.json();
 }
 
 export async function fetchPapers(runId: string): Promise<Paper[]> {
-  const res = await fetch(`${BASE}data/${runId}/papers.json`);
+  const res = await fetch(nocache(`${BASE}data/${runId}/papers.json`));
   if (!res.ok) return [];
   return res.json();
 }
@@ -43,7 +47,7 @@ export async function triggerWorkflow(
 
 export async function fetchSummary(arXivId: string): Promise<PaperSummary | null> {
   try {
-    const res = await fetch(`${BASE}data/summaries/${arXivId}.json`);
+    const res = await fetch(nocache(`${BASE}data/summaries/${arXivId}.json`));
     if (!res.ok) return null;
     const ct = res.headers.get('content-type') ?? '';
     if (!ct.includes('application/json')) return null;
