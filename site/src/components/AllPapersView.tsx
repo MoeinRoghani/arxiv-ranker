@@ -8,9 +8,10 @@ interface Props {
   entry: RunEntry | null;
   onBack: () => void;
   fetchPapers: (runId: string) => Promise<Paper[]>;
+  onAnalyze?: (paper: Paper) => void;
 }
 
-export default function AllPapersView({ runId, entry, onBack, fetchPapers }: Props) {
+export default function AllPapersView({ runId, entry, onBack, fetchPapers, onAnalyze }: Props) {
   const [papers, setPapers] = useState<Paper[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeTier, setActiveTier] = useState<string | null>(null);
@@ -144,6 +145,7 @@ export default function AllPapersView({ runId, entry, onBack, fetchPapers }: Pro
             tierFilter={activeTier}
             categoryFilter={activeCategory}
             venueFilter={activeVenue}
+            onAnalyze={onAnalyze}
             showAll
           />
         )}

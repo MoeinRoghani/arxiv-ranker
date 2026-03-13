@@ -8,10 +8,11 @@ interface Props {
   categoryFilter: string | null;
   venueFilter?: string | null;
   onViewAll?: () => void;
+  onAnalyze?: (paper: Paper) => void;
   showAll?: boolean;
 }
 
-export default function PapersTable({ papers, tierFilter, categoryFilter, venueFilter, onViewAll, showAll = false }: Props) {
+export default function PapersTable({ papers, tierFilter, categoryFilter, venueFilter, onViewAll, onAnalyze, showAll = false }: Props) {
   const filtered = useMemo(() => {
     let result = papers;
 
@@ -53,12 +54,13 @@ export default function PapersTable({ papers, tierFilter, categoryFilter, venueF
     <div>
       <table className="papers-table">
         <colgroup>
-          <col style={{ width: '30px' }} />
-          <col style={{ width: '110px' }} />
-          <col style={{ width: '50px' }} />
-          <col />
-          <col style={{ width: '80px' }} />
-          <col style={{ width: '180px' }} />
+          <col style={{ width: '28px' }} />
+          <col style={{ width: '96px' }} />
+          <col style={{ width: '44px' }} />
+          <col style={{ width: '42%' }} />
+          <col style={{ width: '64px' }} />
+          <col style={{ width: '120px' }} />
+          <col style={{ width: '74px' }} />
         </colgroup>
         <thead>
           <tr>
@@ -68,11 +70,12 @@ export default function PapersTable({ papers, tierFilter, categoryFilter, venueF
             <th>Title</th>
             <th>Venue</th>
             <th className="col-authors">Authors</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {visible.map((p, i) => (
-            <PaperRow key={p.arXiv_ID} paper={p} rank={i + 1} />
+            <PaperRow key={p.arXiv_ID} paper={p} rank={i + 1} onAnalyze={onAnalyze} />
           ))}
         </tbody>
       </table>
@@ -86,7 +89,7 @@ export default function PapersTable({ papers, tierFilter, categoryFilter, venueF
   );
 }
 
-function PaperRow({ paper, rank }: { paper: Paper; rank: number }) {
+function PaperRow({ paper, rank, onAnalyze }: { paper: Paper; rank: number; onAnalyze?: (paper: Paper) => void }) {
   const tc = tierClass(paper.Tier);
   const factors = Array.isArray(paper.Factors)
     ? paper.Factors.slice(0, 3).join(', ')
@@ -116,7 +119,22 @@ function PaperRow({ paper, rank }: { paper: Paper; rank: number }) {
         {factors && <div className="paper-factors">{factors}</div>}
       </td>
       <td className="paper-venue" title={paper.Venue || ''}>{shortVenue(paper.Venue)}</td>
-      <td className="paper-authors">{truncateAuthors(paper.Authors)}</td>
+      <td className="paper-authors"><div className="authors-clamp">{truncateAuthors(paper.Authors, 80)}</div></td>
+      <td className="paper-actions">
+        {onAnalyze && (
+          <button
+            className="analyze-btn"
+            onClick={() => onAnalyze(paper)}
+            title="AI Analysis"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            Analyze
+          </button>
+        )}
+      </td>
     </tr>
   );
 }

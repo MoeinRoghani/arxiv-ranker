@@ -13,6 +13,13 @@ export interface Paper {
   New?: boolean;
 }
 
+export interface PaperSummary {
+  arXiv_ID: string;
+  summary: string;
+  generated_at: string;
+  feedback?: string;
+}
+
 export interface RunEntry {
   id: string;
   categories: string[];

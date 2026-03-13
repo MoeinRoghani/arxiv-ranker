@@ -16,12 +16,9 @@ interface Props {
   onDismiss: (id: number) => void;
 }
 
-function statusIcon(run: TrackedRun): string {
-  if (run.status === 'queued') return '◻';
-  if (run.status === 'in_progress') return '⟳';
-  if (run.conclusion === 'success') return '✓';
-  if (run.conclusion === 'failure') return '✕';
-  return '•';
+function StatusIndicator({ run }: { run: TrackedRun }) {
+  const cls = statusClass(run);
+  return <span className={`wf-indicator wf-ind-${cls}`} />;
 }
 
 function statusClass(run: TrackedRun): string {
@@ -73,7 +70,7 @@ export default function WorkflowTracker({ runs, onDismiss }: Props) {
           {visible.map(run => (
             <div key={run.id} className={`wf-run wf-${statusClass(run)}`}>
               <div className="wf-run-header">
-                <span className="wf-icon">{statusIcon(run)}</span>
+                <StatusIndicator run={run} />
                 <span className="wf-name">{run.name}</span>
                 <span className="wf-time">{run.elapsed}</span>
               </div>

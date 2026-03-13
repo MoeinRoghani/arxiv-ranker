@@ -51,7 +51,9 @@ def build(papers_json_path, categories, year_month):
     with open(run_dir / 'papers.json', 'w') as f:
         json.dump(site_papers, f)
 
-    shutil.copy2(papers_path, run_dir / 'papers_raw.json')
+    raw_dest = run_dir / 'papers_raw.json'
+    if papers_path.resolve() != raw_dest.resolve():
+        shutil.copy2(papers_path, raw_dest)
 
     _update_index(run_id, categories, year_month, site_papers)
 

@@ -11,9 +11,10 @@ interface Props {
   tierFilter: string | null;
   categoryFilter: string | null;
   onViewAll: (runId: string) => void;
+  onAnalyze: (paper: Paper) => void;
 }
 
-export default function RunCard({ entry, onUpdate, tierFilter, categoryFilter, onViewAll }: Props) {
+export default function RunCard({ entry, onUpdate, tierFilter, categoryFilter, onViewAll, onAnalyze }: Props) {
   const [open, setOpen] = useState(false);
   const [papers, setPapers] = useState<Paper[] | null>(null);
   const [loading, setLoading] = useState(false);
@@ -119,6 +120,7 @@ export default function RunCard({ entry, onUpdate, tierFilter, categoryFilter, o
               tierFilter={tierFilter}
               categoryFilter={categoryFilter}
               onViewAll={() => onViewAll(entry.id)}
+              onAnalyze={onAnalyze}
             />
           )}
           {!loading && papers && papers.length === 0 && (

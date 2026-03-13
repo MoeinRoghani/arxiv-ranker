@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import type { RunEntry } from './lib/types';
+import type { RunEntry, Paper } from './lib/types';
 import { fetchIndex, triggerWorkflow, fetchWorkflowRuns, fetchPapers } from './lib/api';
 import GenerateForm from './components/GenerateForm';
 import FilterBar from './components/FilterBar';
@@ -8,6 +8,7 @@ import Toast from './components/Toast';
 import WorkflowTracker from './components/WorkflowTracker';
 import type { TrackedRun } from './components/WorkflowTracker';
 import AllPapersView from './components/AllPapersView';
+import PaperAnalysisView from './components/PaperAnalysisView';
 
 type SortMode = 'newest' | 'oldest' | 'most_papers' | 'most_landmarks';
 
@@ -20,6 +21,7 @@ export default function App() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [sort, setSort] = useState<SortMode>('newest');
   const [viewAllRunId, setViewAllRunId] = useState<string | null>(null);
+  const [analyzePaper, setAnalyzePaper] = useState<Paper | null>(null);
   const dismissed = useRef<Set<number>>(new Set());
 
   useEffect(() => {
@@ -108,6 +110,15 @@ export default function App() {
     }
   }
 
+  if (analyzePaper) {
+    return (
+      <PaperAnalysisView
+        paper={analyzePaper}
+        onBack={() => setAnalyzePaper(null)}
+      />
+    );
+  }
+
   if (viewAllRunId) {
     const entry = entries.find(e => e.id === viewAllRunId);
     return (
@@ -117,6 +128,7 @@ export default function App() {
           entry={entry ?? null}
           onBack={() => setViewAllRunId(null)}
           fetchPapers={fetchPapers}
+          onAnalyze={setAnalyzePaper}
         />
         <WorkflowTracker runs={trackedRuns} onDismiss={handleDismissRun} />
       </>
@@ -188,6 +200,7 @@ export default function App() {
             tierFilter={activeTier}
             categoryFilter={activeCategory}
             onViewAll={(runId) => setViewAllRunId(runId)}
+            onAnalyze={setAnalyzePaper}
           />
         ))}
       </main>

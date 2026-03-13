@@ -1,4 +1,4 @@
-import type { RunEntry, Paper } from './types';
+import type { RunEntry, Paper, PaperSummary } from './types';
 import type { TrackedRun } from '../components/WorkflowTracker';
 
 const BASE = import.meta.env.BASE_URL;
@@ -39,6 +39,30 @@ export async function triggerWorkflow(
   } catch {
     return false;
   }
+}
+
+export async function fetchSummary(arXivId: string): Promise<PaperSummary | null> {
+  try {
+    const res = await fetch(`${BASE}data/summaries/${arXivId}.json`);
+    if (!res.ok) return null;
+    const ct = res.headers.get('content-type') ?? '';
+    if (!ct.includes('application/json')) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
+export async function saveSummaryToRepo(
+  arXivId: string,
+  paperTitle: string,
+  summary: string,
+): Promise<boolean> {
+  return triggerWorkflow('save-analysis.yml', {
+    arxiv_id: arXivId,
+    paper_title: paperTitle,
+    summary,
+  });
 }
 
 function formatElapsed(startedAt: string): string {
