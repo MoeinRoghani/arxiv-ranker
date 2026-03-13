@@ -8019,6 +8019,29 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2602.02276",
+    "Title": "Kimi K2.5: Visual Agentic Intelligence",
+    "Authors": "Kimi Team: Tongtong Bai, Yifan Bai, Yiping Bao, S.H. Cai, Yuan Cao, Y. Charles, H.S. Che, Cheng Chen, Guanduo Chen, Huarong Chen, Jia Chen, Jiahao Chen, Jianlong Chen, Jun Chen, Kefan Chen, Liang Chen, Ruijue Chen, Xinhao Chen, Yanru Chen, Yanxu Chen, Yicun Chen, Yimin Chen, Yingjiang Chen, Yuankun Chen, Yujie Chen, Yutian Chen, Zhirong Chen, Ziwei Chen, Dazhi Cheng, Minghan Chu, Jialei Cui, Jiaqi Deng, Muxi Diao, Hao Ding, Mengfan Dong, Mengnan Dong, Yuxin Dong, Yuhao Dong, Angang Du, Chenzhuang Du, Dikang Du, Lingxiao Du, Yulun Du, Yu Fan, Shengjun Fang, Qiulin Feng, Yichen Feng, Garimugai Fu, Kelin Fu, Hongcheng Gao, Tong Gao, Yuyao Ge, Shangyi Geng, Chengyang Gong, Xiaochen Gong, Zhuoma Gongque, Qizheng Gu, Xinran Gu, Yicheng Gu, Longyu Guan, Yuanying Guo, Xiaoru Hao, Weiran He, Wenyang He, Yunjia He, Chao Hong, Hao Hu, Jiaxi Hu, Yangyang Hu, Zhenxing Hu, Ke Huang, Ruiyuan Huang, Weixiao Huang, Zhiqi Huang, Tao Jiang, Zhejun Jiang, Xinyi Jin, Yu Jing, Guokun Lai, Aidi Li, C. Li, Cheng Li, Fang Li, Guanghe Li, Guanyu Li, Haitao Li, Haoyang Li, Jia Li, Jingwei Li, Junxiong Li, Lincan Li, Mo Li, Weihong Li, Wentao Li, Xinhang Li, Xinhao Li, Yang Li, Yanhao Li, Yiwei Li",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "We introduce Kimi K2.5, an open-source multimodal agentic model designed to advance general agentic intelligence. K2.5 emphasizes the joint optimization of text and vision so that two modalities enhance each other. This includes a series of techniques such as joint text-vision pre-training, zero-vision SFT, and joint text-vision reinforcement learning. Building on this multimodal foundation, K2.5 introduces Agent Swarm, a self-directed parallel agent orchestration framework that dynamically decomposes complex tasks into heterogeneous sub-problems and executes them concurrently. Extensive evaluations show that Kimi K2.5 achieves state-of-the-art results across various domains including coding, vision, reasoning, and agentic tasks. Agent Swarm also reduces latency by up to $4.5\\times$ over single-agent baselines. We release the post-trained Kimi K2.5 model checkpoint to facilitate future research and real-world applications of agentic intelligence.",
+    "Venue": "",
+    "Citation_Count": 24,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 15,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 65,
+    "Factors": [
+      "TITLE(+50:agentic)",
+      "ABSTRACT(+10)",
+      "INFLUENTIAL(+5:8%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2602.00851",
     "Title": "Persuasion Propagation in LLM Agents",
     "Authors": "Hyejun Jeong, Amir Houmansadr, Shlomo Zilberstein, Eugene Bagdasarian",
@@ -8838,28 +8861,6 @@
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
-    ],
-    "Score": 60,
-    "Factors": [
-      "TITLE(+50:agentic)",
-      "ABSTRACT(+10)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2602.02276",
-    "Title": "Kimi K2.5: Visual Agentic Intelligence",
-    "Authors": "Kimi Team: Tongtong Bai, Yifan Bai, Yiping Bao, S.H. Cai, Yuan Cao, Y. Charles, H.S. Che, Cheng Chen, Guanduo Chen, Huarong Chen, Jia Chen, Jiahao Chen, Jianlong Chen, Jun Chen, Kefan Chen, Liang Chen, Ruijue Chen, Xinhao Chen, Yanru Chen, Yanxu Chen, Yicun Chen, Yimin Chen, Yingjiang Chen, Yuankun Chen, Yujie Chen, Yutian Chen, Zhirong Chen, Ziwei Chen, Dazhi Cheng, Minghan Chu, Jialei Cui, Jiaqi Deng, Muxi Diao, Hao Ding, Mengfan Dong, Mengnan Dong, Yuxin Dong, Yuhao Dong, Angang Du, Chenzhuang Du, Dikang Du, Lingxiao Du, Yulun Du, Yu Fan, Shengjun Fang, Qiulin Feng, Yichen Feng, Garimugai Fu, Kelin Fu, Hongcheng Gao, Tong Gao, Yuyao Ge, Shangyi Geng, Chengyang Gong, Xiaochen Gong, Zhuoma Gongque, Qizheng Gu, Xinran Gu, Yicheng Gu, Longyu Guan, Yuanying Guo, Xiaoru Hao, Weiran He, Wenyang He, Yunjia He, Chao Hong, Hao Hu, Jiaxi Hu, Yangyang Hu, Zhenxing Hu, Ke Huang, Ruiyuan Huang, Weixiao Huang, Zhiqi Huang, Tao Jiang, Zhejun Jiang, Xinyi Jin, Yu Jing, Guokun Lai, Aidi Li, C. Li, Cheng Li, Fang Li, Guanghe Li, Guanyu Li, Haitao Li, Haoyang Li, Jia Li, Jingwei Li, Junxiong Li, Lincan Li, Mo Li, Weihong Li, Wentao Li, Xinhang Li, Xinhao Li, Yang Li, Yanhao Li, Yiwei Li",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "We introduce Kimi K2.5, an open-source multimodal agentic model designed to advance general agentic intelligence. K2.5 emphasizes the joint optimization of text and vision so that two modalities enhance each other. This includes a series of techniques such as joint text-vision pre-training, zero-vision SFT, and joint text-vision reinforcement learning. Building on this multimodal foundation, K2.5 introduces Agent Swarm, a self-directed parallel agent orchestration framework that dynamically decomposes complex tasks into heterogeneous sub-problems and executes them concurrently. Extensive evaluations show that Kimi K2.5 achieves state-of-the-art results across various domains including coding, vision, reasoning, and agentic tasks. Agent Swarm also reduces latency by up to $4.5\\times$ over single-agent baselines. We release the post-trained Kimi K2.5 model checkpoint to facilitate future research and real-world applications of agentic intelligence.",
-    "Venue": "",
-    "Citation_Count": 24,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 15,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
     ],
     "Score": 60,
     "Factors": [
@@ -20498,6 +20499,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2602.05628",
+    "Title": "AI chatbots versus human healthcare professionals: a systematic review and meta-analysis of empathy in patient care",
+    "Authors": "Alastair Howcroft, Amber Bennett-Weston, Ahmad Khan, Joseff Griffiths, Simon Gay, Jeremy Howick",
+    "Subjects": "Human-Computer Interaction (cs.HC); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "Background: Empathy is widely recognised for improving patient outcomes ranging from reduced pain and anxiety to improved patient satisfaction, and its absence can cause harm. Meanwhile, use of artificial intelligence (AI)-based chatbots in healthcare is rapidly expanding, with one in five general practitioners (GPs) using generative AI to assist with tasks such as writing letters. Several studies suggest that these AI-based technologies are sometimes more empathic than human healthcare professionals (HCPs). However, the evidence in this area is mixed and has not been synthesised. Objective: To conduct a systematic review of studies that compare empathy of AI technologies with human HCP empathy. Methods: We searched multiple databases for studies comparing AI chatbots using large language models (e.g., GPT-3.5, GPT-4) with human HCPs on empathy measures. We assessed risk of bias with ROBINS-I and synthesised findings using random-effects meta-analysis where feasible, whilst avoiding double counting. Results: Our search identified 15 studies (2023-2024). Thirteen studies reported statistically significantly higher empathy ratings for AI, with only two studies situated in dermatology favouring human responses. Meta-analysis of 13 studies with data suitable for pooling, all utilising ChatGPT-3.5/4, showed a standardised mean difference (SMD) of 0.87 (95% CI, 0.54-1.20) favouring AI (p<0.00001). Conclusion: Our findings indicate that, in text-only scenarios, AI chatbots are frequently perceived as more empathic than human HCPs - equivalent to an increase of approximately two points on a 10-point empathy scale. Future research should validate these findings with direct patient evaluations and assess whether emerging voice-enabled AI systems can deliver similar empathic advantages.",
+    "Venue": "medRxiv",
+    "Citation_Count": 10,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 8,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 30,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "INFLUENTIAL(+15:10%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2602.17545",
     "Title": "Adaptive Decentralized Composite Optimization via Three-Operator Splitting",
     "Authors": "Xiaokai Chen, Ilya Kuruzov, Gesualdo Scutari",
@@ -29080,6 +29103,27 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2602.00091",
+    "Title": "Generative Artificial Intelligence in Small and Medium Enterprises: Navigating its Promises and Challenges",
+    "Authors": "Kumaran Rajaram, Patrick Nicolas Tinguely",
+    "Subjects": "Computers and Society (cs.CY); Artificial Intelligence (cs.AI)",
+    "Abstract": "The latest technological developments in generative artificial intelligence (GAI) offer powerful capabilities to small and medium enterprises (SMEs), as they facilitate the democratization of both scalability and creativity. Even if they have little technical expertise or financial resources, SMEs can leverage this technology to streamline work processes and unleash innovation, thereby improving their product offerings and long-term competitiveness. This paper discusses how SMEs can navigate both the promises and challenges of GAI and offers a roadmap for deploying GAI. We introduce a sailing metaphor that reveals key strategic dimensions for GAI deployment: competency of employees, effective leadership and work values, organizational culture, collaboration and cooperation, and relationships with third parties. We offer practical recommendations that serve as a useful compass for successfully deploying GAI in SMEs.",
+    "Venue": "Bus Horiz",
+    "Citation_Count": 50,
+    "Influential_Citations": 4,
+    "Max_Author_hIndex": 2,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 20,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "INFLUENTIAL(+5:8%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2602.01378",
     "Title": "Context Dependence and Reliability in Autoregressive Language Models",
     "Authors": "Poushali Sengupta, Shashi Raj Pandey, Sabita Maharjan, Frank Eliassen",
@@ -32202,6 +32246,27 @@
     "Factors": [
       "ABSTRACT(+15)",
       "HINDEX(+1:h=17)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2602.01326",
+    "Title": "DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas",
+    "Authors": "Zirui Wu, Lin Zheng, Zhihui Xie, Jiacheng Ye, Jiahui Gao, Shansan Gong, Yansong Feng, Zhenguo Li, Wei Bi, Guorui Zhou, Lingpeng Kong",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "Diffusion Language Models (DLMs) present a compelling alternative to autoregressive models, offering flexible, any-order infilling without specialized prompting design. However, their practical utility is blocked by a critical limitation: the requirement of a fixed-length masked sequence for generation. This constraint severely degrades code infilling performance when the predefined mask size mismatches the ideal completion length. To address this, we propose DreamOn, a novel diffusion framework that enables dynamic, variable-length generation. DreamOn augments the diffusion process with two length control states, allowing the model to autonomously expand or contract the output length based solely on its own predictions. We integrate this mechanism into existing DLMs with minimal modifications to the training objective and no architectural changes. Built upon Dream-Coder-7B and DiffuCoder-7B, DreamOn achieves infilling performance on par with state-of-the-art autoregressive models on HumanEval-Infilling and SantaCoder-FIM and matches oracle performance achieved with ground-truth length. Our work removes a fundamental barrier to the practical deployment of DLMs, significantly advancing their flexibility and applicability for variable-length generation. Our code is available at https://github.com/DreamLM/DreamOn.",
+    "Venue": "",
+    "Citation_Count": 16,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 19,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 16,
+    "Factors": [
+      "HINDEX(+1:h=19)",
+      "INFLUENTIAL(+15:12%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -40081,27 +40146,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2602.05628",
-    "Title": "AI chatbots versus human healthcare professionals: a systematic review and meta-analysis of empathy in patient care",
-    "Authors": "Alastair Howcroft, Amber Bennett-Weston, Ahmad Khan, Joseff Griffiths, Simon Gay, Jeremy Howick",
-    "Subjects": "Human-Computer Interaction (cs.HC); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "Background: Empathy is widely recognised for improving patient outcomes ranging from reduced pain and anxiety to improved patient satisfaction, and its absence can cause harm. Meanwhile, use of artificial intelligence (AI)-based chatbots in healthcare is rapidly expanding, with one in five general practitioners (GPs) using generative AI to assist with tasks such as writing letters. Several studies suggest that these AI-based technologies are sometimes more empathic than human healthcare professionals (HCPs). However, the evidence in this area is mixed and has not been synthesised. Objective: To conduct a systematic review of studies that compare empathy of AI technologies with human HCP empathy. Methods: We searched multiple databases for studies comparing AI chatbots using large language models (e.g., GPT-3.5, GPT-4) with human HCPs on empathy measures. We assessed risk of bias with ROBINS-I and synthesised findings using random-effects meta-analysis where feasible, whilst avoiding double counting. Results: Our search identified 15 studies (2023-2024). Thirteen studies reported statistically significantly higher empathy ratings for AI, with only two studies situated in dermatology favouring human responses. Meta-analysis of 13 studies with data suitable for pooling, all utilising ChatGPT-3.5/4, showed a standardised mean difference (SMD) of 0.87 (95% CI, 0.54-1.20) favouring AI (p<0.00001). Conclusion: Our findings indicate that, in text-only scenarios, AI chatbots are frequently perceived as more empathic than human HCPs - equivalent to an increase of approximately two points on a 10-point empathy scale. Future research should validate these findings with direct patient evaluations and assess whether emerging voice-enabled AI systems can deliver similar empathic advantages.",
-    "Venue": "medRxiv",
-    "Citation_Count": 10,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 8,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 15,
-    "Factors": [
-      "ABSTRACT(+15)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2602.05630",
     "Title": "Rewards as Labels: Revisiting RLVR from a Classification Perspective",
     "Authors": "Zepeng Zhai, Meilin Chen, Jiaxuan Zhao, Junlang Qian, Lei Shen, Yuan Lu",
@@ -43980,26 +44024,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2602.00091",
-    "Title": "Generative Artificial Intelligence in Small and Medium Enterprises: Navigating its Promises and Challenges",
-    "Authors": "Kumaran Rajaram, Patrick Nicolas Tinguely",
-    "Subjects": "Computers and Society (cs.CY); Artificial Intelligence (cs.AI)",
-    "Abstract": "The latest technological developments in generative artificial intelligence (GAI) offer powerful capabilities to small and medium enterprises (SMEs), as they facilitate the democratization of both scalability and creativity. Even if they have little technical expertise or financial resources, SMEs can leverage this technology to streamline work processes and unleash innovation, thereby improving their product offerings and long-term competitiveness. This paper discusses how SMEs can navigate both the promises and challenges of GAI and offers a roadmap for deploying GAI. We introduce a sailing metaphor that reveals key strategic dimensions for GAI deployment: competency of employees, effective leadership and work values, organizational culture, collaboration and cooperation, and relationships with third parties. We offer practical recommendations that serve as a useful compass for successfully deploying GAI in SMEs.",
-    "Venue": "Bus Horiz",
-    "Citation_Count": 50,
-    "Influential_Citations": 4,
-    "Max_Author_hIndex": 2,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 15,
-    "Factors": [
-      "ABSTRACT(+15)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2602.00095",
     "Title": "EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions",
     "Authors": "Weiyu Sun, Liangliang Chen, Yongnuo Cai, Huiru Xie, Yi Zeng, Ying Zhang",
@@ -45496,6 +45520,26 @@
     "Score": 15,
     "Factors": [
       "ABSTRACT(+15)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2602.04095",
+    "Title": "A computational account of dreaming: learning and memory consolidation",
+    "Authors": "Qi Zhang",
+    "Subjects": "Neurons and Cognition (q-bio.NC); Artificial Intelligence (cs.AI); Emerging Technologies (cs.ET)",
+    "Abstract": "A number of studies have concluded that dreaming is mostly caused by random signals because ''dream contents are random impulses'', and argued that dream sleep is unlikely to play an important part in our intellectual capacity. On the other hand, numerous functional studies have suggested that dream sleep does play an important role in our learning and other intellectual functions. Specifically, recent studies have suggested the importance of dream sleep in memory consolidation, following the findings of neural replaying of recent waking patterns in the hippocampus. This study presents a cognitive and computational model of dream process that involves episodic learning and random activation of stored experiences. This model is simulated to perform the functions of learning and memory consolidation, which are two most popular dream functions that have been proposed. The simulations demonstrate that random signals may result in learning and memory consolidation. The characteristics of the model are discussed and found in agreement with many characteristics concluded from various empirical studies.",
+    "Venue": "Cogn Syst Res",
+    "Citation_Count": 17,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 0,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 15,
+    "Factors": [
+      "INFLUENTIAL(+15:12%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -53318,26 +53362,6 @@
     "Score": 1,
     "Factors": [
       "HINDEX(+1:h=17)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2602.01326",
-    "Title": "DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas",
-    "Authors": "Zirui Wu, Lin Zheng, Zhihui Xie, Jiacheng Ye, Jiahui Gao, Shansan Gong, Yansong Feng, Zhenguo Li, Wei Bi, Guorui Zhou, Lingpeng Kong",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "Diffusion Language Models (DLMs) present a compelling alternative to autoregressive models, offering flexible, any-order infilling without specialized prompting design. However, their practical utility is blocked by a critical limitation: the requirement of a fixed-length masked sequence for generation. This constraint severely degrades code infilling performance when the predefined mask size mismatches the ideal completion length. To address this, we propose DreamOn, a novel diffusion framework that enables dynamic, variable-length generation. DreamOn augments the diffusion process with two length control states, allowing the model to autonomously expand or contract the output length based solely on its own predictions. We integrate this mechanism into existing DLMs with minimal modifications to the training objective and no architectural changes. Built upon Dream-Coder-7B and DiffuCoder-7B, DreamOn achieves infilling performance on par with state-of-the-art autoregressive models on HumanEval-Infilling and SantaCoder-FIM and matches oracle performance achieved with ground-truth length. Our work removes a fundamental barrier to the practical deployment of DLMs, significantly advancing their flexibility and applicability for variable-length generation. Our code is available at https://github.com/DreamLM/DreamOn.",
-    "Venue": "",
-    "Citation_Count": 16,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 19,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 1,
-    "Factors": [
-      "HINDEX(+1:h=19)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -73521,24 +73545,6 @@
     "Citation_Count": 0,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 3,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2602.04095",
-    "Title": "A computational account of dreaming: learning and memory consolidation",
-    "Authors": "Qi Zhang",
-    "Subjects": "Neurons and Cognition (q-bio.NC); Artificial Intelligence (cs.AI); Emerging Technologies (cs.ET)",
-    "Abstract": "A number of studies have concluded that dreaming is mostly caused by random signals because ''dream contents are random impulses'', and argued that dream sleep is unlikely to play an important part in our intellectual capacity. On the other hand, numerous functional studies have suggested that dream sleep does play an important role in our learning and other intellectual functions. Specifically, recent studies have suggested the importance of dream sleep in memory consolidation, following the findings of neural replaying of recent waking patterns in the hippocampus. This study presents a cognitive and computational model of dream process that involves episodic learning and random activation of stored experiences. This model is simulated to perform the functions of learning and memory consolidation, which are two most popular dream functions that have been proposed. The simulations demonstrate that random signals may result in learning and memory consolidation. The characteristics of the model are discussed and found in agreement with many characteristics concluded from various empirical studies.",
-    "Venue": "Cogn Syst Res",
-    "Citation_Count": 17,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 0,
     "Category": "cs.AI",
     "Categories": [
       "cs.AI"
