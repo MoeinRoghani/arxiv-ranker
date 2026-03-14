@@ -1,6 +1,6 @@
 """
 Runs --update on all site data entries within the past 12 months.
-Waits 5 minutes between each update to respect S2 rate limits.
+Waits 10s between updates. S2 API key rate limit is 1 req/s.
 
 Called by the weekly cron workflow. Not intended for manual use.
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SITE_DATA_DIR = PROJECT_ROOT / 'site' / 'public' / 'data'
-WAIT_SECONDS = 300  # 5 minutes between updates
+WAIT_SECONDS = 10  # S2 API key allows 1 req/s, no need for long waits
 
 
 def main():
