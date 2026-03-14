@@ -84,13 +84,13 @@ Default dictionary (`ABSTRACT_KEYWORDS`):
 
 Source: `Max_Author_hIndex` (max hIndex across all authors, from S2). Active in both modes.
 
-Formula: `N(h) = 35 * h^1.36 / 223^1.36`
+Formula: `N(h) = 35 * h^1.36 / 253^1.36`
 
 Derived from: `N(h) = MAX_PTS * (h^2 - h_min^2) / (h_max^2 - h_min^2)`, simplified with h_min=0.
 
-Reference: Yoshua Bengio, CS D-index = 223 (current max in CS).
+Reference: Yoshua Bengio, CS D-index = 253 (current max in CS).
 
-Power-law compression gives diminishing returns at high hIndex. Rejected log alternative (`35 * log(1+h²) / log(1+223²)`) — scores clustered too tightly.
+Power-law compression gives diminishing returns at high hIndex. Rejected log alternative (`35 * log(1+h²) / log(1+253²)`) — scores clustered too tightly.
 
 | hIndex | Points |
 |--------|--------|
@@ -99,7 +99,7 @@ Power-law compression gives diminishing returns at high hIndex. Rejected log alt
 | 40 | 16 |
 | 60 | 23 |
 | 100 | 30 |
-| 223 | 35 |
+| 253 | 35 |
 
 ### Filter E — Citation Count (update mode only, uncapped)
 

@@ -457,17 +457,17 @@ class PaperRanker:
     
     # hIndex scoring: power-law normalized to 0-35
     # Derived from: N(h) = MAX_PTS * (h^2 - h_min^2) / (h_max^2 - h_min^2)
-    # Simplified (h_min=0): N(h) = 35 * h^1.36 / 223^1.36
-    # Reference max: Yoshua Bengio, CS D-index = 223 (highest in CS)
+    # Simplified (h_min=0): N(h) = 35 * h^1.36 / 253^1.36
+    # Reference max: Yoshua Bengio, CS D-index = 253 (highest in CS)
     # Rationale: power-law compression gives diminishing returns at high hIndex,
     # reflecting that going from h=40 to h=60 is far harder than h=10 to h=30
     #
-    # Rejected alternative: N(h) = 35 * log(1 + h^2) / log(1 + 223^2)
+    # Rejected alternative: N(h) = 35 * log(1 + h^2) / log(1 + 253^2)
     # Log compression was too aggressive — scores clustered together
     # (h=20 → 19pts, h=60 → 27pts, h=100 → 30pts), failing to
     # differentiate mid-range from high-range researchers
     HINDEX_MAX_PTS = 35
-    HINDEX_REF = 223
+    HINDEX_REF = 253
     HINDEX_EXP = 1.36
 
     # Citation scoring: linear ratio against benchmark, uncapped (update mode only)

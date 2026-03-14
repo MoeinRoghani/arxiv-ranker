@@ -8,8 +8,25 @@ src/
   exporter.py      # CSV/JSON export utilities
   site_builder.py  # Transforms ranker output → lightweight site JSON
   run_updates.py   # Batch updater for weekly cron (past 12 months)
+  agents/
+    agent.py                          # Base agent runner / entry
+    bases/
+      precontex_agent_base.py         # Pre-context agent base class
+    research_reader_agent/
+      agent.py                        # Research Reader agent implementation
+  config/
+    chat_model.py                     # Chat model configuration
+  prompts/
+    base.py                           # Base prompt template
+    research_reader_prompt.py         # Research Reader system prompt
+  tools/                              # Agent tool definitions
+  utils/
+    get_openai_model.py               # OpenAI model helper
+    prompt_utils.py                   # Prompt formatting utilities
 site/              # React + Vite frontend
   src/
+    main.tsx       # React entry, mounts App
+    index.css      # Global styles
     App.tsx        # Root component, hash routing, workflow polling
     lib/api.ts     # All fetch calls (data files, GitHub API, summaries)
     lib/openai.ts  # Client-side OpenAI analysis
@@ -24,7 +41,10 @@ site/              # React + Vite frontend
       WorkflowTracker.tsx   # Live workflow status tracker
       FilterBar.tsx         # Tier/category/sort controls
       MonthPicker.tsx       # Date selector
+      ConfirmDialog.tsx     # Overlay confirm/cancel
+      Toast.tsx             # Toast notifications
   public/data/     # Generated site data (index.json + per-dataset papers.json)
+    summaries/     # Persisted AI analyses (one {arxiv_id}.json per paper)
 .github/workflows/
   generate.yml     # Monthly cron + manual dispatch
   update.yml       # Weekly cron + manual dispatch
@@ -260,7 +280,7 @@ Constructor accepts optional `title_keywords` and `abstract_keywords` dicts (`{t
 **Scoring constants:**
 - `TITLE_KEYWORDS`: dict, keyword → points (50 for MAS, 25 for reasoning/framework)
 - `ABSTRACT_KEYWORDS`: dict, keyword → points (10-25)
-- `HINDEX_MAX_PTS=35`, `HINDEX_REF=223`, `HINDEX_EXP=1.36`
+- `HINDEX_MAX_PTS=35`, `HINDEX_REF=253`, `HINDEX_EXP=1.36`
 - `CITATION_MULTIPLIER=60`, `CITATION_BENCHMARK=58848`
 - `INFLUENTIAL_RATIO_TIERS`: `[(0.15, 30), (0.10, 15), (0.05, 5)]`
 
