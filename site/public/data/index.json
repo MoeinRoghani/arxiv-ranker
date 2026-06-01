@@ -1,5 +1,18 @@
 [
   {
+    "id": "csMA_csCL_csAI_2026_05",
+    "categories": [
+      "cs.MA",
+      "cs.CL",
+      "cs.AI"
+    ],
+    "year_month": "2026-05",
+    "paper_count": 4271,
+    "landmarks": 1,
+    "important": 208,
+    "last_updated": "2026-06-01T11:50:52Z"
+  },
+  {
     "id": "csMA_csCL_csAI_2026_04",
     "categories": [
       "cs.MA",
