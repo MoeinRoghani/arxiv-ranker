@@ -177,6 +177,29 @@
     "Tier": "\ud83d\udd25 TIER-1 LANDMARK"
   },
   {
+    "arXiv_ID": "2607.08057",
+    "Title": "Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization",
+    "Authors": "Jiantong Jiang, Peiyu Yang, Rui Zhang, Feng Liu",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "Despite the rapid advancements of large language models (LLMs), LLM serving systems remain memory-intensive and costly. The key-value (KV) cache, which stores KV tensors during autoregressive decoding, is crucial for enabling low-latency, high-throughput LLM inference serving. In this survey, we focus on system-aware KV infrastructure for serving LLMs (abbreviated as sKis). We revisit recent work from a system behavior perspective, organizing existing efforts into three dimensions: execution and scheduling (temporal), placement and migration (spatial), and representation and retention (structural). Furthermore, we analyze cross-behavior co-design affinity and behavior-objective links, highlighting future opportunities. Our work systematizes a rapidly evolving area, providing a foundation for understanding and innovating KV cache designs in modern LLM serving infrastructure.",
+    "Venue": "Annu Meet Assoc Comput Linguistics, Meeting of the Association for Computational Linguistics, ACL, Meet Assoc Comput Linguistics",
+    "Citation_Count": 13,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 5,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 145,
+    "Factors": [
+      "VENUE(+100:acl)",
+      "TITLE(+25:survey)",
+      "ABSTRACT(+15)",
+      "INFLUENTIAL(+5:8%)"
+    ],
+    "Tier": "\u2b50 TIER-2 IMPORTANT"
+  },
+  {
     "arXiv_ID": "2607.07895",
     "Title": "Scalable and Culturally Specific Stereotype Dataset Construction via Human-LLM Collaboration",
     "Authors": "Weicheng Ma, John Guerrerio, Soroush Vosoughi",
@@ -217,28 +240,6 @@
     "Factors": [
       "VENUE(+100:acl)",
       "TITLE(+25:benchmark)",
-      "ABSTRACT(+15)"
-    ],
-    "Tier": "\u2b50 TIER-2 IMPORTANT"
-  },
-  {
-    "arXiv_ID": "2607.08057",
-    "Title": "Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization",
-    "Authors": "Jiantong Jiang, Peiyu Yang, Rui Zhang, Feng Liu",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "Despite the rapid advancements of large language models (LLMs), LLM serving systems remain memory-intensive and costly. The key-value (KV) cache, which stores KV tensors during autoregressive decoding, is crucial for enabling low-latency, high-throughput LLM inference serving. In this survey, we focus on system-aware KV infrastructure for serving LLMs (abbreviated as sKis). We revisit recent work from a system behavior perspective, organizing existing efforts into three dimensions: execution and scheduling (temporal), placement and migration (spatial), and representation and retention (structural). Furthermore, we analyze cross-behavior co-design affinity and behavior-objective links, highlighting future opportunities. Our work systematizes a rapidly evolving area, providing a foundation for understanding and innovating KV cache designs in modern LLM serving infrastructure.",
-    "Venue": "Annu Meet Assoc Comput Linguistics, Meeting of the Association for Computational Linguistics, ACL, Meet Assoc Comput Linguistics",
-    "Citation_Count": 13,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 5,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 140,
-    "Factors": [
-      "VENUE(+100:acl)",
-      "TITLE(+25:survey)",
       "ABSTRACT(+15)"
     ],
     "Tier": "\u2b50 TIER-2 IMPORTANT"
@@ -479,6 +480,27 @@
     "Factors": [
       "TITLE(+70:multi-agent,orchestration)",
       "ABSTRACT(+60)"
+    ],
+    "Tier": "\u2b50 TIER-2 IMPORTANT"
+  },
+  {
+    "arXiv_ID": "2607.08071",
+    "Title": "COBART: Controlled, Optimized, Bidirectional and Auto-Regressive Transformer for Ad Headline Generation",
+    "Authors": "Yashal Shakti Kanungo, Gyanendra Das, Pooja A, Sumit Negi",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "Online ads are essential to all businesses and ad headlines are one of their core creative component. Existing methods can generate headlines automatically and also optimize their click-through-rate (CTR) and quality. However, evolving ad formats and changing creative requirements make it difficult to generate optimized & customized headlines. We propose a novel method that uses prefix control tokens along with BART [16] fine-tuning. It yields the highest CTR and also allows users to control the length of generated headlines for use across different ad formats. The method is also flexible and can easily be adapted to other architectures, creative requirements and optimization criteria. Our experiments demonstrate a 25.82% increment in Rouge-L and a 5.82% increment in estimated CTR over previously published strong ad headline generation baseline.",
+    "Venue": "KDD, Knowl Discov Data Min",
+    "Citation_Count": 14,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 13,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 130,
+    "Factors": [
+      "VENUE(+100:kdd)",
+      "INFLUENTIAL(+30:21%)"
     ],
     "Tier": "\u2b50 TIER-2 IMPORTANT"
   },
@@ -2468,26 +2490,6 @@
     "Tier": "\u2b50 TIER-2 IMPORTANT"
   },
   {
-    "arXiv_ID": "2607.08071",
-    "Title": "COBART: Controlled, Optimized, Bidirectional and Auto-Regressive Transformer for Ad Headline Generation",
-    "Authors": "Yashal Shakti Kanungo, Gyanendra Das, Pooja A, Sumit Negi",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "Online ads are essential to all businesses and ad headlines are one of their core creative component. Existing methods can generate headlines automatically and also optimize their click-through-rate (CTR) and quality. However, evolving ad formats and changing creative requirements make it difficult to generate optimized & customized headlines. We propose a novel method that uses prefix control tokens along with BART [16] fine-tuning. It yields the highest CTR and also allows users to control the length of generated headlines for use across different ad formats. The method is also flexible and can easily be adapted to other architectures, creative requirements and optimization criteria. Our experiments demonstrate a 25.82% increment in Rouge-L and a 5.82% increment in estimated CTR over previously published strong ad headline generation baseline.",
-    "Venue": "KDD, Knowl Discov Data Min",
-    "Citation_Count": 14,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 13,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 100,
-    "Factors": [
-      "VENUE(+100:kdd)"
-    ],
-    "Tier": "\u2b50 TIER-2 IMPORTANT"
-  },
-  {
     "arXiv_ID": "2607.08080",
     "Title": "MASTE: A Multi-Agent Pipeline for Zero-Shot Aspect Sentiment Triplet Extraction",
     "Authors": "Ao Hong, Lehang Wang, Zhirun Yue, Mingxin Wang, Zihan Wang, Houde Liu",
@@ -3424,6 +3426,27 @@
     "Factors": [
       "TITLE(+50:multi-agent)",
       "ABSTRACT(+45)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2607.06818",
+    "Title": "Ad Headline Generation using Self-Critical Masked Language Model",
+    "Authors": "Yashal Shakti Kanungo, Sumit Negi, Aruna Rajan",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "For any E-commerce website it is a nontrivial problem to build enduring advertisements that attract shoppers. Many sellers often find it hard to pass the creative quality bar of the website, especially at a large scale. We thus propose a programmatic solution to generate product advertising headlines using retail content. We propose a state of the art application of Reinforcement Learning (RL) Policy gradient methods on Transformer (Vaswani et al., 2017) based Masked Language Models (Devlin et al., 2019). Our method creates the advertising headline by jointly conditioning on multiple products that a seller wishes to advertise. We demonstrate that our method outperforms existing Transformer and LSTM + RL methods in overlap metrics and quality audits. We also show that our model-generated headlines outperform human (advertiser) submitted headlines in terms of both grammar and creative quality as determined by audits.",
+    "Venue": "North Am Chapter Assoc Comput Linguistics, NAACL",
+    "Citation_Count": 26,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 13,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 95,
+    "Factors": [
+      "VENUE(+80:naacl)",
+      "INFLUENTIAL(+15:12%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -4968,6 +4991,27 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2607.27671",
+    "Title": "ICLE++: Modeling Fine-Grained Traits for Holistic Essay Scoring",
+    "Authors": "Shengjie Li, Vincent Ng",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "The majority of the recently developed models for automated essay scoring (AES) are evaluated solely on the ASAP corpus. However, ASAP is not without its limitations. For instance, it is not clear whether models trained on ASAP can generalize well when evaluated on other corpora. In light of these limitations, we introduce ICLE++, a corpus of persuasive student essays annotated with both holistic scores and trait-specific scores. Not only can ICLE++ be used to test the generalizability of AES models trained on ASAP, but it can also facilitate the evaluation of models developed for newer AES problems such as multi-trait scoring and cross-prompt scoring. We believe that ICLE++, which represents a culmination of our long-term effort in annotating the essays in the ICLE corpus, contributes to the set of much-needed annotated corpora for AES research.",
+    "Venue": "North Am Chapter Assoc Comput Linguistics, NAACL",
+    "Citation_Count": 17,
+    "Influential_Citations": 1,
+    "Max_Author_hIndex": 7,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 85,
+    "Factors": [
+      "VENUE(+80:naacl)",
+      "INFLUENTIAL(+5:6%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2607.20019",
     "Title": "EvoDRC: A Self-Evolving Agentic Framework for Automated DRC Violation Repair",
     "Authors": "Bing-Yue Wu, Chia-Tung Ho, Haoyu Yang, Brucek Khailany, Vidya A. Chhabria",
@@ -5188,26 +5232,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2607.06818",
-    "Title": "Ad Headline Generation using Self-Critical Masked Language Model",
-    "Authors": "Yashal Shakti Kanungo, Sumit Negi, Aruna Rajan",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "For any E-commerce website it is a nontrivial problem to build enduring advertisements that attract shoppers. Many sellers often find it hard to pass the creative quality bar of the website, especially at a large scale. We thus propose a programmatic solution to generate product advertising headlines using retail content. We propose a state of the art application of Reinforcement Learning (RL) Policy gradient methods on Transformer (Vaswani et al., 2017) based Masked Language Models (Devlin et al., 2019). Our method creates the advertising headline by jointly conditioning on multiple products that a seller wishes to advertise. We demonstrate that our method outperforms existing Transformer and LSTM + RL methods in overlap metrics and quality audits. We also show that our model-generated headlines outperform human (advertiser) submitted headlines in terms of both grammar and creative quality as determined by audits.",
-    "Venue": "North Am Chapter Assoc Comput Linguistics, NAACL",
-    "Citation_Count": 26,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 13,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 80,
-    "Factors": [
-      "VENUE(+80:naacl)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2607.09092",
     "Title": "AgentKGV: Agentic LLM-RAG Framework with Two-Stage Training for the Fact Verification of Knowledge Graphs",
     "Authors": "Yumin Heo, Hyeon-gu Lee, Sumin Seo, Youngjoong Ko",
@@ -5309,26 +5333,6 @@
     "Factors": [
       "TITLE(+70:agentic,benchmark)",
       "ABSTRACT(+10)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2607.27671",
-    "Title": "ICLE++: Modeling Fine-Grained Traits for Holistic Essay Scoring",
-    "Authors": "Shengjie Li, Vincent Ng",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "The majority of the recently developed models for automated essay scoring (AES) are evaluated solely on the ASAP corpus. However, ASAP is not without its limitations. For instance, it is not clear whether models trained on ASAP can generalize well when evaluated on other corpora. In light of these limitations, we introduce ICLE++, a corpus of persuasive student essays annotated with both holistic scores and trait-specific scores. Not only can ICLE++ be used to test the generalizability of AES models trained on ASAP, but it can also facilitate the evaluation of models developed for newer AES problems such as multi-trait scoring and cross-prompt scoring. We believe that ICLE++, which represents a culmination of our long-term effort in annotating the essays in the ICLE corpus, contributes to the set of much-needed annotated corpora for AES research.",
-    "Venue": "North Am Chapter Assoc Comput Linguistics, NAACL",
-    "Citation_Count": 17,
-    "Influential_Citations": 1,
-    "Max_Author_hIndex": 7,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 80,
-    "Factors": [
-      "VENUE(+80:naacl)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -6133,7 +6137,7 @@
     "Subjects": "Computation and Language (cs.CL)",
     "Abstract": "Large language models are increasingly trained as interactive agents for long-horizon tasks involving multi-turn interaction, tool use, and environment feedback. Outcome-based reinforcement learning (RL) provides a practical optimization paradigm, but its sparse trajectory-level rewards offer limited guidance on intermediate decisions, leaving a supervision gap between episode-level outcomes and token-level policy learning. We propose SEED (SElf-Evolving On-Policy Distillation), a self-evolving framework that converts completed on-policy trajectories into training-time hindsight skills and distills their behavioral effect back into the policy model. SEED first fine-tunes the policy to analyze completed trajectories and generate natural-language skills that capture reusable workflows, decisive observations, or failure-avoidance rules. During RL, the current policy both collects trajectories and serves as the analyzer that extracts hindsight skills from them. Policy updates therefore improve subsequent decision making and skill analysis together, allowing hindsight supervision to evolve with the policy. SEED then re-scores the sampled actions under ordinary and skill-augmented contexts, converting the skill-induced probability shift into a dense token-level on-policy distillation signal. This signal is jointly optimized with outcome-based RL, keeping the auxiliary supervision aligned with the current trajectory distribution. Extensive experiments on text-based and vision-based agentic tasks show that SEED consistently improves performance and sample efficiency, exhibiting robust generalization to unseen scenarios. Our code is available at https://github.com/jinyangwu/SEED.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 27,
     "Category": "cs.CL",
@@ -7856,7 +7860,7 @@
     "Subjects": "Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV)",
     "Abstract": "We introduce DrawingVQA, the first benchmark designed to evaluate multimodal large language models (MLLMs) on real-world construction drawings -- a core media in architecture, civil, and many other engineering practices. Unlike natural images or schematic floor plans, construction drawings fuse abstract geometry, symbolic notation, tabular data, annotations, and domain-specific text, forming a uniquely complex visual-textual domain core to engineering workflows. DrawingVQA bridges this gap with 33\"Issued for Construction\"drawings and 92 expertly curated question-answer pairs, spanning three reasoning depths: perceptual understanding, contextual interpretation, and domain-expert reasoning. To evaluate model capabilities, we present a dual categorization framework to jointly analyze performance across seven construction-engineering and four MLLM capability dimensions -- the first to explicitly map engineering workflows to AI reasoning competencies. Evaluations of state-of-the-art MLLMs reveal a substantial gap between model and expert performance, particularly at higher reasoning depths. This benchmark lays a foundation for domain-specialized multimodal reasoning to allow for advancement on integration of AI-driven understanding and real-world engineering workflows.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 39,
     "Category": "cs.AI",
@@ -9352,7 +9356,7 @@
     "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Software Engineering (cs.SE)",
     "Abstract": "Tool calling is central to modern language model agents, but aggregate benchmark scores often hide where tool use fails. A model that never calls a needed tool and a model that calls the tool but ignores the result can look similar under final task accuracy. We introduce ToolFailBench, a diagnostic benchmark for measuring tool-use failures across 1,000 tasks in finance, medicine, law, cybersecurity, and real estate. Tool-required tasks return values the model wouldn't guess, forcing it to trust the tool while control tasks attach the same tools but should be answered directly. We label each trace with Tool-Skip, Result-Ignore, Output-Fabrication, and Unnecessary-Tool-Use, using a rule classifier and two LLM judges aggregated by majority vote. Across 19 headline models, the best reaches 86.33% Clean Tool-Use Rate, showing that faithful tool use is not saturated. More importantly, models with similar aggregate scores fail in different ways: most stay disciplined on no-tool controls, while Llama-3.1 models show an Always-Call pattern, and at the same parameter scale Llama-3.1-70B and Qwen2.5-72B differ by 89 percentage points on control-task accuracy. Tool-use evaluation should measure not only whether agents call tools, but whether they use tool outputs correctly and avoid tools when none is needed.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 0,
     "Category": "cs.CL",
@@ -9647,8 +9651,8 @@
     "Subjects": "Software Engineering (cs.SE); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
     "Abstract": "Tool-using LLM agents are mostly evaluated assuming all tools work. When a tool times out, returns a week-stale value, or has its description poisoned in deployment, the developer needs a controlled way to reproduce the failure, test a fix, and confirm the fix worked before deployment. We present AgentCheck, an open-source web workbench that turns an MCP server into an intervention surface. AgentCheck runs an agent against its real tools and records every tool response, then re-runs the agent with the response perturbed by a fault (12 types) injector. Matching tool calls are replayed from cache, and later tool calls go live after the agent diverges. This yields a reproduce-intervene-confirm loop: the developer toggles a mitigation, re-runs against the identical fault, and sees if the failure goes away. Scoring has two parts: deterministic pass/fail rules, plus an LLM judge for interpretive labels, validated against human annotations. Across five agents, the best passes 105/120 scenarios and the weakest only 77. The failures are usually silent, confident use of incorrect tool outputs rather than crashes. On the weakest agent, a retry mitigation raises success on timeout error faults from as few as 30% of cases to 100%, whereas stale-data faults remain near 3-4 of 10 regardless of the mitigation. AgentCheck makes these failure modes reproducible, comparable, and verifiable before deployment.",
     "Venue": "",
-    "Citation_Count": 0,
-    "Influential_Citations": 0,
+    "Citation_Count": 1,
+    "Influential_Citations": 1,
     "Max_Author_hIndex": 3,
     "Category": "cs.CL",
     "Categories": [
@@ -9689,7 +9693,7 @@
     "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
     "Abstract": "Failure attribution for LLM-based agentic systems, i.e., identifying which steps in a failure trajectory caused the task to fail, is critical for debugging and improving these systems. Existing approaches either rely on prompting-based pipelines, which are computationally expensive, or require post-training on failure trajectories with step-level error annotations, which are costly to collect and difficult to scale. We argue that a practical failure attribution model should be lightweight and trainable without step-level supervision on failure data. To this end, we address unsupervised failure attribution, i.e., training exclusively on successful trajectories and identifying error steps at inference time given a failure trajectory. We propose OAT, which casts this problem as one-class learning with neural controlled differential equations, modeling the dynamical pattern of successful trajectories in latent space. At inference time, each step in a failure trajectory is assigned an anomaly score based on its deviation from the dynamics learned on successful trajectories, which is then used to form a set of error steps. With training on only 100 successful trajectories, experiments show that OAT is 200--5000 $\\times$ faster than prompting-based baselines, and, at the same time, consistently outperforms them in both in-domain and out-of-distribution datasets with +20% and +7% F1 scores, respectively, demonstrating that OAT is a promising and efficient direction for diagnosing agentic system failures.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 14,
     "Category": "cs.CL",
@@ -16860,6 +16864,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2607.02770",
+    "Title": "Gemma 4 Technical Report",
+    "Authors": "Gemma Team: Sherif El Abd, Vaibhav Aggarwal, Robin Algayres, Alek Andreev, Olivier Bachem, Ian Ballantyne, Cormac Brick, Victor C\u0103rbune, Michelle Casbon, Mayank Chaturvedi, Aditya Chawla, Victor Cotruta, Alice Coucke, Phil Culliton, Robert Dadashi, Lucas Dixon, Mohamed Elhawaty, Utku Evci, Cl\u00e9ment Farabet, Johan Ferret, Filippo Galgani, Sertan Girgin, Jean-Bastien Grill, Maarten Grootendorst, Jiaxian Guo, Cassidy Hardin, Yanzhang He, Steven M. Hernandez, Omri Homburger, L\u00e9onard Hussenot, Juyeong Ji, Armand Joulin, Aishwarya Kamath, Parnian Kassraie, Olivier Lacombe, Preethi Lahoti, Ga\u00ebl Liu, Gus Martins, Luciano Martins, Tatiana Matejovicova, Ramona Merhej, Nikola Momchev, Sneha Mondal, Ryan Mullins, Sindhu Raghuram Panyam, Shreya Pathak, Sarah Perrin, Andr\u00e9 Susano Pinto, Etienne Pot, Ang\u00e9line Pouget, Alexandre Ram\u00e9, Sabela Ramos, Douglas Reid, David Rim, Morgane Rivi\u00e8re, Karsten Roth, Louis Rouillard, Omar Sanseviero, Pier Giuseppe Sessa, Shane Settle, Danila Sinopalnikov, Sara Smoot, Piotr Stanczyk, Andreas Steiner, Lawrence Stewart, Ilya Tolstikhin, Michael Tschannen, Anton Tsitsulin, Nino Vieillard, Renjie Wu, Pingmei Xu, Haichuan Yang, Edouard Yvinec, Biao Zhang, Li Zhang, Joe Zou, Nicolas Aagnes, Abdelrahman Abdelhamed, Jakub Adamek, Shivani Agrawal, Shubham Agrawal, Ibrahim Alabdulmohsin, Jean Baptiste Alayrac, Uri Alon, Chandramouli Amarnath, Ankesh Anand, Chrysovalantis Anastasiou, Setareh Ariafar, Fran\u00e7ois-Xavier Aubet, Kyriakos Axiotis, Federico Barbero, Joelle Barral, Alexei Bendebury, Urs Bergmann, Stanley Bileschi, Kat Black, Mathieu Blondel, Sebastian Borgeaud, Arthur Bra\u017einskas",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
+    "Abstract": "We introduce Gemma 4, a new generation of open-weight, natively multimodal language models in the Gemma model family. Designed to advance compute efficiency and reasoning, the Gemma 4 model suite features dense and Mixture-of-Experts architectures, ranging from 2.3B to 31B parameters. Alongside improved vision and audio encoders for all model sizes, we propose a unified, encoder-free architecture for our 12B model, which ingests raw audio and image patches. Furthermore, we integrate a thinking mode, enabling Gemma models to generate reasoning traces prior to responding. We improve inference speed, memory, and compute efficiency, as well as long-context abilities through critical design choices. Gemma 4 establishes a leap in performance across STEM, multimodal, and long-context benchmarks, and rivals larger, frontier open models in human-rated tasks.",
+    "Venue": "",
+    "Citation_Count": 13,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 92,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 38,
+    "Factors": [
+      "HINDEX(+8:h=92)",
+      "INFLUENTIAL(+30:23%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2607.03399",
     "Title": "Second MOASEI Competition at AAMAS'2026: A Technical Report",
     "Authors": "Ceferino Patino, Tyler J. Billings, Alireza Saleh Abadi, Daniel Redder, Adam Eck, Prashant Doshi, Leen-Kiat Soh",
@@ -18580,7 +18606,7 @@
     "Subjects": "Artificial Intelligence (cs.AI)",
     "Abstract": "Agent self-evolution in long-horizon LLM systems is largely procedural: useful experience is not merely stored information, but reusable procedures for searching, debugging, and verification. Yet current evaluations do not isolate this form of transfer. Agent benchmarks test single-episode task solving; memory benchmarks target information retention rather than procedural reuse. We introduce EvoAgentBench, a benchmark for agent self-evolution via Ability-guided transfer across four agentic domains: web research, algorithmic reasoning, software engineering, and knowledge work. EvoAgentBench extracts trace-grounded Abilities from agent executions, canonicalizes them into operational units, and builds domain-specific Ability Graphs linking tasks that share procedural overlap. By design, every test task is backed by verified training-side Ability support. Across a 528/267 train/test split, two scaffolds, and three backbones, curated Ability content transfers reliably across model families, but no current automatic method sustains positive gain in all settings. EvoAgentBench shifts self-evolution evaluation from aggregate accuracy comparison to fine-grained diagnosis of experience encoding, routing, and uptake. The benchmark is publicly available at https://huggingface.co/datasets/EverMind-AI/EvoAgentBench.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 14,
     "Category": "cs.AI",
@@ -18664,7 +18690,7 @@
     "Subjects": "Artificial Intelligence (cs.AI)",
     "Abstract": "The rapid integration of Large Vision-Language Models (VLMs) into critical infrastructure promises to revolutionize personalized healthcare and dietary management. However, in the domain of food systems, autonomous agents face a unique and persistent challenge: the\"Systemic Information Asymmetry\"between visual appearance and intrinsic nutritional composition. Existing benchmarks primarily focus on coarse-grained classification tasks, such as food category recognition, which fail to evaluate the intricate reasoning chain required for real-world dietary management -- specifically, the ability to traverse from identifying hidden ingredients to estimating physical mass, and finally synthesizing safety-critical medical advice. In this paper, we introduce OmniFood-Bench, a comprehensive benchmark constructed from the MM-Food-100K dataset. Unlike previous works, OmniFood-Bench evaluates VLMs across three progressive capabilities: Basic Perception (Ingredients&Cooking Methods), Quantitative Reasoning (Portion Size&Nutritional Profiling), and Safety-Critical Advisory (Disease-Specific Recommendations). We evaluate six state-of-the-art VLMs, including gpt-5.1, gemini-3-flash, and qwen3-vl-8B. Our extensive experiments reveal a startling\"Semantic-Physical Gap\": while models achieve near-human accuracy in naming dishes, they exhibit catastrophic failure in mass estimation and frequently hallucinate benign advice for high-risk diabetic profiles. This work establishes a rigorous standard for trustworthiness in autonomous agents deployed for public health. The code and datasets are available in: https://anonymous.4open.science/r/OmniFood-Bench-7D0B",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 13,
     "Category": "cs.AI",
@@ -19499,7 +19525,7 @@
     "Venue": "",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 5,
+    "Max_Author_hIndex": 9,
     "Category": "cs.AI",
     "Categories": [
       "cs.AI"
@@ -20006,6 +20032,47 @@
     "Factors": [
       "ABSTRACT(+25)",
       "HINDEX(+5:h=68)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2607.15495",
+    "Title": "Verbalizable Representations Form a Global Workspace in Language Models",
+    "Authors": "Wes Gurnee, Nicholas Sofroniew, Adam Pearce, Mateusz Piotrowski, Isaac Kauvar, Runjin Chen, Anna Soligo, Paul Bogdan, Euan Ong, Rowan Wang, Ben Thompson, David Abrahams, Subhash Kantamneni, Emmanuel Ameisen, Joshua Batson, Jack Lindsey",
+    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
+    "Abstract": "Out of everything the human brain processes, only a small fraction is consciously accessible, in the sense of being available for verbal report, deliberate control, and flexible reasoning. In this paper, we present evidence that an analogous functional distinction has emerged in large language models. Using a new interpretability technique, the Jacobian lens, we identify the representations a model is poised to verbalize at any point in its processing. These representations, which we collectively call the J-space, exhibit the functional properties characteristic of a global workspace: their contents can be reported, deliberately summoned and held, used to carry the intermediate steps of silent reasoning, and passed as arguments to arbitrary downstream computations, while automatic processing such as text parsing and routine inference proceeds without them. The J-space also has structural signatures that global workspace theory associates with conscious access: it carries coherent content only in an intermediate band of layers, holds on the order of tens of concepts at a time, and is broadcast by the model's weights more widely than other representations. These properties make it a practical window into a model's unspoken thinking. In alignment audits, it reveals strategic deliberation, evaluation awareness, and trained-in misaligned dispositions that never appear in the model's outputs. We find that post-training installs the Assistant's point of view in the workspace, and we introduce counterfactual reflection training, which improves behavior by training only what a model would say if interrupted and asked to reflect. These results indicate that language models maintain a small, privileged set of representations bearing some of the functional hallmarks of conscious access, and that decoding these representations sheds light on ongoing cognitive processes.",
+    "Venue": "",
+    "Citation_Count": 14,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 12,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 30,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "INFLUENTIAL(+15:14%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2607.01833",
+    "Title": "Non-synchronism in Global Usage of Research Methods in Library and Information Science from 1990 to 2019",
+    "Authors": "Chengzhi Zhang, Liang Tian",
+    "Subjects": "Digital Libraries (cs.DL); Computation and Language (cs.CL); Computers and Society (cs.CY)",
+    "Abstract": "The global development of Library and Information Science (LIS) is influenced by various factors such as the economy, society, culture, discipline, tradition, and more. Consequently, the research methods of LIS vary greatly among countries. To better understand these differences, we conducted a study of 5281 research papers from 81 countries published in internationally representative journals over the past thirty years. We manually annotated the research methods used in some articles through content analysis, and subsequently developed and trained a deep learning model for automatic classification of research methods. Using this method, we conducted a comparative analysis of the usage of research methods in different countries. Our findings reveal that there are differences in the research methods used across countries, with each country having its unique research profile and distribution of research methods. Even when investigating the same topic, research methods can differ between countries. Our study also uncovers that there are differences between the national and international distribution of research methods, these differences have decreased over the past 30 years. By highlighting the characteristics of discipline development in various countries from the perspective of research methods, our study can help guide discipline development at the national level. This study provides insights into the usage trends of research methods across different countries and highlights the unique characteristics of discipline development in each country. This information can be valuable in promoting collaboration and understanding between countries and in guiding discipline development at the national level.",
+    "Venue": "Scientometrics",
+    "Citation_Count": 13,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 5,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 30,
+    "Factors": [
+      "INFLUENTIAL(+30:23%)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -21248,6 +21315,27 @@
     "Factors": [
       "TITLE(+25:framework)",
       "HINDEX(+1:h=26)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2607.28580",
+    "Title": "DualG-MRAG: Decoupling Macro-Reasoning and Micro-Matching for Multimodal Retrieval-Augmented Generation",
+    "Authors": "Jiacheng Tao, Qingyun Sun, Haonan Yuan, Ziwei Zhang, Jianxin Li",
+    "Subjects": "Artificial Intelligence (cs.AI)",
+    "Abstract": "While Multimodal Retrieval-Augmented Generation (MM-RAG) has shown promising results, it still struggles with complex multi-hop reasoning tasks. Existing methods primarily focus on independent instance-level matching, which often fails to capture explicit relationships across modalities and documents. Although Graph-enhanced methods introduce structural modeling, they face a fundamental challenge in multimodal scenarios: incorporating fine-grained visual features leads to rapid graph expansion and retrieval noise, whereas coarse-grained representations cause the discarding of critical local evidence. To address this dilemma, we propose DualG-MRAG, a Dual-tier framework that introduces a decoupled architecture comprising Macro-reasoning and Micro-matching Graphs for Multimodal RAG. Specifically, to suppress retrieval noise by isolating global structural reasoning from fine-grained evidence matching, we construct a Macro Graph for global topological routing and a Micro Graph for precise local verification. Subsequently, to enable dynamic relevance propagation across heterogeneous evidence sources, we formulate retrieval as a query-driven message passing process via a GNN Retriever. Furthermore, to provide the generative model with coherent structural guidance, we introduce a dynamic programming decoding mechanism that extracts explicit reasoning paths directly from the GNN's forward pass, replacing the standard input of isolated document chunks. Extensive experiments demonstrate that DualG-MRAG outperforms baselines in both evidence recall and complex QA accuracy.",
+    "Venue": "",
+    "Citation_Count": 0,
+    "Influential_Citations": 0,
+    "Max_Author_hIndex": 23,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 26,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "HINDEX(+1:h=23)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -22621,7 +22709,7 @@
     "Venue": "",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 0,
+    "Max_Author_hIndex": 2,
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
@@ -24620,7 +24708,7 @@
     "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
     "Abstract": "Scientific datasets are commonly organized as hierarchical repositories containing heterogeneous and interdependent files, making their inspection, integration, and analysis labor-intensive and reliant on domain expertise. Although large language model (LLM) agents have advanced substantially in planning, reasoning, and tool use, existing research has largely overlooked their ability to interact with real scientific data assets through executable environments. We introduce Deep Scientific Data Exploration, an agentic task paradigm in which agents navigate repositories, interpret heterogeneous files and schemas, execute analyses, integrate cross-file evidence, and produce conclusions grounded in executed observations. To operationalize this paradigm, we present SciDataSailor, a framework for synthesizing tool-interactive trajectories by balancing broad exploration with targeted exploitation. SciDataSailor instantiates trajectory synthesis as Monte Carlo Tree Search (MCTS) with four task-specific mechanisms: difficulty-stratified exploration seeds, dual-feedback first-play urgency, hierarchical strategy-to-tool action generation, and entropy-guided branching. Using this framework, we construct SciDataSailor-SFT-2K for supervised fine-tuning and SciDataSailor-Bench for evaluation, with the latter comprising 627 meta-information summarization tasks and 586 scientific question-answering tasks across 27 datasets spanning the life, earth, and physical sciences.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 2,
     "Category": "cs.CL",
@@ -27255,26 +27343,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2607.28580",
-    "Title": "DualG-MRAG: Decoupling Macro-Reasoning and Micro-Matching for Multimodal Retrieval-Augmented Generation",
-    "Authors": "Jiacheng Tao, Qingyun Sun, Haonan Yuan, Ziwei Zhang, Jianxin Li",
-    "Subjects": "Artificial Intelligence (cs.AI)",
-    "Abstract": "While Multimodal Retrieval-Augmented Generation (MM-RAG) has shown promising results, it still struggles with complex multi-hop reasoning tasks. Existing methods primarily focus on independent instance-level matching, which often fails to capture explicit relationships across modalities and documents. Although Graph-enhanced methods introduce structural modeling, they face a fundamental challenge in multimodal scenarios: incorporating fine-grained visual features leads to rapid graph expansion and retrieval noise, whereas coarse-grained representations cause the discarding of critical local evidence. To address this dilemma, we propose DualG-MRAG, a Dual-tier framework that introduces a decoupled architecture comprising Macro-reasoning and Micro-matching Graphs for Multimodal RAG. Specifically, to suppress retrieval noise by isolating global structural reasoning from fine-grained evidence matching, we construct a Macro Graph for global topological routing and a Micro Graph for precise local verification. Subsequently, to enable dynamic relevance propagation across heterogeneous evidence sources, we formulate retrieval as a query-driven message passing process via a GNN Retriever. Furthermore, to provide the generative model with coherent structural guidance, we introduce a dynamic programming decoding mechanism that extracts explicit reasoning paths directly from the GNN's forward pass, replacing the standard input of isolated document chunks. Extensive experiments demonstrate that DualG-MRAG outperforms baselines in both evidence recall and complex QA accuracy.",
-    "Venue": "",
-    "Citation_Count": 0,
-    "Influential_Citations": 0,
-    "Max_Author_hIndex": 10,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 25,
-    "Factors": [
-      "TITLE(+25:reasoning)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2607.00005",
     "Title": "Topological Void Analysis A Mathematical Framework for Systematic Technical Innovation Discovery in Knowledge Spaces",
     "Authors": "Kris Pan",
@@ -27501,7 +27569,7 @@
     "Subjects": "Software Engineering (cs.SE); Artificial Intelligence (cs.AI)",
     "Abstract": "Large language model (LLM)-based software engineering agents are increasingly developed to resolve software issues by generating patches from issue reports and code repositories. Bug reproduction tests (BRTs) are an important building block for such agents and have been shown useful for patch validation. However, it remains unclear whether BRTs can also help the more central stage of patch generation. We first conduct a preliminary study and find that directly using advanced BRT generators to guide patch generation is not beneficial: fail-to-fail BRTs can mislead agents, while even fail-to-pass BRTs bring limited or negative gains. Our analysis reveals two reasons: fail-to-pass BRTs may cover only one manifestation of the reported issue, leading to partial patches, whereas fail-to-fail BRTs are unreliable as direct patch-generation targets. Motivated by these insights, we propose SWE-Doctor, a software issue resolution agent that guides patch generation with runtime diagnoses derived from multi-faceted BRT executions. SWE-Doctor first generates multi-faceted BRTs for different behavioral requirements stated in the issue, then executes and debugs these BRTs to construct runtime-grounded diagnosis records, and finally uses the diagnoses together with localization information inferred during BRT generation to guide patch generation and reduce partial patches. We evaluate SWE-Doctor on Python bug-fixing issues from the widely adopted SWE-bench Verified and SWE-bench Pro across five LLM backends. SWE-Doctor consistently outperforms existing agents across all 10 LLM-benchmark combinations, achieving average resolution rates of 75.7% on SWE-bench Verified and 59.4% on SWE-bench Pro. In particular, on the more challenging SWE-bench Pro, SWE-Doctor improves the average resolution rate by 8.0-8.9 percentage points over the baseline agents.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 2,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 12,
     "Category": "cs.AI",
@@ -29751,7 +29819,7 @@
     "Subjects": "Computation and Language (cs.CL); Programming Languages (cs.PL)",
     "Abstract": "Recent advances in large language models and their widespread adoption have prompted claims that natural language could entirely replace formal languages, such as programming languages for software design. In this position paper, we argue that this perspective overlooks fundamental linguistic properties of natural language, specifically that it is optimized for underspecification in open-ended contexts. We introduce a formal framework centered on *task specificity*, defining it as the information-theoretic reduction of uncertainty in an output space -- such as all possible images -- given a user's specific requirements. We prove a *specificity crossover theorem*, showing the existence of a threshold beyond which the cost to express formal requirements into natural language exceeds the cost of direct formal specification. By analyzing case studies across modalities, such as image generation, code synthesis, and audio production, we demonstrate that natural language excels at low specificity tasks, while formal languages are advantageous on tasks with stricter requirements. We conclude that natural and formal languages are complementary tools and advocate the development of hybrid systems that allow users to move across the specificity spectrum.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 30,
     "Category": "cs.CL",
@@ -32599,26 +32667,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2607.15495",
-    "Title": "Verbalizable Representations Form a Global Workspace in Language Models",
-    "Authors": "Wes Gurnee, Nicholas Sofroniew, Adam Pearce, Mateusz Piotrowski, Isaac Kauvar, Runjin Chen, Anna Soligo, Paul Bogdan, Euan Ong, Rowan Wang, Ben Thompson, David Abrahams, Subhash Kantamneni, Emmanuel Ameisen, Joshua Batson, Jack Lindsey",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)",
-    "Abstract": "Out of everything the human brain processes, only a small fraction is consciously accessible, in the sense of being available for verbal report, deliberate control, and flexible reasoning. In this paper, we present evidence that an analogous functional distinction has emerged in large language models. Using a new interpretability technique, the Jacobian lens, we identify the representations a model is poised to verbalize at any point in its processing. These representations, which we collectively call the J-space, exhibit the functional properties characteristic of a global workspace: their contents can be reported, deliberately summoned and held, used to carry the intermediate steps of silent reasoning, and passed as arguments to arbitrary downstream computations, while automatic processing such as text parsing and routine inference proceeds without them. The J-space also has structural signatures that global workspace theory associates with conscious access: it carries coherent content only in an intermediate band of layers, holds on the order of tens of concepts at a time, and is broadcast by the model's weights more widely than other representations. These properties make it a practical window into a model's unspoken thinking. In alignment audits, it reveals strategic deliberation, evaluation awareness, and trained-in misaligned dispositions that never appear in the model's outputs. We find that post-training installs the Assistant's point of view in the workspace, and we introduce counterfactual reflection training, which improves behavior by training only what a model would say if interrupted and asked to reflect. These results indicate that language models maintain a small, privileged set of representations bearing some of the functional hallmarks of conscious access, and that decoding these representations sheds light on ongoing cognitive processes.",
-    "Venue": "",
-    "Citation_Count": 14,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 12,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 15,
-    "Factors": [
-      "ABSTRACT(+15)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2607.15498",
     "Title": "VarRate: Training-Free Variable-Rate KV Cache Compression for Long-Context LLMs",
     "Authors": "Shahrzad Esmat, Dhawal Shah, Ali Jannesari",
@@ -34165,7 +34213,7 @@
     "Subjects": "Computation and Language (cs.CL); Machine Learning (cs.LG)",
     "Abstract": "We introduce Kimi K3, a 2.8T parameter Mixture-of-Experts model with 104 billion activated parameters, native vision capabilities, and a 1-million-token context window. Kimi K3 is built on Kimi Delta Attention and Attention Residuals, which improve information flow across sequence length and model depth. Together with Stable LatentMoE, which effectively activates 16 of 896 routed experts per token, and refined training and data recipes, these advances yield an approximately 2.5x improvement in overall scaling efficiency over Kimi K2. Post-training highlights reinforcement learning across general, agentic, and coding domains and multiple reasoning-effort levels, enabling compositional generalization and robust long-horizon execution. At 2.8T scale, Kimi K3 is supported by infrastructure advances in multiple areas: algorithm-system co-design for KDA, perfectly balanced expert-parallel training with efficient memory management, million-token agentic RL with persistent rollout and sandbox states, and deployment innovations. Extensive evaluations show that Kimi K3 achieves frontier-level performance across long-horizon coding, agentic, knowledge, reasoning, and vision tasks. While its overall performance still trails the most powerful proprietary models, namely Claude Fable 5 and GPT-5.6 Sol, Kimi K3 consistently outperforms other open and proprietary models evaluated in our suite. We release the full Kimi K3 model weights to facilitate future research and accelerate the broader deployment and adoption of frontier intelligence.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 63,
     "Category": "cs.CL",
@@ -34868,7 +34916,7 @@
     "Venue": "",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 11,
+    "Max_Author_hIndex": 0,
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
@@ -39772,6 +39820,46 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2607.01828",
+    "Title": "Gender Differences in Research Topic and Method Selection in Library and Information Science: Perspectives from Three Top Journals",
+    "Authors": "Chengzhi Zhang, Siqi Wei, Yi Zhao, Liang Tian",
+    "Subjects": "Digital Libraries (cs.DL); Computation and Language (cs.CL); Computers and Society (cs.CY)",
+    "Abstract": "Research in the social sciences has shown that there are gender differences in the selection of research methods, with women often opting for qualitative methods while men prefer quantitative methods. However, it is important to consider that research methods are generally chosen based on the research topic. To figure out the influence of gender on research method selection, a study was conducted in the field of Library and Information Science, using a more fine-grained method classification system and an automatic classification model called CogFT, which is based on full-text cognition. The findings showed that women tend to use Interview while men prefer Theoretical approach, across a range of topics. The study offers insights into the specific research design processes that contribute to gender differences in method selection and suggests ways to promoting gender inclusivity and equality in academia by considering research method use and guidance.",
+    "Venue": "",
+    "Citation_Count": 17,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 18,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 15,
+    "Factors": [
+      "INFLUENTIAL(+15:12%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2607.00248",
+    "Title": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity",
+    "Authors": "Bytedance Seed",
+    "Subjects": "Artificial Intelligence (cs.AI)",
+    "Abstract": "We present Seed2.0, a model series that takes a meaningful step toward solving complex, real-world tasks. Our approach begins with identifying users'genuine needs and constructing a reliable, forward-looking evaluation system by selecting and abstracting benchmarks grounded in these needs and in realistic, complex scenarios. Guided by this evaluation system, Seed2.0 targets two persistent challenges, long-tail knowledge and complex instruction following, substantially improving the model's reliability on intricate, long-horizon tasks. Beyond these, Seed2.0 delivers world-leading reasoning intelligence, visual understanding, and search capabilities that address the most common needs of a broad user base. Through extensive real-world use cases documented in this model card, we demonstrate that Seed2.0 begins to exhibit the ability to handle initial complex real-world tasks, delivering greater value to hundreds of millions of users.",
+    "Venue": "",
+    "Citation_Count": 51,
+    "Influential_Citations": 6,
+    "Max_Author_hIndex": 2,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 15,
+    "Factors": [
+      "INFLUENTIAL(+15:12%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2607.13394",
     "Title": "GFlowRL: Scaling Distribution-Matching RL to Large Language Models",
     "Authors": "Xiaodong Liu, Michael Xu, Jack W. Stokes, Paul Smolensky, Doug Burger, Jianfeng Gao",
@@ -40798,7 +40886,7 @@
     "Subjects": "Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Software Engineering (cs.SE)",
     "Abstract": "We present AgentLens, a production-assessed benchmark for interactive code agents. Most code-agent benchmarks reduce a run to a single bit -- did the task pass? -- but the people who actually use these agents experience the entire trajectory: how the agent follows instructions, uses its tools, verifies its own work, recovers from mistakes, and talks to them along the way. AgentLens evaluates that whole trajectory. It pairs formal verification, where an objective check exists, with LLM-written trajectory reviews and side-by-side comparisons, so that each run yields a readable explanation of why the score is what it is. This makes AgentLens useful for more than ranking models: we use it to diagnose model behavior, compare successive versions of our own agent, and catch product regressions in a nightly evaluation pipeline. We release the benchmark as open source at https://github.com/agent-lens/agent-lens-bench.",
     "Venue": "",
-    "Citation_Count": 1,
+    "Citation_Count": 2,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 21,
     "Category": "cs.AI",
@@ -43056,7 +43144,7 @@
     "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Machine Learning (stat.ML)",
     "Abstract": "We study on-policy distillation (OPD) for agentic tasks, where an LLM agent interacts with an environment over multiple turns and a student imitates a teacher over these multi-turn interaction histories. Fully online OPD is costly because each update requires fresh student rollouts through the environment and teacher queries at visited histories. We propose Replayed-Prefix On-Policy Distillation (ReOPD), an off-environment alternative that reuses pre-collected teacher trajectories as replayed prefixes: the student acts at selected steps, while the teacher provides dense per-step supervision without executing new environment interactions. We show that multi-turn OPD introduces a prefix trap: making histories more student-on-policy improves relevance to the student, but can query the teacher on histories where its target is unreliable. This creates a two-sided distribution shift between student occupancy and teacher reliability. ReOPD addresses this by treating multi-turn OPD as a reliability-aware prefix distribution design and implements it with a simple step-decaying sampling schedule that emphasizes early, lower-shift prefixes. Across mathematical reasoning with Python and search environments over multiple teacher and student model scales, ReOPD preserves or improves OPD-level accuracy, uses zero tool calls during student training, and is at least 4$\\times$ faster per rollout than OPD. ReOPD therefore turns expensive agent-environment interaction into a reusable offline resource, enabling scalable distillation across tools, tasks, and environments.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 18,
     "Category": "cs.CL",
@@ -43138,7 +43226,7 @@
     "Subjects": "Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
     "Abstract": "On-policy distillation (OPD) trains a student policy by matching a stronger teacher on the student's own trajectories, offering a promising framework for language agent training. However, its application to long-horizon agentic tasks remains insufficiently explored. We identify two key inefficiencies in vanilla agent OPD: (1) full-horizon rollouts often waste wall-clock resources on tail turns that provide weak and noisy KL supervision, and (2) trajectory-level KL objectives concentrate most of the loss on shallow tokens, leaving deeper decision turns under-trained once initial behaviors are aligned. To address these challenges, we propose TurnOPD, a turn-level budgeting strategy for efficient on-policy distillation of long-horizon agents. TurnOPD consists of two budget controllers: adaptive rollout-depth budgeting, which uses probe-based turn statistics to determine rollout length, and progressive turn-normalized loss budgeting, which gradually shifts KL weighting from token-level to turn-balanced supervision. Experiments on ALFWorld, WebShop, and Multi-Hop Search with task-specialized teacher models show that TurnOPD achieves superior validation accuracy under equal wall-clock training budgets and advances the accuracy--time frontier beyond vanilla OPD.",
     "Venue": "",
-    "Citation_Count": 1,
+    "Citation_Count": 3,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 7,
     "Category": "cs.CL",
@@ -43837,7 +43925,7 @@
     "Venue": "",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 3,
+    "Max_Author_hIndex": 2,
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
@@ -46099,7 +46187,7 @@
     "Subjects": "Artificial Intelligence (cs.AI)",
     "Abstract": "Long-term memory enables LLM agents to leverage past interactions, but dialogue histories quickly exceed the context window, forcing agents to retrieve relevant subsets at query time. Because useful evidence is sparse and scattered across verbose conversations, retrieval faces a fundamental tension: broadening recall improves coverage but floods downstream reasoning with noise, while compressing memories at write time eases retrieval but irreversibly discards details that future queries may need. We introduce LazyMem, which resolves this tension by deferring all memory construction to query time. Given a retrieved candidate pool, a lightweight model processes it in overlapping parallel windows, selectively retaining and compressing only query-relevant content. The model is trained with supervised fine-tuning followed by reinforcement learning, using a reward that jointly encourages the identification of relevant messages and the generation of compressions that are faithful to the source and useful for answering the query. On LongMemEval, LazyMem-4B achieves an LLM-judge accuracy of 0.85, outperforming the strongest non-oracle baseline while using only 213 answer-context memory tokens, 21.0 times fewer than the baseline. It further generalizes to LoCoMo without target-domain training and reduces mean latency relative to the prior query-time baseline. Code is available at https://github.com/allacnobug/LazyMem.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 2,
     "Category": "cs.AI",
@@ -46721,7 +46809,7 @@
     "Venue": "",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 4,
+    "Max_Author_hIndex": 8,
     "Category": "cs.AI",
     "Categories": [
       "cs.AI"
@@ -47209,27 +47297,6 @@
     "Score": 10,
     "Factors": [
       "ABSTRACT(+10)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2607.02770",
-    "Title": "Gemma 4 Technical Report",
-    "Authors": "Gemma Team: Sherif El Abd, Vaibhav Aggarwal, Robin Algayres, Alek Andreev, Olivier Bachem, Ian Ballantyne, Cormac Brick, Victor C\u0103rbune, Michelle Casbon, Mayank Chaturvedi, Aditya Chawla, Victor Cotruta, Alice Coucke, Phil Culliton, Robert Dadashi, Lucas Dixon, Mohamed Elhawaty, Utku Evci, Cl\u00e9ment Farabet, Johan Ferret, Filippo Galgani, Sertan Girgin, Jean-Bastien Grill, Maarten Grootendorst, Jiaxian Guo, Cassidy Hardin, Yanzhang He, Steven M. Hernandez, Omri Homburger, L\u00e9onard Hussenot, Juyeong Ji, Armand Joulin, Aishwarya Kamath, Parnian Kassraie, Olivier Lacombe, Preethi Lahoti, Ga\u00ebl Liu, Gus Martins, Luciano Martins, Tatiana Matejovicova, Ramona Merhej, Nikola Momchev, Sneha Mondal, Ryan Mullins, Sindhu Raghuram Panyam, Shreya Pathak, Sarah Perrin, Andr\u00e9 Susano Pinto, Etienne Pot, Ang\u00e9line Pouget, Alexandre Ram\u00e9, Sabela Ramos, Douglas Reid, David Rim, Morgane Rivi\u00e8re, Karsten Roth, Louis Rouillard, Omar Sanseviero, Pier Giuseppe Sessa, Shane Settle, Danila Sinopalnikov, Sara Smoot, Piotr Stanczyk, Andreas Steiner, Lawrence Stewart, Ilya Tolstikhin, Michael Tschannen, Anton Tsitsulin, Nino Vieillard, Renjie Wu, Pingmei Xu, Haichuan Yang, Edouard Yvinec, Biao Zhang, Li Zhang, Joe Zou, Nicolas Aagnes, Abdelrahman Abdelhamed, Jakub Adamek, Shivani Agrawal, Shubham Agrawal, Ibrahim Alabdulmohsin, Jean Baptiste Alayrac, Uri Alon, Chandramouli Amarnath, Ankesh Anand, Chrysovalantis Anastasiou, Setareh Ariafar, Fran\u00e7ois-Xavier Aubet, Kyriakos Axiotis, Federico Barbero, Joelle Barral, Alexei Bendebury, Urs Bergmann, Stanley Bileschi, Kat Black, Mathieu Blondel, Sebastian Borgeaud, Arthur Bra\u017einskas",
-    "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
-    "Abstract": "We introduce Gemma 4, a new generation of open-weight, natively multimodal language models in the Gemma model family. Designed to advance compute efficiency and reasoning, the Gemma 4 model suite features dense and Mixture-of-Experts architectures, ranging from 2.3B to 31B parameters. Alongside improved vision and audio encoders for all model sizes, we propose a unified, encoder-free architecture for our 12B model, which ingests raw audio and image patches. Furthermore, we integrate a thinking mode, enabling Gemma models to generate reasoning traces prior to responding. We improve inference speed, memory, and compute efficiency, as well as long-context abilities through critical design choices. Gemma 4 establishes a leap in performance across STEM, multimodal, and long-context benchmarks, and rivals larger, frontier open models in human-rated tasks.",
-    "Venue": "",
-    "Citation_Count": 13,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 92,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 8,
-    "Factors": [
-      "HINDEX(+8:h=92)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -52812,6 +52879,27 @@
     "Score": 1,
     "Factors": [
       "HINDEX(+1:h=21)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
+    "arXiv_ID": "2607.01444",
+    "Title": "On the Utility and Factual Reliability of Pruned Mixture-of-Experts Models in the Biomedical Domain",
+    "Authors": "Atsuki Yamaguchi, Szymon Palucha, L\u00e9o Bijar, Aline Villavicencio, Nikolaos Aletras",
+    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
+    "Abstract": "Mixture-of-Experts (MoE) models offer inference speedups via selective activation but impose substantial memory requirements because the whole network must remain loaded. Structured expert pruning is a practical approach for reducing deployment costs in resource-constrained settings. However, prior studies primarily evaluate benchmark utility, leaving the effect of pruning on factual reliability underexplored, particularly in high-stakes domains such as biomedicine. In this paper, we investigate how domain-specific expert pruning affects both utility and reliability. We assess four MoE models, six pruning methods, and multiple pruning ratios across generation and classification tasks under in-domain (biomedical) and cross-domain settings. Results reveal that moderate pruning preserves in-domain utility without immediate reliability decline, although hallucination risks increase at extreme pruning ratios. When shifting to the general domain, both utility and reliability degrade rapidly. These findings indicate that safe compression depends heavily on the task and domain. Evaluating pruned MoE models solely on utility is inadequate for high-stakes deployment without reliability assessment.",
+    "Venue": "",
+    "Citation_Count": 1,
+    "Influential_Citations": 0,
+    "Max_Author_hIndex": 30,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "Score": 1,
+    "Factors": [
+      "HINDEX(+1:h=30)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -58712,7 +58800,7 @@
     "Authors": "Yunan Zhang, Yang Fan, Heng Li, Xiangping Wu, Qingcai Chen",
     "Subjects": "Computation and Language (cs.CL); Artificial Intelligence (cs.AI)",
     "Abstract": "Continual Learning for Named Entity Recognition (CLNER) enable models to incrementally learn new entity types without forgetting previously acquired ones. However, existing methods suffer from catastrophic forgetting and insufficient exploitation of shared information across tasks. This paper proposes FSE, a Fast-Slow Experts enhanced span-based NER model for CLNER. The shared fast expert learns token-level links to efficiently filter out unlikely spans, while the task-specific slow expert performs span classification only on the remaining candidates. It stabilizes learning by promoting knowledge sharing across tasks and maintains plasticity by reducing learning burden at each task. A length-decay negative sampling strategy to mitigate span imbalance is also introduced. Extensive experiments on OntoNotes and FewNERD synthestic datasets demonstrate that FSE achieves state-of-the-art performance in CLNER scenarios, with effectiveness of each component, empirical evidence of faster convergence and expected functionality of both experts.",
-    "Venue": "",
+    "Venue": "Pattern Recognit Lett",
     "Citation_Count": 0,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 11,
@@ -60334,25 +60422,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2607.01444",
-    "Title": "On the Utility and Factual Reliability of Pruned Mixture-of-Experts Models in the Biomedical Domain",
-    "Authors": "Atsuki Yamaguchi, Szymon Palucha, L\u00e9o Bijar, Aline Villavicencio, Nikolaos Aletras",
-    "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)",
-    "Abstract": "Mixture-of-Experts (MoE) models offer inference speedups via selective activation but impose substantial memory requirements because the whole network must remain loaded. Structured expert pruning is a practical approach for reducing deployment costs in resource-constrained settings. However, prior studies primarily evaluate benchmark utility, leaving the effect of pruning on factual reliability underexplored, particularly in high-stakes domains such as biomedicine. In this paper, we investigate how domain-specific expert pruning affects both utility and reliability. We assess four MoE models, six pruning methods, and multiple pruning ratios across generation and classification tasks under in-domain (biomedical) and cross-domain settings. Results reveal that moderate pruning preserves in-domain utility without immediate reliability decline, although hallucination risks increase at extreme pruning ratios. When shifting to the general domain, both utility and reliability degrade rapidly. These findings indicate that safe compression depends heavily on the task and domain. Evaluating pruned MoE models solely on utility is inadequate for high-stakes deployment without reliability assessment.",
-    "Venue": "",
-    "Citation_Count": 1,
-    "Influential_Citations": 0,
-    "Max_Author_hIndex": 8,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2607.01690",
     "Title": "Epistemic Goggles: A Pretrained Module that Induces an Epistemic Frame via Gradient Editing",
     "Authors": "Joshua Penman",
@@ -60380,42 +60449,6 @@
     "Venue": "",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 5,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2607.01828",
-    "Title": "Gender Differences in Research Topic and Method Selection in Library and Information Science: Perspectives from Three Top Journals",
-    "Authors": "Chengzhi Zhang, Siqi Wei, Yi Zhao, Liang Tian",
-    "Subjects": "Digital Libraries (cs.DL); Computation and Language (cs.CL); Computers and Society (cs.CY)",
-    "Abstract": "Research in the social sciences has shown that there are gender differences in the selection of research methods, with women often opting for qualitative methods while men prefer quantitative methods. However, it is important to consider that research methods are generally chosen based on the research topic. To figure out the influence of gender on research method selection, a study was conducted in the field of Library and Information Science, using a more fine-grained method classification system and an automatic classification model called CogFT, which is based on full-text cognition. The findings showed that women tend to use Interview while men prefer Theoretical approach, across a range of topics. The study offers insights into the specific research design processes that contribute to gender differences in method selection and suggests ways to promoting gender inclusivity and equality in academia by considering research method use and guidance.",
-    "Venue": "",
-    "Citation_Count": 17,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 18,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2607.01833",
-    "Title": "Non-synchronism in Global Usage of Research Methods in Library and Information Science from 1990 to 2019",
-    "Authors": "Chengzhi Zhang, Liang Tian",
-    "Subjects": "Digital Libraries (cs.DL); Computation and Language (cs.CL); Computers and Society (cs.CY)",
-    "Abstract": "The global development of Library and Information Science (LIS) is influenced by various factors such as the economy, society, culture, discipline, tradition, and more. Consequently, the research methods of LIS vary greatly among countries. To better understand these differences, we conducted a study of 5281 research papers from 81 countries published in internationally representative journals over the past thirty years. We manually annotated the research methods used in some articles through content analysis, and subsequently developed and trained a deep learning model for automatic classification of research methods. Using this method, we conducted a comparative analysis of the usage of research methods in different countries. Our findings reveal that there are differences in the research methods used across countries, with each country having its unique research profile and distribution of research methods. Even when investigating the same topic, research methods can differ between countries. Our study also uncovers that there are differences between the national and international distribution of research methods, these differences have decreased over the past 30 years. By highlighting the characteristics of discipline development in various countries from the perspective of research methods, our study can help guide discipline development at the national level. This study provides insights into the usage trends of research methods across different countries and highlights the unique characteristics of discipline development in each country. This information can be valuable in promoting collaboration and understanding between countries and in guiding discipline development at the national level.",
-    "Venue": "Scientometrics",
-    "Citation_Count": 13,
-    "Influential_Citations": 3,
     "Max_Author_hIndex": 5,
     "Category": "cs.CL",
     "Categories": [
@@ -61038,7 +61071,7 @@
     "Venue": "",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 1,
+    "Max_Author_hIndex": 0,
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
@@ -63618,7 +63651,7 @@
     "Subjects": "Information Retrieval (cs.IR); Computation and Language (cs.CL); Human-Computer Interaction (cs.HC)",
     "Abstract": "Context compression discards most of a document before a language model reads it, and is normally evaluated by downstream task accuracy - which makes another model the judge of what mattered. Naturalistic social highlighting offers a non-circular reference: many people independently marking passages on the same page. But the obvious metric, the fraction of crowd-marked sentences a compressor keeps, is confounded twice: crowd marks are front-loaded and crowd-marked sentences are longer, so any method favouring early or long sentences scores well regardless of readers. We remove both by matching each marked sentence against unmarked sentences of the same document at equal relative depth and equal within-document length rank, and we calibrate every estimator on synthetic nulls built from position and length alone - a step that matters, since depth-only stratification returns a false positive on 20-36% of nulls containing no effect. On 120 web documents (at least 12 independent readers each), a language-model importance ranking keeps 38.4% of crowd-marked sentences against 19.9% of their matched neighbours: an enrichment of +0.196 [+0.148, +0.239], at p = 0.0005 under an exact randomization test that assumes nothing about clustering, and replicated cross-vendor. Naive truncation, whose keep rule is position, correctly falls to +0.003. To give the number a scale: scored identically, on the same budget, against a crowd label recomputed to exclude them, a single human reader reaches +0.182 - indistinguishable from GPT-5.4 (+0.002 [-0.081, +0.088]) and below Claude Opus 5. Classical methods are not null - Luhn's 1958 heuristic reaches +0.088 - so reader selection is partly recoverable by counting words; conditioning additionally on lexical centrality removes only 0.010, so the agreement is not centrality. We also report that a claim in our own prior work does not reproduce on this corpus.",
     "Venue": "",
-    "Citation_Count": 0,
+    "Citation_Count": 1,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 3,
     "Category": "cs.CL",
@@ -63805,24 +63838,6 @@
     "Venue": "",
     "Citation_Count": 0,
     "Influential_Citations": 0,
-    "Max_Author_hIndex": 2,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2607.00248",
-    "Title": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity",
-    "Authors": "Bytedance Seed",
-    "Subjects": "Artificial Intelligence (cs.AI)",
-    "Abstract": "We present Seed2.0, a model series that takes a meaningful step toward solving complex, real-world tasks. Our approach begins with identifying users'genuine needs and constructing a reliable, forward-looking evaluation system by selecting and abstracting benchmarks grounded in these needs and in realistic, complex scenarios. Guided by this evaluation system, Seed2.0 targets two persistent challenges, long-tail knowledge and complex instruction following, substantially improving the model's reliability on intricate, long-horizon tasks. Beyond these, Seed2.0 delivers world-leading reasoning intelligence, visual understanding, and search capabilities that address the most common needs of a broad user base. Through extensive real-world use cases documented in this model card, we demonstrate that Seed2.0 begins to exhibit the ability to handle initial complex real-world tasks, delivering greater value to hundreds of millions of users.",
-    "Venue": "",
-    "Citation_Count": 51,
-    "Influential_Citations": 6,
     "Max_Author_hIndex": 2,
     "Category": "cs.AI",
     "Categories": [
@@ -70859,7 +70874,7 @@
     "Subjects": "Software Engineering (cs.SE); Artificial Intelligence (cs.AI)",
     "Abstract": "The use of LLMs in software development has become increasingly widespread on tasks such as code generation and summarization. Reports from large technology companies showed that around 20% to 30% of their code are generated by LLMs. However, there remains skepticism about the practical usage of LLM-generated code and comments, such as concerns on more time for debugging the generated code and the unnaturalness of the generated comments. In this paper, we study the code and comments detected as likely to be generated by LLMs and their characteristics, the differences between company- and community-maintained repositories, and how likely bugs are associated with LLM-generated code. We conduct extensive experiments on active company- and community-maintained repositories from 2021 to 2025 using various tools and techniques that detect code and comments generated by LLMs. Based on our detector-based proxy analysis, the results suggest that code detected as likely to be generated by LLMs decreased over time and appeared frequently in test cases, while that of comments remains relatively stable. Proxy results further suggest that code detected as likely to be generated by LLMs shows substantial intra-repository code clones, whereas comments exhibit a relatively low proportion of grammatically correct sentences. In addition, the company-maintained repositories show a higher percentage of code and comments detected as likely to be generated by LLMs, and only a small percentage of the human-labelled bugs are detected as being likely associated with LLM-generated code.",
     "Venue": "J Syst Softw",
-    "Citation_Count": 1,
+    "Citation_Count": 2,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 3,
     "Category": "cs.AI",
@@ -71975,7 +71990,7 @@
     "Subjects": "Machine Learning (cs.LG); Artificial Intelligence (cs.AI)",
     "Abstract": "Outcome-supervised reinforcement learning scales to verifiable reasoning tasks, but trajectory-level rewards assign the same outcome signal to all sampled tokens, overlooking their unequal contributions to the reasoning process. Entropy provides a natural indicator of the model's decision state, yet using it for token-level credit assignment presents two key challenges: long-tail probabilities in large vocabularies corrupt both entropy values and gradients, and uncertainty carries distinct semantics across positive- and non-positive-advantage trajectories. We propose Asymmetric Credit Policy Optimization (ACPO), which replaces global entropy with the complement of the top-token probability as a mode-local proxy. Guided by gradient analysis, ACPO incorporates mismatch routing and saturation correction to shape policy updates into the desired asymmetric form, emphasizing uncertain decisions on positive trajectories while penalizing confident regions on failed ones. Theoretically, ACPO locally preserves the advantage direction while bounding surrogate error. Experiments on mathematical and coding reasoning benchmarks, including AIME 2025 and HumanEval Pro, show that ACPO consistently outperforms both entropy-aware methods (e.g., 80/20, GTPO) and strong outcome-supervised RL baselines (e.g., DAPO, SAPO).",
     "Venue": "",
-    "Citation_Count": 1,
+    "Citation_Count": 0,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 7,
     "Category": "cs.AI",
