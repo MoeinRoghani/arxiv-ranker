@@ -9314,6 +9314,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2610.02200",
+    "Title": "VISTA: A Visual Harness for Reasoning in an Interactive World",
+    "Authors": "Qiushi Han, Keya Hu, Linlu Qiu, Cathy Wu, Kaiming He",
+    "Subjects": "Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV)",
+    "Abstract": "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments. We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision. VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless visual memory that preserves past observations in their original form. The model can actively retrieve these observations and reorganize its visual input as it reasons. On ARC-AGI-3, VISTA improves Claude Opus 5.0's Relative Human Action Efficiency score from 40.68 to a perfect 100.00, with the model completing all 25 public games using 57.4% fewer actions than first-time human participants. VISTA's simple design also allows it to extend naturally to diverse visual environments with minimal adaptation. Across three additional benchmarks covering a diverse range of visual games and puzzles, it substantially outperforms baselines using the same underlying model with minimal harnesses. Our results highlight VISTA's potential as a general-purpose visual harness for advancing multimodal agents in complex visual environments.",
+    "Venue": "",
+    "Citation_Count": 11,
+    "Influential_Citations": 3,
+    "Max_Author_hIndex": 8,
+    "Category": "cs.AI",
+    "Categories": [
+      "cs.AI"
+    ],
+    "Score": 65,
+    "Factors": [
+      "TITLE(+25:reasoning)",
+      "ABSTRACT(+10)",
+      "INFLUENTIAL(+30:27%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2610.08621",
     "Title": "Recursive Game Creator: An Agentic Product-Level Experience-Oriented Game Harness",
     "Authors": "Jiajun Chen, Haoyu Wu, Mingda Jia, Xihui Liu",
@@ -21294,27 +21316,6 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
-    "arXiv_ID": "2610.02200",
-    "Title": "VISTA: A Visual Harness for Reasoning in an Interactive World",
-    "Authors": "Qiushi Han, Keya Hu, Linlu Qiu, Cathy Wu, Kaiming He",
-    "Subjects": "Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV)",
-    "Abstract": "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments. We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision. VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless visual memory that preserves past observations in their original form. The model can actively retrieve these observations and reorganize its visual input as it reasons. On ARC-AGI-3, VISTA improves Claude Opus 5.0's Relative Human Action Efficiency score from 40.68 to a perfect 100.00, with the model completing all 25 public games using 57.4% fewer actions than first-time human participants. VISTA's simple design also allows it to extend naturally to diverse visual environments with minimal adaptation. Across three additional benchmarks covering a diverse range of visual games and puzzles, it substantially outperforms baselines using the same underlying model with minimal harnesses. Our results highlight VISTA's potential as a general-purpose visual harness for advancing multimodal agents in complex visual environments.",
-    "Venue": "",
-    "Citation_Count": 11,
-    "Influential_Citations": 3,
-    "Max_Author_hIndex": 8,
-    "Category": "cs.AI",
-    "Categories": [
-      "cs.AI"
-    ],
-    "Score": 35,
-    "Factors": [
-      "TITLE(+25:reasoning)",
-      "ABSTRACT(+10)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
     "arXiv_ID": "2610.02351",
     "Title": "DeReAct: Decomposed Reasoning and Acting for Reliable AI Agents",
     "Authors": "Ajay Vohra, Tao Chen, Neeti Narayan, Caron Zhang",
@@ -22460,6 +22461,28 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2610.00223",
+    "Title": "A Holistic Assessment of the Carbon Footprint of Noor, a Very Large Arabic Language Model",
+    "Authors": "Imad Lakim, Ebtesam Almazrouei, Ibrahim Abu Alhaol, Merouane Debbah, Julien Launay",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "As ever larger language models grow more ubiquitous, it is crucial to consider their environmental impact. Characterised by extreme size and resource use, recent generations of models have been criticised for their voracious appetite for compute, and thus significant carbon footprint. Although reporting of carbon impact has grown more common in machine learning papers, this reporting is usually limited to compute resources used strictly for training. In this work, we propose a holistic assessment of the footprint of an extreme-scale language model, Noor. Noor is an ongoing project aiming to develop the largest multi-task Arabic language models\u2013with up to 13B parameters\u2013leveraging zero-shot generalisation to enable a wide range of downstream tasks via natural language instructions. We assess the total carbon bill of the entire project: starting with data collection and storage costs, including research and development budgets, pretraining costs, future serving estimates, and other exogenous costs necessary for this international cooperation. Notably, we find that inference costs and exogenous factors can have a significant impact on total budget. Finally, we discuss pathways to reduce the carbon footprint of extreme-scale models.",
+    "Venue": "",
+    "Citation_Count": 27,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 119,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 32,
+    "Factors": [
+      "ABSTRACT(+15)",
+      "HINDEX(+12:h=119)",
+      "INFLUENTIAL(+5:7%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2610.39018",
     "Title": "Tunable Spatial Task Allocation with Application to Maritime Swarms",
     "Authors": "Vishnudatta Thota, Tyler Paine, Anastasia Bizyaeva",
@@ -22663,27 +22686,6 @@
     "Factors": [
       "ABSTRACT(+25)",
       "HINDEX(+3:h=46)"
-    ],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2610.00223",
-    "Title": "A Holistic Assessment of the Carbon Footprint of Noor, a Very Large Arabic Language Model",
-    "Authors": "Imad Lakim, Ebtesam Almazrouei, Ibrahim Abu Alhaol, Merouane Debbah, Julien Launay",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "As ever larger language models grow more ubiquitous, it is crucial to consider their environmental impact. Characterised by extreme size and resource use, recent generations of models have been criticised for their voracious appetite for compute, and thus significant carbon footprint. Although reporting of carbon impact has grown more common in machine learning papers, this reporting is usually limited to compute resources used strictly for training. In this work, we propose a holistic assessment of the footprint of an extreme-scale language model, Noor. Noor is an ongoing project aiming to develop the largest multi-task Arabic language models\u2013with up to 13B parameters\u2013leveraging zero-shot generalisation to enable a wide range of downstream tasks via natural language instructions. We assess the total carbon bill of the entire project: starting with data collection and storage costs, including research and development budgets, pretraining costs, future serving estimates, and other exogenous costs necessary for this international cooperation. Notably, we find that inference costs and exogenous factors can have a significant impact on total budget. Finally, we discuss pathways to reduce the carbon footprint of extreme-scale models.",
-    "Venue": "",
-    "Citation_Count": 27,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 119,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 27,
-    "Factors": [
-      "ABSTRACT(+15)",
-      "HINDEX(+12:h=119)"
     ],
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
@@ -44514,6 +44516,26 @@
     "Tier": "\u2713 TIER-3 NOTABLE"
   },
   {
+    "arXiv_ID": "2610.02076",
+    "Title": "LLM-as-Jev: LLMs Are Already Jev-Style Decision Models -- When and How to Fine-Tune Them",
+    "Authors": "Yinheng Li, Justin Wagle",
+    "Subjects": "Computation and Language (cs.CL)",
+    "Abstract": "Jev-style decision models have gained surging traction by making decision-making dramatically faster and more efficient, returning categorical probability distributions over predefined options without generating free-form text. However, because Jev's architecture and training methodologies remain proprietary, how to replicate these capabilities effectively remains an open question. In this work, we investigate the extent to which general-purpose LLMs already possess this capability out of the box, and when fine-tuning is actually necessary. We present LLM-as-Jev, an architecture-preserving framework offering both a training-free inference recipe and a fine-tuning objective with KL-divergence anchors. Across Qwen3.5-4B and Qwen3-0.6B, we find that modern LLMs are inherently effective decision models: off the shelf, frozen models match or exceed existing training-free readouts on the same 4B backbone, scale to arbitrary option counts, and natively handle multimodal decisions. They also seamlessly inherit the backbone's thinking mode: while Jev was introduced as a System 1 model,\"Thinking Jev\"leverages budgeted test-time reasoning to boost accuracy on challenging tasks without training. Fine-tuning provides targeted gains for smaller models and complex routing, while our KL anchors prevent behavioral degradation in general text generation.",
+    "Venue": "",
+    "Citation_Count": 19,
+    "Influential_Citations": 2,
+    "Max_Author_hIndex": 7,
+    "Category": "cs.CL",
+    "Categories": [
+      "cs.CL"
+    ],
+    "Score": 15,
+    "Factors": [
+      "INFLUENTIAL(+15:11%)"
+    ],
+    "Tier": "\u2713 TIER-3 NOTABLE"
+  },
+  {
     "arXiv_ID": "2610.04010",
     "Title": "$Q$ Can Play That Game: Online Fitted $Q$-Iteration for Continuous-Action Zero-Sum Markov Games with Convex-Concave Function Approximation",
     "Authors": "Kushagra Gupta, Jingqi Li, Cade Armstrong, Lasse Peters, Ross E. Allen, Ufuk Topcu, David Fridovich-Keil",
@@ -66006,24 +66028,6 @@
     "Citation_Count": 0,
     "Influential_Citations": 0,
     "Max_Author_hIndex": 16,
-    "Category": "cs.CL",
-    "Categories": [
-      "cs.CL"
-    ],
-    "Score": 0,
-    "Factors": [],
-    "Tier": "\u2713 TIER-3 NOTABLE"
-  },
-  {
-    "arXiv_ID": "2610.02076",
-    "Title": "LLM-as-Jev: LLMs Are Already Jev-Style Decision Models -- When and How to Fine-Tune Them",
-    "Authors": "Yinheng Li, Justin Wagle",
-    "Subjects": "Computation and Language (cs.CL)",
-    "Abstract": "Jev-style decision models have gained surging traction by making decision-making dramatically faster and more efficient, returning categorical probability distributions over predefined options without generating free-form text. However, because Jev's architecture and training methodologies remain proprietary, how to replicate these capabilities effectively remains an open question. In this work, we investigate the extent to which general-purpose LLMs already possess this capability out of the box, and when fine-tuning is actually necessary. We present LLM-as-Jev, an architecture-preserving framework offering both a training-free inference recipe and a fine-tuning objective with KL-divergence anchors. Across Qwen3.5-4B and Qwen3-0.6B, we find that modern LLMs are inherently effective decision models: off the shelf, frozen models match or exceed existing training-free readouts on the same 4B backbone, scale to arbitrary option counts, and natively handle multimodal decisions. They also seamlessly inherit the backbone's thinking mode: while Jev was introduced as a System 1 model,\"Thinking Jev\"leverages budgeted test-time reasoning to boost accuracy on challenging tasks without training. Fine-tuning provides targeted gains for smaller models and complex routing, while our KL anchors prevent behavioral degradation in general text generation.",
-    "Venue": "",
-    "Citation_Count": 19,
-    "Influential_Citations": 2,
-    "Max_Author_hIndex": 7,
     "Category": "cs.CL",
     "Categories": [
       "cs.CL"
